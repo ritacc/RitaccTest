@@ -1203,7 +1203,7 @@ namespace MonitorSystem
                 MessageBox.Show(result.Error.Message);
                 return;
             }
-            List<t_Element> lsitElement = _DataContext.t_Elements.Where(a => a.ScreenID == Convert.ToInt32(result.UserState) && null == a.ParentID).ToList();
+            List<t_Element> lsitElement = _DataContext.t_Elements.Where(a => a.ScreenID == Convert.ToInt32(result.UserState) && null == a.ParentID).OrderBy(a => a.ElementName).ToList();
             
             ShowElements(lsitElement, csScreen);
             //如果不是组态，打开定时器

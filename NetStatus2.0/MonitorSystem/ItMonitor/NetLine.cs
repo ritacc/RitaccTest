@@ -14,10 +14,10 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MonitorSystem.Controls;
-using MonitorSystem.ItMonitor;
+ 
 using MonitorSystem.Web.Moldes;
 
-namespace MonitorSystem.MonitorSystemGlobal
+namespace MonitorSystem.ItMonitor
 {
     public partial class NetLine : ItMonitorBase
     {
@@ -44,6 +44,72 @@ namespace MonitorSystem.MonitorSystemGlobal
         {
             DesignMode();
         }
+
+        #region 与设备关联处理
+        public void MovePoint(NetDevice _netDev, double offsetX, double offsetY)
+        {
+            int index = 0;
+            if (_netDev == UpLineDevice)
+                index = 0;
+            else
+                index = PointColl.Count - 1;
+
+            Point newPoint = new Point(PL.Points[index].X + offsetX, PL.Points[index].Y + offsetY);
+            PL.Points.RemoveAt(index);
+            PL.Points.Insert(index, newPoint);
+
+            PointColl = PL.Points;
+            GlobalPoints = PL.Points;
+            PointsConvertStr(PL.Points);
+        }
+
+        public void SetOnDeviceColor()
+        {
+            PL.Stroke = new SolidColorBrush(Colors.Blue);
+        }
+        #endregion
+
+        #region 重载
+        public override event EventHandler Selected;
+        public override event EventHandler Unselected;
+       
+        protected void OnSelected(object sender, EventArgs e)
+        {
+            if (null != Selected)
+            {
+                Selected(this, RoutedEventArgs.Empty);
+            }
+        }
+
+        public override FrameworkElement GetRootControl()
+        {
+            return this;
+        }
+
+
+
+        protected void OnUnselected(object sender, EventArgs e)
+        {
+            if (null != Unselected)
+            {
+                Unselected(this, RoutedEventArgs.Empty);
+            }
+        }
+
+
+        public override void UnDesignMode()
+        {
+            if (IsDesignMode)
+            {
+                AdornerLayer.Selected -= OnSelected;
+                AdornerLayer.ClearValue(ContextMenuService.ContextMenuProperty);
+                AdornerLayer.Dispose();
+                AdornerLayer = null;
+            }
+        }
+
+        #endregion
+
         #region SetValue
 
         public override void SetChannelValue(float fValue)
@@ -127,6 +193,7 @@ namespace MonitorSystem.MonitorSystemGlobal
             PL.Stroke = new SolidColorBrush(color);
         }
         #endregion
+
         #region 重载
         public override void SetPropertyValue()
         {
@@ -201,7 +268,33 @@ namespace MonitorSystem.MonitorSystemGlobal
                         if (!string.IsNullOrEmpty(value))
                             ShowColor7 = Common.StringToColor(value);
                         break;
-                }
+
+                        case "UpLinePort":
+                        if (!string.IsNullOrEmpty(value))
+                            UpLinePort = Convert.ToInt32(value);
+                        break;
+
+                        case "UpLineDeviceID":
+                        if (!string.IsNullOrEmpty(value))
+                        {
+                            UpLineDeviceID = Convert.ToInt32(value);
+                            UpLineDevice = DeviceLineHeadle.GetDeviceByElementID(UpLineDeviceID.Value);
+                        }
+                        break;
+
+                         case "DownLinePort":
+                        if (!string.IsNullOrEmpty(value))
+                            DownLinePort = Convert.ToInt32(value);
+                        break;
+                         case "DownLineDeviceID":
+                        if (!string.IsNullOrEmpty(value))
+                        {
+                            DownLineDeviceID = Convert.ToInt32(value);
+                            DownLineDevice = DeviceLineHeadle.GetDeviceByElementID(DownLineDeviceID.Value);
+                        }
+                        break;
+
+                }			
             }
         }
 
@@ -216,7 +309,8 @@ namespace MonitorSystem.MonitorSystemGlobal
 
         private string[] m_BrowsableProperties = new string[] { "Width", "Height",  "Stroke", "StrokeThickness", "ForeColor" 
         ,"Paser1","ShowColor1"  ,"Paser2","ShowColor2"  ,"Paser3","ShowColor3"  ,"Paser1","ShowColor1"
-        ,"Paser5","ShowColor5" ,"Paser6","ShowColor6"   ,"Paser7","ShowColor7"};
+        ,"Paser5","ShowColor5" ,"Paser6","ShowColor6"   ,"Paser7","ShowColor7"
+        ,"UpLinePort","UpLineDeviceName","DownLineDeviceName"	,"DownLinePort"	};
         public override string[] BrowsableProperties
         {
             get
@@ -333,8 +427,118 @@ namespace MonitorSystem.MonitorSystemGlobal
         {
             get;
             private set;
-        } 
+        }
+        #region 上联设备、端口
+        private static readonly DependencyProperty UpLinePortProperty =DependencyProperty.Register("UpLinePort",typeof(int?), typeof(NetLine), new PropertyMetadata(null));
+        [DefaultValue(null), Description("上联设备端口"), Category("连接设备")]
+        public int? UpLinePort
+        {
+            get { return (int?)GetValue(UpLinePortProperty); }
+            set
+            {
+                SetValue(UpLinePortProperty, value);
+                SetAttrByName("UpLinePort", value);
+            }
+        }
 
+        private int? _UpLineDeviceID = null;
+        public int? UpLineDeviceID
+        {
+            get { return _UpLineDeviceID; }
+            set
+            {
+                SetAttrByName("UpLineDeviceID", value);
+                _UpLineDeviceID = value;
+            }
+        }
+
+        private NetDevice _UpNetDevice = null;
+        public NetDevice UpLineDevice
+        {
+            get { return _UpNetDevice; }
+            set
+            {
+                _UpNetDevice = value;
+                if (value != null)
+                {
+                    UpLineDeviceID = value.ScreenElement.ElementID;
+                    UpLineDeviceName = value.DeviceName;
+                }
+                else
+                {
+                    UpLineDeviceID = null;
+                    UpLineDeviceName = "";
+                }
+            }
+        }
+
+        private static readonly DependencyProperty UpLineDeviceNameProperty = DependencyProperty.Register("UpLineDeviceName", typeof(string), typeof(NetLine), new PropertyMetadata(""));
+        [DefaultValue(""), Description("上联设备名称"), Category("连接设备")]
+        public string UpLineDeviceName
+        {
+            get { return (string)GetValue(UpLineDeviceNameProperty); }
+            set
+            {
+                SetValue(UpLineDeviceNameProperty, value);
+            }
+        }
+        #endregion
+
+        #region 下联设备、端口
+        private static readonly DependencyProperty DownLinePortProperty =DependencyProperty.Register("DownLinePort",typeof(int), typeof(NetLine), new PropertyMetadata(null));
+        [DefaultValue(null), Description("下联设备端口"), Category("连接设备")]
+        public int DownLinePort
+        {
+            get { return (int)GetValue(DownLinePortProperty); }
+            set
+            {
+                SetValue(DownLinePortProperty, value);
+                SetAttrByName("DownLinePort", value);
+            }
+        }
+
+        private int? _DownLineDeviceID = null;
+        public int? DownLineDeviceID
+        {
+            get { return _DownLineDeviceID; }
+            set
+            {
+                SetAttrByName("DownLineDeviceID", value);
+                _DownLineDeviceID = value;
+            }
+        }
+        private NetDevice _DownNetDevice=null;
+        public NetDevice DownLineDevice
+        {
+            get { return _DownNetDevice; }
+            set
+            {
+                _DownNetDevice = value;
+                if (value != null)
+                {
+                    DownLineDeviceID = value.ScreenElement.ElementID;
+                    DownLineDeviceName = value.DeviceName;
+                }
+                else
+                {
+                    DownLineDeviceID = null;
+                    DownLineDeviceName = "";
+                }
+            }
+        }
+
+        private static readonly DependencyProperty DownLineDeviceNameProperty = DependencyProperty.Register("DownLineDeviceName", typeof(string), typeof(NetLine), new PropertyMetadata(""));
+        [DefaultValue(""), Description("下联设备名称"), Category("连接设备")]
+        public string DownLineDeviceName
+        {
+            get { return (string)GetValue(DownLineDeviceNameProperty); }
+            set
+            {
+                SetValue(DownLineDeviceNameProperty, value);
+            }
+        }
+        		 
+        #endregion
 
         #region 边线颜色
 

@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 
 using MonitorSystem.MonitorSystemGlobal;
 using MonitorSystem.Web.Moldes;
+using MonitorSystem.ItMonitor;
 
 namespace MonitorSystem
 
@@ -870,6 +871,19 @@ namespace MonitorSystem
             var offsetY = mousePoint.Y - _initialPoint.Y;
             MouseMuti(offsetX, offsetY);
             _initialPoint = mousePoint;
+
+            if (_associatedElement is NetDevice)
+            {
+                var DeviceOnLine = (_associatedElement as NetDevice).DeviceOnLine;
+                if (DeviceOnLine != null && DeviceOnLine.Count > 0)
+                {
+                    var _netDev = _associatedElement as NetDevice;
+                    foreach (NetLine _Lin in DeviceOnLine)
+                    {
+                        _Lin.MovePoint(_netDev, offsetX, offsetY);
+                    }
+                }
+            }
         }
 
         protected static void MouseMuti(double offsetX, double offsetY)

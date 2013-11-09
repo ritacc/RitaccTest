@@ -130,6 +130,7 @@
     <Compile Include="Gallery\PointerControl.xaml.cs">
       <DependentUpon>PointerControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ItMonitor\DeviceLineHeadle.cs" />
     <Compile Include="ItMonitor\ItMonitorBase.cs" />
     <Compile Include="ItMonitor\NetDevice.cs" />
     <Compile Include="ItMonitor\NetLine.cs" />

@@ -7,6 +7,14 @@ declare @AddControl varchar(50);--添加控件名称
 
 --添加“NetLine”
 set @AddControl='NetLine'
+declare @ControlID int;
+select @ControlID=ControlID from t_control where controlName='NetLine'
+if @ControlID <> 0
+begin
+	delete t_control where ControlID=@ControlID
+	delete [t_ControlProperty] where ControlID=@ControlID
+end
+
 select @ControlNum=count(*) from t_control where controlname=@AddControl
 if @ControlNum = 0
 begin
@@ -14,9 +22,7 @@ begin
 		print @AddControl
 		insert into t_control (controlname,controltype,imageUrl,controltypeName,controlCaption)
 		values(@AddControl,'10','','ItMonitor','连接线');
-
-
-		declare @ControlID int;
+		 
 		set @ControlID=0;
 		select @ControlID=max(controlid)  from t_control
 		if @ControlID > 0
@@ -63,11 +69,27 @@ begin
 			INSERT INTO [t_ControlProperty]([ControlID],[PropertyNo],[PropertyName],[DefaultValue],[Caption])
 				 VALUES(@ControlID, 17,'ShowColor7','#FFE52517','颜色7');
 
+			INSERT INTO [t_ControlProperty]([ControlID],[PropertyNo],[PropertyName],[DefaultValue],[Caption])
+				 VALUES(@ControlID, 20,'UpLinePort','','上联设备端口');
+			INSERT INTO [t_ControlProperty]([ControlID],[PropertyNo],[PropertyName],[DefaultValue],[Caption])
+				 VALUES(@ControlID, 21,'UpLineDeviceID','','上联设备ID');
+			INSERT INTO [t_ControlProperty]([ControlID],[PropertyNo],[PropertyName],[DefaultValue],[Caption])
+				 VALUES(@ControlID, 22,'DownLinePort','1','下联设备端口');
+			INSERT INTO [t_ControlProperty]([ControlID],[PropertyNo],[PropertyName],[DefaultValue],[Caption])
+				 VALUES(@ControlID, 23,'DownLineDeviceID','','下联设备ID');
+
 		end
 end
 
 --添加“NetDevice”
 set @AddControl='NetDevice'
+select @ControlID=ControlID from t_control where controlName='NetDevice'
+if @ControlID <> 0
+begin
+	delete t_control where ControlID=@ControlID
+	delete [t_ControlProperty] where ControlID=@ControlID
+end
+
 select @ControlNum=count(*) from t_control where controlname=@AddControl
 if @ControlNum = 0
 begin
@@ -121,6 +143,9 @@ begin
 
 			INSERT INTO [t_ControlProperty]([ControlID],[PropertyNo],[PropertyName],[DefaultValue],[Caption])
 				 VALUES(@ControlID, 16,'DefultImg','route0.png','图片7');
+
+			INSERT INTO [t_ControlProperty]([ControlID],[PropertyNo],[PropertyName],[DefaultValue],[Caption])
+				VALUES(@ControlID, 20,'PortNumber','16','端口数量');
 
 		end
 end

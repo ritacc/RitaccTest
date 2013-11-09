@@ -15,18 +15,127 @@ using System.ComponentModel;
 using System.Windows.Media.Imaging;
 using MonitorSystem.Controls;
 using MonitorSystem.ItMonitor;
+using System.Collections.Generic;
 
-namespace MonitorSystem.ZTControls
+namespace MonitorSystem.ItMonitor
 {
     /// <summary>
     ///网络设备
     /// </summary>
     public class NetDevice : ItMonitorBase
     {
+        Canvas _grid = new Canvas();
+        Label _Txt = new Label();
+        Image _img = new Image();
+        Rectangle _rect = new Rectangle();
+        public NetDevice()
+        {
+            this.Content = _grid;
+            this.Height = this.Width = 100;
+
+            _Txt.SetValue(Grid.RowProperty, 1);
+            _Txt.FontSize = 12d;
+
+            _grid.Children.Add(_Txt);
+            _grid.Children.Add(_img);
+            _grid.Background = new SolidColorBrush();
+            SetImg();
+
+            
+            _rect.StrokeThickness = 2.0;
+            _rect.Stroke = new SolidColorBrush(Colors.Blue);
+            _grid.Children.Add(_rect);
+            _rect.Visibility = Visibility.Collapsed;
+            
+        }
+
+        #region 关联处理
+        public void ShowRect()
+        {
+            _rect.Visibility = Visibility.Visible;
+        }
+        public void HideRect()
+        {
+            _rect.Visibility = Visibility.Collapsed;
+        }        
+
         public override void SetChannelValue(float fValue)
         {
             SetStringValue(fValue.ToString());
         }
+
+        #endregion
+
+        #region 重载
+        public override event EventHandler Selected;
+
+        public override event EventHandler Unselected;
+        public override void DesignMode()
+        {
+            if (!IsDesignMode)
+            {
+                AdornerLayer = new Adorner(this);
+                AdornerLayer.Selected += OnSelected;
+                AdornerLayer.Unselected += OnUnselected;
+
+                var menu = new ContextMenu();
+                var menuItem = new MenuItem() { Header = "属性" };
+                menuItem.Click += PropertyMenuItem_Click;
+                menu.Items.Add(menuItem);
+                AdornerLayer.SetValue(ContextMenuService.ContextMenuProperty, menu);
+                AdornerLayer.IsLockScale = true;
+            }
+        }
+
+        /// <summary>
+        /// 设备关联的线
+        /// </summary>
+        public List<NetLine> DeviceOnLine { get; set; }
+        protected void OnSelected(object sender, EventArgs e)
+        {
+            if (null != Selected)
+            {
+                Selected(this, RoutedEventArgs.Empty);
+            }
+
+            DeviceOnLine = DeviceLineHeadle.GetDeviceOnLinesByNetDevice(this);
+            if (DeviceOnLine != null && DeviceOnLine.Count > 0)
+            {
+                foreach (NetLine _Lin in DeviceOnLine)
+                {
+                    _Lin.SetOnDeviceColor();
+                }
+            }
+        }
+
+        public override FrameworkElement GetRootControl()
+        {
+            return this;
+        }
+
+
+
+        protected void OnUnselected(object sender, EventArgs e)
+        {
+            if (null != Unselected)
+            {
+                Unselected(this, RoutedEventArgs.Empty);
+            }
+        }
+
+
+        public override void UnDesignMode()
+        {
+            if (IsDesignMode)
+            {
+                AdornerLayer.Selected -= OnSelected;
+                AdornerLayer.ClearValue(ContextMenuService.ContextMenuProperty);
+                AdornerLayer.Dispose();
+                AdornerLayer = null;
+            }
+        }
+
+        #endregion
 
         public void SetDeviceValue(string Value)
         {
@@ -92,25 +201,7 @@ namespace MonitorSystem.ZTControls
                 }
             }
         }
-
-
-        Canvas _grid = new Canvas();
-        Label _Txt = new Label();
-        Image _img = new Image();
-        public NetDevice()
-        {
-            this.Content = _grid;
-            this.Height = this.Width = 100;
-
-            _Txt.SetValue(Grid.RowProperty, 1);
-            _Txt.FontSize = 12d;
-
-            _grid.Children.Add(_Txt);
-            _grid.Children.Add(_img);
-            _grid.Background = new SolidColorBrush();
-            SetImg();
-        }
-
+        
         public void Paint()
         {
             _img.Height = this.Height - 20;
@@ -118,6 +209,9 @@ namespace MonitorSystem.ZTControls
             _img.SetValue(Canvas.LeftProperty, 10d);
             _Txt.SetValue(Canvas.TopProperty, this.Height - 18);
             SetText();
+
+            _rect.Width = this.Width;
+            _rect.Height = this.Height;
         }
 
         public void SetText()
@@ -242,7 +336,8 @@ namespace MonitorSystem.ZTControls
         private string[] m_BrowsableProperties = new string[] { "Left", "Top", "Width", "Height"
             , "PointsSave", "Stroke", "StrokeThickness", "ForeColor" ,"DeviceName","DefultImg"
         ,"Paser1","Img1"        ,"Paser2","Img2"       ,"Paser3","Img3"     ,"Paser4","Img4" 
-        ,"Paser5","Img5"        ,"Paser6","Img6"        ,"Paser7","Img7"};
+        ,"Paser5","Img5"        ,"Paser6","Img6"        ,"Paser7","Img7"
+        ,"PortNumber"};
         public override string[] BrowsableProperties
         {
             get{return m_BrowsableProperties;}
@@ -250,14 +345,22 @@ namespace MonitorSystem.ZTControls
         }
 
         #endregion
-
-       
-
+        
         #region 属性设置
-        private static readonly DependencyProperty ForeColorProperty =
-         DependencyProperty.Register("ForeColor",
-         typeof(Color), typeof(NetDevice), new PropertyMetadata(Colors.Black));
-        [DefaultValue(0), Description("名称颜色"), Category("我的属性")]
+        private static readonly DependencyProperty PortNumberProperty = DependencyProperty.Register("PortNumber", typeof(int), typeof(NetDevice), new PropertyMetadata(16));
+        [DefaultValue(""), Description("端口数量"), Category("基本属性")]
+         public int PortNumber
+        {
+            get { return (int)GetValue(PortNumberProperty); }
+            set
+            {
+                SetValue(PortNumberProperty, value);
+                SetAttrByName("PortNumber", value);
+            }
+        }
+
+        private static readonly DependencyProperty ForeColorProperty =DependencyProperty.Register("ForeColor",typeof(Color), typeof(NetDevice), new PropertyMetadata(Colors.Black));
+        [DefaultValue(0), Description("名称颜色"), Category("基本属性")]
         public Color ForeColor
         {
             get { return (Color)this.GetValue(ForeColorProperty); }
@@ -269,13 +372,10 @@ namespace MonitorSystem.ZTControls
                 _Txt.Foreground = new SolidColorBrush(value);
             }
         }
-        
-         private static readonly DependencyProperty DefultImgProperty =
-      DependencyProperty.Register("DefultImg",
-      typeof(string), typeof(NetDevice), new PropertyMetadata(""));
 
+        private static readonly DependencyProperty DefultImgProperty = DependencyProperty.Register("DefultImg", typeof(string), typeof(NetDevice), new PropertyMetadata(""));
         [ImageAttribute("PIC")]
-        [DefaultValue(""), Description("默认图片"), Category("我的属性")]
+        [DefaultValue(""), Description("默认图片"), Category("基本属性")]
         public string DefultImg
         {
             get { return (string)GetValue(DefultImgProperty); }
@@ -286,11 +386,9 @@ namespace MonitorSystem.ZTControls
             }
         }
 
-        private static readonly DependencyProperty DeviceNameProperty =
-      DependencyProperty.Register("DeviceName",
-      typeof(string), typeof(NetDevice), new PropertyMetadata(""));
+        private static readonly DependencyProperty DeviceNameProperty =DependencyProperty.Register("DeviceName",typeof(string), typeof(NetDevice), new PropertyMetadata(""));
 
-        [DefaultValue(""), Description("表达式"), Category("我的属性")]
+        [DefaultValue(""), Description("设备名称"), Category("基本属性")]
         public string DeviceName
         {
             get { return (string)GetValue(DeviceNameProperty); }

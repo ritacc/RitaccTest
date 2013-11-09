@@ -48,61 +48,7 @@ namespace MonitorSystem.ItMonitor
 
         #endregion
 
-        #region 重载
-        public override event EventHandler Selected;
-
-        public override event EventHandler Unselected;
-        public override void DesignMode()
-        {
-            if (!IsDesignMode)
-            {
-                AdornerLayer = new Adorner(this);
-                AdornerLayer.Selected += OnSelected;
-
-                var menu = new ContextMenu();
-                var menuItem = new MenuItem() { Header = "属性" };
-                menuItem.Click += PropertyMenuItem_Click;
-                menu.Items.Add(menuItem);
-                AdornerLayer.SetValue(ContextMenuService.ContextMenuProperty, menu);
-                AdornerLayer.IsLockScale = true;
-            }
-        }
-        protected void OnSelected(object sender, EventArgs e)
-        {
-            if (null != Selected)
-            {
-                Selected(this, RoutedEventArgs.Empty);
-            }
-        }
-
-        public override FrameworkElement GetRootControl()
-        {
-            return this;
-        }
-
-
-
-        private void OnUnselected(object sender, EventArgs e)
-        {
-            if (null != Unselected)
-            {
-                Unselected(this, RoutedEventArgs.Empty);
-            }
-        }
-
-
-        public override void UnDesignMode()
-        {
-            if (IsDesignMode)
-            {
-                AdornerLayer.Selected -= OnSelected;
-                AdornerLayer.ClearValue(ContextMenuService.ContextMenuProperty);
-                AdornerLayer.Dispose();
-                AdornerLayer = null;
-            }
-        }
-
-        #endregion
+       
 
         #region 通道选择
         SetItMonitorProperty tpp = new SetItMonitorProperty();

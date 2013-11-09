@@ -65,7 +65,7 @@ from [TM] ";
 		/// </summary>
 		public bool Insert(TMOR mobj)
 		{
-			string sql = string.Format("insert into  [TM] (NO,Name,ISUse) values ('{0}','{1}','{2}')",
+			string sql = string.Format("insert into  [TM] ([NO],[Name],[ISUse]) values ('{0}','{1}','{2}')",
 			   mobj.NO, mobj.Name, mobj.ISUse);
 
 			return db.excuteNonquery(sql);

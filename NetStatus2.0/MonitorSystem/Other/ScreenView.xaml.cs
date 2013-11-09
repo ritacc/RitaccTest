@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using MonitorSystem.MonitorSystemGlobal;
 
 using MonitorSystem.ZTControls;
+using MonitorSystem.ItMonitor;
 
 namespace MonitorSystem.Other
 {

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using MonitorSystem.ItMonitor;
 
 namespace MonitorSystem
 {
@@ -159,7 +160,13 @@ namespace MonitorSystem
                 _selectRect.Fill = _selectRect.Stroke;
                 _selectRect = null;
             }
+
+            if (_associatedElement is NetLine)
+            {
+                DeviceLineHeadle.LineMoveSelectDevices(_polyline, _associatedElement);
+            }
         }
+        
 
         void _polyline_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
@@ -179,6 +186,8 @@ namespace MonitorSystem
             var offsetY = mousePoint.Y - _initialPoint.Y;
             MouseMuti(offsetX, offsetY);
             _initialPoint = mousePoint;
+
+            DeviceLineHeadle.LineMoveSelectDevices(_polyline, _associatedElement);
         }
 
         protected override void MoveTo(Point point, double offsetX, double offsetY)
@@ -266,6 +275,8 @@ namespace MonitorSystem
             _selectRect.Fill = new SolidColorBrush(Colors.Green);
         }
 
+        
+
         void element_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             FrameworkElement element = sender as FrameworkElement;
@@ -275,6 +286,8 @@ namespace MonitorSystem
 
             UpdateAssmentElement();
             base.OnSelected();
+
+            //DeviceLineHeadle.CanncelDeviceFcous();
         }
 
 
@@ -290,11 +303,23 @@ namespace MonitorSystem
             Point newPoint = new Point(_polyline.Points[index].X + offsetX, _polyline.Points[index].Y + offsetY);
             _polyline.Points.RemoveAt(index);
             _polyline.Points.Insert(index, newPoint);
-
+            
             element.SetValue(Canvas.LeftProperty, Canvas.GetLeft(element) + offsetX);
             element.SetValue(Canvas.TopProperty, Canvas.GetTop(element) + offsetY);
-
             _initialPoint = mousePoint;
+            if (_associatedElement is NetLine)
+            {
+                
+                NetDevice obj = DeviceLineHeadle.PointSelectRectDevices(index, _polyline);
+                if (index == 0)
+                {
+                    (_associatedElement as NetLine).UpLineDevice = obj;
+                }
+                else
+                {
+                    (_associatedElement as NetLine).DownLineDevice = obj;
+                }
+            }
         }
 
         private void UpdateAssmentElement()

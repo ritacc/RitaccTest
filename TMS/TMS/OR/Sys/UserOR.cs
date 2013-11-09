@@ -23,7 +23,7 @@ namespace TM.OR.Sys
         public UserOR(DataRow dr)
         {
             ID = Convert.ToInt32(dr["ID"].ToString());
-            UserName = dr["Name"].ToString();
+            UserName = dr["UserName"].ToString();
 
             UserCode = dr["UserCode"].ToString();
             PWD = dr["PWD"].ToString();
