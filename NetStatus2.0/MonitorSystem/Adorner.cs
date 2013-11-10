@@ -853,6 +853,11 @@ namespace MonitorSystem
             source.MouseMove += BackgroundAdorner_MouseMove;
             _initialPoint = e.GetPosition(_parent);
             _originPoints = _selectedAdorners.Select(a => new Point((double)a.GetValue(Canvas.LeftProperty) + a._offsetLeft, (double)a.GetValue(Canvas.TopProperty) + a._offsetTop));
+
+            if (_associatedElement is NetDevice)
+            {
+                (_associatedElement as NetDevice).DeviceOnLine = DeviceLineHeadle.GetDeviceOnLinesByNetDevice((_associatedElement as NetDevice));
+            }
         }
 
         protected void BackgroundAdorner_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -861,6 +866,23 @@ namespace MonitorSystem
             source.ReleaseMouseCapture();
             source.MouseMove -= BackgroundAdorner_MouseMove;
             OnSelected();
+
+            AutoConnect();
+        }
+
+        private void AutoConnect()
+        {
+            if (_associatedElement is NetDevice)
+            {
+                var netDevice = _associatedElement as NetDevice;
+                var rect = new Rect(netDevice.Left, netDevice.Top, netDevice.Width, netDevice.Height);
+                var lines = LoadScreen._instance.csScreen.Children.OfType<NetLine>();
+                foreach (var line in lines)
+                {
+                    line.Connection(netDevice, rect);
+                    line.CancelHightlight();
+                }
+            }
         }
 
         protected void BackgroundAdorner_MouseMove(object sender, MouseEventArgs e)
@@ -874,13 +896,28 @@ namespace MonitorSystem
 
             if (_associatedElement is NetDevice)
             {
-                var DeviceOnLine = (_associatedElement as NetDevice).DeviceOnLine;
+                var netDevice = _associatedElement as NetDevice;
+                var DeviceOnLine = netDevice.DeviceOnLine;
                 if (DeviceOnLine != null && DeviceOnLine.Count > 0)
                 {
-                    var _netDev = _associatedElement as NetDevice;
                     foreach (NetLine _Lin in DeviceOnLine)
                     {
-                        _Lin.MovePoint(_netDev, offsetX, offsetY);
+                        _Lin.MovePoint(netDevice, offsetX, offsetY);
+                    }
+                }
+
+                // 查找线的热点
+                var rect = new Rect(netDevice.Left, netDevice.Top, netDevice.Width, netDevice.Height);
+                var lines = LoadScreen._instance.csScreen.Children.OfType<NetLine>();
+                foreach (var line in lines)
+                {
+                    if (!netDevice.DeviceOnLine.Contains(line))
+                    {
+                        line.UpdateHighlight(rect);
+                    }
+                    else
+                    {
+                        line.CancelHightlight();
                     }
                 }
             }
@@ -1275,6 +1312,8 @@ namespace MonitorSystem
             this._associatedElement.SetValue(Canvas.TopProperty, (double)this.GetValue(Canvas.TopProperty) + _offsetTop);
 
             OnSelected();
+
+            AutoConnect();
         }
 
         public void SynchroHost()

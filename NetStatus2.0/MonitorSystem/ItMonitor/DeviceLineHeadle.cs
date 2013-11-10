@@ -43,11 +43,16 @@ namespace MonitorSystem.ItMonitor
                     var obj =element as NetDevice;
                     if (obj !=null)
                     {
-                        if (IsInDeivceUP(_line.Points[_index], obj))
+                        var rect = new Rect(obj.Left, obj.Top, obj.Width, obj.Height);
+                        if (rect.Contains(_line.Points[_index]))
                         {
                             obj.ShowRect();
                             return obj;
                         }
+                        //else
+                        //{
+                        //    obj.HideRect();
+                        //}
                     }
                 }
             }
@@ -66,8 +71,8 @@ namespace MonitorSystem.ItMonitor
             if (obj != null)
             {
                 CanncelDeviceFcous();
-                obj.UpLineDevice = PointSelectRectDevices(0, _Line);
-                obj.DownLineDevice = PointSelectRectDevices(_Line.Points.Count - 1, _Line);
+                PointSelectRectDevices(0, _Line);
+                PointSelectRectDevices(_Line.Points.Count - 1, _Line);
             }
         }
 
@@ -109,24 +114,24 @@ namespace MonitorSystem.ItMonitor
             }
         }
 
-        /// <summary>
-        /// 判断指定的点，是否在设备上。
-        /// </summary>
-        /// <param name="_point"></param>
-        /// <param name="_dev"></param>
-        /// <returns></returns>
-        public static bool IsInDeivceUP(Point _point, NetDevice _dev)
-        {
-            double _top = _dev.Top;
-            double _left = _dev.Left;
-            double _width = _dev.Width;
-            double _height = _dev.Height;
+        ///// <summary>
+        ///// 判断指定的点，是否在设备上。
+        ///// </summary>
+        ///// <param name="_point"></param>
+        ///// <param name="_dev"></param>
+        ///// <returns></returns>
+        //public static bool IsInDeivceUP(Point _point, NetDevice _dev)
+        //{
+        //    double _top = _dev.Top;
+        //    double _left = _dev.Left;
+        //    double _width = _dev.Width;
+        //    double _height = _dev.Height;
 
-            if ((_top+3 < _point.Y && (_top + _height - 20) > _point.Y) && (_left+5 < _point.X && (_left + _width - 20) > _point.X))
-                return true;
+        //    if ((_top+3 < _point.Y && (_top + _height - 20) > _point.Y) && (_left+5 < _point.X && (_left + _width - 20) > _point.X))
+        //        return true;
 
-            return false;
-        }
+        //    return false;
+        //}
 
     }
 }

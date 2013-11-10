@@ -23,6 +23,9 @@ namespace MonitorSystem.ItMonitor
     {
         Polyline PL = new Polyline();
         Canvas _Canvas = new Canvas();
+
+        Rectangle _connect = new Rectangle() { Fill = new SolidColorBrush(Colors.Red), StrokeThickness = 0, Height = 5.0d, Width = 5.0d, HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center, Visibility = Visibility.Collapsed };
+
         public NetLine()
         {
             Content = _Canvas;
@@ -32,6 +35,10 @@ namespace MonitorSystem.ItMonitor
             PL.MouseLeftButtonUp += new MouseButtonEventHandler(PL_MouseLeftButtonUp);
 
             this.SizeChanged += new SizeChangedEventHandler(NetLine_SizeChanged);
+
+            Canvas.SetZIndex(this, 9999);
+
+            _Canvas.Children.Add(_connect);
         }
 
         void NetLine_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -61,6 +68,8 @@ namespace MonitorSystem.ItMonitor
             PointColl = PL.Points;
             GlobalPoints = PL.Points;
             PointsConvertStr(PL.Points);
+
+            (AdornerLayer as LineAdorner).UpdatePoints(index, offsetX, offsetY);
         }
 
         public void SetOnDeviceColor()
@@ -326,6 +335,59 @@ namespace MonitorSystem.ItMonitor
         #endregion
 
         #region  线的点处理
+
+        public void Connection(NetDevice netDevice, Rect rect)
+        {
+            var center = new Point(rect.Left + rect.Width / 2d - Left, rect.Top + rect.Height / 2d - Top);
+            int endIndex = PL.Points.Count - 1;
+            var offsetX = 0d;
+            var offsetY = 0d;
+            if ((this.UpLineDevice == netDevice || this.UpLineDevice == null)
+                && this.DownLineDevice != netDevice
+                && rect.Contains(new Point(PL.Points[0].X + Left, PL.Points[0].Y + Top)))
+            {
+                this.UpLineDevice = netDevice;
+                offsetX = center.X - PL.Points[0].X;
+                offsetY = center.Y - PL.Points[0].Y;
+                MovePoint(netDevice, offsetX, offsetY);
+            }
+            else if ((this.DownLineDevice == netDevice || this.DownLineDevice == null)
+                 && this.UpLineDevice != netDevice
+                && rect.Contains(new Point(PL.Points[endIndex].X + Left, PL.Points[endIndex].Y + Top)))
+            {
+                this.DownLineDevice = netDevice;
+                offsetX = center.X - PL.Points[endIndex].X;
+                offsetY = center.Y - PL.Points[endIndex].Y;
+                MovePoint(netDevice, offsetX, offsetY);
+            }
+        }
+
+        public void UpdateHighlight(Rect rect)
+        {
+            int endIndex = PL.Points.Count - 1;
+            if (null == this.UpLineDevice && rect.Contains(new Point(PL.Points[0].X + Left, PL.Points[0].Y + Top)))
+            {
+                Canvas.SetLeft(_connect, PL.Points[0].X - _connect.Width / 2d);
+                Canvas.SetTop(_connect, PL.Points[0].Y - _connect.Height / 2d);
+                _connect.Visibility = Visibility.Visible;
+            }
+            else if (null == this.DownLineDevice && rect.Contains(new Point(PL.Points[endIndex].X + Left, PL.Points[endIndex].Y + Top)))
+            {
+                Canvas.SetLeft(_connect, PL.Points[endIndex].X - _connect.Width / 2d);
+                Canvas.SetTop(_connect, PL.Points[endIndex].Y - _connect.Height / 2d);
+                _connect.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                _connect.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        public void CancelHightlight()
+        {
+            _connect.Visibility = Visibility.Collapsed;
+        }
+
         private string _PointsSave;
         /// <summary>
         /// 

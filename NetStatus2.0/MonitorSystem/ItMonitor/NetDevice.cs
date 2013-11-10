@@ -27,7 +27,9 @@ namespace MonitorSystem.ItMonitor
         Canvas _grid = new Canvas();
         Label _Txt = new Label();
         Image _img = new Image();
-        Rectangle _rect = new Rectangle();
+        Border _rect = new Border();
+        Rectangle _connect = new Rectangle() { Fill = new SolidColorBrush(Colors.Red),StrokeThickness = 0, Height=5.0d, Width = 5.0d, HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center };
+
         public NetDevice()
         {
             this.Content = _grid;
@@ -41,19 +43,21 @@ namespace MonitorSystem.ItMonitor
             _grid.Background = new SolidColorBrush();
             SetImg();
 
-            
-            _rect.StrokeThickness = 2.0;
-            _rect.Stroke = new SolidColorBrush(Colors.Blue);
+            //_rect.BorderThickness = new Thickness(2);
+            //_rect.BorderBrush = new SolidColorBrush(Colors.Blue);
             _grid.Children.Add(_rect);
             _rect.Visibility = Visibility.Collapsed;
-            
+
+            _rect.Child = _connect;
         }
 
         #region 关联处理
         public void ShowRect()
         {
             _rect.Visibility = Visibility.Visible;
+
         }
+
         public void HideRect()
         {
             _rect.Visibility = Visibility.Collapsed;
@@ -98,14 +102,8 @@ namespace MonitorSystem.ItMonitor
                 Selected(this, RoutedEventArgs.Empty);
             }
 
-            DeviceOnLine = DeviceLineHeadle.GetDeviceOnLinesByNetDevice(this);
-            if (DeviceOnLine != null && DeviceOnLine.Count > 0)
-            {
-                foreach (NetLine _Lin in DeviceOnLine)
-                {
-                    _Lin.SetOnDeviceColor();
-                }
-            }
+
+            ShowRect();
         }
 
         public override FrameworkElement GetRootControl()
@@ -113,14 +111,14 @@ namespace MonitorSystem.ItMonitor
             return this;
         }
 
-
-
         protected void OnUnselected(object sender, EventArgs e)
         {
             if (null != Unselected)
             {
                 Unselected(this, RoutedEventArgs.Empty);
             }
+
+            HideRect();
         }
 
 
@@ -212,6 +210,7 @@ namespace MonitorSystem.ItMonitor
 
             _rect.Width = this.Width;
             _rect.Height = this.Height;
+            
         }
 
         public void SetText()

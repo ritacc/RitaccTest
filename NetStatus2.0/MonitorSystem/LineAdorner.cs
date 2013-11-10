@@ -19,14 +19,14 @@ namespace MonitorSystem
     public class LineAdorner : Adorner
     {
         private Canvas _canvas;
-        private readonly List<FrameworkElement> _blocks = new List<FrameworkElement>();
+        readonly List<Rectangle> _blocks = new List<Rectangle>();
         Brush _pointBrush = new SolidColorBrush(Colors.Blue);
-        const double BLOCK_WIDTH = 8d;// 节点 选中 块的大小
+        const double BLOCK_WIDTH = 10d;// 节点 选中 块的大小
 
         private static Rectangle _selectRect = null;
 
         // 选择之后替换原来的线， 主要是换样式
-        private Polyline _polyline = new Polyline()
+        Polyline _polyline = new Polyline()
         {
             Stroke = new SolidColorBrush(Color.FromArgb(0xFF, 0x56, 0x94, 0xBA)),
             StrokeThickness = 5d
@@ -165,6 +165,8 @@ namespace MonitorSystem
             {
                 DeviceLineHeadle.LineMoveSelectDevices(_polyline, _associatedElement);
             }
+
+            Canvas.SetZIndex(this, 9999);
         }
         
 
@@ -174,8 +176,38 @@ namespace MonitorSystem
             _polyline.MouseLeftButtonUp -= _polyline_MouseLeftButtonUp;
             _polyline.MouseMove -= _polyline_MouseMove;
 
+            AutoConnect(0);
+            AutoConnect(_blocks.Count - 1);
+
             UpdateAssmentElement();
             base.OnSelected();
+
+
+            Canvas.SetZIndex(this, 999);
+
+        }
+
+        private void AutoConnect(int index)
+        {
+            if (index == 0 || index == _blocks.Count - 1)
+            {
+                NetDevice obj = DeviceLineHeadle.PointSelectRectDevices(index, _polyline);
+                if (index == 0)
+                {
+                    (_associatedElement as NetLine).UpLineDevice = obj;
+                }
+                else
+                {
+                    (_associatedElement as NetLine).DownLineDevice = obj;
+                }
+
+                if (null != obj)
+                {
+                    obj.DeviceOnLine = DeviceLineHeadle.GetDeviceOnLinesByNetDevice((_associatedElement as NetDevice));
+
+                    AutoConnect(_blocks[index], obj);
+                }
+            }
         }
 
         void _polyline_MouseMove(object sender, MouseEventArgs e)
@@ -254,6 +286,16 @@ namespace MonitorSystem
             base.OnApplyTemplate();
         }
 
+        public void UpdatePoints(int index ,double offsetX, double offsetY)
+        {
+            NetLine netLine = _associatedElement as NetLine;
+            var rect = _blocks[index];
+            Canvas.SetLeft(rect, netLine.PointColl[index].X + netLine.Left - BLOCK_WIDTH * .5d);
+            Canvas.SetTop(rect, netLine.PointColl[index].Y + netLine.Top - BLOCK_WIDTH * .5d);
+            _polyline.Points.Insert(index + 1, new Point(netLine.PointColl[index].X + netLine.Left, netLine.PointColl[index].Y + netLine.Top));
+            _polyline.Points.RemoveAt(index);
+        }
+
         void rect_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             FrameworkElement element = sender as FrameworkElement;
@@ -273,6 +315,9 @@ namespace MonitorSystem
             }
             _selectRect = element as Rectangle;
             _selectRect.Fill = new SolidColorBrush(Colors.Green);
+
+
+            Canvas.SetZIndex(this, 9999);
         }
 
         
@@ -284,10 +329,42 @@ namespace MonitorSystem
             element.MouseMove -= element_MouseMove;
             element.MouseLeftButtonUp -= element_MouseLeftButtonUp;
 
+            int index = Convert.ToInt32(element.Tag);
+            AutoConnect(index);
             UpdateAssmentElement();
             base.OnSelected();
 
+            Canvas.SetZIndex(this, 999);
             //DeviceLineHeadle.CanncelDeviceFcous();
+        }
+
+        private void AutoConnect(FrameworkElement element, NetDevice obj)
+        {
+            // 吸附在设备的中心点上
+            if (_associatedElement is NetLine)
+            {
+                var netLine = _associatedElement as NetLine;
+                int index = Convert.ToInt32(element.Tag);
+                if (null != obj && ((netLine.UpLineDevice == obj  && index == 0)
+                    || (netLine.DownLineDevice == obj && index == _blocks.Count - 1)))
+                {
+                    var x = obj.Left + obj.Width / 2d;
+                    var y = obj.Top + obj.Height / 2d;
+                    _polyline.Points.RemoveAt(index);
+                    _polyline.Points.Insert(index,new Point(x, y));
+                    Canvas.SetLeft(element, x - BLOCK_WIDTH * .5d);
+                    Canvas.SetTop(element, y - BLOCK_WIDTH * .5d);
+                }
+                if (null != netLine.UpLineDevice)
+                {
+                    netLine.UpLineDevice.HideRect();
+                }
+
+                if (null != netLine.DownLineDevice)
+                {
+                    netLine.DownLineDevice.HideRect();
+                }
+            }
         }
 
 
@@ -307,18 +384,10 @@ namespace MonitorSystem
             element.SetValue(Canvas.LeftProperty, Canvas.GetLeft(element) + offsetX);
             element.SetValue(Canvas.TopProperty, Canvas.GetTop(element) + offsetY);
             _initialPoint = mousePoint;
-            if (_associatedElement is NetLine)
+            if (index == 0 || index == _blocks.Count - 1)
             {
-                
-                NetDevice obj = DeviceLineHeadle.PointSelectRectDevices(index, _polyline);
-                if (index == 0)
-                {
-                    (_associatedElement as NetLine).UpLineDevice = obj;
-                }
-                else
-                {
-                    (_associatedElement as NetLine).DownLineDevice = obj;
-                }
+                DeviceLineHeadle.CanncelDeviceFcous();
+                DeviceLineHeadle.PointSelectRectDevices(index, _polyline);
             }
         }
 

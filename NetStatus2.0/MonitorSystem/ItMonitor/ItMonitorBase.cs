@@ -48,8 +48,6 @@ namespace MonitorSystem.ItMonitor
 
         #endregion
 
-       
-
         #region 通道选择
         SetItMonitorProperty tpp = new SetItMonitorProperty();
         protected void PropertyMenuItem_Click(object sender, RoutedEventArgs e)
