@@ -175,17 +175,23 @@ namespace MonitorSystem
             _polyline.ReleaseMouseCapture();
             _polyline.MouseLeftButtonUp -= _polyline_MouseLeftButtonUp;
             _polyline.MouseMove -= _polyline_MouseMove;
-
-            AutoConnect(0);
-            AutoConnect(_blocks.Count - 1);
-
-            UpdateAssmentElement();
+			if (_associatedElement is NetLine)
+			{
+				MovePositionToDeiceOn();
+			}
             base.OnSelected();
-
-
             Canvas.SetZIndex(this, 999);
-
         }
+
+		/// <summary>
+		/// 移动两个点到关联位
+		/// </summary>
+		public void MovePositionToDeiceOn()
+		{
+			AutoConnect(0);
+			AutoConnect(_blocks.Count - 1);
+			UpdateAssmentElement();
+		}
 
         private void AutoConnect(int index)
         {

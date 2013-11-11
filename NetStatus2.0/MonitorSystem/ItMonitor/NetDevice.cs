@@ -314,11 +314,14 @@ namespace MonitorSystem.ItMonitor
                     case "img7":
                         Img7 = value;
                         break;
-
                     case "defultimg":
                         DefultImg = value;
                         SetImg();
                         break;
+					case "portnumber":
+						if (!string.IsNullOrEmpty(value))
+							PortNumber = Convert.ToInt32(value);
+						break;
                 }
             }
         }

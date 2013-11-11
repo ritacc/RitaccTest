@@ -37,7 +37,6 @@ namespace MonitorSystem.ItMonitor
             this.SizeChanged += new SizeChangedEventHandler(NetLine_SizeChanged);
 
             Canvas.SetZIndex(this, 9999);
-
             _Canvas.Children.Add(_connect);
         }
 
@@ -53,6 +52,20 @@ namespace MonitorSystem.ItMonitor
         }
 
         #region 与设备关联处理
+		public void UpdateDeviceID()
+		{
+			this.UpLineDevice = _UpNetDevice;
+			this.DownLineDevice = _DownNetDevice;
+		}
+
+		/// <summary>
+		/// 移动两个点，到关联的设备上。
+		/// </summary>
+		public void MovePositionToDeiceOn()
+		{
+			(AdornerLayer as LineAdorner).MovePositionToDeiceOn();
+		}
+
         public void MovePoint(NetDevice _netDev, double offsetX, double offsetY)
         {
             int index = 0;
@@ -278,12 +291,12 @@ namespace MonitorSystem.ItMonitor
                             ShowColor7 = Common.StringToColor(value);
                         break;
 
-                        case "UpLinePort":
+                        case "uplineport":
                         if (!string.IsNullOrEmpty(value))
                             UpLinePort = Convert.ToInt32(value);
                         break;
 
-                        case "UpLineDeviceID":
+                        case "uplinedeviceid":
                         if (!string.IsNullOrEmpty(value))
                         {
                             UpLineDeviceID = Convert.ToInt32(value);
@@ -291,11 +304,11 @@ namespace MonitorSystem.ItMonitor
                         }
                         break;
 
-                         case "DownLinePort":
+                         case "downlineport":
                         if (!string.IsNullOrEmpty(value))
                             DownLinePort = Convert.ToInt32(value);
                         break;
-                         case "DownLineDeviceID":
+                         case "downlinedeviceid":
                         if (!string.IsNullOrEmpty(value))
                         {
                             DownLineDeviceID = Convert.ToInt32(value);

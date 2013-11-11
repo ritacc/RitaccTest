@@ -867,7 +867,12 @@ namespace MonitorSystem
             source.MouseMove -= BackgroundAdorner_MouseMove;
             OnSelected();
 
-            AutoConnect();
+			if (_associatedElement is NetDevice)
+			{
+				if (_selectedAdorners != null && _selectedAdorners.Count > 1)
+					return;
+				AutoConnect();
+			}
         }
 
         private void AutoConnect()
@@ -896,6 +901,9 @@ namespace MonitorSystem
 
             if (_associatedElement is NetDevice)
             {
+				if (_selectedAdorners != null && _selectedAdorners.Count > 1)
+					return;
+
                 var netDevice = _associatedElement as NetDevice;
                 var DeviceOnLine = netDevice.DeviceOnLine;
                 if (DeviceOnLine != null && DeviceOnLine.Count > 0)

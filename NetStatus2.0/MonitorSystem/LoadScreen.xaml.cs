@@ -1511,6 +1511,8 @@ namespace MonitorSystem
 
                 var monitorControl = ShowElement(canvas, mElement, ElementSate.New, listElementPro);
                 monitorControl.DesignMode();
+				if (monitorControl is NetLine)
+					(monitorControl as NetLine).MovePositionToDeiceOn();
                 return monitorControl;
             }
             return null;
@@ -1905,7 +1907,9 @@ namespace MonitorSystem
                     {
                         var addElement = obj.AddedEntities[i] as t_Element;
                         var addMonitorControl = listMonitorAddElement[i];
-                        var listProperties = listMonitorAddElement[i].ListElementProp;
+						if (addMonitorControl is NetLine)
+							(addMonitorControl as NetLine).UpdateDeviceID();
+						var listProperties = addMonitorControl.ListElementProp;
 
                         if (addElement.ControlID.HasValue
                             && addElement.ControlID.Value != -9999
@@ -1946,6 +1950,8 @@ namespace MonitorSystem
                 foreach (var monitorControl in listMonitorModifiedElement)
                 {
                     var modifiedElement = monitorControl.ScreenElement;
+					if (monitorControl is NetLine)
+						(monitorControl as NetLine).UpdateDeviceID();
 
                     if (monitorControl is RealTimeT)
                     {
