@@ -189,8 +189,7 @@ namespace MonitorSystem.ZTControls
             DrawLine();
         }
         #region 属性
-        private static readonly DependencyProperty TransparentProperty = DependencyProperty.Register("Transparent",
-         typeof(int), typeof(MyLine), new PropertyMetadata(0));
+        private static readonly DependencyProperty TransparentProperty = DependencyProperty.Register("Transparent",typeof(int), typeof(MyLine), new PropertyMetadata(0));
         private int _Transparent=0;
         [DefaultValue(""), Description("透明"), Category("杂项")]
         public int Transparent
@@ -205,8 +204,7 @@ namespace MonitorSystem.ZTControls
             }
         }
 
-        private static readonly DependencyProperty BackColorProperty = DependencyProperty.Register("BackColor",
-    typeof(int), typeof(MyLine), new PropertyMetadata(0));
+        private static readonly DependencyProperty BackColorProperty = DependencyProperty.Register("BackColor",typeof(int), typeof(MyLine), new PropertyMetadata(0));
         private Color _BackColor = Colors.Black;
         [DefaultValue(""), Description("背景色"),Category("外观")]
         public Color BackColor
@@ -221,8 +219,7 @@ namespace MonitorSystem.ZTControls
             }
         }
 
-        private static readonly DependencyProperty ForeColorProperty = DependencyProperty.Register("ForeColor",
-    typeof(int), typeof(MyLine), new PropertyMetadata(0));
+        private static readonly DependencyProperty ForeColorProperty = DependencyProperty.Register("ForeColor",typeof(int), typeof(MyLine), new PropertyMetadata(0));
         private Color _ForeColor = Colors.Black;
         [DefaultValue(""), Description("字体颜色"), Category("外观")]
         public Color ForeColor

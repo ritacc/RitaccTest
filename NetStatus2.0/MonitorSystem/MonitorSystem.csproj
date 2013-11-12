@@ -137,6 +137,7 @@
     <Compile Include="ItMonitor\PropertyView.xaml.cs">
       <DependentUpon>PropertyView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ItMonitor\ViewCallout.cs" />
     <Compile Include="ItMonitor\SetItMonitorProperty.xaml.cs">
       <DependentUpon>SetItMonitorProperty.xaml</DependentUpon>
     </Compile>
