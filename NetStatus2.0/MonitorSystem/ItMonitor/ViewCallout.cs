@@ -10,6 +10,7 @@ using MonitorSystem.MonitorSystemGlobal;
 using MonitorSystem.ZTControls;
 using MonitorSystem.ItMonitor;
 using System.ComponentModel;
+using System.ServiceModel.DomainServices.Client;
 
 namespace MonitorSystem.ItMonitor
 {
@@ -19,13 +20,26 @@ namespace MonitorSystem.ItMonitor
 		public ViewCallout()
 		{
 			Content = csScreen;
+            csScreen.Background = new SolidColorBrush(Colors.White);
 			this.SizeChanged += new SizeChangedEventHandler(ViewCallout_SizeChanged);
 		}
 
 		void ViewCallout_SizeChanged(object sender, SizeChangedEventArgs e)
 		{
-			csScreen.Width = this.Width = e.NewSize.Width;
-			csScreen.Height = this.Height = e.NewSize.Height;
+			this.Width = e.NewSize.Width;
+			this.Height = e.NewSize.Height;
+
+            RectangleGeometry r = new RectangleGeometry();
+            Rect rect = new Rect();
+            rect.Width = this.Width;
+            rect.Height = this.Height;
+            r.Rect = rect;
+            this.Clip = r;
+
+            if (e.NewSize.Width > 10 && e.NewSize.Height > 10)
+            {
+                ScreenInit();
+            }
 		}
 
 		#region 控件公共属性
@@ -42,32 +56,39 @@ namespace MonitorSystem.ItMonitor
 		}
 
 		#region 属性设置
-		SetSingleProperty tpp = new SetSingleProperty();
-		private void PropertyMenuItem_Click(object sender, RoutedEventArgs e)
-		{
-			tpp = new SetSingleProperty();
-			if (ScreenElement != null)
-			{
-				tpp.Closing += new EventHandler<System.ComponentModel.CancelEventArgs>(tpp_Closing);
-				tpp.DeviceID = this.ScreenElement.DeviceID.Value;
-				tpp.ChanncelID = this.ScreenElement.ChannelNo.Value;
-				tpp.LevelNo = this.ScreenElement.LevelNo.Value;
-				tpp.ComputeStr = this.ScreenElement.ComputeStr;
-			}
-			tpp.Init();
-			tpp.Show();
-		}
+        TPSetProperty tpp = new TPSetProperty();
+        private void PropertyMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            tpp.Closing += new EventHandler<System.ComponentModel.CancelEventArgs>(tpp_Closing);
+            tpp.Screen = GetChildScreenID();
+            tpp.Show();
+        }
 
-		protected void tpp_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-		{
-			if (tpp.IsOK && ScreenElement != null)
-			{
-				this.ScreenElement.DeviceID = tpp.DeviceID;
-				this.ScreenElement.ChannelNo = tpp.ChanncelID;
-				this.ScreenElement.LevelNo = tpp.LevelNo;
-				this.ScreenElement.ComputeStr = tpp.ComputeStr;
-			}
-		}
+        protected void tpp_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (tpp.IsOK)
+            {
+                this.ScreenElement.ChildScreenID = string.Format("{0}#{1};", tpp.Screen.ScreenName,
+                    tpp.Screen.ScreenID);
+            }
+        }
+        private t_Screen GetChildScreenID()
+        {
+            string mScreenID = base.ScreenElement.ChildScreenID;
+            if (string.IsNullOrEmpty(mScreenID) || mScreenID == "0")
+            {
+                return null;
+            }
+            mScreenID = mScreenID.Replace(";", "");
+            string[] attr = mScreenID.Split('#');
+            if (attr.Length == 2)
+            {
+                int Scrennid = Convert.ToInt32(attr[1]);
+                t_Screen t = LoadScreen.listScreen.Single(a => a.ScreenID == Scrennid);
+                return t;
+            }
+            return null;
+        }
 		#endregion
 
 		public override void DesignMode()
@@ -119,7 +140,24 @@ namespace MonitorSystem.ItMonitor
 			Transparent = ScreenElement.Transparent.Value;
 			_ForeColor = Common.StringToColor(ScreenElement.ForeColor);
 			_BackColor = Common.StringToColor(ScreenElement.BackColor);
+
+            this.Width = (double)ScreenElement.Width;
+            this.Height = (double)ScreenElement.Height;
 		}
+
+        public override void SetPropertyValue()
+        {
+            foreach (t_ElementProperty pro in ListElementProp)
+            {
+                string name = pro.PropertyName.ToUpper();
+                string value = pro.PropertyValue;
+                switch (name.ToLower())
+                {
+                    case "devicename":
+                        break;
+                }
+            }
+        }
 
 		#region 属性
 		private static readonly DependencyProperty TransparentProperty = DependencyProperty.Register("Transparent", typeof(int), typeof(MyLine), new PropertyMetadata(0));
@@ -178,35 +216,69 @@ namespace MonitorSystem.ItMonitor
 
 
 		#endregion
-		public override void SetPropertyValue()
-		{
-			foreach (t_ElementProperty pro in ListElementProp)
-			{
-				string name = pro.PropertyName.ToUpper();
-				string value = pro.PropertyValue;
-			}
-		}
 
 		#region  加载数据
-		public void ScreenInit(t_Screen obj)
+		public void ScreenInit()
 		{
+            t_Screen obj = GetChildScreenID();
+            if (obj == null)
+                return;
+
 			csScreen.Children.Clear();
-			RectangleGeometry r = new RectangleGeometry();
-			Rect rect = new Rect();
+
 			if (obj.Width != null && obj.Height != null)
 			{
-				csScreen.Width = this.Width = rect.Width = obj.Width.Value;
-				csScreen.Height = this.Height = rect.Height = obj.Height.Value;
+				csScreen.Width =obj.Width.Value;
+				csScreen.Height =obj.Height.Value;
 			}
 			else
 			{
-				csScreen.Width = this.Width = rect.Width = 1024;
-				csScreen.Height = this.Height = rect.Height = 768;
-			}
-			r.Rect = rect;
-			this.Clip = r;
+				csScreen.Width =    1024;
+				csScreen.Height =    768;
+			}			
 			SetScreenImg(obj.ImageURL);
+
+
+            double sfPerw = this.Width / obj.Width.Value;
+            double sfPerh = this.Height / obj.Height.Value;
+            if (sfPerh < sfPerw)
+                sfPerw = sfPerh;
+            ScaleTransform mainShowCanvasScaleTrans = new ScaleTransform();
+            mainShowCanvasScaleTrans.CenterX = 0.0;
+            mainShowCanvasScaleTrans.CenterY = 0.0;
+            mainShowCanvasScaleTrans.ScaleX = sfPerw;
+            mainShowCanvasScaleTrans.ScaleY = sfPerw;
+            csScreen.RenderTransform = mainShowCanvasScaleTrans;
+
+            LoadScreen._DataContext.Load(LoadScreen._DataContext.GetT_ElementsByScreenIDQuery(obj.ScreenID),
+               LoadElementCompleted, obj.ScreenID);
 		}
+
+
+        /// <summary>
+        /// 加载元素
+        /// </summary>
+        /// <param name="result"></param>
+        private void LoadElementCompleted(LoadOperation<t_Element> result)
+        {
+            if (result.HasError)
+            {
+                return;
+            }
+            LoadScreen._DataContext.Load(LoadScreen._DataContext.GetScreenElementPropertyQuery(Convert.ToInt32(result.UserState)),
+                LoadElementPropertiesCompleted, result.UserState);
+        }
+        private void LoadElementPropertiesCompleted(LoadOperation<t_ElementProperty> result)
+        {
+            if (result.HasError)
+            {
+                return;
+            }
+            List<t_Element> lsitElement = LoadScreen._DataContext.t_Elements.Where(a => a.ScreenID == Convert.ToInt32(result.UserState) && null == a.ParentID).OrderBy(a => a.ElementName).ToList();
+            ShowElements(lsitElement, csScreen);
+        }
+
+
 
 		private void SetScreenImg(string strImg, bool resize = false)
 		{

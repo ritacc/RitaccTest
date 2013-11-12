@@ -69,7 +69,6 @@
     <Content Include="MonitorSystemTestPage.aspx" />
     <Content Include="Silverlight.js" />
     <Content Include="Sql\NetLine_NetDevice.sql" />
-    <Content Include="Sql\Sql_ControlNetOn.sql" />
     <Content Include="test1.aspx" />
     <Content Include="TestPaser.aspx" />
     <Content Include="Upload\PIC\bg1.jpg" />

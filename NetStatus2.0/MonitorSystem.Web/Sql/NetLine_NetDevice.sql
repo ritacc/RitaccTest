@@ -1,6 +1,3 @@
-
-
-
 declare @ControlNum int;--查询控件数量，用于判断是否已经添加
 set @ControlNum=0;
 declare @AddControl varchar(50);--添加控件名称
@@ -8,8 +5,8 @@ declare @AddControl varchar(50);--添加控件名称
 --添加“NetLine”
 set @AddControl='NetLine'
 declare @ControlID int;
-select @ControlID=ControlID from t_control where controlName='NetLine'
-if @ControlID <> 0
+select @ControlID=ControlID from t_control where controlName=@AddControl
+if @ControlID =1
 begin
 	delete t_control where ControlID=@ControlID
 	delete [t_ControlProperty] where ControlID=@ControlID
@@ -21,7 +18,7 @@ begin
 		print '添加控件'
 		print @AddControl
 		insert into t_control (controlname,controltype,imageUrl,controltypeName,controlCaption)
-		values(@AddControl,'10','','ItMonitor','连接线');
+		values(@AddControl,'10','FoldLine.jpg','ItMonitor','连接线');
 		 
 		set @ControlID=0;
 		select @ControlID=max(controlid)  from t_control
@@ -83,8 +80,8 @@ end
 
 --添加“NetDevice”
 set @AddControl='NetDevice'
-select @ControlID=ControlID from t_control where controlName='NetDevice'
-if @ControlID <> 0
+select @ControlID=ControlID from t_control where controlName=@AddControl
+if @ControlID =1
 begin
 	delete t_control where ControlID=@ControlID
 	delete [t_ControlProperty] where ControlID=@ControlID
@@ -96,7 +93,7 @@ begin
 		print '添加设备'
 		print @AddControl
 		insert into t_control (controlname,controltype,imageUrl,controltypeName,controlCaption)
-		values(@AddControl,'10','','ItMonitor','设备');
+		values(@AddControl,'10','Server.jpg','ItMonitor','设备');
 
 
 		set @ControlID=0;
@@ -147,5 +144,33 @@ begin
 			INSERT INTO [t_ControlProperty]([ControlID],[PropertyNo],[PropertyName],[DefaultValue],[Caption])
 				VALUES(@ControlID, 20,'PortNumber','16','端口数量');
 
+		end
+end
+
+--添加“NetDevice”
+set @AddControl='ViewCallout'
+select @ControlID=ControlID from t_control where controlName=@AddControl
+if @ControlID =1
+begin
+	delete t_control where ControlID=@ControlID
+	delete [t_ControlProperty] where ControlID=@ControlID
+end
+
+select @ControlNum=count(*) from t_control where controlname=@AddControl
+if @ControlNum = 0
+begin
+		print '添加ViewCallout'
+		print @AddControl
+		insert into t_control (controlname,controltype,imageUrl,controltypeName,controlCaption)
+		values(@AddControl,'10','SubNet.jpg','ItMonitor','云图');
+
+
+		set @ControlID=0;
+		select @ControlID=max(controlid)  from t_control
+		if @ControlID > 0
+		begin
+			--INSERT INTO [t_ControlProperty]([ControlID],[PropertyNo],[PropertyName],[DefaultValue],[Caption])
+			--	VALUES(@ControlID, 1,'PortNumber','16','端口数量');
+			print 'no Property'
 		end
 end
