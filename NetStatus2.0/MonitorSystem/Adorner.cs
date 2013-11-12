@@ -586,6 +586,14 @@ namespace MonitorSystem
             //    _contentAdorner.Fill = null;
             //    _backgroundAdorner.Fill = new SolidColorBrush(Colors.Transparent);
             //}
+
+			if (_associatedElement is NetDevice)
+			{
+				if ((_associatedElement as NetDevice).ElementState == ElementSate.New)
+				{
+					AutoConnect();
+				}
+			}
         }
 
         private void ToolTipButton_Click(object sender, EventArgs e)

@@ -56,15 +56,7 @@ namespace MonitorSystem.ItMonitor
 		{
 			this.UpLineDevice = _UpNetDevice;
 			this.DownLineDevice = _DownNetDevice;
-		}
-
-		/// <summary>
-		/// 移动两个点，到关联的设备上。
-		/// </summary>
-		public void MovePositionToDeiceOn()
-		{
-			(AdornerLayer as LineAdorner).MovePositionToDeiceOn();
-		}
+		} 
 
         public void MovePoint(NetDevice _netDev, double offsetX, double offsetY)
         {
@@ -282,39 +274,37 @@ namespace MonitorSystem.ItMonitor
                         if (!string.IsNullOrEmpty(value))
                             ShowColor6 = Common.StringToColor(value);
                         break;
+					case "paser7":
+						Paser7 = value;
+						break;
+					case "showcolor7":
+						if (!string.IsNullOrEmpty(value))
+							ShowColor7 = Common.StringToColor(value);
+						break;
 
-                    case "paser7":
-                        Paser7 = value;
-                        break;
-                    case "showcolor7":
-                        if (!string.IsNullOrEmpty(value))
-                            ShowColor7 = Common.StringToColor(value);
-                        break;
+					case "uplineport":
+						if (!string.IsNullOrEmpty(value))
+							UpLinePort = Convert.ToInt32(value);
+						break;
 
-                        case "uplineport":
-                        if (!string.IsNullOrEmpty(value))
-                            UpLinePort = Convert.ToInt32(value);
-                        break;
-
-                        case "uplinedeviceid":
-                        if (!string.IsNullOrEmpty(value))
-                        {
-                            UpLineDeviceID = Convert.ToInt32(value);
-                            UpLineDevice = DeviceLineHeadle.GetDeviceByElementID(UpLineDeviceID.Value);
-                        }
-                        break;
-
-                         case "downlineport":
-                        if (!string.IsNullOrEmpty(value))
-                            DownLinePort = Convert.ToInt32(value);
-                        break;
-                         case "downlinedeviceid":
-                        if (!string.IsNullOrEmpty(value))
-                        {
-                            DownLineDeviceID = Convert.ToInt32(value);
-                            DownLineDevice = DeviceLineHeadle.GetDeviceByElementID(DownLineDeviceID.Value);
-                        }
-                        break;
+					case "uplinedeviceid":
+						if (!string.IsNullOrEmpty(value))
+						{
+							UpLineDeviceID = Convert.ToInt32(value);
+							UpLineDevice = DeviceLineHeadle.GetDeviceByElementID(UpLineDeviceID.Value);
+						}
+						break;
+					case "downlineport":
+						if (!string.IsNullOrEmpty(value))
+							DownLinePort = Convert.ToInt32(value);
+						break;
+					case "downlinedeviceid":
+						if (!string.IsNullOrEmpty(value))
+						{
+							DownLineDeviceID = Convert.ToInt32(value);
+							DownLineDevice = DeviceLineHeadle.GetDeviceByElementID(DownLineDeviceID.Value);
+						}
+						break;
 
                 }			
             }

@@ -528,6 +528,8 @@ namespace MonitorSystem
 
             if (AddElementCanvas.Visibility != Visibility.Visible)
             {
+				AddElementRectangle.Visibility = Visibility.Collapsed;
+
                 AddElementCanvas.SetValue(CustomCursor.CustomProperty, true);
                 AddElementCanvas.Visibility = Visibility.Visible;
                 AddElementCanvas.MouseMove -= AddElementCanvas_MouseMove;
@@ -1511,8 +1513,6 @@ namespace MonitorSystem
 
                 var monitorControl = ShowElement(canvas, mElement, ElementSate.New, listElementPro);
                 monitorControl.DesignMode();
-				if (monitorControl is NetLine)
-					(monitorControl as NetLine).MovePositionToDeiceOn();
                 return monitorControl;
             }
             return null;

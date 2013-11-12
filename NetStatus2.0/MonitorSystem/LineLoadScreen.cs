@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
+using MonitorSystem.ItMonitor;
 
 namespace MonitorSystem
 {
@@ -82,7 +83,7 @@ namespace MonitorSystem
             GridScreen.MouseRightButtonDown -= AddLineCanvas_MouseRightButtonDown;
             
             AddLine.Points.RemoveAt(AddLine.Points.Count - 1);
-
+			 
             if (AddLine.Points.Count > 1)
             {
                 double maxX = AddLine.Points.Max(p => p.X);
@@ -98,6 +99,7 @@ namespace MonitorSystem
             UnAddLineModel();
             PropertyMain.Instance.ResetSelected();
             GalleryControl.Instance.ResetSelected();
+			 
 
             e.Handled = true;
         }

@@ -177,7 +177,7 @@ namespace MonitorSystem
             _polyline.MouseMove -= _polyline_MouseMove;
 			if (_associatedElement is NetLine)
 			{
-				MovePositionToDeiceOn();
+				AutoConnectAll();
 			}
             base.OnSelected();
             Canvas.SetZIndex(this, 999);
@@ -186,7 +186,7 @@ namespace MonitorSystem
 		/// <summary>
 		/// 移动两个点到关联位
 		/// </summary>
-		public void MovePositionToDeiceOn()
+		public void AutoConnectAll()
 		{
 			AutoConnect(0);
 			AutoConnect(_blocks.Count - 1);
@@ -289,6 +289,13 @@ namespace MonitorSystem
             {
                 SetUnselect();
             }
+			if (_associatedElement is NetLine)
+			{
+				if ((_associatedElement as NetLine).ElementState == ElementSate.New)
+				{
+					AutoConnectAll();
+				}
+			}
             base.OnApplyTemplate();
         }
 
