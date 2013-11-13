@@ -197,7 +197,7 @@ namespace MonitorSystem
         {
             if (index == 0 || index == _blocks.Count - 1)
             {
-                NetDevice obj = DeviceLineHeadle.PointSelectRectDevices(index, _polyline);
+                MonitorControl obj = DeviceLineHeadle.PointSelectRectDevices(index, _polyline);
                 if (index == 0)
                 {
                     (_associatedElement as NetLine).UpLineDevice = obj;
@@ -209,9 +209,18 @@ namespace MonitorSystem
 
                 if (null != obj)
                 {
-                    obj.DeviceOnLine = DeviceLineHeadle.GetDeviceOnLinesByNetDevice((_associatedElement as NetDevice));
+                    if (obj is NetDevice)
+                    {
+                        (obj as NetDevice).DeviceOnLine = DeviceLineHeadle.GetDeviceOnLinesByNetDevice((_associatedElement as NetDevice));
 
-                    AutoConnect(_blocks[index], obj);
+                        AutoConnect(_blocks[index], obj);
+                    }
+                    else if (obj is ViewCallout)
+                    {
+                        (obj as ViewCallout).DeviceOnLine = DeviceLineHeadle.GetDeviceOnLinesByNetDevice((_associatedElement as ViewCallout));
+
+                        AutoConnect(_blocks[index], obj);
+                    }
                 }
             }
         }
@@ -351,7 +360,7 @@ namespace MonitorSystem
             //DeviceLineHeadle.CanncelDeviceFcous();
         }
 
-        private void AutoConnect(FrameworkElement element, NetDevice obj)
+        private void AutoConnect(FrameworkElement element, MonitorControl obj)
         {
             // 吸附在设备的中心点上
             if (_associatedElement is NetLine)
@@ -370,12 +379,18 @@ namespace MonitorSystem
                 }
                 if (null != netLine.UpLineDevice)
                 {
-                    netLine.UpLineDevice.HideRect();
+                    if (netLine.UpLineDevice is NetDevice)
+                        (netLine.UpLineDevice as NetDevice).HideRect();
+                    else if (netLine.UpLineDevice is ViewCallout)
+                        (netLine.UpLineDevice as ViewCallout).HideRect();
                 }
 
                 if (null != netLine.DownLineDevice)
                 {
-                    netLine.DownLineDevice.HideRect();
+                    if (netLine.DownLineDevice is NetDevice)
+                        (netLine.DownLineDevice as NetDevice).HideRect();
+                    else if (netLine.DownLineDevice is ViewCallout)
+                        (netLine.DownLineDevice as ViewCallout).HideRect();
                 }
             }
         }

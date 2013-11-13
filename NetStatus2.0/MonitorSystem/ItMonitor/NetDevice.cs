@@ -28,7 +28,8 @@ namespace MonitorSystem.ItMonitor
         Label _Txt = new Label();
         Image _img = new Image();
         Border _rect = new Border();
-        Rectangle _connect = new Rectangle() { Fill = new SolidColorBrush(Colors.Red),StrokeThickness = 0, Height=5.0d, Width = 5.0d, HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center };
+        Rectangle _connect = new Rectangle() { Fill = new SolidColorBrush(Colors.Red),StrokeThickness = 0, Height=5.0d, Width = 5.0d, 
+            HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center };
 
         public NetDevice()
         {
@@ -47,28 +48,32 @@ namespace MonitorSystem.ItMonitor
             //_rect.BorderBrush = new SolidColorBrush(Colors.Blue);
             _grid.Children.Add(_rect);
             _rect.Visibility = Visibility.Collapsed;
-
             _rect.Child = _connect;
         }
 
         #region 关联处理
+        /// <summary>
+        /// 设备关联的线
+        /// </summary>
+        public List<NetLine> DeviceOnLine { get; set; }
+
         public void ShowRect()
         {
             _rect.Visibility = Visibility.Visible;
-
         }
 
         public void HideRect()
         {
             _rect.Visibility = Visibility.Collapsed;
         }        
+        #endregion
 
         public override void SetChannelValue(float fValue)
         {
             SetStringValue(fValue.ToString());
         }
 
-        #endregion
+      
 
         #region 重载
         public override event EventHandler Selected;
@@ -91,18 +96,13 @@ namespace MonitorSystem.ItMonitor
             }
         }
 
-        /// <summary>
-        /// 设备关联的线
-        /// </summary>
-        public List<NetLine> DeviceOnLine { get; set; }
+        
         protected void OnSelected(object sender, EventArgs e)
         {
             if (null != Selected)
             {
                 Selected(this, RoutedEventArgs.Empty);
             }
-
-
             ShowRect();
         }
 

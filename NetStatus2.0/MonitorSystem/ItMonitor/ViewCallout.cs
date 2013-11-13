@@ -11,23 +11,36 @@ using MonitorSystem.ZTControls;
 using MonitorSystem.ItMonitor;
 using System.ComponentModel;
 using System.ServiceModel.DomainServices.Client;
+using System.Windows.Shapes;
 
 namespace MonitorSystem.ItMonitor
 {
 	public class ViewCallout : MonitorControl
 	{
 		Canvas csScreen = new Canvas();
+        Canvas _mainCan = new Canvas();
+        Border _border = new Border();
+        Rectangle _connect = new Rectangle() { Fill = new SolidColorBrush(Colors.Red), StrokeThickness = 0, Height = 5.0d, Width = 5.0d, 
+            HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center };
 		public ViewCallout()
 		{
-			Content = csScreen;
+            _mainCan.Children.Add(csScreen);
+
+            Content = _mainCan;
             csScreen.Background = new SolidColorBrush(Colors.White);
 			this.SizeChanged += new SizeChangedEventHandler(ViewCallout_SizeChanged);
+
+            _border.Visibility = Visibility.Collapsed;            
+            _border.Child = _connect;
+            _mainCan.Children.Add(_border);
 		}
 
 		void ViewCallout_SizeChanged(object sender, SizeChangedEventArgs e)
 		{
 			this.Width = e.NewSize.Width;
 			this.Height = e.NewSize.Height;
+            _border.SetValue(Canvas.LeftProperty, (this.Width-5.0d) / 2);
+            _border.SetValue(Canvas.TopProperty, (this.Height-5.0d) / 2);
 
             RectangleGeometry r = new RectangleGeometry();
             Rect rect = new Rect();
@@ -36,11 +49,27 @@ namespace MonitorSystem.ItMonitor
             r.Rect = rect;
             this.Clip = r;
 
+
             if (e.NewSize.Width > 10 && e.NewSize.Height > 10)
             {
                 ScreenInit();
             }
 		}
+        #region 关联处理
+        /// <summary>
+        /// 设备关联的线
+        /// </summary>
+        public List<NetLine> DeviceOnLine { get; set; }
+        public void ShowRect()
+        {
+            _border.Visibility = Visibility.Visible;
+        }
+
+        public void HideRect()
+        {
+            _border.Visibility = Visibility.Collapsed;
+        }
+        #endregion
 
 		#region 控件公共属性
 		public override event EventHandler Selected;
@@ -53,6 +82,7 @@ namespace MonitorSystem.ItMonitor
 			{
 				Unselected(this, RoutedEventArgs.Empty);
 			}
+            HideRect();
 		}
 
 		#region 属性设置
@@ -122,6 +152,7 @@ namespace MonitorSystem.ItMonitor
 			{
 				Selected(this, RoutedEventArgs.Empty);
 			}
+            ShowRect();
 		}
 
 		private string[] m_BrowsableProperties = new string[] { "Left", "Top", "Width", "Height", "FontFamily", "FontSize","ForeColor","BackColor", "Transparent", 
@@ -220,11 +251,15 @@ namespace MonitorSystem.ItMonitor
 		#region  加载数据
 		public void ScreenInit()
 		{
+            csScreen.Children.Clear();
+
+           
+
             t_Screen obj = GetChildScreenID();
             if (obj == null)
                 return;
 
-			csScreen.Children.Clear();
+			
 
 			if (obj.Width != null && obj.Height != null)
 			{

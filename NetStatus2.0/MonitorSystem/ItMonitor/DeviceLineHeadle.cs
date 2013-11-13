@@ -9,12 +9,13 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
+using MonitorSystem.MonitorSystemGlobal;
 
 namespace MonitorSystem.ItMonitor
 {
     public class DeviceLineHeadle
     {
-        public static NetDevice GetDeviceByElementID(int ElementID)
+        public static MonitorControl GetDeviceByElementID(int ElementID)
         {
             foreach (FrameworkElement element in LoadScreen._instance.csScreen.Children)
             {
@@ -26,6 +27,13 @@ namespace MonitorSystem.ItMonitor
                         return obj;
                     }
                 }
+                if (element is ViewCallout)
+                {
+                    if ((element as ViewCallout).ScreenElement.ElementID == ElementID)
+                    {
+                        return element as ViewCallout;
+                    }
+                }
             }
             return null;
         }
@@ -34,25 +42,32 @@ namespace MonitorSystem.ItMonitor
         /// </summary>
         /// <param name="_index"></param>
         /// <param name="_line"></param>
-        public static NetDevice PointSelectRectDevices(int _index, Polyline _line)
+        public static MonitorControl PointSelectRectDevices(int _index, Polyline _line)
         {
             if (_index == 0 || _index == _line.Points.Count - 1)
             {
                 foreach (FrameworkElement element in LoadScreen._instance.csScreen.Children)
                 {
-                    var obj =element as NetDevice;
-                    if (obj !=null)
+                    var _dev =element as NetDevice;
+                    if (_dev != null)
                     {
-                        var rect = new Rect(obj.Left, obj.Top, obj.Width, obj.Height);
+                        var rect = new Rect(_dev.Left, _dev.Top, _dev.Width, _dev.Height);
                         if (rect.Contains(_line.Points[_index]))
                         {
-                            obj.ShowRect();
-                            return obj;
+                            _dev.ShowRect();
+                            return _dev;
                         }
-                        //else
-                        //{
-                        //    obj.HideRect();
-                        //}
+                    }
+
+                    var _Net = element as ViewCallout;
+                    if (_Net != null)
+                    {
+                        var rect = new Rect(_Net.Left, _Net.Top, _Net.Width, _Net.Height);
+                        if (rect.Contains(_line.Points[_index]))
+                        {
+                            _Net.ShowRect();
+                            return _Net;
+                        }
                     }
                 }
             }
@@ -81,7 +96,7 @@ namespace MonitorSystem.ItMonitor
         /// </summary>
         /// <param name="_netDev"></param>
         /// <returns></returns>
-        public static List<NetLine> GetDeviceOnLinesByNetDevice(NetDevice _netDev)
+        public static List<NetLine> GetDeviceOnLinesByNetDevice(MonitorControl _netDev)
         {
             List<NetLine> ListLines = new List<NetLine>();
             foreach (FrameworkElement element in LoadScreen._instance.csScreen.Children)
@@ -110,6 +125,10 @@ namespace MonitorSystem.ItMonitor
                 if (element is NetDevice)
                 {
                     (element as NetDevice).HideRect();
+                }
+                else if (element is ViewCallout)
+                {
+                    (element as ViewCallout).HideRect();
                 }
             }
         }

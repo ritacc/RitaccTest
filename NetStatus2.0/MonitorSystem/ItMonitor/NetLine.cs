@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using MonitorSystem.Controls;
  
 using MonitorSystem.Web.Moldes;
+using MonitorSystem.MonitorSystemGlobal;
 
 namespace MonitorSystem.ItMonitor
 {
@@ -36,7 +37,7 @@ namespace MonitorSystem.ItMonitor
 
             this.SizeChanged += new SizeChangedEventHandler(NetLine_SizeChanged);
 
-            Canvas.SetZIndex(this, 9999);
+            Canvas.SetZIndex(this, 998);
             _Canvas.Children.Add(_connect);
         }
 
@@ -56,9 +57,9 @@ namespace MonitorSystem.ItMonitor
 		{
 			this.UpLineDevice = _UpNetDevice;
 			this.DownLineDevice = _DownNetDevice;
-		} 
+		}
 
-        public void MovePoint(NetDevice _netDev, double offsetX, double offsetY)
+        public void MovePoint(MonitorControl _netDev, double offsetX, double offsetY)
         {
             int index = 0;
             if (_netDev == UpLineDevice)
@@ -120,6 +121,7 @@ namespace MonitorSystem.ItMonitor
                 AdornerLayer.Dispose();
                 AdornerLayer = null;
             }
+            Canvas.SetZIndex(this, 998);
         }
 
         #endregion
@@ -339,7 +341,7 @@ namespace MonitorSystem.ItMonitor
 
         #region  线的点处理
 
-        public void Connection(NetDevice netDevice, Rect rect)
+        public void Connection(MonitorControl netDevice, Rect rect)
         {
             var center = new Point(rect.Left + rect.Width / 2d - Left, rect.Top + rect.Height / 2d - Top);
             int endIndex = PL.Points.Count - 1;
@@ -517,8 +519,8 @@ namespace MonitorSystem.ItMonitor
             }
         }
 
-        private NetDevice _UpNetDevice = null;
-        public NetDevice UpLineDevice
+        private MonitorControl _UpNetDevice = null;
+        public MonitorControl UpLineDevice
         {
             get { return _UpNetDevice; }
             set
@@ -527,7 +529,10 @@ namespace MonitorSystem.ItMonitor
                 if (value != null)
                 {
                     UpLineDeviceID = value.ScreenElement.ElementID;
-                    UpLineDeviceName = value.DeviceName;
+                    if (value is NetDevice)
+                    {
+                        UpLineDeviceName = (value as NetDevice).DeviceName;
+                    }
                 }
                 else
                 {
@@ -572,8 +577,8 @@ namespace MonitorSystem.ItMonitor
                 _DownLineDeviceID = value;
             }
         }
-        private NetDevice _DownNetDevice=null;
-        public NetDevice DownLineDevice
+        private MonitorControl _DownNetDevice = null;
+        public MonitorControl DownLineDevice
         {
             get { return _DownNetDevice; }
             set
@@ -582,7 +587,10 @@ namespace MonitorSystem.ItMonitor
                 if (value != null)
                 {
                     DownLineDeviceID = value.ScreenElement.ElementID;
-                    DownLineDeviceName = value.DeviceName;
+                    if (value is NetDevice)
+                    {
+                        DownLineDeviceName = (value as NetDevice).DeviceName;
+                    }
                 }
                 else
                 {
@@ -881,6 +889,7 @@ namespace MonitorSystem.ItMonitor
                 menu.Items.Add(menuItem);
                 AdornerLayer.SetValue(ContextMenuService.ContextMenuProperty, menu);
             }
+            Canvas.SetZIndex(this, 9999);
         }
     }
 }
