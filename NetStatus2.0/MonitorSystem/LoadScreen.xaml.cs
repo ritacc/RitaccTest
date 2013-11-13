@@ -1265,6 +1265,10 @@ namespace MonitorSystem
                 {
                     switch (obj.ElementName)
                     {
+                        case "ViewCallout":
+                            ViewCallout mViewCall = new ViewCallout();
+                            SetEletemt(canvas, mViewCall, obj, eleStae, listObj);
+                            return mViewCall;
                         case "NetLine":
                             NetLine mNetLine = new NetLine();
                             SetEletemt(canvas, mNetLine, obj, eleStae, listObj);
