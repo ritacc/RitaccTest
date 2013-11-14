@@ -1205,8 +1205,16 @@ namespace MonitorSystem
                 MessageBox.Show(result.Error.Message);
                 return;
             }
-            List<t_Element> lsitElement = _DataContext.t_Elements.Where(a => a.ScreenID == Convert.ToInt32(result.UserState) && null == a.ParentID).OrderBy(a => a.ElementName).ToList();
-            
+            List<t_Element> lsitElement = _DataContext.t_Elements.Where(a => a.ScreenID == Convert.ToInt32(result.UserState) && a.ElementName != "NetLine" && null == a.ParentID).OrderBy(a => a.ElementName).ToList();
+
+            List<t_Element> listLine = _DataContext.t_Elements.Where(a => a.ScreenID == Convert.ToInt32(result.UserState) && a.ElementName == "NetLine" && null == a.ParentID).OrderBy(a => a.ElementName).ToList();
+            if (listLine != null)
+            {
+                foreach (t_Element _lin in listLine)
+                {
+                    lsitElement.Add(_lin);
+                }
+            }
             ShowElements(lsitElement, csScreen);
             //如果不是组态，打开定时器
             //if (CBIsztControl.IsChecked == false)

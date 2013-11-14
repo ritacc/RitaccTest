@@ -281,7 +281,7 @@ namespace MonitorSystem
 
         protected Adorner()
         {
-
+            
         }
 
         public Adorner(FrameworkElement associatedElement)
@@ -587,9 +587,9 @@ namespace MonitorSystem
             //    _backgroundAdorner.Fill = new SolidColorBrush(Colors.Transparent);
             //}
 
-			if (_associatedElement is NetDevice)
+			if (_associatedElement is NetDevice || _associatedElement is ViewCallout)
 			{
-				if ((_associatedElement as NetDevice).ElementState == ElementSate.New)
+				if ((_associatedElement as MonitorControl).ElementState == ElementSate.New)
 				{
 					AutoConnect();
 				}
@@ -862,9 +862,16 @@ namespace MonitorSystem
             _initialPoint = e.GetPosition(_parent);
             _originPoints = _selectedAdorners.Select(a => new Point((double)a.GetValue(Canvas.LeftProperty) + a._offsetLeft, (double)a.GetValue(Canvas.TopProperty) + a._offsetTop));
 
-            if (_associatedElement is NetDevice)
+            if (_associatedElement is NetDevice || _associatedElement is ViewCallout)
             {
-                (_associatedElement as NetDevice).DeviceOnLine = DeviceLineHeadle.GetDeviceOnLinesByNetDevice((_associatedElement as NetDevice));
+                if (_associatedElement is NetDevice)
+                {
+                    (_associatedElement as NetDevice).DeviceOnLine = DeviceLineHeadle.GetDeviceOnLinesByNetDevice((_associatedElement as NetDevice));
+                }
+                else
+                {
+                    (_associatedElement as ViewCallout).DeviceOnLine = DeviceLineHeadle.GetDeviceOnLinesByNetDevice((_associatedElement as ViewCallout));
+                }
             }
         }
 
@@ -875,7 +882,7 @@ namespace MonitorSystem
             source.MouseMove -= BackgroundAdorner_MouseMove;
             OnSelected();
 
-			if (_associatedElement is NetDevice)
+            if (_associatedElement is NetDevice || _associatedElement is ViewCallout)
 			{
 				if (_selectedAdorners != null && _selectedAdorners.Count > 1)
 					return;
@@ -885,9 +892,9 @@ namespace MonitorSystem
 
         private void AutoConnect()
         {
-            if (_associatedElement is NetDevice)
+            if (_associatedElement is NetDevice || _associatedElement is ViewCallout)
             {
-                var netDevice = _associatedElement as NetDevice;
+                var netDevice = _associatedElement as MonitorControl;
                 var rect = new Rect(netDevice.Left, netDevice.Top, netDevice.Width, netDevice.Height);
                 var lines = LoadScreen._instance.csScreen.Children.OfType<NetLine>();
                 foreach (var line in lines)
@@ -907,13 +914,18 @@ namespace MonitorSystem
             MouseMuti(offsetX, offsetY);
             _initialPoint = mousePoint;
 
-            if (_associatedElement is NetDevice)
+            if (_associatedElement is NetDevice || _associatedElement is ViewCallout)
             {
 				if (_selectedAdorners != null && _selectedAdorners.Count > 1)
 					return;
+                
+                List<NetLine> DeviceOnLine = new List<NetLine>();
+                if (_associatedElement is NetDevice)
+                    DeviceOnLine = (_associatedElement as NetDevice).DeviceOnLine;
+                else if (_associatedElement is ViewCallout)
+                    DeviceOnLine = (_associatedElement as ViewCallout).DeviceOnLine;
 
-                var netDevice = _associatedElement as NetDevice;
-                var DeviceOnLine = netDevice.DeviceOnLine;
+                var netDevice = _associatedElement as MonitorControl;
                 if (DeviceOnLine != null && DeviceOnLine.Count > 0)
                 {
                     foreach (NetLine _Lin in DeviceOnLine)
@@ -925,15 +937,32 @@ namespace MonitorSystem
                 // 查找线的热点
                 var rect = new Rect(netDevice.Left, netDevice.Top, netDevice.Width, netDevice.Height);
                 var lines = LoadScreen._instance.csScreen.Children.OfType<NetLine>();
-                foreach (var line in lines)
+                if (_associatedElement is NetDevice)
                 {
-                    if (!netDevice.DeviceOnLine.Contains(line))
+                    foreach (var line in lines)
                     {
-                        line.UpdateHighlight(rect);
+                        if (!(netDevice as NetDevice).DeviceOnLine.Contains(line))
+                        {
+                            line.UpdateHighlight(rect);
+                        }
+                        else
+                        {
+                            line.CancelHightlight();
+                        }
                     }
-                    else
+                }
+                else if (_associatedElement is ViewCallout)
+                {
+                    foreach (var line in lines)
                     {
-                        line.CancelHightlight();
+                        if (!(netDevice as ViewCallout).DeviceOnLine.Contains(line))
+                        {
+                            line.UpdateHighlight(rect);
+                        }
+                        else
+                        {
+                            line.CancelHightlight();
+                        }
                     }
                 }
             }
