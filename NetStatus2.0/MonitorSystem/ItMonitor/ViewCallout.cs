@@ -13,6 +13,9 @@ using System.ComponentModel;
 using System.ServiceModel.DomainServices.Client;
 using System.Windows.Input;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+using MonitorSystem.Other;
+using MonitorSystem.Web.Servers;
 
 namespace MonitorSystem.ItMonitor
 {
@@ -21,6 +24,7 @@ namespace MonitorSystem.ItMonitor
 		Canvas csScreen = new Canvas();
         Canvas _mainCan = new Canvas();
         Border _border = new Border();
+
         Rectangle _connect = new Rectangle() { Fill = new SolidColorBrush(Colors.Red), StrokeThickness = 0, Height = 5.0d, Width = 5.0d, 
             HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center };
 		public ViewCallout()
@@ -38,6 +42,11 @@ namespace MonitorSystem.ItMonitor
             _border.Child = _connect;
             _mainCan.Children.Add(_border);
 
+			timerRefrshValue.Interval = new TimeSpan(0, 0, 30);
+			timerRefrshValue.Tick += new EventHandler(timer_Tick);
+			timerRefrshValue.Start();
+
+			_DataContext = LoadScreen._DataContext;
 		}
 
 		DateTime dtStart = DateTime.Now;
@@ -222,6 +231,7 @@ namespace MonitorSystem.ItMonitor
 				menu.Items.Add(menuItem);
 				AdornerLayer.SetValue(ContextMenuService.ContextMenuProperty, menu);
 			}
+			 
 		}
 		public override void UnDesignMode()
 		{
@@ -336,18 +346,14 @@ namespace MonitorSystem.ItMonitor
 
 		#endregion
 
-		#region  加载数据
+		#region  加载数据		
 		public void ScreenInit()
 		{
             csScreen.Children.Clear();
-
-           
-
             t_Screen obj = GetChildScreenID();
             if (obj == null)
                 return;
-
-			
+			ScreentID = obj.ScreenID;
 
 			if (obj.Width != null && obj.Height != null)
 			{
@@ -377,7 +383,6 @@ namespace MonitorSystem.ItMonitor
                LoadElementCompleted, obj.ScreenID);
 		}
 
-
         /// <summary>
         /// 加载元素
         /// </summary>
@@ -400,8 +405,6 @@ namespace MonitorSystem.ItMonitor
             List<t_Element> lsitElement = LoadScreen._DataContext.t_Elements.Where(a => a.ScreenID == Convert.ToInt32(result.UserState) && null == a.ParentID).OrderBy(a => a.ElementName).ToList();
             ShowElements(lsitElement, csScreen);
         }
-
-
 
 		private void SetScreenImg(string strImg, bool resize = false)
 		{
@@ -436,7 +439,6 @@ namespace MonitorSystem.ItMonitor
 							return mNetLine;
 						case "NetDevice":
 							NetDevice mNetDevvice = new NetDevice();
-							mNetDevvice.Name = obj.ElementID.ToString();
 							SetEletemt(canvas, mNetDevvice, obj, eleStae, listObj);
 							return mNetDevvice;
 						case "MyButton":
@@ -602,6 +604,8 @@ namespace MonitorSystem.ItMonitor
 					}
 				}
 			}
+
+			LoadChanncelValue();
 		}
 
 		private void SetEletemt(Canvas canvas, MonitorControl mControl, t_Element obj, ElementSate eleStae, List<t_ElementProperty> listObj)
@@ -614,7 +618,7 @@ namespace MonitorSystem.ItMonitor
 			};
 			if (eleStae == ElementSate.Save)
 			{
-				mControl.Name = "slt" + obj.ElementID.ToString();
+				mControl.Name = "viewCal" + obj.ElementID.ToString();
 			}
 			mControl.ScreenElement = obj;
 			mControl.ListElementProp = listObj;
@@ -624,6 +628,91 @@ namespace MonitorSystem.ItMonitor
 			mControl.SetCommonPropertyValue();
 			//添加到场景
 			canvas.Children.Add(mControl);
+		}
+		#endregion
+
+		#region  刷新值
+		DispatcherTimer timerRefrshValue = new DispatcherTimer();
+		int ScreentID = -1;
+		public  MonitorServers _DataContext = new MonitorServers();
+		protected void timer_Tick(object sender, EventArgs e)
+		{
+			LoadChanncelValue();
+		}
+
+		private void LoadChanncelValue()
+		{
+			if (ScreentID == -1 || IsDesignMode)
+				return;
+			EntityQuery<V_ScreenMonitorValue> v = _DataContext.GetScreenMonitorValueQuery(ScreentID);
+
+			_DataContext.Load(v, ValueLoadComplete, null);
+		}
+
+		public void ValueLoadComplete(LoadOperation<V_ScreenMonitorValue> result)
+		{
+			if (result.HasError)
+				return;
+			float digitalValue = 0f;
+			foreach (V_ScreenMonitorValue obj in result.Entities)
+			{
+				var vobj = (MonitorControl)this.csScreen.FindName("viewCal" + obj.ElementID.ToString());
+				if (null != vobj)
+				{
+					SetChannelValue(digitalValue, obj, vobj);
+					if (vobj.ToolTipControl != null)
+					{
+						var child = (MonitorControl)vobj.ToolTipControl.ToolTipCanvas.FindName(obj.ElementID.ToString());
+						SetChannelValue(digitalValue, obj, child);
+					}
+					if (vobj is BackgroundControl)
+					{
+						var backgroundControl = vobj as BackgroundControl;
+						var child = (MonitorControl)backgroundControl.BackgroundCanvas.FindName(obj.ElementID.ToString());
+						SetChannelValue(digitalValue, obj, child);
+					}
+				}
+			}
+			_DataContext.V_ScreenMonitorValues.Clear();
+		}
+
+		private void SetChannelValue(float digitalValue, V_ScreenMonitorValue obj, MonitorControl vobj)
+		{
+			if (vobj == null)
+			{
+				return;
+			}
+
+			if (vobj is RealTimeT)
+			{
+				(vobj as RealTimeT).SetLineValue(obj);
+				return;
+			}
+
+			if (vobj.ScreenElement.DeviceID.Value != -1 && vobj.ScreenElement.ChannelNo.Value != -1)
+			{
+				float fValue;
+				if (float.TryParse(obj.MonitorValue.ToString(), out fValue))
+				{
+					if (vobj.ScreenElement.ElementName == "DigitalBiaoPan")
+					{
+						digitalValue = fValue;
+						vobj.SetChannelValue(fValue);
+					}
+					else if (vobj.ScreenElement.ElementName == "DrawLine")
+					{
+						vobj.SetChannelValue(fValue, digitalValue);
+					}
+					else
+					{
+						vobj.SetChannelValue(fValue);
+					}
+				}
+				else//非flat值
+				{
+					vobj.SetStringValue(obj.MonitorValue);
+				}
+			}
 		}
 		#endregion
 	}
