@@ -17,7 +17,6 @@ namespace MonitorSystem.MonitorSystemGlobal
 {
     public partial class TPSetProperty : ChildWindow
     {
-        MonitorServers _DataContext = new MonitorServers();
         public TPSetProperty()
         {
             InitializeComponent();

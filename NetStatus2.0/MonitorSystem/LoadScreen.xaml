@@ -57,8 +57,7 @@
                         Stroke="#FF5694BA"
                         StrokeThickness="1"
                         StrokeDashArray="5,5"
-                        Visibility="Collapsed"
-                        />
+                        Visibility="Collapsed"/>
                 </Canvas>
                 <Border
                     BorderBrush="Black"
@@ -203,7 +202,10 @@
             </Grid>
             <TextBox Opacity="0" Height="0" Width="0" x:Name="HideFocusElement"/>
         </Grid>
-
+		
+		<Slider     Height="153" Name="sdSizeControl" Value="1" Width="53"  VerticalAlignment="Top" HorizontalAlignment="Left"
+				  Minimum="0.10"  Margin="0,60,0,0"  Maximum="5"  Orientation="Vertical" ValueChanged="sdSizeControl_ValueChanged"/>
+		
         <!-- 图库面板 -->
         <ctrls:FloatPanel
             x:Name="GalleryFloatPanel"

@@ -142,6 +142,9 @@
       <DependentUpon>SetItMonitorProperty.xaml</DependentUpon>
     </Compile>
     <Compile Include="ItMonitor\TootHead.cs" />
+    <Compile Include="ItMonitor\ViewCalloutProperty.xaml.cs">
+      <DependentUpon>ViewCalloutProperty.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LineAdorner.cs" />
     <Compile Include="LineLoadScreen.cs" />
     <Compile Include="MonitorSystemGlobal\ToolTipControl.cs" />
@@ -419,6 +422,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ItMonitor\SetItMonitorProperty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ItMonitor\ViewCalloutProperty.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

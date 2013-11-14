@@ -256,7 +256,7 @@ namespace MonitorSystem
                 }
                 else
                 {
-                    _sacleIndex = 5;
+					ScaleValue = 1.0d;
                     GridScreen.AddHandler(Grid.MouseWheelEvent, new MouseWheelEventHandler(GridScreen_MouseWheel), false);
                     ThumbnailToggleButton.IsChecked = false;
                     ThumbnailToggleButton.Visibility = Visibility.Visible;
@@ -1160,7 +1160,7 @@ namespace MonitorSystem
             _DataContext.Load(_DataContext.GetT_ElementsByScreenIDQuery(_Screen.ScreenID),
                 LoadElementCompleted, _Screen.ScreenID);
 
-            _sacleIndex = 5;
+			ScaleValue = 1.0d;
             CanvasScaleTransform.ScaleX = 1d;
             CanvasScaleTransform.ScaleY = 1d;
             CanvasTranslateTransform.X = 0d;
@@ -1582,15 +1582,7 @@ namespace MonitorSystem
         }
         #endregion
 
-        ///// <summary>
-        ///// 属性窗口改变大小时发生
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //protected void f_SizeChanged(object sender, SizeChangedEventArgs e)
-        //{
-        //    prop.ChangeSize(e.NewSize.Height, e.NewSize.Width);
-        //}
+        
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             IsShowSaveToot = true;//显示保存成功提示
@@ -2260,8 +2252,10 @@ namespace MonitorSystem
             DesignFloatPanel.IsOpened = !DesignFloatPanel.IsOpened;
         }
 
-        private readonly double[] ScaleArray = new[] { 0.1d, 0.15d, 0.25d, 0.5d, 0.75d, 1.0d, 1.25d, 1.50d, 2.0d, 3.0d, 5.0d };
-        private int _sacleIndex = 5;
+		#region 缩放处理
+		//private readonly double[] ScaleArray = new[] { 0.1d, 0.15d, 0.25d, 0.5d, 0.75d, 1.0d, 1.25d, 1.50d, 2.0d, 3.0d, 5.0d };
+		private double ScaleValue = 1.0d;
+        //private int _sacleIndex = 5;
         DateTime WheelTime = DateTime.Now;
         private void GridScreen_MouseWheel(object sender, MouseWheelEventArgs e)
         {
@@ -2271,22 +2265,64 @@ namespace MonitorSystem
             WheelTime = DateTime.Now;
 
             var point = e.GetPosition(GridScreen);
-            if (e.Delta > 0 && _sacleIndex < ScaleArray.Length - 1)
-            {
-                ++_sacleIndex;
-                ScaleCanvas(point);
+
+			double Setup = 0.25d;
+			if (ScaleValue > 2)
+				Setup = 0.5;
+			else if (ScaleValue <= 0.5)
+				Setup = 0.1;
+
+            if (e.Delta > 0)
+			{
+				ScaleValue += Setup;
             }
-            else if (e.Delta < 0 && _sacleIndex > 1)
+            else if (e.Delta < 0)
             {
-                --_sacleIndex;
-                ScaleCanvas(point);
+				ScaleValue -= Setup;
             }
+
+			if (ScaleValue > 5)
+			{
+				ScaleValue = 5;
+			}
+			else if (ScaleValue < 0.1)
+			{
+				ScaleValue = 0.1;
+			}
+			ScaleValue = int.Parse((ScaleValue * 100).ToString().Split('.')[0]) / 100.0d;
+			ScaleCanvas(point);
         }
+
+		private void sdSizeControl_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+		{
+			double ChangeValue = e.NewValue;
+			if (ChangeValue > 5)
+			{
+				ChangeValue = 5;
+			}
+			else if (ChangeValue < 0.25)
+			{
+				ChangeValue = 0.25;
+			}
+			if (ScaleTextBlock == null)
+				return;
+
+			int  valPer = int.Parse((ChangeValue * 100).ToString().Split('.')[0]);
+			ScaleValue = ChangeValue;
+			ScaleTextBlock.Text = string.Format("{0}%", valPer);
+			CanvasScaleTransform.ScaleX = CanvasScaleTransform.ScaleY = ScaleValue;
+			//CanvasScaleTransform.CenterX = point.X - CanvasTranslateTransform.X;
+			//CanvasScaleTransform.CenterY = point.Y - CanvasTranslateTransform.Y;
+
+			AddElementCanvas.RenderTransform = csScreen.RenderTransform;
+			AddLineCanvas.RenderTransform = csScreen.RenderTransform;
+			UpdateThumbnail();
+		}
 
         private void ScaleCanvas(Point point)
         {
-            ScaleTextBlock.Text = string.Format("{0}%", ScaleArray[_sacleIndex] * 100);
-            CanvasScaleTransform.ScaleX = CanvasScaleTransform.ScaleY = ScaleArray[_sacleIndex];
+			ScaleTextBlock.Text = string.Format("{0}%", ScaleValue * 100);
+			CanvasScaleTransform.ScaleX = CanvasScaleTransform.ScaleY = ScaleValue;
             CanvasScaleTransform.CenterX = point.X - CanvasTranslateTransform.X;
             CanvasScaleTransform.CenterY = point.Y - CanvasTranslateTransform.Y;
 
@@ -2294,8 +2330,8 @@ namespace MonitorSystem
             AddLineCanvas.RenderTransform = csScreen.RenderTransform;
             UpdateThumbnail();
         }
-
-        private void GridScreen_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+		
+		private void GridScreen_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (!AutoSize)
             {
@@ -2427,7 +2463,8 @@ namespace MonitorSystem
             CanvasScaleTransform.CenterY = 0d;
             CanvasTranslateTransform.X = -left * canvasWidth / thumbnailViewWidth;
             CanvasTranslateTransform.Y = -top * canvasHeight / thumbnailViewHeight;
-        }
-    }
+		}
+		#endregion
+	}
 }
 

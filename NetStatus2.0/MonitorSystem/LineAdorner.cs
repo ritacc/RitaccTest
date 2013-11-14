@@ -401,7 +401,7 @@ namespace MonitorSystem
             FrameworkElement element = sender as FrameworkElement;
 
             var mousePoint = e.GetPosition(_parent);
-            var i = 0;
+            //var i = 0;
             var offsetX = mousePoint.X - _initialPoint.X;
             var offsetY = mousePoint.Y - _initialPoint.Y;
             int index = Convert.ToInt32(element.Tag);

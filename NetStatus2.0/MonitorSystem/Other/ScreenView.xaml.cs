@@ -66,6 +66,10 @@ namespace MonitorSystem.Other
                 {
                     switch (obj.ElementName)
                     {
+						case "ViewCallout":
+							ViewCallout mViewCall = new ViewCallout();
+							SetEletemt(canvas, mViewCall, obj, eleStae, listObj);
+							return mViewCall;
                         case "NetLine":
                             NetLine mNetLine = new NetLine();
                             obj.Width = 50;
@@ -77,61 +81,49 @@ namespace MonitorSystem.Other
                             mNetDevvice.Name = obj.ElementID.ToString();
                             SetEletemt(canvas, mNetDevvice, obj, eleStae, listObj);
                             return mNetDevvice;
-
-
                         case "MyButton":
                             TP_Button mtpButtom = new TP_Button();
                             SetEletemt(canvas, mtpButtom, obj, eleStae, listObj);
                             return mtpButtom;
-                        //break;
                         case "MonitorLine":
                             MonitorLine mPubLine = new MonitorLine();
                             SetEletemt(canvas, mPubLine, obj, eleStae, listObj);
                             return mPubLine;
-                        //break;
                         case "MonitorText":
                             MonitorText mPubText = new MonitorText();
                             mPubText.MyText = obj.TxtInfo;
                             SetEletemt(canvas, mPubText, obj, eleStae, listObj);
                             return mPubText;
-                        //break;
                         case "ColorText":
                             ColorText mColorText = new ColorText();
                             SetEletemt(canvas, mColorText, obj, eleStae, listObj);
                             return mColorText;
-                        //break;
                         case "InputTextBox":
                             InputTextBox mInputTextBox = new InputTextBox();
                             mInputTextBox.MyText = obj.TxtInfo;
                             SetEletemt(canvas, mInputTextBox, obj, eleStae, listObj);
                             return mInputTextBox;
-                        //break;
                         case "ButtonCtrl":
                             ButtonCtrl mButtonCtrl = new ButtonCtrl();
                             mButtonCtrl.MyText = obj.TxtInfo;
                             SetEletemt(canvas, mButtonCtrl, obj, eleStae, listObj);
                             return mButtonCtrl;
-                        //break;
                         case "MonitorCur":
                             MonitorCur mPubCur = new MonitorCur();
                             SetEletemt(canvas, mPubCur, obj, eleStae, listObj);
                             return mPubCur;
-                        //break;
                         case "MonitorRectangle":
                             MonitorRectangle mPubRec = new MonitorRectangle();
                             SetEletemt(canvas, mPubRec, obj, eleStae, listObj);
                             return mPubRec;
-                        //break;
                         case "MonitorGrid":
                             MonitorGrid mPubGrid = new MonitorGrid();
                             SetEletemt(canvas, mPubGrid, obj, eleStae, listObj);
                             return mPubGrid;
-                        //break;
                         case "FoldLine":
                             MonitorFoldLine mPubFoldLine = new MonitorFoldLine();
                             SetEletemt(canvas, mPubFoldLine, obj, eleStae, listObj);
                             return mPubFoldLine;
-                        //break;
                         case "Temprary":
                             Temprary mTemprary = new Temprary();
                             SetEletemt(canvas, mTemprary, obj, eleStae, listObj);
@@ -151,7 +143,6 @@ namespace MonitorSystem.Other
                             return mSwitch;
                         case "SignalSwitch":
                             SignalSwitch mSignalSwitch = new SignalSwitch();
-                            //obj.Width = obj.Height;
                             SetEletemt(canvas, mSignalSwitch, obj, eleStae, listObj);
                             return mSignalSwitch;
                         case "DetailSwitch":
@@ -216,9 +207,6 @@ namespace MonitorSystem.Other
                             mtp.Source = mm;
                             SetEletemt(canvas, mtp, obj, eleStae, listObj);
                             return mtp;
-
-
-                        //break;
                     }
                 }
             }

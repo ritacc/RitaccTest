@@ -85,7 +85,6 @@ namespace MonitorSystem.ZTControls
         }
 
         private ObservableCollection<t_Device> _devices;
-
         public ObservableCollection<t_Device> Devices
         {
             get

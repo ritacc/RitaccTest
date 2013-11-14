@@ -39,11 +39,12 @@ namespace MonitorSystem
             
             //double h = image1.Height;
         }
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-           // MessageBox.Show("");
-            //drawLine1.SetChannelValue(0f, 25);
-        }
+        
+
+		private void slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+		{
+
+		}
     }
 
    

@@ -86,10 +86,10 @@ namespace MonitorSystem.ItMonitor
             if (string.IsNullOrEmpty(paser) || string.IsNullOrEmpty(devVal))
                 return false;
 
-            if (paser.Length <= 2)
+            if (paser.Length < 2)
                 return false;
 
-            bool isResult = false;
+            //bool isResult = false;
 
             string[] czf1 = {"=",">","<" };
             string[] czf2 = { ">=", "<=" };
