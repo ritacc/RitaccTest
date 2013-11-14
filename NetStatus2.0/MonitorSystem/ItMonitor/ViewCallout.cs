@@ -11,6 +11,8 @@ using MonitorSystem.ZTControls;
 using MonitorSystem.ItMonitor;
 using System.ComponentModel;
 using System.ServiceModel.DomainServices.Client;
+using System.Windows.Input;
+using System.Windows.Shapes;
 
 namespace MonitorSystem.ItMonitor
 {
@@ -22,24 +24,94 @@ namespace MonitorSystem.ItMonitor
 			Content = csScreen;
             csScreen.Background = new SolidColorBrush(Colors.White);
 			this.SizeChanged += new SizeChangedEventHandler(ViewCallout_SizeChanged);
+
+			this.MouseLeftButtonUp += new MouseButtonEventHandler(TP_MouseLeftButtonUp);
+			this.MouseLeftButtonDown += new MouseButtonEventHandler(ViewCallout_MouseLeftButtonDown);
 		}
 
+		DateTime dtStart = DateTime.Now;
+		void ViewCallout_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+		{
+			dtStart = DateTime.Now;
+		}
+		public void TP_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+		{
+			TimeSpan t = DateTime.Now - dtStart;
+			if (t.Seconds == 0 && t.Minutes < 2 && t.Milliseconds < 999)
+			{
+				t_Screen ts = GetChildScreenID();
+				if (ts != null)
+				{
+					LoadScreen.Load(ts);
+				}
+			}
+		}
 		void ViewCallout_SizeChanged(object sender, SizeChangedEventArgs e)
 		{
 			this.Width = e.NewSize.Width;
 			this.Height = e.NewSize.Height;
 
             RectangleGeometry r = new RectangleGeometry();
-            Rect rect = new Rect();
+			Rect rect = new Rect();
             rect.Width = this.Width;
             rect.Height = this.Height;
+			
             r.Rect = rect;
-            this.Clip = r;
+			this.Clip = r;
+
+			
 
             if (e.NewSize.Width > 10 && e.NewSize.Height > 10)
             {
                 ScreenInit();
+				//PathGeometry pg = new PathGeometry();
+				//pg.Figures = getpfc();
+				//this.Clip = pg;
             }
+		}
+
+		public PathFigureCollection getpfc()
+		{
+			PathFigureCollection pfc = new PathFigureCollection();
+			PathFigure pf = new PathFigure();
+			PathSegmentCollection psc = new PathSegmentCollection();
+			pfc.Add(pf);
+			pf.Segments = psc;
+
+			pf.StartPoint = new Point(0, 0);
+			psc.Clear();
+			//直线
+			ArcSegment arcs = new ArcSegment();
+			arcs.Point = new Point(this.Width * 0.75, 0);
+			psc.Add(arcs);
+
+
+			arcs = new ArcSegment();
+			arcs.Point = new Point(this.Width, this.Height / 2);
+			arcs.Size = new Size()
+			{
+				Height = this.Height / 2,
+				Width = this.Width * 0.25
+			};
+			arcs.SweepDirection = SweepDirection.Clockwise;
+			psc.Add(arcs);
+
+			//下面
+			arcs = new ArcSegment();
+			arcs.Point = new Point(this.Width * 0.75, this.Height);
+			arcs.Size = new Size()
+			{
+				Height = this.Height / 2,
+				Width = this.Width * 0.25
+			};
+			arcs.SweepDirection = SweepDirection.Clockwise;
+			psc.Add(arcs);
+			//中间最右边线
+			arcs = new ArcSegment();
+			arcs.Point = new Point(0, this.Height);
+			psc.Add(arcs);
+
+			return pfc;
 		}
 
 		#region 控件公共属性
@@ -68,8 +140,12 @@ namespace MonitorSystem.ItMonitor
         {
             if (tpp.IsOK)
             {
-                this.ScreenElement.ChildScreenID = string.Format("{0}#{1};", tpp.Screen.ScreenName,
-                    tpp.Screen.ScreenID);
+				var oldScr = GetChildScreenID();
+                this.ScreenElement.ChildScreenID = string.Format("{0}#{1};", tpp.Screen.ScreenName,tpp.Screen.ScreenID);
+				var newScr = GetChildScreenID();
+				if (oldScr != null && newScr != null && oldScr.ScreenID == newScr.ScreenID)
+					return;
+				ScreenInit();
             }
         }
         private t_Screen GetChildScreenID()
@@ -239,8 +315,8 @@ namespace MonitorSystem.ItMonitor
 			SetScreenImg(obj.ImageURL);
 
 
-            double sfPerw = this.Width / obj.Width.Value;
-            double sfPerh = this.Height / obj.Height.Value;
+			double sfPerw = this.Width / csScreen.Width;
+			double sfPerh = this.Height / csScreen.Height;
             if (sfPerh < sfPerw)
                 sfPerw = sfPerh;
             ScaleTransform mainShowCanvasScaleTrans = new ScaleTransform();
