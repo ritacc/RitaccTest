@@ -113,12 +113,20 @@ namespace MonitorSystem.ItMonitor
 			pfc.Add(pf);
 			pf.Segments = psc;
 
-			pf.StartPoint = new Point(0, 0);
-			psc.Clear();
+            psc.Clear();
+			pf.StartPoint = new Point(this.Width * 0.1, this.Height* 0.5);
+			
 			//直线
 			ArcSegment arcs = new ArcSegment();
-			arcs.Point = new Point(this.Width * 0.75, 0);
+			arcs.Point = new Point(0, this.Height * 0.4);
+            arcs.SweepDirection = SweepDirection.Clockwise;
+            arcs.Size = new Size() { Height = this.Height / 2, Width = this.Width * 0.25 };
 			psc.Add(arcs);
+
+            arcs = new ArcSegment();
+            arcs.Point = new Point(this.Width * 0.3, this.Height * 0.01);
+            arcs.SweepDirection = SweepDirection.Clockwise;
+            psc.Add(arcs);
 
 
 			arcs = new ArcSegment();
