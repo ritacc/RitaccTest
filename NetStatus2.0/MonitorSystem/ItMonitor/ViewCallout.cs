@@ -121,10 +121,46 @@ namespace MonitorSystem.ItMonitor
 		private double _NowSize = 1;
 		public override void SetChannelValue(float fValue)
 		{
+
+			//
+
+			//RectangleGeometry r = new RectangleGeometry();
+			//Rect rect = new Rect();
+			//rect.Width = this.Width;
+			//rect.Height = this.Height;
+
+			//r.Rect = rect;
+			//this.Clip = r;
+
+			PathFigureCollection pfc = new PathFigureCollection();
+			PathFigure pf = new PathFigure();
+			PathSegmentCollection psc = new PathSegmentCollection();
+			pfc.Add(pf);
+			pf.Segments = psc;
+
+            psc.Clear();
+			pf.StartPoint = new Point(this.Width * 0.1, this.Height* 0.5);
+			
+			//直线
+			ArcSegment arcs = new ArcSegment();
+			arcs.Point = new Point(0, this.Height * 0.4);
+            arcs.SweepDirection = SweepDirection.Clockwise;
+            arcs.Size = new Size() { Height = this.Height / 2, Width = this.Width * 0.25 };
+			psc.Add(arcs);
+
+            arcs = new ArcSegment();
+            arcs.Point = new Point(this.Width * 0.3, this.Height * 0.01);
+            arcs.SweepDirection = SweepDirection.Clockwise;
+            psc.Add(arcs);
+
+
+			arcs = new ArcSegment();
+			arcs.Point = new Point(this.Width, this.Height / 2);
+			arcs.Size = new Size();
+
 			if (fValue == 1)
 			{
-				_NowColor = this.BackColor;		
-				
+				_NowColor = this.BackColor;				
 			}
 			else
 			{

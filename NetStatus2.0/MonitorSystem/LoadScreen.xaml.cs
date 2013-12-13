@@ -1828,6 +1828,7 @@ namespace MonitorSystem
                 MessageBox.Show(string.Format("保存场景失败，错误信息：{0}", ex.Message));
                 tbWait.IsBusy = false;
             }
+            tbWait.IsBusy = false;
         }
 
         private static void RemoveOldProperties(t_Element meleObj, string elementType)
