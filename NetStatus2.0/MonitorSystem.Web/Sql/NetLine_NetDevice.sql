@@ -6,7 +6,7 @@ declare @AddControl varchar(50);--添加控件名称
 set @AddControl='NetLine'
 declare @ControlID int;
 select @ControlID=ControlID from t_control where controlName=@AddControl
-if @ControlID =1
+if @ControlID >1
 begin
 	delete t_control where ControlID=@ControlID
 	delete [t_ControlProperty] where ControlID=@ControlID
@@ -81,7 +81,7 @@ end
 --添加“NetDevice”
 set @AddControl='NetDevice'
 select @ControlID=ControlID from t_control where controlName=@AddControl
-if @ControlID =1
+if @ControlID >1
 begin
 	delete t_control where ControlID=@ControlID
 	delete [t_ControlProperty] where ControlID=@ControlID
@@ -150,7 +150,7 @@ end
 --添加“NetDevice”
 set @AddControl='ViewCallout'
 select @ControlID=ControlID from t_control where controlName=@AddControl
-if @ControlID =1
+if @ControlID >1
 begin
 	delete t_control where ControlID=@ControlID
 	delete [t_ControlProperty] where ControlID=@ControlID
@@ -169,8 +169,13 @@ begin
 		select @ControlID=max(controlid)  from t_control
 		if @ControlID > 0
 		begin
-			--INSERT INTO [t_ControlProperty]([ControlID],[PropertyNo],[PropertyName],[DefaultValue],[Caption])
-			--	VALUES(@ControlID, 1,'PortNumber','16','端口数量');
-			print 'no Property'
+			INSERT INTO [t_ControlProperty]([ControlID],[PropertyNo],[PropertyName],[DefaultValue],[Caption])
+				 VALUES(@ControlID, 1,'Radius','20','边框圆角半径');
+
+			INSERT INTO [t_ControlProperty]([ControlID],[PropertyNo],[PropertyName],[DefaultValue],[Caption])
+				 VALUES(@ControlID, 1,'BorderColor','#FFF2C4C4','边框颜色');
+
+			INSERT INTO [t_ControlProperty]([ControlID],[PropertyNo],[PropertyName],[DefaultValue],[Caption])
+				 VALUES(@ControlID, 1,'BorderSize','1','边框线粗细');
 		end
-end
+end 
