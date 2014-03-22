@@ -25,14 +25,27 @@ namespace MonitorSystem.ItMonitor
         Canvas _mainCan = new Canvas();
         Border _border = new Border();
 
+		Rectangle _ContentRect = new Rectangle();
         Rectangle _connect = new Rectangle() { Fill = new SolidColorBrush(Colors.Red), StrokeThickness = 0, Height = 5.0d, Width = 5.0d, 
             HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center };
+
+
 		public ViewCallout()
 		{
             _mainCan.Children.Add(csScreen);
 
             Content = _mainCan;
-            csScreen.Background = new SolidColorBrush(Colors.White);
+			if (LoadScreen._instance.ScaleValue < 2)
+			{
+				_mainCan.Background = new SolidColorBrush(Colors.Blue);
+				csScreen.Visibility = Visibility.Collapsed;
+			}
+			else
+			{
+				csScreen.Visibility = Visibility.Visible;
+				_mainCan.Background = new SolidColorBrush();
+			}
+
 			this.SizeChanged += new SizeChangedEventHandler(ViewCallout_SizeChanged);
 
 			this.MouseLeftButtonUp += new MouseButtonEventHandler(TP_MouseLeftButtonUp);
@@ -42,13 +55,34 @@ namespace MonitorSystem.ItMonitor
             _border.Child = _connect;
             _mainCan.Children.Add(_border);
 
+			//_ContentBorder
+			_ContentRect.StrokeThickness = 1.0;
+			_ContentRect.Stroke = new SolidColorBrush(Colors.Red);
+			_mainCan.Children.Add(_ContentRect);
+
 			timerRefrshValue.Interval = new TimeSpan(0, 0, 30);
 			timerRefrshValue.Tick += new EventHandler(timer_Tick);
 			timerRefrshValue.Start();
 
 			_DataContext = LoadScreen._DataContext;
 		}
+		
+		void ViewCallout_SizeChanged(object sender, SizeChangedEventArgs e)
+		{
+			this.Width = e.NewSize.Width;
+			this.Height = e.NewSize.Height;
+            _border.SetValue(Canvas.LeftProperty, (this.Width-5.0d) / 2);
+            _border.SetValue(Canvas.TopProperty, (this.Height-5.0d) / 2);
 
+			_ContentRect.Width = this.Width;
+			_ContentRect.Height = this.Height;
+
+            if (e.NewSize.Width > 10 && e.NewSize.Height > 10)
+            {
+                ScreenInit();
+				SetRect();
+            }
+		}
 		DateTime dtStart = DateTime.Now;
 		void ViewCallout_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 		{
@@ -66,21 +100,7 @@ namespace MonitorSystem.ItMonitor
 				}
 			}
 		}
-		void ViewCallout_SizeChanged(object sender, SizeChangedEventArgs e)
-		{
-			this.Width = e.NewSize.Width;
-			this.Height = e.NewSize.Height;
-            _border.SetValue(Canvas.LeftProperty, (this.Width-5.0d) / 2);
-            _border.SetValue(Canvas.TopProperty, (this.Height-5.0d) / 2);
-
-           
-
-            if (e.NewSize.Width > 10 && e.NewSize.Height > 10)
-            {
-                ScreenInit();
-				SetRect();
-            }
-		}
+		
         #region 关联处理
         /// <summary>
         /// 设备关联的线
@@ -96,9 +116,14 @@ namespace MonitorSystem.ItMonitor
             _border.Visibility = Visibility.Collapsed;
         }
         #endregion
-
-		public void SetRect()
+		#region 背景处理
+		public Color _NowColor = Colors.Blue;
+		private double _NowSize = 1;
+		public override void SetChannelValue(float fValue)
 		{
+
+			//
+
 			//RectangleGeometry r = new RectangleGeometry();
 			//Rect rect = new Rect();
 			//rect.Width = this.Width;
@@ -131,33 +156,59 @@ namespace MonitorSystem.ItMonitor
 
 			arcs = new ArcSegment();
 			arcs.Point = new Point(this.Width, this.Height / 2);
-			arcs.Size = new Size()
-			{
-				Height = this.Height / 2,
-				Width = this.Width * 0.25
-			};
-			arcs.SweepDirection = SweepDirection.Clockwise;
-			psc.Add(arcs);
+			arcs.Size = new Size();
 
-			//下面
-			arcs = new ArcSegment();
-			arcs.Point = new Point(this.Width * 0.75, this.Height);
-			arcs.Size = new Size()
+			if (fValue == 1)
 			{
-				Height = this.Height / 2,
-				Width = this.Width * 0.25
-			};
-			arcs.SweepDirection = SweepDirection.Clockwise;
-			psc.Add(arcs);
-			//中间最右边线
-			arcs = new ArcSegment();
-			arcs.Point = new Point(0, this.Height);
-			psc.Add(arcs);
+				_NowColor = this.BackColor;				
+			}
+			else
+			{
+				_NowColor = this.ForeColor;		 
+			}
+			SetBackInfo();
+		}
+		public void SetBackInfo()
+		{
+			if (_NowSize >= 2)
+			{
+				_mainCan.Background = new SolidColorBrush();
+				csScreen.Visibility = Visibility.Visible;
+			}
+			else
+			{
+				_mainCan.Background = new SolidColorBrush(_NowColor);
+				csScreen.Visibility = Visibility.Collapsed;
+			}
+		}
+		public void SetCallout(double m)
+		{
+			_NowSize = m;
+			if (!IsDesignMode)
+			{
+				SetBackInfo();
+			}
+		}
+		#endregion
 
-			//Path Rect
-			PathGeometry pg = new PathGeometry();
-			pg.Figures = pfc;
-			this.Clip = pg;
+		public void SetRect()
+		{
+			if (this.Width < 5 || this.Height < 5)
+			{
+				return;
+			}
+			RectangleGeometry r = new RectangleGeometry();
+			Rect rect = new Rect();
+			rect.Width = this.Width;
+			rect.Height = this.Height;
+			r.RadiusX = r.RadiusY = Radius;
+			r.Rect = rect;
+			this.Clip = r;
+
+			//--_ContentRect
+			_ContentRect.RadiusX = _ContentRect.RadiusY = Radius;
+			_ContentRect.Stroke = new SolidColorBrush(this.BorderColor);
+			_ContentRect.StrokeThickness = BorderSize;
 		}
 
 		#region 控件公共属性
@@ -165,13 +216,13 @@ namespace MonitorSystem.ItMonitor
 
 		public override event EventHandler Unselected;
 
-		private void OnUnselected(object sender, EventArgs e)
+		protected void OnUnselected(object sender, EventArgs e)
 		{
 			if (null != Unselected)
 			{
 				Unselected(this, RoutedEventArgs.Empty);
 			}
-            HideRect();
+			HideRect();
 		}
 
 		#region 属性设置
@@ -239,7 +290,6 @@ namespace MonitorSystem.ItMonitor
 				menu.Items.Add(menuItem);
 				AdornerLayer.SetValue(ContextMenuService.ContextMenuProperty, menu);
 			}
-			 
 		}
 		public override void UnDesignMode()
 		{
@@ -259,10 +309,9 @@ namespace MonitorSystem.ItMonitor
 				Selected(this, RoutedEventArgs.Empty);
 			}
             ShowRect();
-		}
-
-		private string[] m_BrowsableProperties = new string[] { "Left", "Top", "Width", "Height", "FontFamily", "FontSize","ForeColor","BackColor", "Transparent", 
-            "MyData","Title","SetXTitle","Range","SetYTitle","SetMinValue","SetMaxValue","DataZone","DottedLine","LineColor"};
+		} 
+		private string[] m_BrowsableProperties = new string[] { "Left", "Top", "Width", "Height", "FontFamily", "FontSize","ForeColor","BackColor", "Translate"
+           ,"Radius","BorderColor","BorderSize"};
 
 		public override string[] BrowsableProperties
 		{
@@ -274,12 +323,15 @@ namespace MonitorSystem.ItMonitor
 		{
 			this.SetValue(Canvas.LeftProperty, (double)ScreenElement.ScreenX);
 			this.SetValue(Canvas.TopProperty, (double)ScreenElement.ScreenY);
-			Transparent = ScreenElement.Transparent.Value;
-			_ForeColor = Common.StringToColor(ScreenElement.ForeColor);
-			_BackColor = Common.StringToColor(ScreenElement.BackColor);
 
+			_Translate = ScreenElement.Transparent.Value;
+			_NowColor = _ForeColor = Common.StringToColor(ScreenElement.ForeColor);
+			_BackColor = Common.StringToColor(ScreenElement.BackColor);
+			
             this.Width = (double)ScreenElement.Width;
             this.Height = (double)ScreenElement.Height;
+
+			SetBackInfo();
 		}
 
         public override void SetPropertyValue()
@@ -290,21 +342,71 @@ namespace MonitorSystem.ItMonitor
                 string value = pro.PropertyValue;
                 switch (name.ToLower())
                 {
-                    case "devicename":
+					case "radius":
+						Radius = Convert.ToInt32(value);
                         break;
+					case "bordercolor":
+						BorderColor = Common.StringToColor(value);
+						break;
+					case "bordersize":
+						BorderSize = Convert.ToInt32(value);
+						break;
                 }
             }
         }
 
 		#region 属性
-		private static readonly DependencyProperty TransparentProperty = DependencyProperty.Register("Transparent", typeof(int), typeof(MyLine), new PropertyMetadata(0));
+		private static readonly DependencyProperty BorderColorProperty = DependencyProperty.Register("BorderColor", typeof(Color), typeof(MyLine), new PropertyMetadata(Colors.Blue));
+		private Color _BorderColor = Colors.Blue;
+		[DefaultValue(""), Description("边框颜色"), Category("边框")]
+		public Color BorderColor
+		{
+			get { return _BorderColor; }
+			set
+			{
+				_BorderColor = value;
+				SetAttrByName("BorderColor", value);
+				SetRect();
+			}
+		}
+
+		private static readonly DependencyProperty BorderSizeProperty = DependencyProperty.Register("BorderSize", typeof(int), typeof(MyLine), new PropertyMetadata(0));
+		private int _BorderSize = 0;
+		[DefaultValue(0), Description("边框圆角半径"), Category("边框")]
+		public int BorderSize
+		{
+			get { return _BorderSize; }
+			set
+			{
+				_BorderSize = value;
+				SetAttrByName("BorderSize", value);
+				SetRect();
+			}
+		}
+
+		private static readonly DependencyProperty RadiusProperty = DependencyProperty.Register("Radius", typeof(int), typeof(MyLine), new PropertyMetadata(0));
+		private int _Radius = 0;
+		[DefaultValue(0), Description("边框圆角半径"), Category("边框")]
+		public int Radius
+		{
+			get { return _Radius; }
+			set
+			{
+				_Radius = value;
+				SetAttrByName("Radius", value);
+				SetRect();
+			}
+		}
+
+		private static readonly DependencyProperty TransparentProperty = DependencyProperty.Register("Translate", typeof(int), typeof(MyLine), new PropertyMetadata(0));
 		private int _Transparent = 0;
 		[DefaultValue(""), Description("透明"), Category("杂项")]
-		public int Transparent
+		public int _Translate
 		{
 			get { return _Transparent; }
 			set
 			{
+				this.Translate = value;
 				_Transparent = value;
 				if (ScreenElement != null)
 					ScreenElement.Transparent = value;
@@ -319,24 +421,26 @@ namespace MonitorSystem.ItMonitor
 			get { return _BackColor; }
 			set
 			{
-				_BackColor = value;
+				_NowColor = _BackColor = value;
 				 
 				if (ScreenElement != null)
 					ScreenElement.BackColor = value.ToString();
+				SetBackInfo();
 			}
 		}
 
 		private static readonly DependencyProperty ForeColorProperty = DependencyProperty.Register("ForeColor", typeof(int), typeof(MyLine), new PropertyMetadata(0));
 		private Color _ForeColor = Colors.Black;
-		[DefaultValue(""), Description("字体颜色"), Category("外观")]
+		[DefaultValue(""), Description("背景颜色"), Category("外观")]
 		public Color ForeColor
 		{
 			get { return _ForeColor; }
 			set
 			{
-				_ForeColor = value;
+				_NowColor = _ForeColor = value;
 				if (ScreenElement != null)
 					ScreenElement.ForeColor = value.ToString();
+				SetBackInfo();
 			}
 		}
 		#endregion

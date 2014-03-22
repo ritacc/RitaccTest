@@ -167,6 +167,7 @@ namespace MonitorSystem.ZTControls
             {
                 //cbChanncel.ItemsSource = v;
                 Channels = new ObservableCollection<t_Channel>(v);
+				
                 var vc = v.Where(a => a.ChannelNo == _ChanncelID);
                 if (vc.Count() > 0)
                 {

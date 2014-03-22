@@ -2255,7 +2255,7 @@ namespace MonitorSystem
 
 		#region 缩放处理
 		//private readonly double[] ScaleArray = new[] { 0.1d, 0.15d, 0.25d, 0.5d, 0.75d, 1.0d, 1.25d, 1.50d, 2.0d, 3.0d, 5.0d };
-		private double ScaleValue = 1.0d;
+		public double ScaleValue = 1.0d;
         //private int _sacleIndex = 5;
         DateTime WheelTime = DateTime.Now;
         private void GridScreen_MouseWheel(object sender, MouseWheelEventArgs e)
@@ -2292,6 +2292,7 @@ namespace MonitorSystem
 			}
 			ScaleValue = int.Parse((ScaleValue * 100).ToString().Split('.')[0]) / 100.0d;
 			ScaleCanvas(point);
+			sdSizeControl.Value = ScaleValue;
         }
 
 		private void sdSizeControl_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -2312,12 +2313,29 @@ namespace MonitorSystem
 			ScaleValue = ChangeValue;
 			ScaleTextBlock.Text = string.Format("{0}%", valPer);
 			CanvasScaleTransform.ScaleX = CanvasScaleTransform.ScaleY = ScaleValue;
-			//CanvasScaleTransform.CenterX = point.X - CanvasTranslateTransform.X;
-			//CanvasScaleTransform.CenterY = point.Y - CanvasTranslateTransform.Y;
-
+			
 			AddElementCanvas.RenderTransform = csScreen.RenderTransform;
 			AddLineCanvas.RenderTransform = csScreen.RenderTransform;
 			UpdateThumbnail();
+
+			SetCallout();
+		}
+
+		double olderSize = 0;
+
+		public void SetCallout()
+		{
+			var list = csScreen.Children.Where(a => a is ViewCallout);
+			if (list != null && list.Count() > 0)
+			{
+				if (olderSize == ScaleValue)
+					return;
+				olderSize = ScaleValue;
+				foreach (ViewCallout obj in list)
+				{
+					obj.SetCallout(ScaleValue);
+				}
+			}
 		}
 
         private void ScaleCanvas(Point point)
@@ -2330,6 +2348,8 @@ namespace MonitorSystem
             AddElementCanvas.RenderTransform = csScreen.RenderTransform;
             AddLineCanvas.RenderTransform = csScreen.RenderTransform;
             UpdateThumbnail();
+
+			SetCallout();
         }
 		
 		private void GridScreen_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
