@@ -44,24 +44,38 @@ namespace AnalysisJson
 			}
 			ListObj= ListObj.OrderBy(a => a.ID).ToList();
 			gvDataList.DataSource = ListObj;
+            StringBuilder sb = new StringBuilder();
+            try
+            {
+                foreach (Q item in ListObj)
+                {
+                    if (!string.IsNullOrEmpty(item.ImagePath))
+                    {
+                        if (cbLoadFile.Checked)
+                        {
+                            LoadFile(item.ImagePath);
+                        }
+                        item.ImagePath = HeadleImgPath(item.ImagePath);
+                    }
+                    sb.Append(string.Format("listTi.add(new TI({0},{1},\"{2}\",\"{3}\",\"{4}\",\"{5}\",\"{6}\",\"{7}\",\"{8}\"));"
+                        , item.ID-970
+                        , item.subjectType
+                        , item.IssueSubject
+                        , item.EIssueSubject
+                        , item.IssueType_ID
+                        , item.Answer
+                        , (string.IsNullOrEmpty(item.IssueResult) ? "" : item.IssueResult.Replace("&nbsp;", " ").Replace("\r\n", "").Replace("\n", ""))
+                        , item.EIssueResult
+                        , item.ImagePath));
 
-			try
-			{
-				if (cbLoadFile.Checked)
-				{
-					foreach (Q item in ListObj)
-					{
-						if (!string.IsNullOrEmpty(item.ImagePath))
-						{
-							LoadFile(item.ImagePath);
-						}
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message);
-			}
+                    sb.AppendLine();
+                }
+                rtb.Text = sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 		}
 
 		public void LoadFile(string ImagePath)
@@ -77,10 +91,7 @@ namespace AnalysisJson
 
 			byte[] buffer = new byte[1024*1000];
 			int numBytesRead = 1;
-
-			 
-
-			//string path=System.Environment.CurrentDirectory + "\\File\\" + url.Substring(url.LastIndexOf("/"), url.Length - url.LastIndexOf("/"));
+            
 			string path = GetFileInfo(ImagePath);
 			FileStream fs = new FileStream(path, FileMode.Create);
 			int n = 0;
@@ -106,7 +117,8 @@ namespace AnalysisJson
 
 		public string GetFileInfo(string imgPath)
 		{
-			string FilePath = System.Environment.CurrentDirectory +"\\File\\" + imgPath.Replace("/","\\");
+
+            string FilePath = System.Environment.CurrentDirectory + "\\File\\" + HeadleImgPath(imgPath);
 
 			FileInfo fInfo = new FileInfo(FilePath);
 			string path = fInfo.Directory.FullName;
@@ -116,5 +128,13 @@ namespace AnalysisJson
 			}
 			return FilePath;
 		}
+
+        public string HeadleImgPath(string imgPath)
+        {
+            imgPath = imgPath.Replace("/", "\\").Replace("\\", "_").Replace("图片", "img").Replace("图", "img").Replace("动画", "avi");
+            if (imgPath.StartsWith("_"))
+                imgPath = imgPath.Substring(1);
+            return imgPath.ToLower();
+        }
 	}
 }
