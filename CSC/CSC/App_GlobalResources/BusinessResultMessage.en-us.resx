@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="INF_CANCELSELECT_FAILED" xml:space="preserve">
+    <value>Cancel Select Failed.</value>
+  </data>
+  <data name="INF_CANCELSELECT_SUCCEED" xml:space="preserve">
+    <value>Cancel Select Succeed.</value>
+  </data>
+  <data name="INF_CANCEL_FAILED" xml:space="preserve">
+    <value>Cancel Failed.</value>
+  </data>
+  <data name="INF_CANCEL_IDOD_ORDER_FAILED" xml:space="preserve">
+    <value>Cancel ID/OD Order Failed.</value>
+  </data>
+  <data name="INF_CANCEL_IDOD_ORDER_SUCCEED" xml:space="preserve">
+    <value>Cancel ID/OD Order Succeed.</value>
+  </data>
+  <data name="INF_CANCEL_JOB_FAILED" xml:space="preserve">
+    <value>Cancel Job Failed.</value>
+  </data>
+  <data name="INF_CANCEL_JOB_SUCCEED" xml:space="preserve">
+    <value>Cancel Job Succeed.</value>
+  </data>
+  <data name="INF_CANCEL_SUCCEED" xml:space="preserve">
+    <value>Cancel Succeed.</value>
+  </data>
+  <data name="INF_CONFIRM_FAILED" xml:space="preserve">
+    <value>Confirm Failed.</value>
+  </data>
+  <data name="INF_CONFIRM_SUCCEED" xml:space="preserve">
+    <value>Confirm Succeed.</value>
+  </data>
+  <data name="INF_COPY_FAILED" xml:space="preserve">
+    <value>Copy Failed.</value>
+  </data>
+  <data name="INF_COPY_SUCCEED" xml:space="preserve">
+    <value>Copy Succeed</value>
+  </data>
+  <data name="INF_DELETE_FAILED" xml:space="preserve">
+    <value>Delete failed.</value>
+  </data>
+  <data name="INF_DELETE_SUCCEED" xml:space="preserve">
+    <value>Delete Succeed.</value>
+  </data>
+  <data name="INF_OPERATE_FAILED" xml:space="preserve">
+    <value>Operate failed.</value>
+  </data>
+  <data name="INF_OPERATE_SUCCEED" xml:space="preserve">
+    <value>Operate succeed.</value>
+  </data>
+  <data name="INF_SAVE_FAILED" xml:space="preserve">
+    <value>Save failed.</value>
+  </data>
+  <data name="INF_SAVE_SUCCEED" xml:space="preserve">
+    <value>Save succeed.</value>
+  </data>
+  <data name="INF_SELECT_FAILED" xml:space="preserve">
+    <value>Select Failed.</value>
+  </data>
+  <data name="INF_SELECT_SUCCEED" xml:space="preserve">
+    <value>Select Succeed.</value>
+  </data>
+  <data name="INF_SET_FAILED" xml:space="preserve">
+    <value>Setting Failed.</value>
+  </data>
+  <data name="INF_SET_SUCCEED" xml:space="preserve">
+    <value>Setting Succeed.</value>
+  </data>
+  <data name="MSG_1001" xml:space="preserve">
+    <value>Record contains duplicate data.</value>
+  </data>
+  <data name="MSG_1002" xml:space="preserve">
+    <value>Record does not exist.</value>
+  </data>
+  <data name="MSG_1003" xml:space="preserve">
+    <value>Record is already modified by other user.</value>
+  </data>
+  <data name="MSG_1004" xml:space="preserve">
+    <value>The record has been used other records, and can not be deleted.</value>
+  </data>
+  <data name="MSG_1005" xml:space="preserve">
+    <value>The record has been used other records, and can not be operated.</value>
+  </data>
+  <data name="MSG_1006" xml:space="preserve">
+    <value>Parts contains substitution parts can not change Master Parts value.</value>
+  </data>
+  <data name="MSG_1007" xml:space="preserve">
+    <value>Parts has been referenced by substitution parts can not change Master Parts value.</value>
+  </data>
+  <data name="MSG_1008" xml:space="preserve">
+    <value>Code has been duplicated,please change it.</value>
+  </data>
+  <data name="MSG_1009" xml:space="preserve">
+    <value>The rate of date time has error,please check it.</value>
+  </data>
+  <data name="MSG_1010" xml:space="preserve">
+    <value>Product Group No. has been used by other Products already!</value>
+  </data>
+  <data name="MSG_1011" xml:space="preserve">
+    <value>Job No. is not exists</value>
+  </data>
+  <data name="MSG_1012" xml:space="preserve">
+    <value>Already exists Normal state Job Adjustment</value>
+  </data>
+  <data name="MSG_1013" xml:space="preserve">
+    <value>The Job Adjustment data has been confirmed,Can not delete it.</value>
+  </data>
+  <data name="MSG_1014" xml:space="preserve">
+    <value>The Job Adjustment data has been confirmed,Can not confrim it again.</value>
+  </data>
+  <data name="MSG_1015" xml:space="preserve">
+    <value>The Job Order has not complete,can not create Job Adjustment.</value>
+  </data>
+  <data name="MSG_1016" xml:space="preserve">
+    <value>The Normal state of Job Order already exists, you can't create a new Job Order.</value>
+  </data>
+  <data name="MSG_1017" xml:space="preserve">
+    <value>Already exists valid ID/OD Order</value>
+  </data>
+  <data name="MSG_1018" xml:space="preserve">
+    <value>The ID/OD Order has been cancelled,Can not canel it again.</value>
+  </data>
+  <data name="MSG_1019" xml:space="preserve">
+    <value>Customer product is not exists.</value>
+  </data>
+  <data name="MSG_1020" xml:space="preserve">
+    <value>Qty greater Technician Available Qty, pls. check the qty is entered correctly.</value>
+  </data>
+</root>

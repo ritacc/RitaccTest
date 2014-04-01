@@ -1,0 +1,39 @@
+﻿/**********************************************************************/
+-- Description:		Job Parameters
+---Remarks:			Specific Parameters used : NAME = 'PRINTER', 'PRINT ORIENTATION'
+---------------------------------------------------------------------
+-- Action		Date			Staff		Version		Remarks
+-- Create	 	2013-05-14		Zhangbo		1.00.00
+-- Modify	 	2013-05-22		Zhangbo		1.01.00
+/**********************************************************************/
+CREATE TABLE SY_JOB_PARAM
+(
+	JOB_PARAM_ID			bigint			NOT NULL	IDENTITY(1,1)
+	,JOB_ID					bigint			NOT NULL
+	,SEQ_NBR				bigint			NOT NULL
+	,PARAM_NAME				nvarchar (30)	NOT NULL
+	,PARAM_DISP_NAME		nvarchar(50)	NOT NULL
+	,PARAM_DATA_TYPE		nvarchar(4)		NOT NULL	-- 'DATE', 'CHAR', 'NUM'
+	,PARAM_DFLT_VALUE		nvarchar (50)	NOT NULL
+	,MULTI_VALUE_IND		nvarchar(1)		NOT NULL	-- N, Y
+	,PARAM_LOV				nvarchar(2000)	NOT NULL	DEFAULT(N'')
+	,MANDATORY_IND			nvarchar(1)		NOT NULL	-- Y/N(ADD 2013-05-22)
+	,PARAM_DFLT_VALUE_SQL	nvarchar(2000)	NULL		-- (ADD 2013-05-22)
+	,DISPLAY_ONLY_IND		nvarchar(1)		NOT NULL	-- Y/N(ADD 2013-05-22)
+	,UPPERCASE_IND			nvarchar(1)		NOT NULL	-- Y/N(ADD 2013-05-22)
+	,VALIDATE_LOV_IND		nvarchar(1)		NOT NULL	-- Y/N(ADD 2013-05-22)
+	,SYS_CODE				nvarchar (4)	NOT NULL
+	,CREATED_BY				bigint			NOT NULL
+	,CREATION_DATE			datetime		NOT NULL
+	,LAST_UPDATED_BY		bigint			NOT NULL
+	,LAST_UPDATE_DATE		datetime		NOT NULL
+	,CONSTRAINT PK_SY_JOB_PARAM PRIMARY KEY(JOB_PARAM_ID) ON [PRIMARY]
+	,CONSTRAINT FK_SY_JOB_PARAM_JOB FOREIGN KEY(JOB_ID) REFERENCES SY_JOB(JOB_ID)
+	,CONSTRAINT CHK_SY_JOB_PARAM CHECK (MULTI_VALUE_IND=N'N' OR MULTI_VALUE_IND=N'Y')
+	,CONSTRAINT CHK_JOB_PARAM_MANDATORY CHECK (MANDATORY_IND=N'N' OR MANDATORY_IND=N'Y')			-- (ADD 2013-05-22)
+	,CONSTRAINT CHK_JOB_PARAM_DISPLAY_ONLY CHECK (DISPLAY_ONLY_IND=N'N' OR DISPLAY_ONLY_IND=N'Y')	-- (ADD 2013-05-22)
+	,CONSTRAINT CHK_JOB_PARAM_UPPERCASE CHECK (UPPERCASE_IND=N'N' OR UPPERCASE_IND=N'Y')			-- (ADD 2013-05-22)
+	,CONSTRAINT CHK_JOB_PARAM_VALIDATE_LOV CHECK (VALIDATE_LOV_IND=N'N' OR VALIDATE_LOV_IND=N'Y')	-- (ADD 2013-05-22)
+	,CONSTRAINT UK_SY_JOB_PARAM_SEQ_NBR UNIQUE(JOB_ID,SEQ_NBR)
+) ON [PRIMARY]
+GO

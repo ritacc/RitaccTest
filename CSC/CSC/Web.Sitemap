@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-3.0" enableLocalization="true">
+	<mvcSiteMapNode title="">
+		<!--System 大结点-->
+		<mvcSiteMapNode title="$resources:SiteMapLocalizations,SystemTitle" url="/" clickable="false">
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,ShopTitle" controller="Shop" action="Index"/>
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,LoginTitle" controller="Account" action="Login" changeFrequency="Always" updatePriority="Normal"></mvcSiteMapNode>
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,LoginTitle" controller="Account" action="LogInToShop" changeFrequency="Always" updatePriority="Normal"></mvcSiteMapNode>
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,ChangePasswordTitle" controller="Account" action="PasswordChange"/>
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,ChangePasswordTitle" controller="Account" action="ModifyLoginPwd"/>
+			<!--<mvcSiteMapNode title="$resources:SiteMapLocalizations,Material" controller="Material" action="IndexDefault"/>-->
+			<!--功能-->
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,FunctionTitle" controller="Function" action="Index"/>
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,FunctionTitle" controller="Function" action="IndexDefault"/>
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,RoleTitle" controller="Role" action="Index"/>
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,UserTitle" controller="User" action="Index"/>
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,DayEndReportTitle" area="Report" controller="DayEndReport" action="Index"/>
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,DayEndReportTitle" area="Report" controller="DayEndReport" action="DayEndSubmit"/>
+		</mvcSiteMapNode>
+ 
+		<!--Assignment 大结点-->
+		<mvcSiteMapNode title="$resources:SiteMapLocalizations,AssignmentTitle" url="/" clickable="false">
+		</mvcSiteMapNode>
+    
+		<!--Agreement 大结点-->
+		<mvcSiteMapNode title="$resources:SiteMapLocalizations,AgreementTitle" url="/" clickable="false">
+			<!--ProductRenewalLetterPrintingTitle-->
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,ProductRenewalLetterPrintingTitle" controller="ProductRenewalLetterPrinting" action="Index"/>
+			<!--RejoinRenewalProductPrintingTitle-->
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,RejoinRenewalProductPrintingTitle" controller="RejoinRenewalProductPrinting" action="Index"/>
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,DiscontinueLetterPrintingTitle" area="Report" controller="DiscontinueLetterPrinting" action="Index"/>
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,MaintenancePolicyPrintoutTitle" area="Report" controller="MaintenancePolicyPrinting" action="Index"/>
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,RefundMaintAgreementTitle" controller="RefundMaintAgreement" action="Index"/>
+		</mvcSiteMapNode> 
+
+		<!--Invoice 大结点-->
+		<mvcSiteMapNode title="$resources:SiteMapLocalizations,InvoiceTitle" url="/" clickable="false">
+			<!--Supplier Invoice-->
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,SupplierInvoiceTitle" controller="ApInvoice" action="Index"/>
+			<!--ApCharge-->
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,ApChargeTitle" controller="ApInvoice" action="ApChargeList"/>
+		</mvcSiteMapNode>
+		
+	 
+
+		<!--Sales Memo 大结点-->
+		<mvcSiteMapNode title="$resources:SiteMapLocalizations,SalesMemoTitle" url="/" clickable="false">
+			
+			<!--Sales Memo-->
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,SalesMemoTitle" controller="SalesMemo" action="Index"/>
+			<mvcSiteMapNode title="$resources:SiteMapLocalizations,SalesReturnTitle" controller="SalesReturn" action="Index"/>
+		</mvcSiteMapNode>
+
+		 
+	</mvcSiteMapNode>
+</mvcSiteMap>

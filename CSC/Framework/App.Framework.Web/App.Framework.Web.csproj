@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E25BDEB4-AE6B-4E6E-9F00-C9EED8F251B1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App.Framework.Web</RootNamespace>
+    <AssemblyName>App.Framework.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\App.Framework.Web.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attribute\AttachAttribute.cs" />
+    <Compile Include="Attribute\ListSlectRangeAttribute.cs" />
+    <Compile Include="Attribute\MultiButtonAttribute.cs" />
+    <Compile Include="Extension\BusinessListExtension.cs" />
+    <Compile Include="Extension\DateTimeExtension.cs" />
+    <Compile Include="Extension\DictionaryExtension.cs" />
+    <Compile Include="Extension\GuidExtension.cs" />
+    <Compile Include="Extension\HtmlHelperExtensionForControl.cs" />
+    <Compile Include="Extension\HtmlHelperExtension`1.cs" />
+    <Compile Include="Extension\IntExtension.cs" />
+    <Compile Include="Extension\NullableExtension.cs" />
+    <Compile Include="Extension\ObjectExtension.cs" />
+    <Compile Include="Extension\SelectListExtension.cs" />
+    <Compile Include="Filters\ExecutionTimingFilterAttribute.cs" />
+    <Compile Include="Helper\CharacterHelper.cs" />
+    <Compile Include="Filters\AuthorizationFilter.cs" />
+    <Compile Include="Helper\ConfigHelper.cs" />
+    <Compile Include="Filters\ExceptionFilter.cs" />
+    <Compile Include="Extension\HtmlHelperExtension.cs" />
+    <Compile Include="Extension\ListExtension.cs" />
+    <Compile Include="Helper\ServiceInvokeHelper.cs" />
+    <Compile Include="Helper\StringHelper.cs" />
+    <Compile Include="Json\JSONExtension.cs" />
+    <Compile Include="Json\JsonEntity.cs" />
+    <Compile Include="Helper\JsonHelper.cs" />
+    <Compile Include="Localization\EnumLanguage.cs" />
+    <Compile Include="Localization\LocalizationManger.cs" />
+    <Compile Include="Logger\IConverEntity.cs" />
+    <Compile Include="Logger\DefaultLogger.cs" />
+    <Compile Include="Logger\ILogger.cs" />
+    <Compile Include="Logger\LogEntity.cs" />
+    <Compile Include="Filters\LoggerFilter.cs" />
+    <Compile Include="Menu\IGenerateMenu.cs" />
+    <Compile Include="Menu\Menu.cs" />
+    <Compile Include="Menu\MenuGenerate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Menu\MenuHelper.cs" />
+    <Compile Include="Menu\MenuReader.cs" />
+    <Compile Include="Menu\Module.cs" />
+    <Compile Include="Menu\Permissions.cs" />
+    <Compile Include="Helper\MessageHelper.cs" />
+    <Compile Include="Pager\PagerHelper.cs" />
+    <Compile Include="Pager\IGeneratePagerHtmlAble.cs" />
+    <Compile Include="Pager\IPageAble.cs" />
+    <Compile Include="Pager\NormalPageProc.cs" />
+    <Compile Include="Pager\NormalPagerHtmlGenerate.cs" />
+    <Compile Include="Pager\PageButton.cs" />
+    <Compile Include="Pager\PageButtonType.cs" />
+    <Compile Include="Pager\PagerBuilder.cs" />
+    <Compile Include="Pager\PagerSettings.cs" />
+    <Compile Include="Pager\Util.cs" />
+    <Compile Include="Permissions\AuthorizationException.cs" />
+    <Compile Include="Permissions\IProvidePermissions.cs" />
+    <Compile Include="Permissions\PermissionsProviderFactory.cs" />
+    <Compile Include="Permissions\UserIdentityAuthorization.cs" />
+    <Compile Include="Permissions\IGetPermissions.cs" />
+    <Compile Include="Permissions\UserIdentityCollection.cs" />
+    <Compile Include="Permissions\IAuthenticate.cs" />
+    <Compile Include="Permissions\PermissionsPoint.cs" />
+    <Compile Include="Permissions\UserIdentity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Sitemap\AclModuleNotSupportedException.cs" />
+    <Compile Include="Sitemap\AmbiguousControllerException.cs" />
+    <Compile Include="Sitemap\AuthorizeAttributeAclModule.cs" />
+    <Compile Include="Sitemap\ChangeFrequency.cs" />
+    <Compile Include="Sitemap\ControllerExtensions.cs" />
+    <Compile Include="Sitemap\DefaultAclModule.cs" />
+    <Compile Include="Sitemap\DefaultActionMethodParameterResolver.cs" />
+    <Compile Include="Sitemap\DefaultControllerTypeResolver.cs" />
+    <Compile Include="Sitemap\DefaultNodeKeyGenerator.cs" />
+    <Compile Include="Sitemap\DefaultSiteMapNodeUrlResolver.cs" />
+    <Compile Include="Sitemap\DefaultSiteMapNodeVisibilityProvider.cs" />
+    <Compile Include="Sitemap\DefaultSiteMapProvider.cs" />
+    <Compile Include="Sitemap\DefaultSiteMapProviderEventHandler.cs" />
+    <Compile Include="Sitemap\Extensibility\CacheDescription.cs" />
+    <Compile Include="Sitemap\Extensibility\DynamicNode.cs" />
+    <Compile Include="Sitemap\Extensibility\DynamicNodeProviderBase.cs" />
+    <Compile Include="Sitemap\Extensibility\IAclModule.cs" />
+    <Compile Include="Sitemap\Extensibility\IActionMethodParameterResolver.cs" />
+    <Compile Include="Sitemap\Extensibility\IControllerTypeResolver.cs" />
+    <Compile Include="Sitemap\Extensibility\IDynamicNodeProvider.cs" />
+    <Compile Include="Sitemap\Extensibility\INodeKeyGenerator.cs" />
+    <Compile Include="Sitemap\Extensibility\ISiteMapNodeUrlResolver.cs" />
+    <Compile Include="Sitemap\Extensibility\ISiteMapNodeVisibilityProvider.cs" />
+    <Compile Include="Sitemap\Extensibility\ISiteMapProviderEventHandler.cs" />
+    <Compile Include="Sitemap\External\AuthorizeAttributeBuilder.cs" />
+    <Compile Include="Sitemap\External\Dynamic.cs" />
+    <Compile Include="Sitemap\External\HttpContext2.cs" />
+    <Compile Include="Sitemap\External\HttpRequest2.cs" />
+    <Compile Include="Sitemap\External\IAuthorizeAttribute.cs" />
+    <Compile Include="Sitemap\External\InternalAuthorize.cs" />
+    <Compile Include="Sitemap\External\ObjectCopier.cs" />
+    <Compile Include="Sitemap\External\ThreadSafeDictionary.cs" />
+    <Compile Include="Sitemap\External\UrlUtilities.cs" />
+    <Compile Include="Sitemap\FilteredSiteMapNodeVisibilityProvider.cs" />
+    <Compile Include="Sitemap\Filters\AttributeTarget.cs" />
+    <Compile Include="Sitemap\Filters\SiteMapPreserveRouteDataAttribute.cs" />
+    <Compile Include="Sitemap\Filters\SiteMapTitleAttribute.cs" />
+    <Compile Include="Sitemap\Filters\SiteMapTitleTarget.cs" />
+    <Compile Include="Sitemap\IMvcSiteMapNodeAttribute.cs" />
+    <Compile Include="Sitemap\IMvcSiteMapNodeAttributeDefinition.cs" />
+    <Compile Include="Sitemap\Internal\MvcSiteMapProviderViewEngine.cs" />
+    <Compile Include="Sitemap\Internal\MvcSiteMapProviderViewEngineVirtualFile.cs" />
+    <Compile Include="Sitemap\Internal\MvcSiteMapProviderViewEngineVirtualPathProvider.cs" />
+    <Compile Include="Sitemap\MvcSiteMapException.cs" />
+    <Compile Include="Sitemap\MvcSiteMapNode.cs" />
+    <Compile Include="Sitemap\MvcSiteMapNodeAttribute.cs" />
+    <Compile Include="Sitemap\MvcSiteMapNodeAttributeDefinitionForAction.cs" />
+    <Compile Include="Sitemap\MvcSiteMapNodeAttributeDefinitionForController.cs" />
+    <Compile Include="Sitemap\Resources\Messages.Designer.cs" />
+    <Compile Include="Sitemap\SiteMapNodeExtensions.cs" />
+    <Compile Include="Sitemap\SiteMapProviderEventContext.cs" />
+    <Compile Include="Sitemap\UnknownSiteMapProviderException.cs" />
+    <Compile Include="Sitemap\UpdatePriority.cs" />
+    <Compile Include="Sitemap\UrlResolverException.cs" />
+    <Compile Include="Sitemap\Web\Html\HtmlHelperExtensions.cs" />
+    <Compile Include="Sitemap\Web\Html\MenuHelper.cs" />
+    <Compile Include="Sitemap\Web\Html\Models\MenuHelperModel.cs" />
+    <Compile Include="Sitemap\Web\Html\Models\SiteMapHelperModel.cs" />
+    <Compile Include="Sitemap\Web\Html\Models\SiteMapNodeModel.cs" />
+    <Compile Include="Sitemap\Web\Html\Models\SiteMapNodeModelList.cs" />
+    <Compile Include="Sitemap\Web\Html\Models\SiteMapPathHelperModel.cs" />
+    <Compile Include="Sitemap\Web\Html\Models\SiteMapTitleHelperModel.cs" />
+    <Compile Include="Sitemap\Web\Html\MvcSiteMapHtmlHelper.cs" />
+    <Compile Include="Sitemap\Web\Html\SiteMapHelper.cs" />
+    <Compile Include="Sitemap\Web\Html\SiteMapNodeModelMapper.cs" />
+    <Compile Include="Sitemap\Web\Html\SiteMapPathHelper.cs" />
+    <Compile Include="Sitemap\Web\Html\SiteMapTitleHelper.cs" />
+    <Compile Include="Sitemap\Web\ViewDataContainer.cs" />
+    <Compile Include="Sitemap\Web\XmlSiteMapController.cs" />
+    <Compile Include="Sitemap\Web\XmlSiteMapResult.cs" />
+    <Compile Include="Sitemap\XElementExtensions.cs" />
+    <Compile Include="Sitemap\XmlRolesAclModule.cs" />
+    <Compile Include="Tree\TreeGenerate.cs" />
+    <Compile Include="Tree\TreeNode.cs" />
+    <Compile Include="Upload\EnumPictureSizeType.cs" />
+    <Compile Include="Upload\ExtensionHelper.cs" />
+    <Compile Include="Upload\ShowFileModule.cs" />
+    <Compile Include="Upload\ThumbnailHelper.cs" />
+    <Compile Include="Upload\ThumbnailIdentify.cs" />
+    <Compile Include="Upload\UpLoadFile.cs" />
+    <Compile Include="User\IGetUserIdentity.cs" />
+    <Compile Include="User\UserIdentityFactory.cs" />
+    <Compile Include="User\UserIdentityFormCookies.cs" />
+    <Compile Include="Extension\StringExtension.cs" />
+    <Compile Include="User\UserOpretionExcepiton.cs" />
+    <Compile Include="Utilities\EnumAttribute.cs" />
+    <Compile Include="Utilities\EnumExtensions.cs" />
+    <Compile Include="Utilities\ValidateCode.cs" />
+    <Compile Include="Helper\WebHelper.cs" />
+    <Compile Include="Validate\ClientValidate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.Framework\App.Framework.csproj">
+      <Project>{FFEDC854-962E-4BED-BAB9-DF9B62334BC9}</Project>
+      <Name>App.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sitemap\Resources\Messages.resx" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Sitemap\MvcSiteMapProvider.csproj" />
+    <EmbeddedResource Include="Sitemap\Web\Html\DisplayTemplates\MenuHelperModel.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sitemap\Web\Html\DisplayTemplates\SiteMapHelperModel.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sitemap\Web\Html\DisplayTemplates\SiteMapNodeModel.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sitemap\Web\Html\DisplayTemplates\SiteMapNodeModelList.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sitemap\Web\Html\DisplayTemplates\SiteMapPathHelperModel.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sitemap\Web\Html\DisplayTemplates\SiteMapTitleHelperModel.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sitemap\MvcSiteMapProvider.snk" />
+    <None Include="Sitemap\MvcSiteMapSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

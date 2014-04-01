@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CSCP01010" xml:space="preserve">
+    <value>Reason Code - CSCP01010</value>
+  </data>
+  <data name="CSCP01020" xml:space="preserve">
+    <value>Product Class - CSCP01020</value>
+  </data>
+  <data name="CSCP01030" xml:space="preserve">
+    <value>Currency - CSCP01030</value>
+  </data>
+  <data name="CSCP01040" xml:space="preserve">
+    <value>Exchange Rate - CSCP01040</value>
+  </data>
+  <data name="CSCP01050" xml:space="preserve">
+    <value>Supplier - CSCP01050</value>
+  </data>
+  <data name="CSCP01060" xml:space="preserve">
+    <value>Customer - CSCP01060</value>
+  </data>
+  <data name="CSCP01070" xml:space="preserve">
+    <value>Parts Class - CSCP01070</value>
+  </data>
+  <data name="CSCP01080" xml:space="preserve">
+    <value>Reorder Factor - CSCP01080</value>
+  </data>
+  <data name="CSCP01090" xml:space="preserve">
+    <value>Category Code - CSCP01090</value>
+  </data>
+  <data name="CSCP02010" xml:space="preserve">
+    <value>Parts - CSCP02010</value>
+  </data>
+  <data name="CSCP02020" xml:space="preserve">
+    <value>Bin Location - CSCP02020</value>
+  </data>
+  <data name="CSCP02030" xml:space="preserve">
+    <value>Godown - CSCP02030</value>
+  </data>
+  <data name="CSCP02040" xml:space="preserve">
+    <value>Parts Factory Price - CSCP02040</value>
+  </data>
+  <data name="CSCP02050" xml:space="preserve">
+    <value>Parts Selling Price - CSCP02050</value>
+  </data>
+  <data name="CSCP02060" xml:space="preserve">
+    <value>Purchase Order - CSCP02060</value>
+  </data>
+  <data name="CSCP02070" xml:space="preserve">
+    <value>Approve PO - CSCP02070</value>
+  </data>
+  <data name="CSCP02080" xml:space="preserve">
+    <value>PO Approval Rule - CSCP02080</value>
+  </data>
+  <data name="CSCP02090" xml:space="preserve">
+    <value>Stock Arrival - CSCP02090</value>
+  </data>
+  <data name="CSCP03010" xml:space="preserve">
+    <value>Stock Transfer - CSCP03010</value>
+  </data>
+  <data name="CSCP03020" xml:space="preserve">
+    <value>Requisition Note - CSCP03020</value>
+  </data>
+  <data name="CSCPR07070" xml:space="preserve">
+    <value>Job Queue - CSCPR07070</value>
+  </data>
+  <data name="CSCS01010" xml:space="preserve">
+    <value>Shop Management - CSCS01010</value>
+  </data>
+  <data name="CSCS01020" xml:space="preserve">
+    <value>User Management - CSCS01020</value>
+  </data>
+  <data name="CSCS01030" xml:space="preserve">
+    <value>Role Management - CSCS01030</value>
+  </data>
+  <data name="CSCS01040" xml:space="preserve">
+    <value>Change Password - CSCS01040</value>
+  </data>
+  <data name="CSCS01050" xml:space="preserve">
+    <value>Function Management - CSCS01050</value>
+  </data>
+  <data name="CSCS02010" xml:space="preserve">
+    <value>Brand - CSCS02010</value>
+  </data>
+  <data name="CSCS02020" xml:space="preserve">
+    <value>Service Group - CSCS02020</value>
+  </data>
+  <data name="CSCS02030" xml:space="preserve">
+    <value>Result Code - CSCS02030</value>
+  </data>
+  <data name="CSCS02040" xml:space="preserve">
+    <value>Repair Code - CSCS02040</value>
+  </data>
+  <data name="CSCS02050" xml:space="preserve">
+    <value>Charge Code - CSCS02050</value>
+  </data>
+  <data name="CSCS02060" xml:space="preserve">
+    <value>Master Code - CSCS02060</value>
+  </data>
+  <data name="CSCS02070" xml:space="preserve">
+    <value>Address - CSCS02070</value>
+  </data>
+  <data name="CSCS02080" xml:space="preserve">
+    <value>Model Class - CSCS02080</value>
+  </data>
+  <data name="CSCS02090" xml:space="preserve">
+    <value>Material - CSCS02090</value>
+  </data>
+  <data name="CSCS03010" xml:space="preserve">
+    <value>Model Type - CSCS03010</value>
+  </data>
+  <data name="CSCS03020" xml:space="preserve">
+    <value>Model Code - CSCS03020</value>
+  </data>
+  <data name="CSCS03030" xml:space="preserve">
+    <value>Symptom - CSCS03030</value>
+  </data>
+  <data name="CSCS03040" xml:space="preserve">
+    <value>Policy - CSCS03040</value>
+  </data>
+  <data name="CSCS03050" xml:space="preserve">
+    <value>Product Information - CSCS03050</value>
+  </data>
+  <data name="CSCS03060" xml:space="preserve">
+    <value>Technician - CSCS03060</value>
+  </data>
+  <data name="CSCS03070" xml:space="preserve">
+    <value>Contractor - CSCS03070</value>
+  </data>
+  <data name="CSCS03080" xml:space="preserve">
+    <value>Job Assign Rule - CSCS03080</value>
+  </data>
+  <data name="CSCS03090" xml:space="preserve">
+    <value>Job Labor Fee - CSCS03090</value>
+  </data>
+  <data name="CSCS04010" xml:space="preserve">
+    <value>Product Renewal Letter Printing - CSCS04010</value>
+  </data>
+  <data name="CSCS04020" xml:space="preserve">
+    <value>Rejoin Renewal Product Printing - CSCS04020</value>
+  </data>
+  <data name="CSCS04030" xml:space="preserve">
+    <value>Take Order - CSCS04030</value>
+  </data>
+  <data name="MNU_Agreement" xml:space="preserve">
+    <value>Agreement</value>
+  </data>
+  <data name="MNU_CS" xml:space="preserve">
+    <value>CS</value>
+  </data>
+  <data name="MNU_Finance" xml:space="preserve">
+    <value>Finance</value>
+  </data>
+  <data name="MNU_Job" xml:space="preserve">
+    <value>Job</value>
+  </data>
+  <data name="MNU_Model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="MNU_Parts" xml:space="preserve">
+    <value>Parts</value>
+  </data>
+  <data name="MNU_Parts_Setup" xml:space="preserve">
+    <value>Parts Setup</value>
+  </data>
+  <data name="MNU_PO" xml:space="preserve">
+    <value>PO</value>
+  </data>
+  <data name="MNU_Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="MNU_Purchase_Order" xml:space="preserve">
+    <value>Purchase Order</value>
+  </data>
+  <data name="MNU_Report" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="MNU_Requisition" xml:space="preserve">
+    <value>Requisition</value>
+  </data>
+  <data name="MNU_Setup" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="MNU_Stock" xml:space="preserve">
+    <value>Stock</value>
+  </data>
+  <data name="MNU_System" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="TestReport" xml:space="preserve">
+    <value>Test Report</value>
+  </data>
+  <data name="CSCS04040" xml:space="preserve">
+    <value>Assign Job - CSCS04040</value>
+  </data>
+  <data name="MNU_Assignment" xml:space="preserve">
+    <value>Assignment</value>
+  </data>
+  <data name="CSCS04050" xml:space="preserve">
+    <value>Quotation - CSCS04050</value>
+  </data>
+  <data name="CSCS04060" xml:space="preserve">
+    <value>Enter Job Result and Complete - CSCS04060</value>
+  </data>
+  <data name="CSCP03030" xml:space="preserve">
+    <value>Stock Adjustment - CSCP03030</value>
+  </data>
+  <data name="CSCP03040" xml:space="preserve">
+    <value>Sales Memo - CSCP03040</value>
+  </data>
+  <data name="MNU_Sales_Memo" xml:space="preserve">
+    <value>Sales Memo</value>
+  </data>
+  <data name="CSCP03050" xml:space="preserve">
+    <value>Return To Vendor - CSCP03050</value>
+  </data>
+  <data name="CSCP03060" xml:space="preserve">
+    <value>Stock Arrival Correction - CSCP03060</value>
+  </data>
+  <data name="CSCS04070" xml:space="preserve">
+    <value>Print Job Sheet - CSCS04070</value>
+  </data>
+  <data name="CSCP03070" xml:space="preserve">
+    <value>Supplier Invoice - CSCP03070</value>
+  </data>
+  <data name="MNU_Invoice" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
+  <data name="CSCP03080" xml:space="preserve">
+    <value>GL Account - CSCP03080</value>
+  </data>
+  <data name="CSCS04080" xml:space="preserve">
+    <value>Print Technician Daily Job List - CSCS04080</value>
+  </data>
+  <data name="CSCP03090" xml:space="preserve">
+    <value>Parts Enquiry - CSCP03090</value>
+  </data>
+  <data name="CSCP04010" xml:space="preserve">
+    <value>Technician Outstanding Parts Enquiry - CSCP04010</value>
+  </data>
+  <data name="CSCP04020" xml:space="preserve">
+    <value>Requisition Return - CSCP04020</value>
+  </data>
+  <data name="CSCS04090" xml:space="preserve">
+    <value>Payment Method - CSCS04090</value>
+  </data>
+  <data name="CSCS05010" xml:space="preserve">
+    <value>Customer Invoice - CSCS05010</value>
+  </data>
+  <data name="MNU_Voucher" xml:space="preserve">
+    <value>Voucher</value>
+  </data>
+  <data name="CSCP04030" xml:space="preserve">
+    <value>Sales Return - CSCP04030</value>
+  </data>
+  <data name="CSCP04040" xml:space="preserve">
+    <value>Stock Movement Enquiry - CSCP04040</value>
+  </data>
+  <data name="CSCP04050" xml:space="preserve">
+    <value>Issued Requisition Enquiry - CSCP04050</value>
+  </data>
+  <data name="CSCP04060" xml:space="preserve">
+    <value>Discontinue Parts Enquiry - CSCP04060</value>
+  </data>
+  <data name="CSCP04070" xml:space="preserve">
+    <value>Parts Details Enquiry - CSCP04070</value>
+  </data>
+  <data name="CSCS05020" xml:space="preserve">
+    <value>Payment Terms - CSCS05020</value>
+  </data>
+  <data name="CSCS05030" xml:space="preserve">
+    <value>Adjust Job - CSCS05030</value>
+  </data>
+  <data name="CSCS05040" xml:space="preserve">
+    <value>Incentive Bonus-CSCS05040</value>
+  </data>
+  <data name="CSCS05050" xml:space="preserve">
+    <value>Job Payment - CSCS05050</value>
+  </data>
+  <data name="CSCS05060" xml:space="preserve">
+    <value>Generate Invoice/DR/CR Note - CSCS05060</value>
+  </data>
+  <data name="CSCS05070" xml:space="preserve">
+    <value>Product Upload - CSCS05070</value>
+  </data>
+  <data name="CSCP04080" xml:space="preserve">
+    <value>Stock Take - CSCP04080</value>
+  </data>
+  <data name="CSCS05080" xml:space="preserve">
+    <value>Discontinue Letter Printing - CSCS05080</value>
+  </data>
+  <data name="CSCS05090" xml:space="preserve">
+    <value>DR/CR Note - CSCS05090</value>
+  </data>
+  <data name="CSCS06010" xml:space="preserve">
+    <value>Payment Received - CSCS06010</value>
+  </data>
+  <data name="CSCS06020" xml:space="preserve">
+    <value>Bad Debt - CSCS06020</value>
+  </data>
+  <data name="CSCS06030" xml:space="preserve">
+    <value>Maintenance Policy Printout - CSCS06030</value>
+  </data>
+  <data name="CSCS06040" xml:space="preserve">
+    <value>Refund Maintenance Agreement - CSCS06040</value>
+  </data>
+  <data name="CSCS06050" xml:space="preserve">
+    <value>ID/OD Order - CSCS06050</value>
+  </data>
+  <data name="CSCS06060" xml:space="preserve">
+    <value>Settle Maintenance Renewal - CSCS06060</value>
+  </data>
+  <data name="CSCS06070" xml:space="preserve">
+    <value>Print Invoice - CSCS06070</value>
+  </data>
+  <data name="CSCS06080" xml:space="preserve">
+    <value>Day End - CSCS06080</value>
+  </data>
+  <data name="CSCPR01030" xml:space="preserve">
+    <value>Purchase Order Suggest List - CSCPR01030</value>
+  </data>
+  <data name="CSCS06090" xml:space="preserve">
+    <value>Outstanding Job Enquiry - CSCS06090</value>
+  </data>
+  <data name="CSCS07010" xml:space="preserve">
+    <value>Job Waiting Parts Enquiry - CSCS07010</value>
+  </data>
+  <data name="CSCS07020" xml:space="preserve">
+    <value>Job Payment Enquiry - CSCS07020</value>
+  </data>
+  <data name="CSCS07030" xml:space="preserve">
+    <value>Job Important Field Approval - CSCS07030</value>
+  </data>
+  <data name="CSCS07040" xml:space="preserve">
+    <value>Generate Invoice For Sales Memo - CSCS07040</value>
+  </data>
+  <data name="CSCS07050" xml:space="preserve">
+    <value>Job Payment Consolidate Report - CSCS07050</value>
+  </data>
+  <data name="CSCP04090" xml:space="preserve">
+    <value>AP Charges - CSCP04090</value>
+  </data>
+  <data name="CSCS07060" xml:space="preserve">
+    <value>Technician Group - CSCS07060</value>
+  </data>
+  <data name="CSCS07070" xml:space="preserve">
+    <value>Upload EAD Product - CSCS07070</value>
+  </data>
+  <data name="CSCS07080" xml:space="preserve">
+    <value>Override Job Result - CSCS07080</value>
+  </data>
+</root>

@@ -1,0 +1,47 @@
+﻿.div_shade_dialog
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #000;
+    filter: alpha(opacity=10);
+    -moz-opacity: 0.1;
+    opacity: 0.1;
+    display: none;
+}
+.div_container_dialog
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    /*border: solid 2px #ccc;*/
+    /*background-color: #fff;*/
+    display: none;
+}
+.div_title_dialog
+{
+    position: relative;
+    color: #fff;
+    padding: 5px 10px;
+    background-color: #0D276C;
+    cursor: move;
+    font: normal normal bold 12px normal;
+}
+.div_title_close_dialog
+{
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    background-image: url(../Images/Close.gif);
+}
+.dialog-border
+{
+    background: none repeat scroll 0 0 #000000;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+     -moz-opacity: 0.4;
+}
+

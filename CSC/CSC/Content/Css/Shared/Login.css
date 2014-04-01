@@ -1,0 +1,69 @@
+body
+{
+	/*
+	background-image:url(../Images/Login-Background.gif);
+	*/
+	font-family:@Î¢ÈíÑÅºÚ;
+}
+
+.login_form
+{
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-284px;
+	margin-top:-182px;
+	
+	/*
+	background-image:url(../Images/Login-Form.png);
+	*/
+	width:567px;
+	height:283px;
+}
+
+table
+{
+	width:100%;height:100%;	
+}
+
+.login_title
+{
+    font-size:xx-large;
+    font-family:@Î¢ÈíÑÅºÚ;
+    font-style:oblique;
+}
+
+.text_in
+{
+    width: 260px;
+    font-family: @Î¢ÈíÑÅºÚ;
+    font-size: 18px;
+    padding: 0px 2px;
+}
+
+.ddl_in
+{
+    width: 300px;
+    font-family: @Î¢ÈíÑÅºÚ;
+    font-size: 18px;
+    padding: 0px 2px;
+}
+
+.validation-summary-errors
+{
+	text-align:left;
+    color:Red;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"]
+{
+    line-height: 20px;
+    background: url(../Images/LineBg.png) repeat-x 0px 0px;
+    border: solid 1px #6C92AD;
+    cursor: pointer;
+}
+
+input[type="text"], input[type="password"]
+{
+    border: solid 1px #6C92AD;
+}

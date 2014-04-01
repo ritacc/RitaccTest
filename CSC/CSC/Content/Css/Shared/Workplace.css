@@ -1,0 +1,187 @@
+﻿.callContainer
+{
+	float: left;
+	margin-left: 5px;
+	line-height: 20px;
+}
+
+.callContainer div
+{
+	padding-bottom: 4px;
+}
+
+.cent
+{
+	text-align: center;
+}
+.callContainer ul li
+{
+	display: inline;
+	float: left;
+	line-height: 20px;
+	padding-bottom: 7px;
+	clear: both;
+}
+
+label
+{
+	padding-left: 4px;
+}
+
+.labelw50
+{
+	width: 50px;
+	display: -moz-inline-box;
+	display: inline-block;
+}
+.labelw80
+{
+	width: 80px;
+	display: -moz-inline-box;
+	display: inline-block;
+}
+.left
+{
+	float: left;
+	margin-right: 4px;
+}
+.clear
+{
+	clear: both;
+}
+.cti
+{
+	float: left;
+	width: 100%;
+	height: 130px;
+	padding-top: 5px;
+	border-bottom: solid 1px #ccc;
+}
+.iframeContainer
+{
+	/*padding: 5px;*/
+}
+.redColor
+{
+	color: Red;
+}
+.floatRight
+{
+	float: left;
+	margin-right: 30px;
+}
+.floatRight li
+{
+	text-align: right;
+	padding-bottom: 2px;
+}
+.floatRight input
+{
+	margin-left: 10px;
+}
+
+/*.verticaltab_container ul li.active, .verticaltab_container ul li a:hover
+        {
+            background: url("~/Content/Css/Images/LineBg.png") repeat-x scroll 0 2px transparent;
+            border-right: 1px solid #FFFFFF;
+        }*/
+.verticaltab_container
+{
+	width: 100%;
+	height: 100%; /*border: 1px solid #999999;*/
+	list-style: none outside none;
+}
+.verticaltab_container ul
+{
+	width: 300px;
+	height: 800px;
+	list-style: none;
+	border-right: 1px solid #999999;
+	float: left;
+}
+.verticaltab_container li a
+{
+	border: 1px solid #FFFFFF;
+	color: #000000;
+	display: block;
+	float:left;
+	font-size: 1.2em;
+	outline: medium none;
+	padding: 0 10px;
+	text-decoration: none;
+}
+.verticaltab_container li
+{
+	background: none repeat scroll 0 0 #E0E0E0;
+	border: 1px solid #999999;
+	float: left;
+	height: 27px;
+	line-height: 22px;
+	margin: 0 0 -1px 5px;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	width: 295px;
+	margin: 5px 0 0;
+	background: #f7f7f7;
+	cursor: pointer;
+	border: 1px solid #ccc;
+	border-right: none;
+	position: relative;
+	left: 4px;
+}
+.verticaltab_container li.active
+{
+	width: 296px;
+	color: #ff0000;
+	background: #fff;
+}
+.tabCon
+{
+	float: left; /*border:solid 1px red;*/
+	line-height: 25px;
+	width: 70%;
+	height: 100%;
+}
+.verticaltab_container .tab_content
+{
+	/*float: left;*/ /*width: 80%;*/
+	margin-left: 301px;
+	height: 100%;
+}
+
+.b
+{
+	overflow: auto; /*border-bottom: solid 1px #8DB2E3;*/
+}
+/*.b a
+{
+	float: left;
+	margin-top: 3px;
+}*/
+.btn
+{
+	/*float: right;*/
+}
+.r
+{
+	float: left;
+}
+.b div.btn a
+{
+	display: block;
+	background-position: 5px center;
+	background-repeat: no-repeat;
+	float: left;
+	margin: 1px;
+	padding: 0px;
+	padding-left: 20px;
+	outline: none;
+	border: 1px solid #E4ECF7;
+}
+
+.b div.btn a:hover
+{
+	border: 1px solid #FFD049;
+	background-color: #FFE8AB;
+}

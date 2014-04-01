@@ -1,0 +1,102 @@
+﻿.grid_list2
+{
+    overflow: hidden;    
+    position: relative;
+    border: 1px solid #ccc;
+}
+.grid_v
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 18px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -moz-overflow-y: scroll;
+    -moz-overflow-x: hidden;
+    z-index: 3;
+}
+.grid_h
+{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 18px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -moz-overflow-x: scroll;
+    -moz-overflow-y: hidden;
+    z-index: 3;
+}
+.grid_bg
+{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    height: 17px;
+    width: 17px;
+    z-index: 2;
+    background-color: Window;
+}
+.grid_title
+{
+    table-layout: fixed;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+.grid_list table
+{
+    position: absolute;
+    table-layout: fixed;
+    border: 1px solid #fff;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+.grid_list table > thead > tr > th
+{
+    height: 24px;
+    border-bottom: solid 1px #999;
+    border-top: solid 1px #fff;
+    border-left: solid 1px #fff;
+    border-right: solid 1px #999;
+    overflow: hidden;
+    font-weight: bold;
+    background-color: ButtonFace;
+    padding: 2px 6px;
+    /*
+    white-space: nowrap;
+    word-break: keep-all;
+    */
+    text-overflow: ellipsis;
+}
+.grid_move
+{
+    cursor: e-resize;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+}
+.grid_list table > thead > tr > th > a
+{
+    display: block;
+}
+.grid_list table tr.alter
+{
+    background-color: #fafafa;
+}
+.grid_list table td
+{
+    line-height: 160%;
+    color: #717475;
+    padding: 2px 6px;
+    border-right: 1px solid ButtonFace;
+    border-bottom: 1px solid ButtonFace;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+}
+

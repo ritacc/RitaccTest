@@ -1,0 +1,971 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config>
+	
+	<Permissions MenuKey="CSCS01010" FunctionCode="CSCS01010">
+		<Permission Key="Shop_View" type="Default"></Permission>
+		<Permission Key="Shop_Edit" type="Update"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCS01020" FunctionCode="CSCS01020">
+		<Permission Key="User_View" type="Default"></Permission>
+		<Permission Key="User_Add" type="Create"></Permission>
+		<Permission Key="User_Edit" type="Update"></Permission>
+		<Permission Key="User_Delete" type="Update"></Permission>
+		<Permission Key="User_ChangePassword" type="Update"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCS01030" FunctionCode="CSCS01030">
+		<Permission Key="Role_View" type="Default"></Permission>
+		<Permission Key="Role_Add" type="Create"></Permission>
+		<Permission Key="Role_Edit" type="Update"></Permission>
+		<Permission Key="Role_Delete" type="Update"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCS01040" FunctionCode="CSCS01040">
+		<Permission Key="Own_ChangePassword" type="Update"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCS01050" FunctionCode="CSCS01050">
+		<Permission Key="Function_View" type="Default"></Permission>
+		<Permission Key="Function_Edit" type="Update"></Permission>
+	</Permissions>
+	<!--BRAND-->
+	<Permissions MenuKey="CSCS02010" FunctionCode="CSCS02010">
+		<Permission Key="CSCS02010_View" type="Default"></Permission>
+		<Permission Key="CSCS02010_Add" type="Create"></Permission>
+		<Permission Key="CSCS02010_Edit" type="Update"></Permission>
+		<Permission Key="CSCS02010_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--SERVICE_GROUP-->
+	<Permissions MenuKey="CSCS02020" FunctionCode="CSCS02020">
+		<Permission Key="CSCS02020_View" type="Default"></Permission>
+		<Permission Key="CSCS02020_Add" type="Create"></Permission>
+		<Permission Key="CSCS02020_Edit" type="Update"></Permission>
+		<Permission Key="CSCS02020_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Reason Code-->
+	<Permissions MenuKey="CSCP01010" FunctionCode="CSCP01010">
+		<Permission Key="CSCP01010_View" type="Default"></Permission>
+		<Permission Key="CSCP01010_Add" type="Create"></Permission>
+		<Permission Key="CSCP01010_Edit" type="Update"></Permission>
+		<Permission Key="CSCP01010_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Product Class-->
+	<Permissions MenuKey="CSCP01020" FunctionCode="CSCP01020">
+		<Permission Key="CSCP01020_View" type="Default"></Permission>
+		<Permission Key="CSCP01020_Add" type="Create"></Permission>
+		<Permission Key="CSCP01020_Edit" type="Update"></Permission>
+		<Permission Key="CSCP01020_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Currency-->
+	<Permissions MenuKey="CSCP01030" FunctionCode="CSCP01030">
+		<Permission Key="CSCP01030_View" type="Default"></Permission>
+		<Permission Key="CSCP01030_Add" type="Create"></Permission>
+		<Permission Key="CSCP01030_Edit" type="Update"></Permission>
+		<Permission Key="CSCP01030_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Exchange Rate-->
+	<Permissions MenuKey="CSCP01040" FunctionCode="CSCP01040">
+		<Permission Key="CSCP01040_View" type="Default"></Permission>
+		<Permission Key="CSCP01040_Add" type="Create"></Permission>
+		<Permission Key="CSCP01040_Edit" type="Update"></Permission>
+		<Permission Key="CSCP01040_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Result Code-->
+	<Permissions MenuKey="CSCS02030" FunctionCode="CSCS02030">
+		<Permission Key="CSCS02030_View" type="Default"></Permission>
+		<Permission Key="CSCS02030_Add" type="Create"></Permission>
+		<Permission Key="CSCS02030_Edit" type="Update"></Permission>
+		<Permission Key="CSCS02030_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Repair Code-->
+	<Permissions MenuKey="CSCS02040" FunctionCode="CSCS02040">
+		<Permission Key="CSCS02040_View" type="Default"></Permission>
+		<Permission Key="CSCS02040_Add" type="Create"></Permission>
+		<Permission Key="CSCS02040_Edit" type="Update"></Permission>
+		<Permission Key="CSCS02040_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Charge Code-->
+	<Permissions MenuKey="CSCS02050" FunctionCode="CSCS02050">
+		<Permission Key="CSCS02050_View" type="Default"></Permission>
+		<Permission Key="CSCS02050_Add" type="Create"></Permission>
+		<Permission Key="CSCS02050_Edit" type="Update"></Permission>
+		<Permission Key="CSCS02050_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Master Code-->
+	<Permissions MenuKey="CSCS02060" FunctionCode="CSCS02060">
+		<Permission Key="CSCS02060_View" type="Default"></Permission>
+		<Permission Key="CSCS02060_Add" type="Create"></Permission>
+		<Permission Key="CSCS02060_Edit" type="Update"></Permission>
+		<Permission Key="CSCS02060_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Adress Code-->
+	<Permissions MenuKey="CSCS02070" FunctionCode="CSCS02070">
+		<Permission Key="CSCS02070_View" type="Default"></Permission>
+		<Permission Key="CSCS02070_Add" type="Create"></Permission>
+		<Permission Key="CSCS02070_Edit" type="Update"></Permission>
+		<Permission Key="CSCS02070_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Supplier-->
+	<Permissions MenuKey="CSCP01050" FunctionCode="CSCP01050">
+		<Permission Key="CSCP01050_View" type="Default"></Permission>
+		<Permission Key="CSCP01050_Add" type="Create"></Permission>
+		<Permission Key="CSCP01050_Edit" type="Update"></Permission>
+		<Permission Key="CSCP01050_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Client-->
+	<Permissions MenuKey="CSCP01060" FunctionCode="CSCP01060">
+		<Permission Key="CSCP01060_View" type="Default"></Permission>
+		<Permission Key="CSCP01060_Add" type="Create"></Permission>
+		<Permission Key="CSCP01060_Edit" type="Update"></Permission>
+		<Permission Key="CSCP01060_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Model Class-->
+	<Permissions MenuKey="CSCS02080" FunctionCode="CSCS02080">
+		<Permission Key="CSCS02080_View" type="Default"></Permission>
+		<Permission Key="CSCS02080_Add" type="Create"></Permission>
+		<Permission Key="CSCS02080_Edit" type="Update"></Permission>
+		<Permission Key="CSCS02080_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Material-->
+	<Permissions MenuKey="CSCS02090" FunctionCode="CSCS02090">
+		<Permission Key="CSCS02090_View" type="Default"></Permission>
+		<Permission Key="CSCS02090_Add" type="Create"></Permission>
+		<Permission Key="CSCS02090_Edit" type="Update"></Permission>
+		<Permission Key="CSCS02090_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Material-->
+	<Permissions MenuKey="CSCS03010" FunctionCode="CSCS03010">
+		<Permission Key="CSCS03010_View" type="Default"></Permission>
+		<Permission Key="CSCS03010_Add" type="Create"></Permission>
+		<Permission Key="CSCS03010_Edit" type="Update"></Permission>
+		<Permission Key="CSCS03010_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Model Code-->
+	<Permissions MenuKey="CSCS03020" FunctionCode="CSCS03020">
+		<Permission Key="CSCS03020_View" type="Default"></Permission>
+		<Permission Key="CSCS03020_Add" type="Create"></Permission>
+		<Permission Key="CSCS03020_Edit" type="Update"></Permission>
+		<Permission Key="CSCS03020_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Symptom-->
+	<Permissions MenuKey="CSCS03030" FunctionCode="CSCS03030">
+		<Permission Key="CSCS03030_View" type="Default"></Permission>
+		<Permission Key="CSCS03030_Add" type="Create"></Permission>
+		<Permission Key="CSCS03030_Edit" type="Update"></Permission>
+		<Permission Key="CSCS03030_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Parts Class-->
+	<Permissions MenuKey="CSCP01070" FunctionCode="CSCP01070">
+		<Permission Key="CSCP01070_View" type="Default"></Permission>
+		<Permission Key="CSCP01070_Add" type="Create"></Permission>
+		<Permission Key="CSCP01070_Edit" type="Update"></Permission>
+		<Permission Key="CSCP01070_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Reorder Factor-->
+	<Permissions MenuKey="CSCP01080" FunctionCode="CSCP01080">
+		<Permission Key="CSCP01080_View" type="Default"></Permission>
+		<Permission Key="CSCP01080_Add" type="Create"></Permission>
+		<Permission Key="CSCP01080_Edit" type="Update"></Permission>
+		<Permission Key="CSCP01080_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Parts Maintenance-->
+	<Permissions MenuKey="CSCP02010" FunctionCode="CSCP02010">
+		<Permission Key="CSCP02010_View" type="Default"></Permission>
+		<Permission Key="CSCP02010_Add" type="Create"></Permission>
+		<Permission Key="CSCP02010_Edit" type="Update"></Permission>
+		<Permission Key="CSCP02010_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Category Code Maintenance-->
+	<Permissions MenuKey="CSCP01090" FunctionCode="CSCP01090">
+		<Permission Key="CSCP01090_View" type="Default"></Permission>
+		<Permission Key="CSCP01090_Add" type="Create"></Permission>
+		<Permission Key="CSCP01090_Edit" type="Update"></Permission>
+		<Permission Key="CSCP01090_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Bin Location-->
+	<Permissions MenuKey="CSCP02020" FunctionCode="CSCP02020">
+		<Permission Key="CSCP02020_View" type="Default"></Permission>
+		<Permission Key="CSCP02020_Add" type="Create"></Permission>
+		<Permission Key="CSCP02020_Edit" type="Update"></Permission>
+		<Permission Key="CSCP02020_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Godown Code-->
+	<Permissions MenuKey="CSCP02030" FunctionCode="CSCP02030">
+		<Permission Key="CSCP02030_View" type="Default"></Permission>
+		<Permission Key="CSCP02030_Add" type="Create"></Permission>
+		<Permission Key="CSCP02030_Edit" type="Update"></Permission>
+		<Permission Key="CSCP02030_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Maintenance Policy-->
+	<Permissions MenuKey="CSCS03040" FunctionCode="CSCS03040">
+		<Permission Key="CSCS03040_View" type="Default"></Permission>
+		<Permission Key="CSCS03040_Add" type="Create"></Permission>
+		<Permission Key="CSCS03040_Edit" type="Update"></Permission>
+		<Permission Key="CSCS03040_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Product Information-->
+	<Permissions MenuKey="CSCS03050" FunctionCode="CSCS03050">
+		<Permission Key="CSCS03050_View" type="Default"></Permission>
+		<Permission Key="CSCS03050_Add" type="Create"></Permission>
+		<Permission Key="CSCS03050_Edit" type="Update"></Permission>
+		<Permission Key="CSCS03050_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Technician Code-->
+	<Permissions MenuKey="CSCS03060" FunctionCode="CSCS03060">
+		<Permission Key="CSCS03060_View" type="Default"></Permission>
+		<Permission Key="CSCS03060_Add" type="Create"></Permission>
+		<Permission Key="CSCS03060_Edit" type="Update"></Permission>
+		<Permission Key="CSCS03060_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Contractor-->
+	<Permissions MenuKey="CSCS03070" FunctionCode="CSCS03070">
+		<Permission Key="CSCS03070_View" type="Default"></Permission>
+		<Permission Key="CSCS03070_Add" type="Create"></Permission>
+		<Permission Key="CSCS03070_Edit" type="Update"></Permission>
+		<Permission Key="CSCS03070_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Job Assign Rule-->
+	<Permissions MenuKey="CSCS03080" FunctionCode="CSCS03080">
+		<Permission Key="CSCS03080_View" type="Default"></Permission>
+		<Permission Key="CSCS03080_Add" type="Create"></Permission>
+		<Permission Key="CSCS03080_Edit" type="Update"></Permission>
+		<Permission Key="CSCS03080_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Parts Factory Price Maintenance-->
+	<Permissions MenuKey="CSCP02040" FunctionCode="CSCP02040">
+		<Permission Key="CSCP02040_View" type="Default"></Permission>
+		<Permission Key="CSCP02040_Add" type="Create"></Permission>
+		<Permission Key="CSCP02040_Edit" type="Update"></Permission>
+		<Permission Key="CSCP02040_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Parts Selling Price Maintenance-->
+	<Permissions MenuKey="CSCP02050" FunctionCode="CSCP02050">
+		<Permission Key="CSCP02050_View" type="Default"></Permission>
+		<Permission Key="CSCP02050_Add" type="Create"></Permission>
+		<Permission Key="CSCP02050_Edit" type="Update"></Permission>
+		<Permission Key="CSCP02050_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Purchase Order Maintenance-->
+	<Permissions MenuKey="CSCP02060" FunctionCode="CSCP02060">
+		<Permission Key="CSCP02060_View" type="Default"></Permission>
+		<Permission Key="CSCP02060_Add" type="Create"></Permission>
+		<Permission Key="CSCP02060_Edit" type="Update"></Permission>
+		<Permission Key="CSCP02060_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Job Labour Fee-->
+	<Permissions MenuKey="CSCS03090" FunctionCode="CSCS03090">
+		<Permission Key="CSCS03090_View" type="Default"></Permission>
+		<Permission Key="CSCS03090_Add" type="Create"></Permission>
+		<Permission Key="CSCS03090_Edit" type="Update"></Permission>
+		<Permission Key="CSCS03090_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Product Renewal Letter Printing-->
+	<Permissions MenuKey="CSCS04010" FunctionCode="CSCS04010">
+		<Permission Key="CSCS04010_View" type="Default"></Permission>
+		<Permission Key="CSCS04010_Add" type="Create"></Permission>
+		<Permission Key="CSCS04010_Edit" type="Update"></Permission>
+		<Permission Key="CSCS04010_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Rejoin Renewal Product Printing-->
+	<Permissions MenuKey="CSCS04020" FunctionCode="CSCS04020">
+		<Permission Key="CSCS04020_View" type="Default"></Permission>
+		<Permission Key="CSCS04020_Add" type="Create"></Permission>
+		<Permission Key="CSCS04020_Edit" type="Update"></Permission>
+		<Permission Key="CSCS04020_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Take Order-->
+	<Permissions MenuKey="CSCS04030" FunctionCode="CSCS04030">
+		<Permission Key="CSCS04030_View" type="Default"></Permission>
+		<Permission Key="CSCS04030_Add" type="Create"></Permission>
+		<Permission Key="CSCS04030_Edit" type="Update"></Permission>
+		<Permission Key="CSCS04030_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--PO Approval Setup-->
+	<Permissions MenuKey="CSCP02070" FunctionCode="CSCP02070">
+		<Permission Key="CSCP02070_View" type="Default"></Permission>
+		<Permission Key="CSCP02070_Add" type="Create"></Permission>
+		<Permission Key="CSCP02070_Edit" type="Update"></Permission>
+		<Permission Key="CSCP02070_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Assign Purchase Order Approval Rule-->
+	<Permissions MenuKey="CSCP02080" FunctionCode="CSCP02080">
+		<Permission Key="CSCP02080_View" type="Default"></Permission>
+		<Permission Key="CSCP02080_Add" type="Create"></Permission>
+		<Permission Key="CSCP02080_Edit" type="Update"></Permission>
+		<Permission Key="CSCP02080_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Stock Arrival Maintenance-->
+	<Permissions MenuKey="CSCP02090" FunctionCode="CSCP02090">
+		<Permission Key="CSCP02090_View" type="Default"></Permission>
+		<Permission Key="CSCP02090_Add" type="Create"></Permission>
+		<Permission Key="CSCP02090_Edit" type="Update"></Permission>
+		<Permission Key="CSCP02090_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Stock Transfer-->
+	<Permissions MenuKey="CSCP03010" FunctionCode="CSCP03010">
+		<Permission Key="CSCP03010_View" type="Default"></Permission>
+		<Permission Key="CSCP03010_Add" type="Create"></Permission>
+		<Permission Key="CSCP03010_Edit" type="Update"></Permission>
+		<Permission Key="CSCP03010_Delete" type="Update"></Permission>
+	</Permissions>
+	<!--Requisition Note-->
+	<Permissions MenuKey="CSCP03020" FunctionCode="CSCP03020">
+		<Permission Key="CSCP03020_View" type="Default"></Permission>
+		<Permission Key="CSCP03020_Add" type="Create"></Permission>
+		<Permission Key="CSCP03020_Edit" type="Update"></Permission>
+		<Permission Key="CSCP03020_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Assign Job-->
+	<Permissions MenuKey="CSCS04040" FunctionCode="CSCS04040">
+		<Permission Key="CSCS04040_View" type="Default"></Permission>
+		<Permission Key="CSCS04040_Add" type="Create"></Permission>
+		<Permission Key="CSCS04040_Edit" type="Update"></Permission>
+		<Permission Key="CSCS04040_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Quotation-->
+	<Permissions MenuKey="CSCS04050" FunctionCode="CSCS04050">
+		<Permission Key="CSCS04050_View" type="Default"></Permission>
+		<Permission Key="CSCS04050_Add" type="Create"></Permission>
+		<Permission Key="CSCS04050_Edit" type="Update"></Permission>
+		<Permission Key="CSCS04050_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Enter Job Result and Complete-->
+	<Permissions MenuKey="CSCS04060" FunctionCode="CSCS04060">
+		<Permission Key="CSCS04060_View" type="Default"></Permission>
+		<Permission Key="CSCS04060_Add" type="Create"></Permission>
+		<Permission Key="CSCS04060_Edit" type="Update"></Permission>
+		<Permission Key="CSCS04060_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Stock Adjustment-->
+	<Permissions MenuKey="CSCP03030" FunctionCode="CSCP03030">
+		<Permission Key="CSCP03030_View" type="Default"></Permission>
+		<Permission Key="CSCP03030_Add" type="Create"></Permission>
+		<Permission Key="CSCP03030_Edit" type="Update"></Permission>
+		<Permission Key="CSCP03030_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Sales Memo-->
+	<Permissions MenuKey="CSCP03040" FunctionCode="CSCP03040">
+		<Permission Key="CSCP03040_View" type="Default"></Permission>
+		<Permission Key="CSCP03040_Add" type="Create"></Permission>
+		<Permission Key="CSCP03040_Edit" type="Update"></Permission>
+		<Permission Key="CSCP03040_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Return To Vendor-->
+	<Permissions MenuKey="CSCP03050" FunctionCode="CSCP03050">
+		<Permission Key="CSCP03050_View" type="Default"></Permission>
+		<Permission Key="CSCP03050_Add" type="Create"></Permission>
+		<Permission Key="CSCP03050_Edit" type="Update"></Permission>
+		<Permission Key="CSCP03050_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Stock Arrival Correction-->
+	<Permissions MenuKey="CSCP03060" FunctionCode="CSCP03060">
+		<Permission Key="CSCP03060_View" type="Default"></Permission>
+		<Permission Key="CSCP03060_Add" type="Create"></Permission>
+		<Permission Key="CSCP03060_Edit" type="Update"></Permission>
+		<Permission Key="CSCP03060_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Print Job Sheet-->
+	<Permissions MenuKey="CSCS04070" FunctionCode="CSCS04070">
+		<Permission Key="CSCS04070_View" type="Default"></Permission>
+		<Permission Key="CSCS04070_Add" type="Create"></Permission>
+		<Permission Key="CSCS04070_Edit" type="Update"></Permission>
+		<Permission Key="CSCS04070_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Supplier Invoice-->
+	<Permissions MenuKey="CSCP03070" FunctionCode="CSCP03070">
+		<Permission Key="CSCP03070_View" type="Default"></Permission>
+		<Permission Key="CSCP03070_Add" type="Create"></Permission>
+		<Permission Key="CSCP03070_Edit" type="Update"></Permission>
+		<Permission Key="CSCP03070_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--GL Account-->
+	<Permissions MenuKey="CSCP03080" FunctionCode="CSCP03080">
+		<Permission Key="CSCP03080_View" type="Default"></Permission>
+		<Permission Key="CSCP03080_Add" type="Create"></Permission>
+		<Permission Key="CSCP03080_Edit" type="Update"></Permission>
+		<Permission Key="CSCP03080_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Print Technician Daily Job List-->
+	<Permissions MenuKey="CSCS04080" FunctionCode="CSCS04080">
+		<Permission Key="CSCS04080_View" type="Default"></Permission>
+		<Permission Key="CSCS04080_Add" type="Create"></Permission>
+		<Permission Key="CSCS04080_Edit" type="Update"></Permission>
+		<Permission Key="CSCS04080_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Parts Enquiry-->
+	<Permissions MenuKey="CSCP03090" FunctionCode="CSCP03090">
+		<Permission Key="CSCP03090_View" type="Default"></Permission>
+		<Permission Key="CSCP03090_Add" type="Create"></Permission>
+		<Permission Key="CSCP03090_Edit" type="Update"></Permission>
+		<Permission Key="CSCP03090_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Technician Outstanding Parts Enquiry-->
+	<Permissions MenuKey="CSCP04010" FunctionCode="CSCP04010">
+		<Permission Key="CSCP04010_View" type="Default"></Permission>
+		<Permission Key="CSCP04010_Add" type="Create"></Permission>
+		<Permission Key="CSCP04010_Edit" type="Update"></Permission>
+		<Permission Key="CSCP04010_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Requisition Return-->
+	<Permissions MenuKey="CSCP04020" FunctionCode="CSCP04020">
+		<Permission Key="CSCP04020_View" type="Default"></Permission>
+		<Permission Key="CSCP04020_Add" type="Create"></Permission>
+		<Permission Key="CSCP04020_Edit" type="Update"></Permission>
+		<Permission Key="CSCP04020_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Payment Method-->
+	<Permissions MenuKey="CSCS04090" FunctionCode="CSCS04090">
+		<Permission Key="CSCS04090_View" type="Default"></Permission>
+		<Permission Key="CSCS04090_Add" type="Create"></Permission>
+		<Permission Key="CSCS04090_Edit" type="Update"></Permission>
+		<Permission Key="CSCS04090_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Customer Invoice-->
+	<Permissions MenuKey="CSCS05010" FunctionCode="CSCS05010">
+		<Permission Key="CSCS05010_View" type="Default"></Permission>
+		<Permission Key="CSCS05010_Add" type="Create"></Permission>
+		<Permission Key="CSCS05010_Edit" type="Update"></Permission>
+		<Permission Key="CSCS05010_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Sales Return-->
+	<Permissions MenuKey="CSCP04030" FunctionCode="CSCP04030">
+		<Permission Key="CSCP04030_View" type="Default"></Permission>
+		<Permission Key="CSCP04030_Add" type="Create"></Permission>
+		<Permission Key="CSCP04030_Edit" type="Update"></Permission>
+		<Permission Key="CSCP04030_Delete" type="Update"></Permission>
+	</Permissions>
+	
+	<!--Stock Movement Enquiry-->
+	<Permissions MenuKey="CSCP04040" FunctionCode="CSCP04040">
+		<Permission Key="CSCP04040_View" type="Default"></Permission>
+		<Permission Key="CSCP04040_Add" type="Create"></Permission>
+		<Permission Key="CSCP04040_Edit" type="Update"></Permission>
+		<Permission Key="CSCP04040_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Issued Requisition Enquiry-->
+	<Permissions MenuKey="CSCP04050" FunctionCode="CSCP04050">
+		<Permission Key="CSCP04050_View" type="Default"></Permission>
+		<Permission Key="CSCP04050_Add" type="Create"></Permission>
+		<Permission Key="CSCP04050_Edit" type="Update"></Permission>
+		<Permission Key="CSCP04050_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Discontinue Parts Enquiry-->
+	<Permissions MenuKey="CSCP04060" FunctionCode="CSCP04060">
+		<Permission Key="CSCP04060_View" type="Default"></Permission>
+		<Permission Key="CSCP04060_Add" type="Create"></Permission>
+		<Permission Key="CSCP04060_Edit" type="Update"></Permission>
+		<Permission Key="CSCP04060_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Parts Details Enquiry-->
+	<Permissions MenuKey="CSCP04070" FunctionCode="CSCP04070">
+		<Permission Key="CSCP04070_View" type="Default"></Permission>
+		<Permission Key="CSCP04070_Add" type="Create"></Permission>
+		<Permission Key="CSCP04070_Edit" type="Update"></Permission>
+		<Permission Key="CSCP04070_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Payment Terms-->
+	<Permissions MenuKey="CSCS05020" FunctionCode="CSCS05020">
+		<Permission Key="CSCS05020_View" type="Default"></Permission>
+		<Permission Key="CSCS05020_Add" type="Create"></Permission>
+		<Permission Key="CSCS05020_Edit" type="Update"></Permission>
+		<Permission Key="CSCS05020_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Adjust Job-->
+	<Permissions MenuKey="CSCS05030" FunctionCode="CSCS05030">
+		<Permission Key="CSCS05030_View" type="Default"></Permission>
+		<Permission Key="CSCS05030_Add" type="Create"></Permission>
+		<Permission Key="CSCS05030_Edit" type="Update"></Permission>
+		<Permission Key="CSCS05030_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Technician Bonus-->
+	<Permissions MenuKey="CSCS05040" FunctionCode="CSCS05040">
+		<Permission Key="CSCS05040_View" type="Default"></Permission>
+		<Permission Key="CSCS05040_Add" type="Create"></Permission>
+		<Permission Key="CSCS05040_Edit" type="Update"></Permission>
+		<Permission Key="CSCS05040_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Job Payment-->
+	<Permissions MenuKey="CSCS05050" FunctionCode="CSCS05050">
+		<Permission Key="CSCS05050_View" type="Default"></Permission>
+		<Permission Key="CSCS05050_Add" type="Create"></Permission>
+		<Permission Key="CSCS05050_Edit" type="Update"></Permission>
+		<Permission Key="CSCS05050_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Invoice Generation-->
+	<Permissions MenuKey="CSCS05060" FunctionCode="CSCS05060">
+		<Permission Key="CSCS05060_View" type="Default"></Permission>
+		<Permission Key="CSCS05060_Add" type="Create"></Permission>
+		<Permission Key="CSCS05060_Edit" type="Update"></Permission>
+		<Permission Key="CSCS05060_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Product Upload-->
+	<Permissions MenuKey="CSCS05070" FunctionCode="CSCS05070">
+		<Permission Key="CSCS05070_View" type="Default"></Permission>
+		<Permission Key="CSCS05070_Add" type="Create"></Permission>
+		<Permission Key="CSCS05070_Edit" type="Update"></Permission>
+		<Permission Key="CSCS05070_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Stock Take-->
+	<Permissions MenuKey="CSCP04080" FunctionCode="CSCP04080">
+		<Permission Key="CSCP04080_View" type="Default"></Permission>
+		<Permission Key="CSCP04080_Add" type="Create"></Permission>
+		<Permission Key="CSCP04080_Edit" type="Update"></Permission>
+		<Permission Key="CSCP04080_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Discontinue Letter Printing-->
+	<Permissions MenuKey="CSCS05080" FunctionCode="CSCS05080">
+		<Permission Key="CSCS05080_View" type="Default"></Permission>
+		<Permission Key="CSCS05080_Add" type="Create"></Permission>
+		<Permission Key="CSCS05080_Edit" type="Update"></Permission>
+		<Permission Key="CSCS05080_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--DR/CR Note-->
+	<Permissions MenuKey="CSCS05090" FunctionCode="CSCS05090">
+		<Permission Key="CSCS05090_View" type="Default"></Permission>
+		<Permission Key="CSCS05090_Add" type="Create"></Permission>
+		<Permission Key="CSCS05090_Edit" type="Update"></Permission>
+		<Permission Key="CSCS05090_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Payment Received-->
+	<Permissions MenuKey="CSCS06010" FunctionCode="CSCS06010">
+		<Permission Key="CSCS06010_View" type="Default"></Permission>
+		<Permission Key="CSCS06010_Add" type="Create"></Permission>
+		<Permission Key="CSCS06010_Edit" type="Update"></Permission>
+		<Permission Key="CSCS06010_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Bad Debt-->
+	<Permissions MenuKey="CSCS06020" FunctionCode="CSCS06020">
+		<Permission Key="CSCS06020_View" type="Default"></Permission>
+		<Permission Key="CSCS06020_Add" type="Create"></Permission>
+		<Permission Key="CSCS06020_Edit" type="Update"></Permission>
+		<Permission Key="CSCS06020_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Maintenance Policy Printout-->
+	<Permissions MenuKey="CSCS06030" FunctionCode="CSCS06030">
+		<Permission Key="CSCS06030_View" type="Default"></Permission>
+		<Permission Key="CSCS06030_Add" type="Create"></Permission>
+		<Permission Key="CSCS06030_Edit" type="Update"></Permission>
+		<Permission Key="CSCS06030_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Refund Maintenance Agreement-->
+	<Permissions MenuKey="CSCS06040" FunctionCode="CSCS06040">
+		<Permission Key="CSCS06040_View" type="Default"></Permission>
+		<Permission Key="CSCS06040_Add" type="Create"></Permission>
+		<Permission Key="CSCS06040_Edit" type="Update"></Permission>
+		<Permission Key="CSCS06040_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--ID/OD Order-->
+	<Permissions MenuKey="CSCS06050" FunctionCode="CSCS06050">
+		<Permission Key="CSCS06050_View" type="Default"></Permission>
+		<Permission Key="CSCS06050_Add" type="Create"></Permission>
+		<Permission Key="CSCS06050_Edit" type="Update"></Permission>
+		<Permission Key="CSCS06050_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Renew Maint-->
+	<Permissions MenuKey="CSCS06060" FunctionCode="CSCS06060">
+		<Permission Key="CSCS06060_View" type="Default"></Permission>
+		<Permission Key="CSCS06060_Add" type="Create"></Permission>
+		<Permission Key="CSCS06060_Edit" type="Update"></Permission>
+		<Permission Key="CSCS06060_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Print Invoice-->
+	<Permissions MenuKey="CSCS06070" FunctionCode="CSCS06070">
+		<Permission Key="CSCS06070_View" type="Default"></Permission>
+		<Permission Key="CSCS06070_Add" type="Create"></Permission>
+		<Permission Key="CSCS06070_Edit" type="Update"></Permission>
+		<Permission Key="CSCS06070_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Day End-->
+	<Permissions MenuKey="CSCS06080" FunctionCode="CSCS06080">
+		<Permission Key="CSCS06080_View" type="Default"></Permission>
+		<Permission Key="CSCS06080_Add" type="Create"></Permission>
+		<Permission Key="CSCS06080_Edit" type="Update"></Permission>
+		<Permission Key="CSCS06080_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Outstanding Job Enquiry-->
+	<Permissions MenuKey="CSCS06090" FunctionCode="CSCS06090">
+		<Permission Key="CSCS06090_View" type="Default"></Permission>
+		<Permission Key="CSCS06090_Add" type="Create"></Permission>
+		<Permission Key="CSCS06090_Edit" type="Update"></Permission>
+		<Permission Key="CSCS06090_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Job Waiting Parts Enquiry-->
+	<Permissions MenuKey="CSCS07010" FunctionCode="CSCS07010">
+		<Permission Key="CSCS07010_View" type="Default"></Permission>
+		<Permission Key="CSCS07010_Add" type="Create"></Permission>
+		<Permission Key="CSCS07010_Edit" type="Update"></Permission>
+		<Permission Key="CSCS07010_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Job Payment Enquiry-->
+	<Permissions MenuKey="CSCS07020" FunctionCode="CSCS07020">
+		<Permission Key="CSCS07020_View" type="Default"></Permission>
+		<Permission Key="CSCS07020_Add" type="Create"></Permission>
+		<Permission Key="CSCS07020_Edit" type="Update"></Permission>
+		<Permission Key="CSCS07020_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Job Important Field Approval-->
+	<Permissions MenuKey="CSCS07030" FunctionCode="CSCS07030">
+		<Permission Key="CSCS07030_View" type="Default"></Permission>
+		<Permission Key="CSCS07030_Add" type="Create"></Permission>
+		<Permission Key="CSCS07030_Edit" type="Update"></Permission>
+		<Permission Key="CSCS07030_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Stock Take Print Variant-->
+	<Permissions MenuKey="CSCP04081" FunctionCode="CSCP04081">
+		<Permission Key="CSCP04081_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Stock Take Print All-->
+	<Permissions MenuKey="CSCP04082" FunctionCode="CSCP04082">
+		<Permission Key="CSCP04082_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Stock Take Consolidate Report-->
+	<Permissions MenuKey="CSCP04083" FunctionCode="CSCP04083">
+		<Permission Key="CSCP04083_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Stock Take Discrepancy Report-->
+	<Permissions MenuKey="CSCP04084" FunctionCode="CSCP04084">
+		<Permission Key="CSCP04084_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Generate Invoice For Sales Memo-->
+	<Permissions MenuKey="CSCS07040" FunctionCode="CSCS07040">
+		<Permission Key="CSCS07040_View" type="Default"></Permission>
+		<Permission Key="CSCS07040_Add" type="Create"></Permission>
+		<Permission Key="CSCS07040_Edit" type="Update"></Permission>
+		<Permission Key="CSCS07040_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Job Payment Consolidate Report-->
+	<Permissions MenuKey="CSCS07050" FunctionCode="CSCS07050">
+		<Permission Key="CSCS07050_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Adjust Job Create Refund-->
+	<Permissions MenuKey="CSCS05031" FunctionCode="CSCS05031">
+		<Permission Key="CSCS05031_View" type="Default"></Permission>
+		<Permission Key="CSCS05031_Add" type="Create"></Permission>
+		<Permission Key="CSCS05031_Edit" type="Update"></Permission>
+		<Permission Key="CSCS05031_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--AP Charges-CSCP04090-->
+	<Permissions MenuKey="CSCP04090" FunctionCode="CSCP04090">
+		<Permission Key="CSCP04090_View" type="Default"></Permission>
+		<Permission Key="CSCP04090_Add" type="Create"></Permission>
+		<Permission Key="CSCP04090_Edit" type="Update"></Permission>
+		<Permission Key="CSCP04090_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Technician Group-CSCS07060-->
+	<Permissions MenuKey="CSCS07060" FunctionCode="CSCS07060">
+		<Permission Key="CSCS07060_View" type="Default"></Permission>
+		<Permission Key="CSCS07060_Add" type="Create"></Permission>
+		<Permission Key="CSCS07060_Edit" type="Update"></Permission>
+		<Permission Key="CSCS07060_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Upload EAD Product-CSCS07070-->
+	<Permissions MenuKey="CSCS07070" FunctionCode="CSCS07070">
+		<Permission Key="CSCS07070_View" type="Default"></Permission>
+		<Permission Key="CSCS07070_Add" type="Create"></Permission>
+		<Permission Key="CSCS07070_Edit" type="Update"></Permission>
+		<Permission Key="CSCS07070_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--Override Job Result-CSCS07080-->
+	<Permissions MenuKey="CSCS07080" FunctionCode="CSCS07080">
+		<Permission Key="CSCS07080_View" type="Default"></Permission>
+		<Permission Key="CSCS07080_Add" type="Create"></Permission>
+		<Permission Key="CSCS07080_Edit" type="Update"></Permission>
+		<Permission Key="CSCS07080_Delete" type="Update"></Permission>
+	</Permissions>
+
+	<!--****************************************************************************Report BEGIN****************************************************************************-->
+	<!--Purchase Order-->
+	<Permissions MenuKey="CSCPR00010" FunctionCode="CSCPR00010">
+		<Permission Key="CSCPR00010_View" type="Default"></Permission>
+		<Permission Key="CSCPR00010_Edit" type="Default"></Permission>
+	</Permissions>
+
+	<!--Purchase Order Report-->
+	<Permissions MenuKey="CSCPR01010" FunctionCode="CSCPR01010">
+		<Permission Key="CSCPR01010_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Purchase Receiving Correction Report-->
+	<Permissions MenuKey="CSCPR01020" FunctionCode="CSCPR01020">
+		<Permission Key="CSCPR01020_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Purchase Order Suggest List Report-->
+	<Permissions MenuKey="CSCPR01030" FunctionCode="CSCPR01030">
+		<Permission Key="CSCPR01030_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Purchase Analysis Report-->
+	<Permissions MenuKey="CSCPR01040" FunctionCode="CSCPR01040">
+		<Permission Key="CSCPR01040_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Counter Sales  Report-->
+	<Permissions MenuKey="CSCPR01050" FunctionCode="CSCPR01050">
+		<Permission Key="CSCPR01050_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Counter Sales Return Report-->
+	<Permissions MenuKey="CSCPR01060" FunctionCode="CSCPR01060">
+		<Permission Key="CSCPR01060_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Outstanding Parts By Technician Report-->
+	<Permissions MenuKey="CSCPR01070" FunctionCode="CSCPR01070">
+		<Permission Key="CSCPR01070_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Outstanding Parts History By Technician Report-->
+	<Permissions MenuKey="CSCPR01080" FunctionCode="CSCPR01080">
+		<Permission Key="CSCPR01080_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Technician Parts Movement Report-->
+	<Permissions MenuKey="CSCPR01090" FunctionCode="CSCPR01090">
+		<Permission Key="CSCPR01090_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Stock Movement Report-->
+	<Permissions MenuKey="CSCPR02010" FunctionCode="CSCPR02010">
+		<Permission Key="CSCPR02010_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Stock Adjustment Transaction Report-->
+	<Permissions MenuKey="CSCPR02020" FunctionCode="CSCPR02020">
+		<Permission Key="CSCPR02020_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Stock Value Report-->
+	<Permissions MenuKey="CSCPR02030" FunctionCode="CSCPR02030">
+		<Permission Key="CSCPR02030_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Stock Aging By Brand By Type Report-->
+	<Permissions MenuKey="CSCPR02040" FunctionCode="CSCPR02040">
+		<Permission Key="CSCPR02040_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Stock Aging By Brand Report-->
+	<Permissions MenuKey="CSCPR02050" FunctionCode="CSCPR02050">
+		<Permission Key="CSCPR02050_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Stock Aging By Brand By Parts Report-->
+	<Permissions MenuKey="CSCPR02060" FunctionCode="CSCPR02060">
+		<Permission Key="CSCPR02060_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Stock Take Report-->
+	<Permissions MenuKey="CSCPR02070" FunctionCode="CSCPR02070">
+		<Permission Key="CSCPR02070_View" type="Default"></Permission>
+	</Permissions>
+
+	<!--Stock Take Discrepancy Report-->
+	<Permissions MenuKey="CSCPR02080" FunctionCode="CSCPR02080">
+		<Permission Key="CSCPR02080_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR02090" FunctionCode="CSCPR02090">
+		<Permission Key="CSCPR02090_View" type="Default"></Permission>
+	</Permissions>
+
+	<Permissions MenuKey="CSCPR03010" FunctionCode="CSCPR03010">
+		<Permission Key="CSCPR03010_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR03020" FunctionCode="CSCPR03020">
+		<Permission Key="CSCPR03020_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR03030" FunctionCode="CSCPR03030">
+		<Permission Key="CSCPR03030_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR03040" FunctionCode="CSCPR03040">
+		<Permission Key="CSCPR03040_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR03050" FunctionCode="CSCPR03050">
+		<Permission Key="CSCPR03050_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR03060" FunctionCode="CSCPR03060">
+		<Permission Key="CSCPR03060_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR03070" FunctionCode="CSCPR03070">
+		<Permission Key="CSCPR03070_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR03080" FunctionCode="CSCPR03080">
+		<Permission Key="CSCPR03080_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR03090" FunctionCode="CSCPR03090">
+		<Permission Key="CSCPR03090_View" type="Default"></Permission>
+	</Permissions>
+
+	<Permissions MenuKey="CSCPR04010" FunctionCode="CSCPR04010">
+		<Permission Key="CSCPR04010_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR04020" FunctionCode="CSCPR04020">
+		<Permission Key="CSCPR04020_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR04030" FunctionCode="CSCPR04030">
+		<Permission Key="CSCPR04030_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR04040" FunctionCode="CSCPR04040">
+		<Permission Key="CSCPR04040_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR04050" FunctionCode="CSCPR04050">
+		<Permission Key="CSCPR04050_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR04060" FunctionCode="CSCPR04060">
+		<Permission Key="CSCPR04060_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR04070" FunctionCode="CSCPR04070">
+		<Permission Key="CSCPR04070_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR04080" FunctionCode="CSCPR04080">
+		<Permission Key="CSCPR04080_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR04090" FunctionCode="CSCPR04090">
+		<Permission Key="CSCPR04090_View" type="Default"></Permission>
+	</Permissions>
+
+	<Permissions MenuKey="CSCPR05010" FunctionCode="CSCPR05010">
+		<Permission Key="CSCPR05010_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR05020" FunctionCode="CSCPR05020">
+		<Permission Key="CSCPR05020_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR05030" FunctionCode="CSCPR05030">
+		<Permission Key="CSCPR05030_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR05040" FunctionCode="CSCPR05040">
+		<Permission Key="CSCPR05040_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR05050" FunctionCode="CSCPR05050">
+		<Permission Key="CSCPR05050_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR05060" FunctionCode="CSCPR05060">
+		<Permission Key="CSCPR05060_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR05070" FunctionCode="CSCPR05070">
+		<Permission Key="CSCPR05070_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR05080" FunctionCode="CSCPR05080">
+		<Permission Key="CSCPR05080_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR05090" FunctionCode="CSCPR05090">
+		<Permission Key="CSCPR05090_View" type="Default"></Permission>
+	</Permissions>
+
+	<Permissions MenuKey="CSCPR06010" FunctionCode="CSCPR06010">
+		<Permission Key="CSCPR06010_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR06020" FunctionCode="CSCPR06020">
+		<Permission Key="CSCPR06020_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR06030" FunctionCode="CSCPR06030">
+		<Permission Key="CSCPR06030_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR06040" FunctionCode="CSCPR06040">
+		<Permission Key="CSCPR06040_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR06050" FunctionCode="CSCPR06050">
+		<Permission Key="CSCPR06050_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR06060" FunctionCode="CSCPR06060">
+		<Permission Key="CSCPR06060_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR06070" FunctionCode="CSCPR06070">
+		<Permission Key="CSCPR06070_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR06080" FunctionCode="CSCPR06080">
+		<Permission Key="CSCPR06080_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR06090" FunctionCode="CSCPR06090">
+		<Permission Key="CSCPR06090_View" type="Default"></Permission>
+	</Permissions>
+
+	<Permissions MenuKey="CSCPR07010" FunctionCode="CSCPR07010">
+		<Permission Key="CSCPR07010_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR07020" FunctionCode="CSCPR07020">
+		<Permission Key="CSCPR07020_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR07030" FunctionCode="CSCPR07030">
+		<Permission Key="CSCPR07030_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR07040" FunctionCode="CSCPR07040">
+		<Permission Key="CSCPR07040_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR07050" FunctionCode="CSCPR07050">
+		<Permission Key="CSCPR07050_View" type="Default"></Permission>
+	</Permissions>
+	<!--<Permissions MenuKey="CSCPR07060" FunctionCode="CSCPR07060">
+		<Permission Key="CSCPR07060_View" type="Default"></Permission>
+	</Permissions>-->
+	<!--Job Queue-->
+	<Permissions MenuKey="CSCPR07070" FunctionCode="CSCPR07070">
+		<Permission Key="CSCPR07070_View" type="Default"></Permission>
+		<Permission Key="CSCPR07070_Add" type="Create"></Permission>
+		<Permission Key="CSCPR07070_Edit" type="Update"></Permission>
+		<Permission Key="CSCPR07070_Delete" type="Update"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR07080" FunctionCode="CSCPR07080">
+		<Permission Key="CSCPR07080_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR07090" FunctionCode="CSCPR07090">
+		<Permission Key="CSCPR07090_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR08010" FunctionCode="CSCPR08010">
+		<Permission Key="CSCPR08010_View" type="Default"></Permission>
+	</Permissions>
+	<Permissions MenuKey="CSCPR08020" FunctionCode="CSCPR08020">
+		<Permission Key="CSCPR08020_View" type="Default"></Permission>
+	</Permissions>
+	<!--****************************************************************************Report END****************************************************************************-->
+</Config>

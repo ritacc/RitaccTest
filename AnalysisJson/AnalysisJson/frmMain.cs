@@ -60,11 +60,17 @@ namespace AnalysisJson
                     sb.Append(string.Format("listTi.add(new TI({0},{1},\"{2}\",\"{3}\",\"{4}\",\"{5}\",\"{6}\",\"{7}\",\"{8}\"));"
                         , item.ID-970
                         , item.subjectType
-                        , item.IssueSubject
+						, item.IssueSubject.Replace("<br />", "").Replace("<p>", "").Replace("</p>", "")
                         , item.EIssueSubject
                         , item.IssueType_ID
                         , item.Answer
-                        , (string.IsNullOrEmpty(item.IssueResult) ? "" : item.IssueResult.Replace("&nbsp;", " ").Replace("\r\n", "").Replace("\n", ""))
+						, (string.IsNullOrEmpty(item.IssueResult) ? "" : 
+								item.IssueResult.Replace("&nbsp;", " ")
+								.Replace("\r\n", "")
+								.Replace("\n", "")
+								.Replace("<br />", "")
+								.Replace("<p>", "")
+								.Replace("</p>", ""))
                         , item.EIssueResult
                         , item.ImagePath));
 

@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<Module Key="Key_Null" Caption="System" Resource="MNU_System" Href="#">
+		<Menu Key="CSCS01010" Caption="店管理-CSCS01010" Resource="CSCS01010" Href="~/Shop/Index"></Menu>
+		<Menu Key="CSCS01020" Caption="用户管理-CSCS01020" Resource="CSCS01020" Href="~/User/Index"></Menu>
+		<Menu Key="CSCS01030" Caption="角色管理-CSCS01030" Resource="CSCS01030" Href="~/Role/Index"></Menu>
+		<!--<Menu Key="CSCS01050" Caption="功能管理-CSCS01050" Resource="CSCS01050" Href="~/Function/IndexDefault"></Menu>-->
+		<Menu Key="CSCS01040" Caption="密码变更-CSCS01040" Resource="CSCS01040" Href="~/Account/PasswordChange"></Menu>
+		<Menu Key="CSCS06080" Caption="Day End-CSCS06080" Resource="CSCS06080" Href="~/Report/DayEndReport/Index"></Menu>
+	</Module>
+	<Module Key="Key_Null" Caption="Product" Resource="MNU_Product" Href="#">
+		<Menu Key="CSCS03050" Caption="Product Information-CSCS03050" Resource="CSCS03050" Href="~/ProductInformation/Index"></Menu>
+		<Menu Key="CSCS05070" Caption="Product Upload-CSCS05070" Resource="CSCS05070" Href="~/ProductUpload/Index"></Menu>
+		<Menu Key="CSCS03040" Caption="Policy-CSCS03040" Resource="CSCS03040" Href="~/PolicyCode/Index"></Menu>
+		<Menu Key="CSCS07070" Caption="Upload EAD Product-CSCS07070" Resource="CSCS07070" Href="~/ProdUpload/Index"></Menu>
+	</Module>
+	<Module Key="Key_Null" Caption="Job" Resource="MNU_Job" Href="#">
+		<Menu Key="CSCS04030" Caption="Take Order-CSCS04030" Resource="CSCS04030" Href="~/OrderTake/Index"></Menu>
+		<Menu Key="CSCS04040" Caption="Assign Job-CSCS04040" Resource="CSCS04040" Href="~/AssignJob/Index"></Menu>
+		<Menu Key="CSCS04060" Caption="Enter Job Result and Complete-CSCS04060" Resource="CSCS04060" Href="~/JobResult/Index"></Menu>
+		<Menu Key="CSCS04050" Caption="Quotation-CSCS04050" Resource="CSCS04050" Href="~/Quotation/Index"></Menu>
+		<Menu Key="CSCS04070" Caption="Print Job Sheet-CSCS04070" Resource="CSCS04070" Href="~/JobSheetPrint/Index"></Menu>
+		<Menu Key="CSCS04080" Caption="Print Technician Daily Job List-CSCS04080" Resource="CSCS04080" Href="~/PrintTechJob/Index"></Menu>
+		<Menu Key="CSCS05030" Caption="Adjust Job-CSCS05030" Resource="CSCS05030" Href="~/AdjustJob/Index"></Menu>
+		<Menu Key="CSCS05040" Caption="Incentive Bonus-CSCS05040" Resource="CSCS05040" Href="~/TechnicianBonus/Index"></Menu>
+		<Menu Key="CSCS06050" Caption="ID/OD Order-CSCS06050" Resource="CSCS06050" Href="~/IDODOrder/Index"></Menu>
+		<Menu Key="CSCS06090" Caption="Outstanding Job Enquiry-CSCS06090" Resource="CSCS06090" Href="~/OutstandingJobEnquiry/IndexDefault"></Menu>
+		<Menu Key="CSCS07010" Caption="Job Waiting Parts Enquiry-CSCS07010" Resource="CSCS07010" Href="~/JobWaitingParts/Index"></Menu>
+		<Menu Key="CSCS07030" Caption="Job Important Field Approval-CSCS07030" Resource="CSCS07030" Href="~/JobImportantFieldApproval/Index"></Menu>
+		<Menu Key="CSCS07080" Caption="Override Job Result-CSCS07080" Resource="CSCS07080" Href="~/OJobResult/Index"></Menu>
+	</Module>
+	<Module Key="Key_Null" Caption="Assignment" Resource="MNU_Assignment" Href="#">
+		
+	</Module>
+	<Module Key="Key_Null" Caption="Agreement" Resource="MNU_Agreement" Href="#">
+		<Menu Key="CSCS04010" Caption="Product Renewal Letter Printing-CSCS04010" Resource="CSCS04010" Href="~/ProductRenewalLetterPrinting/Index"></Menu>
+		<Menu Key="CSCS04020" Caption="Rejoin Renewal Product Printing-CSCS04020" Resource="CSCS04020" Href="~/RejoinRenewalProductPrinting/Index"></Menu>
+		<Menu Key="CSCS05080" Caption="Discontinue Letter Printing-CSCS05080" Resource="CSCS05080" Href="~/Report/DiscontinueLetterPrinting/Index"></Menu>
+		<Menu Key="CSCS06030" Caption="Maintenance Policy Printing-CSCS06030" Resource="CSCS06030" Href="~/Report/MaintenancePolicyPrinting/Index"></Menu>
+		<Menu Key="CSCS06040" Caption="Refund Maintenance Agreement-CSCS06040" Resource="CSCS06040" Href="~/RefundMaintAgreement/Index"></Menu>
+	</Module>
+	<Module Key="Key_Null" Caption="Voucher" Resource="MNU_Voucher" Href="#">
+		<Menu Key="CSCS05010" Caption="Customer Invoice-CSCS05010" Resource="CSCS05010" Href="~/CustomerInvoice/Index"></Menu>
+		<Menu Key="CSCS05090" Caption="DR/CR Note-CSCS05090" Resource="CSCS05090" Href="~/DRCRNote/Index"></Menu>
+		<Menu Key="CSCS05050" Caption="Job Payment-CSCS05050" Resource="CSCS05050" Href="~/ArPayment/List"></Menu>
+		<Menu Key="CSCS05060" Caption="Invoice Generation-CSCS05060" Resource="CSCS05060" Href="~/InvoiceGen/Index"></Menu>
+		<Menu Key="CSCS06070" Caption="Print Invoice-CSCS06070" Resource="CSCS06070" Href="~/InvoicePrint/Index"></Menu>
+		<Menu Key="CSCS06010" Caption="Payment Received-CSCS06010" Resource="CSCS06010" Href="~/ArPaymentReceive/Index"></Menu>
+		<Menu Key="CSCS06020" Caption="Bad Debt-CSCS06020" Resource="CSCS06020" Href="~/ArPaymentForBadDebt/List"></Menu>
+		<Menu Key="CSCS06060" Caption="Renew Maint-CSCS06060" Resource="CSCS06060" Href="~/ArPaymentRenewMaint/List"></Menu>
+		<Menu Key="CSCS07020" Caption="Job Payment Enquiry-CSCS07020" Resource="CSCS07020" Href="~/JobPaymentEnquiry/Index"></Menu>
+		<Menu Key="CSCS07040" Caption="Generate Invoice For Sales Memo-CSCS07040" Resource="CSCS07040" Href="~/InvoiceGenForSalesMemo/Index"></Menu>
+	</Module>
+	<Module Key="Key_Null" Caption="Parts Setup" Resource="MNU_Parts_Setup" Href="#">
+		<Menu Key="CSCP02010" Caption="Parts-CSCP02010" Resource="CSCP02010" Href="~/PartsMaintenance/Index"></Menu>
+		<Menu Key="CSCP02040" Caption="Parts Factory Price-CSCP02040" Resource="CSCP02040" Href="~/PartsFactoryPrice/Index"></Menu>
+		<Menu Key="CSCP02050" Caption="Parts Selling Price-CSCP02050" Resource="CSCP02050" Href="~/PartsSellingPrice/Index"></Menu>
+		<Menu Key="CSCP03090" Caption="Parts Enquiry-CSCP03090" Resource="CSCP03090" Href="~/PartsEnquiry/Index"></Menu>
+		<Menu Key="CSCP04010" Caption="Technician Outstanding Parts Enquiry-CSCP04010" Resource="CSCP04010" Href="~/PartsEnquiry/TechOutPartsEnquiryIndex"></Menu>
+		<Menu Key="CSCP04060" Caption="Discontinue Parts Enquiry-CSCP04060" Resource="CSCP04060" Href="~/DiscontinuePartsInquiry/Index"></Menu>
+		<Menu Key="CSCP04070" Caption="Parts Details Enquiry-CSCP04070" Resource="CSCP04070" Href="~/PartsDetailsEnquiry/Index"></Menu>
+	</Module>
+	<Module Key="Key_Null" Caption="Purchase Order" Resource="MNU_Purchase_Order" Href="#">
+		<Menu Key="CSCP02060" Caption="Purchase Order-CSCP02060" Resource="CSCP02060" Href="~/PurchaseOrderMaintenance/Index"></Menu>
+		<Menu Key="CSCP02070" Caption="Approve PO-CSCP02070" Resource="CSCP02070" Href="~/PurchaseOrder/List"></Menu>
+		<Menu Key="CSCP02080" Caption="PO Approval Rule-CSCP02080" Resource="CSCP02080" Href="~/PurchaseApproval/Index"></Menu>
+		<Menu Key="CSCPR01030" Caption="Purchase Order Suggest List-CSCPR01030" Resource="CSCPR01030" Href="~/Report/PurchaseOrderSuggestListReport/Index"></Menu>
+	</Module>
+	<Module Key="Key_Null" Caption="Stock" Resource="MNU_Stock" Href="#">
+		<Menu Key="CSCP02090" Caption="Stock Arrival Maintenance-CSCP02090" Resource="CSCP02090" Href="~/PoReceipt/Index"></Menu>
+		<Menu Key="CSCP03010" Caption="Stock Transfer-CSCP03010" Resource="CSCP03010" Href="~/StockTransfer/Index"></Menu>
+		<Menu Key="CSCP03030" Caption="Stock Adjustment-CSCP03030" Resource="CSCP03030" Href="~/StockAdjustment/Index"></Menu>
+		<Menu Key="CSCP03050" Caption="Return To Vendor-CSCP03050" Resource="CSCP03050" Href="~/PoReturnToVendor/List"></Menu>
+		<Menu Key="CSCP03060" Caption="Stock Arrival Correction-CSCP03060" Resource="CSCP03060" Href="~/PoStockArrivalCorrection/List"></Menu>
+		<Menu Key="CSCP04040" Caption="Stock Movement Enquiry-CSCP04040" Resource="CSCP04040" Href="~/StockMovementEnquiry/Index"></Menu>
+		<Menu Key="CSCP04080" Caption="Stock Take-CSCP04080" Resource="CSCP04080" Href="~/StockTakeBatch/Index"></Menu>
+	</Module>
+	<Module Key="Key_Null" Caption="Invoice" Resource="MNU_Invoice" Href="#">
+		<Menu Key="CSCP03070" Caption="Supplier Invoice-CSCP03070" Resource="CSCP03070" Href="~/ApInvoice/Index"></Menu>
+		<Menu Key="CSCP04090" Caption="AP Charges-CSCP04090" Resource="CSCP04090" Href="~/ApInvoice/ApChargeList"></Menu>
+	</Module>
+	<Module Key="Key_Null" Caption="Requisition" Resource="MNU_Requisition" Href="#">
+		<Menu Key="CSCP03020" Caption="Requisition Note-CSCP03020" Resource="CSCP03020" Href="~/Requisition/Index"></Menu>
+		<Menu Key="CSCP04020" Caption="Requisition Return-CSCP04020" Resource="CSCP04020" Href="~/RequisitionReturn/Index"></Menu>
+		<Menu Key="CSCP04050" Caption="Issued Requisition Enquiry-CSCP04050" Resource="CSCP04050" Href="~/IssuedRequisitionEnquiry/Index"></Menu>
+	</Module>
+	<Module Key="Key_Null" Caption="Sales Memo" Resource="MNU_Sales_Memo" Href="#">
+		<Menu Key="CSCP03040" Caption="Sales Memo-CSCP03040" Resource="CSCP03040" Href="~/SalesMemo/Index"></Menu>
+		<Menu Key="CSCP04030" Caption="Sales Return-CSCP04030" Resource="CSCP04030" Href="~/SalesReturn/Index"></Menu>
+	</Module>
+	<Module Key="Key_Null" Caption="Report" Resource="MNU_Report" Href="#">
+		<Module Key="Key_Null" Caption="PO" Resource="MNU_PO" Href="#">
+			<!--<Menu Key="CSCPR07060" Caption="Purchase Order" Resource="Purchase Order" Href="~/Report/PurchaseOrderReport/Index"></Menu>-->
+			<Menu Key="CSCPR00010" Caption="Purchase Order" Resource="Purchase Order" Href="~/Report/PO/Index"></Menu>
+			<Menu Key="CSCPR01010" Caption="Purchase Order Report" Resource="Purchase Order Report" Href="~/Report/PurchaseOrderReport/Index"></Menu>
+			<Menu Key="CSCPR01020" Caption="Purchase Receiving Correction Report" Resource="Purchase Receiving Correction Report" Href="~/Report/PurchaseReceivingCorrectionReport/Index"></Menu>
+			<!--<Menu Key="CSCPR01030" Caption="Purchase Order Suggest List" Resource="Purchase Order Suggest List" Href="~/Report/PurchaseOrderSuggestListReport/Index"></Menu>-->
+			<Menu Key="CSCPR01040" Caption="Purchase Analysis Report" Resource="Purchase Analysis Report" Href="~/Report/PurchaseAnalysisReport/Index"></Menu>
+		</Module>
+		<Module Key="Key_Null" Caption="Parts" Resource="MNU_Parts" Href="#">
+			<Menu Key="CSCPR01050" Caption="Counter Sales Report" Resource="Counter Sales Report" Href="~/Report/CounterSalesReport/Index"></Menu>
+			<Menu Key="CSCPR01060" Caption="Counter Sales Return Report" Resource="Counter Sales Return Report" Href="~/Report/CounterSalesReturnReport/Index"></Menu>
+			<Menu Key="CSCPR01090" Caption="Technician Parts Movement Report" Resource="Technician Parts Movement Report" Href="~/Report/TechnicianPartsMovementReport/Index"></Menu>
+			<Menu Key="CSCPR02010" Caption="Stock Movement Report" Resource="Stock Movement Report" Href="~/Report/StockMovementReport/Index"></Menu>
+			<Menu Key="CSCPR02020" Caption="Stock Adjustment Transaction Report" Resource="Stock Adjustment Transaction Report" Href="~/Report/StockAdjustmentTransactionReport/Index"></Menu>
+			<Menu Key="CSCPR02030" Caption="Stock Value Report " Resource="Stock Value Report" Href="~/Report/StockValueReport/Index"></Menu>
+			<Menu Key="CSCPR02040" Caption="Stock Aging By Brand By Type" Resource="Stock Aging By Brand By Type" Href="~/Report/StockAgingByBrandByTypeReport/Index"></Menu>
+			<Menu Key="CSCPR02050" Caption="Stock Aging By Brand" Resource="Stock Aging By Brand" Href="~/Report/StockAgingByBrandReport/Index"></Menu>
+			<Menu Key="CSCPR02060" Caption="Stock Aging By Brand By Parts"  Resource="Stock Aging By Brand By Parts" Href="~/Report/StockAgingByBrandByPartsReport/Index"></Menu>
+			<!--<Menu Key="CSCPR02070" Caption="Stock Take Report" Resource="Stock Take Report" Href="~/Report/StockTakeReport/Index"></Menu>
+			<Menu Key="CSCPR02080" Caption="Stock Take Discrepancy Report" Resource="Stock Take Discrepancy Report" Href="~/Report/StockTakeDiscrepancyReport/Index"></Menu>-->
+			<Menu Key="CSCPR02090" Caption="Wait Order Stock Arrival Alert List" Resource="Wait Order Stock Arrival Alert List" Href="~/Report/WaitOrderStockArrivalAlertList/Index"></Menu>
+			<Menu Key="CSCPR03010" Caption="Parts Sales Analysis Report" Resource="Parts Sales Analysis Report" Href="~/Report/PartsSalesAnalysisReport/Index"></Menu>
+			<Menu Key="CSCPR03020" Caption="Stock Transfer Note" Resource="Stock Transfer Note" Href="~/Report/StockTransferNote/Index"></Menu>
+			<Menu Key="CSCPR05080" Caption="Model Information Report" Resource="Model Information Report" Href="~/Report/ModelInformationReport/Index"></Menu>
+			<!--<Menu Key="CSCPR06020" Caption="Inventory Distribution Report" Resource="Inventory Distribution Report" Href="~/Report/InventoryDistributionReport/Index"></Menu>-->
+			<Menu Key="CSCPR06040" Caption="Parts Selling Price Audit Report" Resource="Parts Selling Price Audit Report" Href="~/Report/PartsSellingPriceAuditReport/Index"></Menu>
+			<Menu Key="CSCPR06050" Caption="Parts Selling Price Report" Resource="Parts Selling Price Report" Href="~/Report/PartsSellingPriceReport/Index"></Menu>
+			<Menu Key="CSCPR07030" Caption="Parts Selling Price VS Cost Audit Report" Resource="Parts Selling Price VS Cost Audit Report" Href="~/Report/PartsSellingPriceVSCostAuditReport/Index"></Menu>
+			<Menu Key="CSCPR07040" Caption="Stock Take Skip Parts Report" Resource="Stock Take Skip Parts Report" Href="~/Report/StockTakeSkipPartsReport/Index"></Menu>
+			<Menu Key="CSCPR07050" Caption="Stock Arrival Report" Resource="Stock Arrival Report" Href="~/Report/StockArrivalReport/Index"></Menu>
+			<Menu Key="CSCPR07080" Caption="Daily Physical Stock OnHand Report" Resource="Daily Physical Stock OnHand Report" Href="~/Report/DailyPhysicalStockOnHandReport/Index"></Menu>
+		</Module>
+		<Module Key="Key_Null" Caption="CS" Resource="MNU_CS" Href="#">
+			<Menu Key="CSCPR01070" Caption="Outstanding Parts By Technician" Resource="Outstanding Parts By Technician" Href="~/Report/OutstandingPartsByTechnicianReport/Index"></Menu>
+			<Menu Key="CSCPR01080" Caption="Outstanding Parts History By Technician" Resource="Outstanding Parts History By Technician" Href="~/Report/OutstandingPartsHistoryByTechnicianReport/Index"></Menu>
+			<!--<Menu Key="CSCPR01090" Caption="Technician Parts Movement Report" Resource="Technician Parts Movement Report" Href="~/Report/TechnicianPartsMovementReport/Index"></Menu>-->
+			<Menu Key="CSCPR03070" Caption="Daily Job Pick Slip Report" Resource="Daily Job Pick Slip Report" Href="~/Report/DailyJobPickSlipReport/Index"></Menu>
+			<Menu Key="CSCPR03080" Caption="Daily Job Report" Resource="Daily Job Report" Href="~/Report/DailyJobReport/Index"></Menu>
+			<!--<Menu Key="CSCPR03090" Caption="Technician Daily Job List" Resource="Technician Daily Job List" Href="~/Report/TechnicianDailyJobList/Index"></Menu>-->
+			<Menu Key="CSCPR04010" Caption="Outstanding Job Alert Report By Technician" Resource="Outstanding Job Alert Report By Technician" Href="~/Report/OutstandingJobAlertReportByTechnician/Index"></Menu>
+			<Menu Key="CSCPR04020" Caption="ID OD Check List" Resource="ID OD Check List" Href="~/Report/IDODCheckList/Index"></Menu>
+			<Menu Key="CSCPR04030" Caption="Daily Received Transaction Report" Resource="Daily Received Transaction Report" Href="~/Report/DailyReceivedTransactionReport/Index"></Menu>
+			<Menu Key="CSCPR05010" Caption="Product Information Report" Resource="Product Information Report" Href="~/Report/ProductInformationReport/Index"></Menu>
+			<Menu Key="CSCPR05020" Caption="Job Details Information Report" Resource="Job Details Information Report" Href="~/Report/JobDetailsInformationReport/Index"></Menu>
+			<!--<Menu Key="CSCPR05030" Caption="Job Analysis For Non DCH Brand" Resource="Job Analysis For Non DCH Brand" Href="~/Report/JobAnalysisForNonDCHBrand/Index"></Menu>-->
+			<Menu Key="CSCPR05040" Caption="Repair Symptom Analysis Report" Resource="Repair Symptom Analysis Report" Href="~/Report/RepairSymptomAnalysisReport"></Menu>
+			<Menu Key="CSCPR05050" Caption="Technician Performance Report" Resource="Technician Performance Report" Href="~/Report/TechnicianPerformanceReport/Index"></Menu>
+			<Menu Key="CSCPR05060" Caption="Technician Performance By Product Report" Resource="Technician Performance By Product Report" Href="~/Report/TechnicianPerformanceByProductReport/Index"></Menu>
+			<Menu Key="CSCPR05070" Caption="District Distribution Report" Resource="District Distribution Report" Href="~/Report/DistrictDistributionReport/Index"></Menu>
+			<Menu Key="CSCPR06060" Caption="Maintenance Price Report" Resource="Maintenance Price Report" Href="~/Report/MaintenancePriceReport/Index"></Menu>
+			<Menu Key="CSCPR06070" Caption="Maintenance Price Audit Report" Resource="Maintenance Price Audit Report" Href="~/Report/MaintenancePriceAuditReport/Index"></Menu>
+			<Menu Key="CSCPR06080" Caption="Product Information Audit Report" Resource="Product Information Audit Report" Href="~/Report/ProductInformationAuditReport/Index"></Menu>
+			<Menu Key="CSCPR07010" Caption="Technician Incentive Bonus Report" Resource="Technician Incentive Bonus Report" Href="~/Report/TechnicianIncentiveBonusReport/Index"></Menu>
+			<!--<Menu Key="CSCPR07020" Caption="Customer Information Audit Report" Resource="Customer Information Audit Report" Href="~/Report/CustomerInformationAuditReport/Index"></Menu>-->
+			<Menu Key="CSCS07050" Caption="Job Payment Consolidate Report-CSCS07050" Resource="CSCS07050" Href="~/Report/JobPaymentConsolidateReport/Index"></Menu>
+			<Menu Key="CSCPR08010" Caption="User List Report" Resource="User List Report" Href="~/Report/UserListReport/Index"></Menu>
+			<Menu Key="CSCPR08020" Caption="Function List Report" Resource="Role Function List Report" Href="~/Report/FunctionListReport/Index"></Menu>
+		</Module>
+		<Module Key="Key_Null" Caption="Finance" Resource="MNU_Finance" Href="#">
+			<Menu Key="CSCPR03030" Caption="AP Invoice Report" Resource="AP Invoice Report" Href="~/Report/APInvoiceReport/Index"></Menu>
+			<Menu Key="CSCPR03040" Caption="Material Account Distribution Detail" Resource="Material Account Distribution Detail" Href="~/Report/MaterialAccount/DetailIndex"></Menu>
+			<Menu Key="CSCPR03050" Caption="Material Account Distribution Summary" Resource="Material Account Distribution Summary" Href="~/Report/MaterialAccount/SummaryIndex"></Menu>
+			<Menu Key="CSCPR03060" Caption="Daily Cost Consumption Summary Report" Resource="Daily Cost Consumption Summary Report" Href="~/Report/DailyCostConsumptionSummaryReport/Index"></Menu>
+			<Menu Key="CSCPR04040" Caption="Debtor Invoice Report" Resource="Debtor Invoice Report" Href="~/Report/DebtorInvoiceReport/Index"></Menu>
+			<Menu Key="CSCPR04050" Caption="AR Settlement History Report" Resource="AR Settlement History Report" Href="~/Report/ARSettlementHistoryReport/Index"></Menu>
+			<Menu Key="CSCPR04060" Caption="Debtor Aging Report" Resource="Debtor Aging Report" Href="~/Report/DebtorAgingReport/Index"></Menu>
+			<Menu Key="CSCPR04070" Caption="Sales Analysis By Maint Type" Resource="Sales Analysis By Maint Type" Href="~/Report/SalesAnalysisByMaintType/Index"></Menu>
+			<Menu Key="CSCPR04080" Caption="Sales Analysis By Product Aging" Resource="Sales Analysis By Product Aging" Href="~/Report/SalesAnalysisByProductAging/Index"></Menu>
+			<Menu Key="CSCPR04090" Caption="Renew Analysis By Aging Report" Resource="Renew Analysis By Aging Report" Href="~/Report/RenewAnalysisByAgingReport/Index"></Menu>
+			<Menu Key="CSCPR05090" Caption="Accounting Movement Transaction Report" Resource="Accounting Movement Transaction Report" Href="~/Report/AccountingMovementTransactionReport/Index"></Menu>
+			<Menu Key="CSCPR06010" Caption="Daily Sales Summary Report" Resource="Daily Sales Summary Report" Href="~/Report/DailySalesSummaryReport/Index"></Menu>
+			<!--<Menu Key="CSCPR06030" Caption="Posted Journals" Resource="Posted Journals" Href="~/Report/PostedJournals/Index"></Menu>-->
+			<Menu Key="CSCPR06090" Caption="AR Voucher Report" Resource="AR Voucher Report" Href="~/Report/ARVoucherReport/Index"></Menu>
+		</Module>
+		<Menu Key="CSCPR07070" Caption="Job Queue-CSCPR07070" Resource="CSCPR07070" Href="~/Report/JobQueue/Index"></Menu>
+		<!--<Menu Key="CSCP01030" Caption="Test Report" Resource="TestReport" Href="~/Report/TestReport/Index"></Menu>
+		<Menu Key="CSCP01030" Caption="Test Report" Resource="TestReport" Href="~/Report/TestReport2/Index"></Menu>-->
+	</Module>
+	<Module Key="Key_Null" Caption="Setup" Resource="MNU_Setup" Href="#">
+		<Module Key="Key_Null" Caption="Job" Resource="MNU_Job" Href="#">
+			<Menu Key="CSCS02070" Caption="Address Code-CSCS02070" Resource="CSCS02070" Href="~/AddressCode/Index"></Menu>
+			<Menu Key="CSCS03060" Caption="Technician Code-CSCS03060" Resource="CSCS03060" Href="~/Technician/Index"></Menu>
+			<Menu Key="CSCS07060" Caption="Technician Group-CSCS07060" Resource="CSCS07060" Href="~/TechGroup/List"></Menu>
+			<Menu Key="CSCS03070" Caption="Contractor-CSCS03070" Resource="CSCS03070" Href="~/Contractor/Index"></Menu>
+			<Menu Key="CSCS03090" Caption="Job Labour Fee-CSCS03090" Resource="CSCS03090" Href="~/JobLabourFee/Index"></Menu>
+			<Menu Key="CSCS03080" Caption="Job Assign Rule-CSCS03080" Resource="CSCS03080" Href="~/JobQuota/Index"></Menu>
+			<Menu Key="CSCS02090" Caption="Material-CSCS02090" Resource="CSCS02090" Href="~/Material/Index"></Menu>
+			<Menu Key="CSCS02020" Caption="Service Group-CSCS02020" Resource="CSCS02020" Href="~/ServiceGroup/Index"></Menu>
+			<Menu Key="CSCS02030" Caption="Result Code-CSCS02030" Resource="CSCS02030" Href="~/ResultCode/Index"></Menu>
+			<Menu Key="CSCS02040" Caption="Repair Code-CSCS02040" Resource="CSCS02040" Href="~/RepairCode/Index"></Menu>
+			<Menu Key="CSCP01010" Caption="Reason Code-CSCP01010" Resource="CSCP01010" Href="~/ReasonCode/Index"></Menu>
+			<Menu Key="CSCS03030" Caption="Symptom-CSCS03030" Resource="CSCS03030" Href="~/Symptom/Index"></Menu>
+		</Module>
+		<Module Key="Key_Null" Caption="Model" Resource="MNU_Model" Href="#">
+			<Menu Key="CSCS02010" Caption="Brand Code-CSCS02010" Resource="CSCS02010" Href="~/BrandCode/Index"></Menu>
+			<Menu Key="CSCS02080" Caption="Model Class-CSCS02080" Resource="CSCS02080" Href="~/ModelClass/Index"></Menu>
+			<Menu Key="CSCS03010" Caption="Model Type-CSCS03010" Resource="CSCS03010" Href="~/ModelType/Index"></Menu>
+			<Menu Key="CSCS03020" Caption="Model Code-CSCS03020" Resource="CSCS03020" Href="~/Model/Index"></Menu>
+			<Menu Key="CSCP01020" Caption="Product Class-CSCP01020" Resource="CSCP01020" Href="~/ProductClass/Index"></Menu>
+		</Module>
+		<Module Key="Key_Null" Caption="Parts" Resource="MNU_Parts" Href="#">
+			<Menu Key="CSCP02030" Caption="Godown Code-CSCP02030" Resource="CSCP02030" Href="~/Godown/Index"></Menu>
+			<Menu Key="CSCP02020" Caption="Bin Location-CSCP02020" Resource="CSCP02020" Href="~/BinLocation/Index"></Menu>
+			<Menu Key="CSCP01070" Caption="Parts Class-CSCP01070" Resource="CSCP01070" Href="~/PartsClass/Index"></Menu>
+			<Menu Key="CSCP01080" Caption="Reorder Factor-CSCP01080" Resource="CSCP01080" Href="~/ReorderFactor/IndexDefault"></Menu>
+			<Menu Key="CSCP01090" Caption="Category Code-CSCP01090" Resource="CSCP01090" Href="~/CategoryCode/Index"></Menu>
+		</Module>
+		<Module Key="Key_Null" Caption="Finance" Resource="MNU_Finance" Href="#">
+			<Menu Key="CSCP01060" Caption="Client-CSCP01060" Resource="CSCP01060" Href="~/Client/Index"></Menu>
+			<Menu Key="CSCP01050" Caption="Supplier-CSCP01050" Resource="CSCP01050" Href="~/Supplier/Index"></Menu>
+			<Menu Key="CSCS02050" Caption="Charge Code-CSCS02050" Resource="CSCS02050" Href="~/ChargeCode/Index"></Menu>
+			<Menu Key="CSCP03080" Caption="GL Account-CSCP03080" Resource="CSCP03080" Href="~/AccountCode/AccountCodeList"></Menu>
+			<Menu Key="CSCP01030" Caption="Currency-CSCP01030" Resource="CSCP01030" Href="~/Currency/Index"></Menu>
+			<Menu Key="CSCP01040" Caption="Exchange Rate-CSCP01040" Resource="CSCP01040" Href="~/ExchangeRate/Index"></Menu>
+			<Menu Key="CSCS04090" Caption="Payment Method-CSCS04090" Resource="CSCS04090" Href="~/PaymentMethod/Index"></Menu>
+			<Menu Key="CSCS05020" Caption="Payment Terms-CSCS05020" Resource="CSCS05020" Href="~/ArPaymentTerms/List"></Menu>
+		</Module>
+		<Menu Key="CSCS02060" Caption="Master Code-CSCS02060" Resource="CSCS02060" Href="~/MasterCode/Index"></Menu>
+  </Module>
+</config>

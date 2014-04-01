@@ -1,0 +1,71 @@
+﻿.div_container_lov
+{
+    display: inline-table;
+    position: relative;
+    overflow: auto;
+    margin: 0px;
+    padding: 0px;
+}
+
+.aselect_lov
+{
+    background-color: #fff;
+    background-image: url(../Images/Select.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    display: block;
+    top: 1px;
+    right: 1px;
+    border: 1px solid #f00;
+}
+.search_lov
+,.search_lov_dialog
+{
+    border: 1px solid #ccc;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.search_lov ul.s > li,.search_lov_dialog ul.s > li
+{
+    float: left;
+    margin: 0px 3px;
+}
+.pager_lov
+{
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.a_lov
+{
+    position: absolute;
+    background-color: #fff;
+    background-image: url(../Images/Lov.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    display: block;
+    top: 1px;
+    right: 1px;
+    border: 1px solid #ccc;
+}
+a.a_lov:hover
+{
+    background-color: #f2f2f2;
+}
+.div_select_lov
+{
+    border: solid 1px #6C92AD;
+    background-color: #fff;
+    position: absolute;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+    z-index: 19;
+}

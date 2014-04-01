@@ -1,0 +1,46 @@
+﻿.div_container_numeric
+{
+    position: relative;
+    overflow: auto;
+    display: inline-table;
+}
+.a_up_numeric
+{
+    position: absolute;
+    background-image: url(../Images/Up.png);
+    background-position: 5px 3px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: 17px;
+    height: 10px;
+    display: block;
+    top: 1px;
+    right: 1px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background-color: White;
+}
+.a_down_numeric
+{
+    position: absolute;
+    background-image: url(../Images/Down.png);
+    background-position: 5px 3px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: 17px;
+    height: 10px;
+    display: block;
+    bottom: 1px;
+    right: 1px;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: White;
+}
+a.a_up_numeric:hover
+{
+    background-color: #f2f2f2;
+}
+a.a_down_numeric:hover
+{
+    background-color: #f2f2f2;
+}

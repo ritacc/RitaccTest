@@ -1,0 +1,460 @@
+/*-----------------------------------------------------------------------------*/
+.form-table { }
+.form-table tr { height:35px; }
+
+select
+{
+    border: solid 1px #6C92AD;
+    font-size: 12px;
+    padding: 2px;
+    padding-top: 3px;
+}
+input[type="button"], input[type="submit"], input[type="reset"]
+{
+    font-family:Times New Roman;
+    font-size: 12px;
+    line-height: 20px;
+    background: url(../Images/LineBg.png) repeat-x 0px 0px;
+    border: solid 1px #6C92AD;
+    cursor: pointer;
+}
+
+button
+{
+    font-family:Times New Roman;
+    font-size: 12px;
+    line-height: 20px;
+    background: url(../Images/LineBg.png) repeat-x 0px 1px;
+    border: solid 1px #6C92AD;
+    cursor: pointer;
+}
+
+.buttonX 
+{
+    font-family:Times New Roman;
+    font-size: 12px;
+    background: url("../Images/LineBg.png") repeat-x scroll 0 90% transparent;
+    border: 1px solid #6C92AD;
+    cursor: pointer;
+    line-height: 20px;
+    width: auto;
+}
+
+input[type="text"], input[type="password"]
+{
+    font-family:Times New Roman;
+    font-size: 12px;
+    border: solid 1px #6C92AD;
+    /*padding-top:3px;
+    padding-bottom:4px;*/
+    line-height:21px;
+    height:20px;
+    width: 150px;
+}
+textarea
+{
+    font-family:Times New Roman;
+    font-size: 12px;
+    border: solid 1px #6C92AD;
+    padding: 3px 2px;
+    width: 221px;
+}
+span.label
+{
+    display: block;
+    border: solid 1px #6C92AD;
+    font-family: Arial;
+    font-size: 12px;
+    padding: 3px 2px;
+    background-color: #f2f2f2;
+    float: left;
+}
+.valid_error_msg
+{
+    vertical-align:middle;
+    color: Red;
+}
+.in_error
+{
+    background-color: #f2f2f2;
+}
+.in_readonly
+{
+    background-color: #FEF6D0;
+}
+.label_readonly
+{
+    text-align: left;
+	background-color: #FEF6D0;
+	border:1px solid #6C92AD;
+	vertical-align:middle;  
+	display:-moz-inline-box;  
+	display:inline-block;
+	min-height:19px;
+	word-break: break-all;
+	word-wrap: break-word;
+    padding-top: 2px;
+    padding-left: 2px;
+}
+.amount_color
+{ 
+	background-color:#B4FFB4;	 
+}
+.div_readonly
+{
+	background-color: #FEF6D0;
+	border:1px solid #6C92AD;
+	vertical-align:middle;  
+	padding-top:3px;
+	display:-moz-inline-box;  
+	display:inline-block;
+	min-height:18px;
+	width:auto
+}
+
+.ddl_readonly
+{
+	background-color: #FEF6D0;
+	border:1px solid #6C92AD;
+	display:-moz-inline-box;  
+	display:inline-block
+}
+.in_search
+{
+    background: url(../Images/Search.png) no-repeat right center;
+    border: solid 1px #6C92AD;
+    font-family: Arial;
+    font-size: 12px;
+    padding: 3px 2px;
+}
+/*-- tool bar button ---------------------------------------------------------------------------*/
+.tool_recalculate
+{
+	background-image: url(../Images/Recalculate.png);
+}
+.tool_audit
+{
+	background-image: url(../Images/Audit.png);
+}
+.tool_search
+{
+	background-image: url(../Images/Search.png);
+}
+.tool_generate
+{
+	background-image: url(../Images/Generate.png);
+}
+.tool_locate
+{
+	background-image: url(../Images/Locate.png);
+}
+.tool_fllowup
+{
+	background-image: url(../Images/Fllowup.png);
+}
+.tool_lostfllowup
+{
+	background-image: url(../Images/lossfollowup.png);
+}
+.tool_help
+{
+    background-image: url(../Images/Help.png);
+}
+.tool_new
+{
+    background-image: url(../Images/New.png);
+}
+.tool_create
+{
+    background-image: url(../Images/create.png);
+}
+.tool_edit
+{
+    background-image: url(../Images/Edit.png);
+}
+.tool_delete
+{
+    /*background-image: url(../Images/Delete.png);*/
+    background-image: url(../Images/Delete_1.png);
+}
+.tool_delete_1
+{
+    background-image: url(../Images/Delete_1.png);
+}
+
+.tool_collect
+{
+    background-image: url(../Images/Collect.png);
+}
+
+.tool_export
+{
+    background-image: url(../Images/Download.png);
+}
+.tool_down
+{
+    background-image: url(../Images/arrow_down.jpg);
+}
+.tool_download1
+{
+    background-image: url(../Images/download1.jpg);
+}
+.tool_download2
+{
+    background-image: url(../Images/Download2.bmp);
+}
+.tool_down1
+{
+    background-image: url(../Images/Down.ico);
+}
+.tool_up1
+{
+    background-image: url(../Images/up1.jpg);
+}
+.tool_print
+{
+    background-image: url(../Images/Print.png);
+}
+.tool_report
+{
+    background-image: url(../Images/View.png);
+}
+.tool_return
+{
+    background-image: url(../Images/Return.png);
+}
+.tool_previous
+{
+    background-image: url(../Images/Previous.png);
+}
+.tool_next
+{
+    background-image: url(../Images/Next.png);
+}
+.tool_copy
+{
+    background-image: url(../Images/Copy.png);
+}
+.tool_convert
+{
+    background-image: url(../Images/Convert.png);
+}
+.tool_append
+{
+    background-image: url(../Images/Append.png);
+}
+.tool_save
+{
+    background-image: url(../Images/Save.png);
+}
+.tool_lotbatch
+{
+    background-image: url(../Images/LotBatch.png);
+}
+.tool_view
+{
+    background-image: url(../Images/Lov.png);
+}
+.tool_approval
+{
+    background-image: url(../Images/Approval.png);
+}
+.tool_confirmd
+{
+    background-image: url(../Images/Confirmed.png);
+}
+.tool_cancelapproval
+{
+    background-image: url(../Images/CancelApproval.png);
+}
+.tool_cancelconfirm
+{
+    background-image: url(../Images/CancelConfirmed.png);
+}
+.tool_allapproval
+{
+    background-image: url(../Images/Approval.png);
+}
+.tool_allconfirmd
+{
+    background-image: url(../Images/Confirmed.png);
+}
+
+.tool_allcancelapproval
+{
+    background-image: url(../Images/CancelApproval.png);
+}
+.tool_allcancelconfirm
+{
+    background-image: url(../Images/CancelConfirmed.png);
+}
+
+.tool_posttogl
+{
+    background-image:url(../Images/PostToGL.png);
+}
+
+.tool_freezeGroup
+{
+    background-image:url(../Images/FreezeGroup.png);
+}
+
+.tool_cancelFreezeGroup
+{
+    background-image:url(../Images/CancelFreezeGroup.png);
+}
+
+.tool_suspend
+{
+    background-image:url(../Images/SuspendUser.png);
+}
+
+.tool_cancelSuspend
+{
+    background-image:url(../Images/CancelSuspendUser.png);
+}
+
+.tool_changePassword
+{
+    background-image:url(../Images/ChangePassword.png);
+}
+
+.tool_select
+{
+    background-image: url(../Images/Select.png);
+}
+
+.tool_cancelselect
+{
+    background-image: url(../Images/Delete_1.png);
+}
+.tool_active
+{
+    background-image:url(../Images/Select.png);
+}
+.tool_inactive
+{
+    background-image:url(../Images/Delete.png);
+}
+.tool_inactive_1
+{
+    background-image:url(../Images/Delete_1.png);
+}
+.tool_manual_ob 
+{
+    background-image: url(../Images/Edit.png);
+}
+.tool_auto_ob
+{
+    background-image:url(../Images/Edit.png);
+}
+.tool_complaint
+{
+    background-image: url("../Images/telephone.png");
+}
+
+.tool_undosuccess
+{
+    background-image: url("../Images/delete.png");
+}
+
+.tool_undoclose
+{
+    background-image: url("../Images/delete.png");
+}
+
+.tool_success
+{
+    background-image: url("../Images/accept.png");
+}
+
+.tool_details
+{
+    background-image: url("../Images/Lov.png");
+}
+
+.tool_close
+{
+    background-image: url("../Images/delete.png");
+}
+.tool_close_1
+{
+    background-image: url("../Images/Delete_1.png");
+}
+
+.tool_question
+{
+    background-image: url("../Images/Help.png");
+}
+
+.tool_fllow
+{
+    background-image: url("../Images/Fllowup.png");
+}
+
+.tool_positioningofvehicles
+{
+    background-image: url("../Images/car_add.png");
+}
+
+
+
+.task_personnel
+{
+    background-image: url("../Images/user.png");
+}
+.tool_cancelsuccess
+{
+    background-image: url("../Images/cancel.png");
+}
+.tool_cancelclose
+{
+    background-image: url("../Images/lock_break.png");
+}
+.tool_generate
+{
+    background-image:url(../Images/Select.png);
+}
+
+/*-- quick bar button ---------------------------------------------------------------------------*/
+
+.success
+{
+    background-image:url(../Images/success.png);
+}
+
+.failure
+{
+    background-image:url(../Images/failure.png);
+}
+
+.question
+{
+    background-image:url(../Images/question.png);
+}
+
+.info
+{
+    background-image:url(../Images/info.png);
+}
+
+.tool_WaitSend 
+{
+    background-image: url(../Images/Generate.png);
+}
+.tool_Cancel
+{
+    background-image: url(../Images/cancel.png);
+}
+.tool_draft
+{
+    background-image: url(../Images/draft.ico);
+}
+.tool_created
+{
+    background-image: url(../Images/created.ico);
+}
+.tool_deny
+{
+    background-image: url(../Images/deny.ico);
+}

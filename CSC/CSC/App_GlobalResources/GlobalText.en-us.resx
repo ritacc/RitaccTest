@@ -1,0 +1,849 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BtnDeleteText" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="BtnEditText" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="BtnNewText" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="BtnReset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="BtnResetText" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="btnCancelText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="BtnSaveText" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="BtnSearchText" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="BtnSelectedText" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="CancelFrozen" xml:space="preserve">
+    <value>Unfrozen</value>
+  </data>
+  <data name="CancelFrozenConfirm" xml:space="preserve">
+    <value>Are you sure you want to unfreeze the role?</value>
+  </data>
+  <data name="CancelSuspend" xml:space="preserve">
+    <value>Unsuspend</value>
+  </data>
+  <data name="CancelSuspendConfirm" xml:space="preserve">
+    <value>Are you sure you want to unsuspend the user?</value>
+  </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>中文</value>
+  </data>
+  <data name="DeleteConfirm" xml:space="preserve">
+    <value>Are you sure you want to delete it?</value>
+  </data>
+  <data name="DropDownListDefaultItemText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Frozen" xml:space="preserve">
+    <value>Frozen</value>
+  </data>
+  <data name="FrozenConfirm" xml:space="preserve">
+    <value>Are you sure to frozen the user?</value>
+  </data>
+  <data name="FullNamex" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="PagerBtnJumpText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="PagerFirst" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="PagerGo" xml:space="preserve">
+    <value>Go</value>
+  </data>
+  <data name="PagerJumpToFormat" xml:space="preserve">
+    <value>Go to {0}</value>
+  </data>
+  <data name="PagerLast" xml:space="preserve">
+    <value>Last</value>
+  </data>
+  <data name="PagerNext" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="PagerOverNumStr" xml:space="preserve">
+    <value>Please enter the numbers 1 to {0}</value>
+  </data>
+  <data name="PagerPrevious" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="PagerToolTip" xml:space="preserve">
+    <value>Total {0} records, total {1} pages, {2} records per page, current page {3}</value>
+  </data>
+  <data name="RequiredMessage" xml:space="preserve">
+    <value>This field is required.</value>
+  </data>
+  <data name="SelectSingle" xml:space="preserve">
+    <value>Please select a record before you do this operation.</value>
+  </data>
+  <data name="Suspend" xml:space="preserve">
+    <value>Suspend</value>
+  </data>
+  <data name="SuspendConfirm" xml:space="preserve">
+    <value>Are you sure you want to suspend it?</value>
+  </data>
+  <data name="ChangeShop" xml:space="preserve">
+    <value>Change Shop</value>
+  </data>
+  <data name="SelectNoItemText" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="SelectYesItemText" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="HasFrozen" xml:space="preserve">
+    <value>The record is already frozen, not allowed to repeat operation.</value>
+  </data>
+  <data name="NoFrozen" xml:space="preserve">
+    <value>This item is not frozen, can not unfrozen.</value>
+  </data>
+  <data name="RedirectToLogin" xml:space="preserve">
+    <value>redirect to login</value>
+  </data>
+  <data name="AjaxProcess" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="NotCancelFrozenRoleByNS" xml:space="preserve">
+    <value>It's not allowed to cancel frozen role by this user of current type.</value>
+  </data>
+  <data name="NotEditRoleByNS" xml:space="preserve">
+    <value>It's not allowed to edit role by this user of current type.</value>
+  </data>
+  <data name="NotFrozenRoleByNS" xml:space="preserve">
+    <value>It's not allowed to frozen role by this user of current type.</value>
+  </data>
+  <data name="CancelFrozenNoSuccess" xml:space="preserve">
+    <value>Unfrozen the role failed.</value>
+  </data>
+  <data name="CancelFrozenSuccess" xml:space="preserve">
+    <value>Unfrozen the role succeed.</value>
+  </data>
+  <data name="FrozenNoSuccess" xml:space="preserve">
+    <value>Frozen failed.</value>
+  </data>
+  <data name="FrozenSuccess" xml:space="preserve">
+    <value>Frozen succeed.</value>
+  </data>
+  <data name="RecordChanged" xml:space="preserve">
+    <value>Record changed</value>
+  </data>
+  <data name="RecordDuplicate" xml:space="preserve">
+    <value>Record duplicate</value>
+  </data>
+  <data name="SaveSucceed" xml:space="preserve">
+    <value>Save succeed</value>
+  </data>
+  <data name="CancelSuspendNoSuccess" xml:space="preserve">
+    <value>Unsuspend the user failed.</value>
+  </data>
+  <data name="CancelSuspendSuccess" xml:space="preserve">
+    <value>Unsuspend the user succeed.</value>
+  </data>
+  <data name="SuspendNoSuccess" xml:space="preserve">
+    <value>Suspend failed.</value>
+  </data>
+  <data name="SuspendSuccess" xml:space="preserve">
+    <value>Suspend succeed.</value>
+  </data>
+  <data name="CancelLock" xml:space="preserve">
+    <value>Unlock</value>
+  </data>
+  <data name="CancelLockConfirm" xml:space="preserve">
+    <value>Are you sure you want to unlock the user?</value>
+  </data>
+  <data name="HasSuspend" xml:space="preserve">
+    <value>The user is already suspend, not allowed to repeat operation.</value>
+  </data>
+  <data name="NoLock" xml:space="preserve">
+    <value>This item is not locked, can not unlock.</value>
+  </data>
+  <data name="NoSuspend" xml:space="preserve">
+    <value>This item is not suspend, can not resume.</value>
+  </data>
+  <data name="CancelLockNoSuccess" xml:space="preserve">
+    <value>Unlock the user failed.</value>
+  </data>
+  <data name="CancelLockSuccess" xml:space="preserve">
+    <value>Unlock the user succeed.</value>
+  </data>
+  <data name="EnterConfirmPassword" xml:space="preserve">
+    <value>Please enter the confirm password.</value>
+  </data>
+  <data name="EnterPassword" xml:space="preserve">
+    <value>Please enter the new password.</value>
+  </data>
+  <data name="PassNoEqualsConfirmPass" xml:space="preserve">
+    <value>Twice enter the password is not the same.</value>
+  </data>
+  <data name="DeleteFailed" xml:space="preserve">
+    <value>Delete Failed</value>
+  </data>
+  <data name="DeleteSucceed" xml:space="preserve">
+    <value>Delete Succeed.</value>
+  </data>
+  <data name="ExistsSubData" xml:space="preserve">
+    <value>The current data have been used, not allowed to be deleted.</value>
+  </data>
+  <data name="SaveFailed" xml:space="preserve">
+    <value>Save Failed</value>
+  </data>
+  <data name="SHOP_MUST_SELECT" xml:space="preserve">
+    <value>The shop is required</value>
+  </data>
+  <data name="ModifySuccessed" xml:space="preserve">
+    <value>Modify Successed</value>
+  </data>
+  <data name="EnterNumber" xml:space="preserve">
+    <value>Please enter a number.</value>
+  </data>
+  <data name="FrozenEditError" xml:space="preserve">
+    <value>It's not allowed to edit with frozen status.</value>
+  </data>
+  <data name="CanNotDeleteMainData" xml:space="preserve">
+    <value>Can not delete main data</value>
+  </data>
+  <data name="MustSelectShop" xml:space="preserve">
+    <value>User must have one shop at least.</value>
+  </data>
+  <data name="BtnModifyText" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="ClickModify" xml:space="preserve">
+    <value>Please click modify button</value>
+  </data>
+  <data name="BtnOKText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="BtnCancelSelectedText" xml:space="preserve">
+    <value>Unselect</value>
+  </data>
+  <data name="CancelMasterCodeConfirm" xml:space="preserve">
+    <value>Sure to cancel use this data?</value>
+  </data>
+  <data name="SelectMasterCodeConfirm" xml:space="preserve">
+    <value>Sure to use this data?</value>
+  </data>
+  <data name="BtnExportText" xml:space="preserve">
+    <value>Export CSV</value>
+  </data>
+  <data name="BtnSignOutText" xml:space="preserve">
+    <value>Sign out</value>
+  </data>
+  <data name="ConfirmActive" xml:space="preserve">
+    <value>Are you sure you want to change the status to active?</value>
+  </data>
+  <data name="ConfirmAuto" xml:space="preserve">
+    <value>Are you sure you want to change the mode to auto?</value>
+  </data>
+  <data name="ConfirmInactive" xml:space="preserve">
+    <value>Are you sure you want to change the status to inactive?</value>
+  </data>
+  <data name="ConfirmManual" xml:space="preserve">
+    <value>Are you sure you want to change the mode to manual?</value>
+  </data>
+  <data name="HasActive" xml:space="preserve">
+    <value>The record is already activated, not allowed to repeat operation.</value>
+  </data>
+  <data name="HasAuto" xml:space="preserve">
+    <value>It's already auto mode, can not change to auto mode again.</value>
+  </data>
+  <data name="HasInactive" xml:space="preserve">
+    <value>The record is already activated, not allowed to repeat operation.</value>
+  </data>
+  <data name="HasManual" xml:space="preserve">
+    <value>It's already manual mode, can not change to manual mode again.</value>
+  </data>
+  <data name="ModifyUnsuccessed" xml:space="preserve">
+    <value>Modify Unsuccessed</value>
+  </data>
+  <data name="ConfirmClose" xml:space="preserve">
+    <value>Are you sure you want to close the selected item?</value>
+  </data>
+  <data name="BtnReturnText" xml:space="preserve">
+    <value>Return</value>
+  </data>
+  <data name="RequiredSelect" xml:space="preserve">
+    <value>Please select a record.</value>
+  </data>
+  <data name="BtnCopy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="BtnDownload" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="BtnConfirmChange" xml:space="preserve">
+    <value>Verify Import</value>
+  </data>
+  <data name="BtnDownCSV" xml:space="preserve">
+    <value>Export Data CSV</value>
+  </data>
+  <data name="BtnImport" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="BtnValid" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+  <data name="ShopLovTitle" xml:space="preserve">
+    <value>Please select a shop.</value>
+  </data>
+  <data name="NoRecords" xml:space="preserve">
+    <value>Could not find any records!</value>
+  </data>
+  <data name="BtnReturnChange" xml:space="preserve">
+    <value>Return Change</value>
+  </data>
+  <data name="SearchFrist" xml:space="preserve">
+    <value>Please Search or Search(Customer) to file then Export CSV</value>
+  </data>
+  <data name="SelectExportField" xml:space="preserve">
+    <value>Please select export fields</value>
+  </data>
+  <data name="MustSelectRecord" xml:space="preserve">
+    <value>Please select a record.</value>
+  </data>
+  <data name="BtnDownTempCSV" xml:space="preserve">
+    <value>CSV Template</value>
+  </data>
+  <data name="BtnViewText" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="MaxMin" xml:space="preserve">
+    <value>The max value must greater than min value</value>
+  </data>
+  <data name="NoSelectMode" xml:space="preserve">
+    <value>The mode unable select.</value>
+  </data>
+  <data name="NotAlphabet" xml:space="preserve">
+    <value>Not a alphabet</value>
+  </data>
+  <data name="NotChar" xml:space="preserve">
+    <value>Not a character</value>
+  </data>
+  <data name="NotNumber" xml:space="preserve">
+    <value>Not a number</value>
+  </data>
+  <data name="NotValid" xml:space="preserve">
+    <value>Data is not valid</value>
+  </data>
+  <data name="SameValue" xml:space="preserve">
+    <value>Exists the same value</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="Sure" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="BtnComplete" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="BtnReject" xml:space="preserve">
+    <value>Refuse</value>
+  </data>
+  <data name="BtnCancelAllSelectedText" xml:space="preserve">
+    <value>Unselecte All</value>
+  </data>
+  <data name="BtnSelectedAllText" xml:space="preserve">
+    <value>Select All</value>
+  </data>
+  <data name="ConfirmSave" xml:space="preserve">
+    <value>Are you sure you want to save the current changes?</value>
+  </data>
+  <data name="NO" xml:space="preserve">
+    <value>No.</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="DateVaid" xml:space="preserve">
+    <value>Query time is unreasonable, the end date must be greater than start date</value>
+  </data>
+  <data name="TimeTypeError" xml:space="preserve">
+    <value>Time error</value>
+  </data>
+  <data name="RecalculateConfirm" xml:space="preserve">
+    <value>Sure to date recalculate?</value>
+  </data>
+  <data name="HasUnlockLogin" xml:space="preserve">
+    <value>The client is already un-locked, not allowed to repeat operation.</value>
+  </data>
+  <data name="HasUnlockWP" xml:space="preserve">
+    <value>The workplace is already un-locked, not allowed to repeat operation.</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="SelectMultiple" xml:space="preserve">
+    <value>Please check more than one record, then the current operation</value>
+  </data>
+  <data name="SelectAllConfirm" xml:space="preserve">
+    <value>Are you sure you want to select all record?</value>
+  </data>
+  <data name="SureLeave" xml:space="preserve">
+    <value>You have unsaved changes,are you sure to leave this page?</value>
+  </data>
+  <data name="SureLeave1" xml:space="preserve">
+    <value>Are you sure you want to do this operation?</value>
+  </data>
+  <data name="NoVehicle" xml:space="preserve">
+    <value>The selected customer has no vehcile</value>
+  </data>
+  <data name="BtnUploadCSV" xml:space="preserve">
+    <value>Upload Data CSV</value>
+  </data>
+  <data name="DMSDeleteConfirm" xml:space="preserve">
+    <value>Are you sure detele your choose?</value>
+  </data>
+  <data name="ErrBegDateMoreThanEndDate" xml:space="preserve">
+    <value>BeginDate&gt;EndDate should be prohibited</value>
+  </data>
+  <data name="ErrMoreThanDateNow" xml:space="preserve">
+    <value>Query Date more than Now should be prohibited</value>
+  </data>
+  <data name="DMSProhibitDelStatus" xml:space="preserve">
+    <value>Status prohibit Del</value>
+  </data>
+  <data name="DMSProhibitEditStsD" xml:space="preserve">
+    <value>Status prohibit Edit</value>
+  </data>
+  <data name="CheckedStatus" xml:space="preserve">
+    <value>Please checked the status</value>
+  </data>
+  <data name="SaveComplaintFirst" xml:space="preserve">
+    <value>Please save complaint first !</value>
+  </data>
+  <data name="BtnReport" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="BtnShopSelectedText" xml:space="preserve">
+    <value>Shop Select</value>
+  </data>
+  <data name="HasSelected" xml:space="preserve">
+    <value>Has been selected, can not repeat the operation.</value>
+  </data>
+  <data name="SHOP_CODE" xml:space="preserve">
+    <value>Shop code</value>
+  </data>
+  <data name="SYS_CODE" xml:space="preserve">
+    <value>System code</value>
+  </data>
+  <data name="USER_CODE" xml:space="preserve">
+    <value>User code</value>
+  </data>
+  <data name="USER_GROUP" xml:space="preserve">
+    <value>User group</value>
+  </data>
+  <data name="NotSelectToSetDefaultValue" xml:space="preserve">
+    <value>Not selected, you can not set default value.</value>
+  </data>
+  <data name="DateError" xml:space="preserve">
+    <value>The end date must be greater than or equal to start date</value>
+  </data>
+  <data name="SelectMemberAttrItem" xml:space="preserve">
+    <value>Please select the Member attribute items</value>
+  </data>
+  <data name="DecimalCompareMsg" xml:space="preserve">
+    <value>The end value must be greater than or equal to start value</value>
+  </data>
+  <data name="btnSetText" xml:space="preserve">
+    <value>Set</value>
+  </data>
+  <data name="hasNoPermissionToOperate" xml:space="preserve">
+    <value>You are not currently gives view permissions, suggest you to ask management empower application.</value>
+  </data>
+  <data name="BtnClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="PropMustActiveAndShopSelect" xml:space="preserve">
+    <value>Can not use this feature！Note:The property must be actived and shop selected！</value>
+  </data>
+  <data name="ConfirmConvert" xml:space="preserve">
+    <value>Are you sure you want to convert the current data?</value>
+  </data>
+  <data name="LblMultipleChoice" xml:space="preserve">
+    <value>Multiple Choice</value>
+  </data>
+  <data name="LblRadio" xml:space="preserve">
+    <value>Radio</value>
+  </data>
+  <data name="SingleSelected" xml:space="preserve">
+    <value>Radio</value>
+  </data>
+  <data name="MaxValue" xml:space="preserve">
+    <value>MaxValue:{0}</value>
+  </data>
+  <data name="MinValue" xml:space="preserve">
+    <value>MinValue:{0}</value>
+  </data>
+  <data name="Input_plus_number" xml:space="preserve">
+    <value>Please enter a positive integer value.</value>
+  </data>
+  <data name="LOV_CANCEL" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="LOV_CLEAR" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="LOV_OK" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="CurrShop" xml:space="preserve">
+    <value>Current Shop</value>
+  </data>
+  <data name="BtnAuditText" xml:space="preserve">
+    <value>Audit</value>
+  </data>
+  <data name="BtnCreateText" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="BtnSubmitText" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="CreationDate" xml:space="preserve">
+    <value>Creation Date</value>
+  </data>
+  <data name="LastUpdateDate" xml:space="preserve">
+    <value>Last Update Date</value>
+  </data>
+  <data name="LastUpdatedBy" xml:space="preserve">
+    <value>Last Updated By</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="MustInput" xml:space="preserve">
+    <value>This field is required.</value>
+  </data>
+  <data name="ConfrimDel" xml:space="preserve">
+    <value>Confirm to delete the selected record</value>
+  </data>
+  <data name="CurrentUser" xml:space="preserve">
+    <value>User : </value>
+  </data>
+  <data name="BtnNoText" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="BtnYesText" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="MessageTitle" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="BtnCreateFromText" xml:space="preserve">
+    <value>Create From</value>
+  </data>
+  <data name="NotMasterPartsPrompt" xml:space="preserve">
+    <value>Not the master parts,Can not modify Substitution information.</value>
+  </data>
+  <data name="Mandatory" xml:space="preserve">
+    <value>＊</value>
+  </data>
+  <data name="BtnGroupProduct" xml:space="preserve">
+    <value>Group Product</value>
+  </data>
+  <data name="DDL_CheckReq" xml:space="preserve">
+    <value>Check Req</value>
+  </data>
+  <data name="DDL_Need" xml:space="preserve">
+    <value>Need</value>
+  </data>
+  <data name="DDL_NoNeed" xml:space="preserve">
+    <value>No Need</value>
+  </data>
+  <data name="DDL_Valid" xml:space="preserve">
+    <value>Valid</value>
+  </data>
+  <data name="NotInt" xml:space="preserve">
+    <value>Not a interger</value>
+  </data>
+  <data name="SelectBrandFrist" xml:space="preserve">
+    <value>Please select a brand.</value>
+  </data>
+  <data name="SelectDistrictFrist" xml:space="preserve">
+    <value>Please select a district.</value>
+  </data>
+  <data name="SelectEstateRoadFrist" xml:space="preserve">
+    <value>Please select a Estate/Road.</value>
+  </data>
+  <data name="SelectModelTypeFrist" xml:space="preserve">
+    <value>Please select a model type.</value>
+  </data>
+  <data name="BtnAudit" xml:space="preserve">
+    <value>Audit</value>
+  </data>
+  <data name="BtnBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="BtnBookingHistory" xml:space="preserve">
+    <value>Booking History</value>
+  </data>
+  <data name="BtnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="BtnCreateJob" xml:space="preserve">
+    <value>Create Job</value>
+  </data>
+  <data name="BtnDeleteJob" xml:space="preserve">
+    <value>Delete Job</value>
+  </data>
+  <data name="BtnDeleteProduct" xml:space="preserve">
+    <value>Delete Product</value>
+  </data>
+  <data name="BtnEditMailAddress" xml:space="preserve">
+    <value>Edit Mail Address</value>
+  </data>
+  <data name="BtnPrint" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="BtnQuotation" xml:space="preserve">
+    <value>Quotation</value>
+  </data>
+  <data name="BtnReturn" xml:space="preserve">
+    <value>Return</value>
+  </data>
+  <data name="BtnSubmit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="BtnEditJob" xml:space="preserve">
+    <value>Edit Job</value>
+  </data>
+  <data name="BinLocId" xml:space="preserve">
+    <value>Bin Location</value>
+  </data>
+  <data name="BrandCode" xml:space="preserve">
+    <value>Brand Code</value>
+  </data>
+  <data name="BrandDesc" xml:space="preserve">
+    <value>Brand Desc</value>
+  </data>
+  <data name="PartsMasterPartsReplece" xml:space="preserve">
+    <value>Not the master parts,Can not  Substitution Create Replace.</value>
+  </data>
+  <data name="DDL_InvoiceOnly" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
+  <data name="DDL_ProductAndInvoice" xml:space="preserve">
+    <value>Product and Invoice</value>
+  </data>
+  <data name="BtnBookHistory" xml:space="preserve">
+    <value>Book History</value>
+  </data>
+  <data name="BtnCancelBooking" xml:space="preserve">
+    <value>Cancel Booking</value>
+  </data>
+  <data name="BtnDetailResult" xml:space="preserve">
+    <value>Detail Result</value>
+  </data>
+  <data name="GroupValidateNotPass" xml:space="preserve">
+    <value>Name / Phone / Address inconsistencies. Can not operate Group Product. </value>
+  </data>
+  <data name="SearchFirst" xml:space="preserve">
+    <value>Please search data first.</value>
+  </data>
+  <data name="BtnHistory" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="BtnCancelJob" xml:space="preserve">
+    <value>Cancel Job</value>
+  </data>
+  <data name="CancelJobConfirm" xml:space="preserve">
+    <value>Are you sure you want to cancel this job?</value>
+  </data>
+  <data name="CheckDistrictCodeFirst" xml:space="preserve">
+    <value>District code not exists,Please check District code first.</value>
+  </data>
+  <data name="CheckEstateRoadCodeFirst" xml:space="preserve">
+    <value>Estate/Road code not exists,Please check Estate/Road code first.</value>
+  </data>
+  <data name="CheckModelTypeCodeFirst" xml:space="preserve">
+    <value>Model Type code not exists,Please check Model Type code first.</value>
+  </data>
+  <data name="CheckModelTypeOrBrandCodeFirst" xml:space="preserve">
+    <value>Model Type / Brand code not exists,Please check Model Type / Brand code first.</value>
+  </data>
+  <data name="SelectSingleFromOSList" xml:space="preserve">
+    <value>Please select a record from [Outstanding Order List] before you do this operation.</value>
+  </data>
+  <data name="BtnConfirmText" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="ConfirmedJobAdjust" xml:space="preserve">
+    <value>Are you sure you want to confirm Job Adjustment?</value>
+  </data>
+  <data name="BtnVoid" xml:space="preserve">
+    <value>Void</value>
+  </data>
+  <data name="BtnApprove" xml:space="preserve">
+    <value>Approve</value>
+  </data>
+  <data name="BtnDecline" xml:space="preserve">
+    <value>Decline</value>
+  </data>
+  <data name="BtnCreateJobForIDOD" xml:space="preserve">
+    <value>Create Job For ID/OD</value>
+  </data>
+  <data name="CONFIRM_VOID" xml:space="preserve">
+    <value>Are you sure you want to void it?</value>
+  </data>
+  <data name="BtnBookingList" xml:space="preserve">
+    <value>Booking List</value>
+  </data>
+  <data name="BtnBookedJob" xml:space="preserve">
+    <value>Booked Job</value>
+  </data>
+  <data name="BtnOverwriteMailingAddressText" xml:space="preserve">
+    <value>Overwrite Mailing Address</value>
+  </data>
+  <data name="BtnCustProdAddrUpdatedInfo" xml:space="preserve">
+    <value>Address Updated Info.</value>
+  </data>
+  <data name="SaveAndConfirm" xml:space="preserve">
+    <value>Save and Confirm</value>
+  </data>
+  <data name="BtnCreateByProdNoText" xml:space="preserve">
+    <value>Create By Product No.</value>
+  </data>
+  <data name="BtnCreateByNewProdText" xml:space="preserve">
+    <value>Create By New Product</value>
+  </data>
+  <data name="NoPermssion" xml:space="preserve">
+    <value>No Permssion</value>
+  </data>
+</root>

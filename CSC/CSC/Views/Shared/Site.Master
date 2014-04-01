@@ -1,0 +1,102 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<%@ Import Namespace="App.Framework.Web.Menu" %>
+<%@ Import Namespace="CSC.Lib" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title><%=Html.MvcSiteMap().SiteMapTitle() %></title>
+    <script type="text/javascript">
+        var appRootPath = '<%=Url.Content("~/") %>'
+    </script>
+    <link href="<%=Url.Content("~/Content/Css/Shared/Common.css") %>" rel="stylesheet" type="text/css" />
+    <script src="<%=Url.Content("~/Content/Scripts/jQuery/jquery-1.4.1.min.js")%>" type="text/javascript"></script>
+    <script src="<%=Url.Content("~/Content/Scripts/jQuery/jquery.Dialog.js")%>" type="text/javascript"></script>
+    <script src="<%=Url.Content("~/Content/Scripts/jQuery/jquery.NumericTextbox.js")%>" type="text/javascript"></script>
+    <script src="<%=Url.Content("~/Content/Scripts/jQuery/jquery.Grid.js")%>" type="text/javascript"></script>
+    <script src="<%=Url.Content("~/Content/Scripts/jQuery/jquery.Tabs.js")%>" type="text/javascript"></script>
+    <script src="<%=Url.Content("~/Content/Scripts/jQuery/jquery.Form.js")%>" type="text/javascript"></script>
+    <script src="<%=Url.Content("~/Content/Scripts/jQuery/jquery.Combobox.js")%>" type="text/javascript"></script>
+    <script src="<%=Url.Content("~/Content/Scripts/jQuery/jquery.LOV.js")%>" type="text/javascript"></script>
+    <script src="<%=Url.Content("~/Content/Scripts/Shared/Calendar.js")%>" type="text/javascript"></script>
+    <script src="<%=Url.Content("~/Content/Scripts/Shared/MenuClass.js")%>" type="text/javascript"></script>
+    <script src="<%=Url.Content("~/Content/Scripts/Common/popDialog.js")%>" type="text/javascript"></script>
+	<script src="<%=Url.Content("~/Content/Scripts/Common/Message.js") + "?t=" + DateTime.Now.Ticks %>" type="text/javascript"></script>
+	<script src="<%=Url.Content("~/Content/Scripts/Common/formLeaveCheck.js") %>" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        window.Resources = '<%=Url.Content("~/Ajax/ResourceText") %>';
+		window.GetCurrentUserHasPermission = '<%:Url.Content("~/Ajax/GetCurrentUserHasPermission") %>'
+        window.ImageResources = '<%=Url.Content("~/Content/css/images/")%>';
+		$g = <%:CSC.Controllers.AjaxController.GetResourceText("GlobalText") %>;
+        <%=Html.Moudle() %>
+        $(function(){
+			<%=Html.Message() %>
+        });
+    </script>
+    <script src="<%=Url.Content("~/Content/Scripts/Shared/Common.js")%>" type="text/javascript"></script>
+    <%=Html.SetCalendarFormat()%>
+     
+                     <% var version = System.Reflection.Assembly.Load("CSC").GetName().Version.ToString();
+                        var vArr = version.Split('.');
+                        var vStr = string.Format("{0}.{1}",vArr[0], vArr[1]);%>
+                     
+    <asp:ContentPlaceHolder ID="ScriptContent" runat="server" />
+</head>
+<body>
+    <div id="divMainContainer" class="container">
+        <div class="top">
+            <ul>
+                <li class="m">
+                    <div id="divmenu">
+                    </div>
+                    <div id="divcompany">
+                        <ul>
+                           <%-- <li><%=Html.MvcSiteMap().HelpPath()%></li>--%>
+                            
+                            <li>
+                                <a href='<%:Url.Content("~/Account/SignOut") %>'><%:CSC.Resources.GlobalText.BtnSignOutText%></a>
+								
+                            </li>
+							<li>
+                                <%:CSC.Resources.GlobalText.CurrentUser%><%=App.Framework.Security.User.Current.UserName%>(<%=App.Framework.Security.User.Current.ShopCode%>)
+                                 <%--<a class="ctiQuit" href='<%:Url.Content("~/Account/LogInToShop") %>'><%:CSC.Resources.GlobalText.ChangeShop%></a>(<%=App.Framework.Security.User.Current.ShopCode%>)--%>
+                            </li>
+
+                            <%--<li>
+                                <%=ViewData["ExecTime"]%></li>--%>
+                          <%--  <li>
+                                <%=Html.GenerateLaugnageLink()%>
+                            </li>--%>
+                           <%-- <li>
+                                 
+                                  <%:CSC.Resources.Account.Version + vStr%>  
+                            </li>--%>
+                        </ul>
+                    </div>
+                </li>
+                <li class="b">
+                    <div class="btn">
+                        <asp:ContentPlaceHolder ID="ButtonContent" runat="server" />
+                    </div>
+                    <div class="sitemap">
+                        <%=Html.MvcSiteMap().SiteMapPath() %>
+                    </div>
+					<div class="sitever">
+							 
+                                  <span><%:CSC.Resources.Account.TransactionDate%><%:QuickInvoke.GetTransactionDate().Format()%></span>
+                                  <span><%:CSC.Resources.Account.Version + vStr%></span>
+                            
+					</div>
+                </li>
+            </ul>
+        </div>
+        <div class="centra">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        <div class="bottom">
+            <asp:ContentPlaceHolder ID="ContentBottom" runat="server" />
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1064 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>CSC.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.0</ProjectVersion>
+    <ProjectGuid>{67cbc824-a49e-4e9b-a947-360f3dfe65c3}</ProjectGuid>
+    <DSP>Microsoft.Data.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ShowWizard>False</ShowWizard>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <IncludeSchemaNameInFileName>False</IncludeSchemaNameInFileName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchema</DefaultFileStructure>
+    <DeployToDatabaseAddToServerExplorer>True</DeployToDatabaseAddToServerExplorer>
+    <DeployToScript>True</DeployToScript>
+    <CatalogPropertiesFile>Properties\Database.sqlsettings</CatalogPropertiesFile>
+    <LoadSqlClrTypes>True</LoadSqlClrTypes>
+    <RootNamespace>CSC.Database</RootNamespace>
+    <DefaultSchema>dbo</DefaultSchema>
+    <PreviousProjectVersion>4.0</PreviousProjectVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>.\sql\release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TargetConnectionString>
+    </TargetConnectionString>
+    <TargetDatabase>
+    </TargetDatabase>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <SuppressWarnings>
+    </SuppressWarnings>
+    <DeploymentConfigFile>Properties\Database.sqldeployment</DeploymentConfigFile>
+    <SqlCommandVariablesFile>Properties\Database.sqlcmdvars</SqlCommandVariablesFile>
+    <DeployToDatabase>False</DeployToDatabase>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>.\sql\debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TargetConnectionString>
+    </TargetConnectionString>
+    <TargetDatabase>
+    </TargetDatabase>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <SuppressWarnings>
+    </SuppressWarnings>
+    <DeploymentConfigFile>Properties\Database.sqldeployment</DeploymentConfigFile>
+    <SqlCommandVariablesFile>Properties\Database.sqlcmdvars</SqlCommandVariablesFile>
+    <DeployToDatabase>False</DeployToDatabase>
+  </PropertyGroup>
+  <!--Import the settings-->
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\TeamData\Microsoft.Data.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Comparisons" />
+    <Folder Include="Properties\" />
+    <Folder Include="Programmability" />
+    <Folder Include="Programmability\User" />
+    <Folder Include="Programmability\Common" />
+    <Folder Include="Programmability\Function" />
+    <Folder Include="Programmability\Role" />
+    <Folder Include="Programmability\Shop" />
+    <Folder Include="Tables" />
+    <Folder Include="Tables\ACS" />
+    <Folder Include="Views" />
+    <Folder Include="Data" />
+    <Folder Include="Updates" />
+    <Folder Include="Tables\CSC" />
+    <Folder Include="Triggers" />
+    <Folder Include="Updates\Tools" />
+  </ItemGroup>
+  <ItemGroup>
+    <PropertiesFile Include="Properties\Database.sqlsettings">
+    </PropertiesFile>
+    <PropertiesFile Include="Properties\Database.sqldeployment">
+    </PropertiesFile>
+    <PropertiesFile Include="Properties\Database.sqlcmdvars">
+    </PropertiesFile>
+    <Build Include="Properties\Database.sqlpermissions">
+      <ModelBuilderType>Permissions</ModelBuilderType>
+    </Build>
+  </ItemGroup>
+  <ItemGroup>
+    <BuildContributorArgument Include="OutDir=$(OutDir)" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Programmability\User\spAddUserRole.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spAddUserRoleShop.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spAddUserShop.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spAuthUser.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spDeleteUserRole.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spDeleteUserRoleNotInUser.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spDeleteUserRoleShop.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spDeleteUserRoleShopByShop.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spDeleteUserShop.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spDeleteUserShopByShop.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spDeleteUserShopNotInUser.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spForzenUser.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spGetUserByUserID.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spGetUserByUserName.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spGetUserLoginIp.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spGetUserPassword.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spGetUserPermission.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spGetUserShopCount.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spModifyUserAuthPwd.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spModifyUserLoginPwd.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spModifyUserLoginPwdAndAuthPwd.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spSaveUser.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spSearchRoleInUser.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spSearchShopInUser.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spSearchUser.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spSearchUserForDDL.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spSearchUserRoleByUser.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spSearchUserRoleShopByShop.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spUpdateUserForzen.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spUpdateUserIp.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spUpdateUserSuspend.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Common\fnCheckFKConflicts.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Common\fnConvertBitToNvarchar.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Common\fnConvertNvarcharToBit.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Common\fnGetMaxDateTime.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Common\fnGetMinDateTime.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Common\fnSplitString.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Common\fnToNeatInteger.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Common\spExceptionHandle.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Common\spGetNextSequence.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Function\spLoadFunction.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Function\spSaveFunction.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Function\spSearchFunction.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Role\spSaveRole.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Role\spSearchRole.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Role\spSearchRoleForDDL.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Role\spSearchRoleFunc.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Role\spSearchRoleFuncByRole.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Role\spSearchUserRole.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Role\spUpdateBatchRoleFunc.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Role\spUpdateRoleForzen.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Role\spUpdateRoleFunc.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Shop\spLoadShop.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Shop\spLoadShopView.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Shop\spSaveShop.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Shop\spSearchAreaForDDL.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Shop\spSearchCityForDDL.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Shop\spSearchProvinceForDDL.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Shop\spSearchShop.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Shop\spSearchShopByUserID.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Shop\spSearchShopByUserIDInUser.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Shop\spSearchShopForLov.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Data\SY_FUNCTION.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Tables\ACS\SY_AREA.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SYS_LOG.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_ACCESS_LOG.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_CITY.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_FUNCTION.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_PARAMETER.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_PARAMETER_SHOP.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_PASSWORD_LOG.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_PROVINCE.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_ROLE.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_ROLE_FUNC.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_SEQUENCE.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_SHOP.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_SYSTEM.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_USER.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_USER_LOCK.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_USER_ROLE.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_USER_ROLE_SHOP.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_USER_SHOP.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\BUSINESS_UNIT.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Data\CRM.Data.Security.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Data\CRM.Data.Shop.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Data\CRM.Data.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Data\INIT_SHOP_DATA.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Data\SY_SYSTEM.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Data\BUSINESS_UNIT.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Comparisons\Development.scmp">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Programmability\Common\spValidLastUpdate.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Programmability\Common\spCheckFKConflicts.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Tables\ESC_ER.vsd">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Programmability\Shop\spSearchBUForDDL.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Views\VW_GODOWN.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Views\VW_CUSTOMER_SERVICE.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+  </ItemGroup>
+  <ItemGroup>
+    <NotInBuild Include="Updates\Update_20130418.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Data\MASTER_CODE_TYPE.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Programmability\Shop\spShearchShopGodown.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Programmability\Shop\spGetShopByShopCode.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Shop\spShearchShopBySysCodeAndBuCode.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Common\spValidCodeWithDuplicate.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Updates\Update_20130502.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130506.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130507.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130508.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130509.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130513.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130515.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130516.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130514.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Tables\ACS\SY_JOB.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_JOB_STEP.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_JOB_DEPENDENCY.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_JOB_PARAM.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_JOB_QUEUE.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_JOB_REQUEST.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_JOB_REQUEST_PARAM.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_JOB_ROLE.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Tables\ACS\SY_JOB_RUN_STEP.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Updates\UPDATE_20130514.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130517.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130521.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130522.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Tables\ACS\SY_PRINT_QUEUE.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Updates\UPDATE_20130523.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130524.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Tables\ACS\SY_JOB_ROLE_QUEUE.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Updates\UPDATE_20130527.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130528.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130529.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_FUNCTION_DATA.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Tables\ACS\SY_DOC_NO_SEQ.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Data\SY_DOC_NO_SEQ.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Tables\ACS\SY_TRANSACTION_DATE.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Updates\UPDATE_20130530.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Programmability\Common\fnGetPartsCost.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Common\fnGetTransactionDate.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Updates\UPDATE_20130531.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Data\SY_TRANSACTION_DATE.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130603.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Data\SY_PARAMETER.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Programmability\Common\fnGetParameterValue.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Common\spGetParameter.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Common\spGetTransactionDate.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Common\spInsertInvTrans.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Updates\UPDATE_20130604.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130605.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130606.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130607.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130608.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130613.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130614.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130617.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130618.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130619.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130620.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130621.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130624.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130625.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Programmability\Common\fnGetExchangeRate.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Common\fnSplit.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Updates\UPDATE_20130626.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130627.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130628.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130629.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130701.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130702.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130703.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130704.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130705.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130704.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130708.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Programmability\Common\fnGetDefaultGodown.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Updates\UPDATE_20130709.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130710.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130712.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130715.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130716.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130717.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130718.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130719.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130715.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130716.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130717.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130718.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130722.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Data\PARTS_GODOWN_TRANS_TYPE.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Data\REASON_CODE.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130723.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130724.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130725.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130726.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130727.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130729.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130730.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130731.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130801.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130803.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130805.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130806.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130807.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Programmability\Common\spGetDefaultGodown.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Shop\spSaveDefaultGodown.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Shop\spSearchShopCodeForDDL.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Updates\UPDATE_20130808.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130809.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130810.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130812.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130815.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Programmability\Shop\spEditPassword.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Updates\UPDATE_20130816.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130817.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130819.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130820.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130821.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130823.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130826.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Programmability\Common\spPartsDailyUnitCostUpdate.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Updates\UPDATE_20130827.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Programmability\Common\spPartsTransDailyUnitCostUpdate.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Updates\UPDATE_20130828.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130829.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130830.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130831.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130902.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Programmability\Common\fnGetProdPolicyID.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Updates\UPDATE_20130904.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130905.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130906.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130907.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130909.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130911.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Programmability\User\spCheckLastPwd.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spCheckInitialLogin.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Updates\UPDATE_20130912.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130913.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130914.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130916.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.36.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.36.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.37.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.38.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.39.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.40.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.42.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.43.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Tools\DropAllPrograms.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\UPDATE_20130930.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.45.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.46.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.47.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.48.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Tools\DropDefault.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.49.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.51.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.52.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.54.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.56.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.57.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.58.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Programmability\Shop\spSearchShopFromTechnician.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\User\spDeleteUser.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <Build Include="Programmability\Role\spDeleteRole.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Updates\Update 1.60.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.63.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.65.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.69.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.70.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.72.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.73.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.74.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.76.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.77.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.79.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.80.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.81.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.82.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.83.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.87.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.88.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.89.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.92.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.91.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.93.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.95.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.96.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.97.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.98.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.100.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.101.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.102.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.103.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.109.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.110.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <Build Include="Programmability\Common\fnRtrimStr.sql">
+      <SubType>NotInBuild</SubType>
+    </Build>
+    <NotInBuild Include="Updates\Update 1.113.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.115.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.118.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.119.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.120.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.107.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.115+.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.117.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.121.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.126.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.127.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.132.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.134.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.136.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.138.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.139.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.140.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.141.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.148.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.142.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.146.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.147.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.150.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.153.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.155.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Updates\Update 1.156.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+  </ItemGroup>
+</Project>

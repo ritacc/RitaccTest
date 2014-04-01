@@ -1,0 +1,67 @@
+﻿.div_container_combobox
+{
+    display: inline-table;
+    position: relative;
+    overflow: auto;
+    margin: 0px;
+    padding: 0px;
+}
+.input_combobox
+{
+    border: solid 1px #6C92AD;
+    font-family: Arial;
+    font-size: 12px;
+    padding: 3px 2px;
+}
+.a_combobox
+{
+    position: absolute;
+    background-color: #fff;
+    background-image: url(../Images/Down.png);
+    background-position: 5px 60%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: 17px;
+    min-height: 10px;
+    display: block;
+    top: 1px;
+    right: 1px;
+    border: 1px solid #ccc;
+}
+a.a_combobox:hover
+{
+    background-color: #f2f2f2;
+}
+.div_select_combobox
+{
+    border: solid 1px #6C92AD;
+    background-color: #fff;
+    position: absolute;
+    overflow: auto;
+    padding: 0px;
+    margin: 0px;
+    z-index: 19;
+}
+.div_select_combobox a
+{
+    display: block;
+    border: dotted 1px #fff;
+    padding: 3px;
+    color: #000;
+    cursor: default;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+}
+.div_select_combobox a.current
+{
+    border: dotted 1px #CC6600;
+    background-color: #3399FF;
+    color: #fff;
+}
+.div_select_combobox a:hover
+{
+    border: dotted 1px #CC6600;
+    background-color: #3399FF;
+    color: #fff;
+}

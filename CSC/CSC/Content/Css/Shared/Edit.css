@@ -1,0 +1,101 @@
+/*-----------------------------------------------------------------------------*/
+.edit
+{
+    border: solid 1px #ccc;
+    border-collapse: collapse;
+    width: 100%;
+}
+.edit tr.a
+{
+    background-color: #F6F9FC;
+}
+.edit td
+{
+    border-bottom: dotted 1px #ccc;
+    padding: 5px;
+    vertical-align: top;
+}
+.edit td.t
+{
+    width: 100px;
+    text-align: right;
+    border-right: dotted 1px #ccc;
+    vertical-align: middle;
+}
+.edit_btn
+{
+    text-align: center;
+    padding: 5px;
+}
+.error_info
+{
+    padding: 3px;
+    color: Red;
+    font-weight: bold;
+    margin-top: 2px;
+}
+dl.error
+{
+    font-size: 12px;
+    font-family: Tahoma;
+}
+dl.error dd
+{
+    padding: 2px;
+    line-height: 1.5em;
+}
+dl.error dt
+{
+    border-bottom: dotted 1px #ccc;
+    margin-bottom: 5px;
+    padding: 5px;
+    color: Red;
+    font-size: 14px;
+}
+div.item_tools
+{
+    float: right;
+}
+div.item_tools li
+{
+    float: left;
+    padding: 3px 8px;
+    border: solid 1px #ccc;
+    margin: 0px 2px;
+    cursor: pointer;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+div.item_tools li:hover
+{
+    background-color: #ebebeb;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}

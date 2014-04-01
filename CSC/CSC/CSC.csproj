@@ -1,0 +1,769 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CCE39D3A-5468-45E8-A175-8C66484EDEC2}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSC</RootNamespace>
+    <AssemblyName>CSC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NPOI, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL" />
+    <Reference Include="NPOI.OOXML, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL" />
+    <Reference Include="NPOI.OpenXml4Net, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL" />
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\Account.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Account.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Account.en-us.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Account.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\BusinessResultMessage.en-us1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusinessResultMessage.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\BusinessResultMessage1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusinessResultMessage.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Contractor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Contractor.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ProvinceCityAreaText.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProvinceCityAreaText.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ProvinceCityAreaText.en-us.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProvinceCityAreaText.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ServiceGroupText.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServiceGroupText.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ServiceGroupText.en-us.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServiceGroupText.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\UserText.Designer.cs">
+      <DependentUpon>UserText.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\UserText.en-us.Designer.cs">
+      <DependentUpon>UserText.en-us.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\FunctionText.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionText.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\FunctionText.en-us.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionText.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Parameter.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Parameter.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Parameter.en-us.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Parameter.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Menu.en-us.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Role.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Role.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Role.en-us.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Role.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ShopText.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopText.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ShopText.en-us.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopText.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\SiteMapLocalizations.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteMapLocalizations.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\SiteMapLocalizations.en-us.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteMapLocalizations.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Material.designer.cs">
+      <DependentUpon>Material.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Code\CacheHelper.cs" />
+    <Compile Include="Code\Comparint.cs" />
+    <Compile Include="Code\ExportCSV.cs" />
+    <Compile Include="Code\ControlerExtension.cs" />
+    <Compile Include="Code\ConvertHelper.cs" />
+    <Compile Include="Code\DataSetExtension.cs" />
+    <Compile Include="Code\DbException.cs" />
+    <Compile Include="Code\NumberExtension.cs" />
+    <Compile Include="Code\QuickInvoke.cs" />
+    <Compile Include="Code\SessionCache.cs" />
+    <Compile Include="Code\BusinessResultExtension.cs" />
+    <Compile Include="Code\DataCriteriaExtension.cs" />
+    <Compile Include="Code\GetPermissionsFromDb.cs" />
+    <Compile Include="Code\HtmlHelperExtension.cs" />
+    <Compile Include="Code\SerializeHelper.cs" />
+    <Compile Include="Code\ToolHelper.cs" />
+    <Compile Include="Code\XController.cs" />
+    <Compile Include="Code\QuickPagerHelper.cs" />
+    <Compile Include="Code\UserExtension.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AjaxController.cs" />
+    <Compile Include="Controllers\System\AccountCodeController.cs" />
+    <Compile Include="Controllers\System\AuditController.cs" />
+    <Compile Include="Controllers\System\ShopController.cs" />
+    <Compile Include="Controllers\System\FunctionController.cs" />
+    <Compile Include="Controllers\System\ParameterController.cs" />
+    <Compile Include="Controllers\System\UserController.cs" />
+    <Compile Include="Controllers\LovController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\System\RoleController.cs" />
+    <Compile Include="Enum\EnumContactType.cs" />
+    <Compile Include="Enum\EnumAddressUpdateType.cs" />
+    <Compile Include="Enum\EnumPermission.cs" />
+    <Compile Include="Enum\EnumRepairType.cs" />
+    <Compile Include="Enum\EnumResultCode.cs" />
+    <Compile Include="Enum\EnumUnitCode.cs" />
+    <Compile Include="Enum\EnumPurchaseOrder.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\JsMenuClassGenerate.cs" />
+    <Compile Include="Lib\Language.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App_GlobalResources\GlobalText.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalText.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\GlobalText.en-us.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalText.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Menu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ReportService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\NPOI.dll" />
+    <Content Include="bin\NPOI.OOXML.dll" />
+    <Content Include="bin\NPOI.OpenXml4Net.dll" />
+    <Content Include="bin\NPOI.OpenXmlFormats.dll" />
+    <Content Include="bin\NPOI.XML" />
+    <Content Include="Content\Css\Images\Audit.png" />
+    <Content Include="Content\Css\Images\create.png" />
+    <Content Include="Content\Css\Images\Down.ico" />
+    <Content Include="Content\Css\Images\download1.jpg" />
+    <Content Include="Content\Css\Images\Download2.bmp" />
+    <Content Include="Content\Css\Images\info.png" />
+    <Content Include="Content\Css\Images\Return.png" />
+    <Content Include="Content\Css\Images\up1.jpg" />
+    <Content Include="Content\Css\Images\up2.png" />
+    <Content Include="Content\Css\jQuery\dropdownEx.css" />
+    <Content Include="Content\Css\jQuery\dropdownEx_autocomplete.css" />
+    <Content Include="Content\Scripts\Common\DateConvert.js" />
+    <Content Include="Content\Scripts\jQuery\jquery-SimpleValidForm.js" />
+    <Content Include="Content\Scripts\jQuery\jquery-SimpleValidMethod.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.control.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.dropdown.AutoComplete.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.dropdownEx.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.Lov2.js" />
+    <Content Include="Content\Scripts\System\BrandPartsInputLov.js" />
+    <Content Include="Content\Scripts\System\SalesMemoItem.js" />
+    <Content Include="Content\Css\Images\accept.png" />
+    <Content Include="Content\Css\Images\blankButton.png" />
+    <Content Include="Content\Css\Images\Calendar.gif" />
+    <Content Include="Content\Css\Images\cancel.png" />
+    <Content Include="Content\Css\Images\car.png" />
+    <Content Include="Content\Css\Images\car_add.png" />
+    <Content Include="Content\Css\Images\created.ico" />
+    <Content Include="Content\Css\Images\Delete_1.png" />
+    <Content Include="Content\Css\Images\deny.ico" />
+    <Content Include="Content\Css\Images\draft.ico" />
+    <Content Include="Content\Css\Images\Help.png" />
+    <Content Include="Content\Css\Images\key.png" />
+    <Content Include="Content\Css\Images\Login-Background.gif" />
+    <Content Include="Content\Css\Images\Login-Form.png" />
+    <Content Include="Content\Css\Images\Logo.jpg" />
+    <Content Include="Content\Css\Images\failure.png" />
+    <Content Include="Content\Css\Images\Fllowup.png" />
+    <Content Include="Content\Css\Images\Generate.png" />
+    <Content Include="Content\Css\Images\Loading.gif" />
+    <Content Include="Content\Css\Images\1.png" />
+    <Content Include="Content\Css\Images\2.png" />
+    <Content Include="Content\Css\Images\ajax-loader.gif" />
+    <Content Include="Content\Css\Images\Append.png" />
+    <Content Include="Content\Css\Images\Approval.png" />
+    <Content Include="Content\Css\Images\arrow_down.jpg" />
+    <Content Include="Content\Css\Images\arrow_up.jpg" />
+    <Content Include="Content\Css\Images\camera_test.png" />
+    <Content Include="Content\Css\Images\CancelApproval.png" />
+    <Content Include="Content\Css\Images\CancelConfirmed.png" />
+    <Content Include="Content\Css\Images\CancelFreezeGroup.png" />
+    <Content Include="Content\Css\Images\CancelSuspendUser.png" />
+    <Content Include="Content\Css\Images\ChangePassword.png" />
+    <Content Include="Content\Css\Images\Close.gif" />
+    <Content Include="Content\Css\Images\close.ico" />
+    <Content Include="Content\Css\Images\close.png" />
+    <Content Include="Content\Css\Images\Collect.png" />
+    <Content Include="Content\Css\Images\Confirmed.png" />
+    <Content Include="Content\Css\Images\Convert.png" />
+    <Content Include="Content\Css\Images\Copy.png" />
+    <Content Include="Content\Css\Images\Delete.png" />
+    <Content Include="Content\Css\Images\dialog_close.png" />
+    <Content Include="Content\Css\Images\Down.png" />
+    <Content Include="Content\Css\Images\Download.png" />
+    <Content Include="Content\Css\Images\global.png" />
+    <Content Include="Content\Css\Images\Edit.png" />
+    <Content Include="Content\Css\Images\Expend.png" />
+    <Content Include="Content\Css\Images\file.gif" />
+    <Content Include="Content\Css\Images\folder-closed.gif" />
+    <Content Include="Content\Css\Images\folder.gif" />
+    <Content Include="Content\Css\Images\FreezeGroup.png" />
+    <Content Include="Content\Css\Images\LineBg.png" />
+    <Content Include="Content\Css\Images\Loading.bak.gif" />
+    <Content Include="Content\Css\Images\Locate.png" />
+    <Content Include="Content\Css\Images\lock_break.png" />
+    <Content Include="Content\Css\Images\Logo.png" />
+    <Content Include="Content\Css\Images\lossfollowup.png" />
+    <Content Include="Content\Css\Images\LotBatch.png" />
+    <Content Include="Content\Css\Images\Lov.png" />
+    <Content Include="Content\Css\Images\New.png" />
+    <Content Include="Content\Css\Images\Next.png" />
+    <Content Include="Content\Css\Images\ok-icon.png" />
+    <Content Include="Content\Css\Images\phone_icon_by_cemagraphics.png" />
+    <Content Include="Content\Css\Images\PostToGL.png" />
+    <Content Include="Content\Css\Images\Previous.png" />
+    <Content Include="Content\Css\Images\Print.png" />
+    <Content Include="Content\Css\Images\question.png" />
+    <Content Include="Content\Css\Images\Recalculate.png" />
+    <Content Include="Content\Css\Images\right.png" />
+    <Content Include="Content\Css\Images\save.jpg" />
+    <Content Include="Content\Css\Images\Save.png" />
+    <Content Include="Content\Css\Images\Search.png" />
+    <Content Include="Content\Css\Images\Select.png" />
+    <Content Include="Content\Css\Images\success.png" />
+    <Content Include="Content\Css\Images\SuspendUser.png" />
+    <Content Include="Content\Css\Images\telephone.png" />
+    <Content Include="Content\Css\Images\treeview-black-line.gif" />
+    <Content Include="Content\Css\Images\treeview-black.gif" />
+    <Content Include="Content\Css\Images\treeview-default-line.gif" />
+    <Content Include="Content\Css\Images\treeview-default.gif" />
+    <Content Include="Content\Css\Images\Unlock.png" />
+    <Content Include="Content\Css\Images\Up.png" />
+    <Content Include="Content\Css\Images\user.png" />
+    <Content Include="Content\Css\Images\View.png" />
+    <Content Include="Content\Css\Images\xiao001.gif" />
+    <Content Include="Content\Css\jQuery\GridTow.css" />
+    <Content Include="Content\Css\jQuery\jquery.Combobox.css" />
+    <Content Include="Content\Css\jQuery\jquery.contextMenu.css" />
+    <Content Include="Content\Css\jQuery\jquery.Dialog.css" />
+    <Content Include="Content\Css\jQuery\jquery.Grid.css" />
+    <Content Include="Content\Css\jQuery\jquery.LOV.css" />
+    <Content Include="Content\Css\jQuery\jquery.NumericTextbox.css" />
+    <Content Include="Content\Css\jQuery\jquery.Tabs.css" />
+    <Content Include="Content\Css\jQuery\jquery.treeview.css" />
+    <Content Include="Content\Css\Shared\Calendar.css" />
+    <Content Include="Content\Css\Shared\Common.css" />
+    <Content Include="Content\Css\Shared\Edit.css" />
+    <Content Include="Content\Css\Shared\Form.css" />
+    <Content Include="Content\Css\Shared\Global.css" />
+    <Content Include="Content\Css\Shared\Login.css" />
+    <Content Include="Content\Css\Shared\Menu.css" />
+    <Content Include="Content\Css\Shared\Pager.css" />
+    <Content Include="Content\Css\Shared\Workplace.css" />
+    <Content Include="Content\Scripts\Common\areaLoader.js" />
+    <Content Include="Content\Scripts\Common\array.extension.js" />
+    <Content Include="Content\Scripts\Common\childWindow.js" />
+    <Content Include="Content\Scripts\Common\CommonLov.js" />
+    <Content Include="Content\Scripts\Common\date.extension.js" />
+    <Content Include="Content\Scripts\Common\formLeaveCheck.js" />
+    <Content Include="Content\Scripts\Common\FrameWindow.js" />
+    <Content Include="Content\Scripts\System\quickInvoker.js" />
+    <Content Include="Content\Scripts\System\loadContactToMasterControl.js" />
+    <Content Include="Content\Scripts\System\MasterControl.js" />
+    <Content Include="Content\Scripts\Common\Message.js" />
+    <Content Include="Content\Scripts\Common\popDialog.js" />
+    <Content Include="Content\Scripts\Common\Stopwatch.js" />
+    <Content Include="Content\Scripts\CTI\Agent.CAB" />
+    <Content Include="Content\Scripts\CTI\Enums.js" />
+    <Content Include="Content\Scripts\CTI\CTIInvoker.js" />
+    <Content Include="Content\Scripts\CustomerVehicle\ABCDType.js" />
+    <Content Include="Content\Scripts\jQuery\jquery-asyncUpload-0.1.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.Combobox.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.contextMenu.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.Dialog.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.Form.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.Grid.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.LevelLoader.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.LOV.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.NumericTextbox.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.Tabs.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.tmpl.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.treeview.async.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.treeview.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.VerticalTabs.js" />
+    <Content Include="Content\Scripts\jQuery\swfupload.js" />
+    <Content Include="Content\Scripts\jQuery\swfupload.swf" />
+    <Content Include="Content\Scripts\Shared\BindCalendar.js" />
+    <Content Include="Content\Scripts\Shared\json2.js" />
+    <Content Include="Content\Scripts\Shared\Menu.js" />
+    <Content Include="Content\Scripts\Common\popWindow.js" />
+    <Content Include="Content\Scripts\Shared\Calendar.js" />
+    <Content Include="Content\Scripts\Shared\Common.js" />
+    <Content Include="Content\Scripts\Shared\CommonChoose.js" />
+    <Content Include="Content\Scripts\Shared\CommonDialog.js" />
+    <Content Include="Content\Scripts\Shared\Edit.js" />
+    <Content Include="Content\Scripts\Shared\FunctionFields.js" />
+    <Content Include="Content\Scripts\Shared\List.js" />
+    <Content Include="Content\Scripts\Shared\LotDialog.js" />
+    <Content Include="Content\Scripts\Shared\md5.js" />
+    <Content Include="Content\Scripts\Shared\MenuClass.js" />
+    <Content Include="Content\Scripts\Shared\Quick.js" />
+    <Content Include="Content\Scripts\Shared\Tabs.js" />
+    <Content Include="Content\Scripts\Shared\tit.js" />
+    <Content Include="Content\Scripts\Shared\TmplCommon.js" />
+    <Content Include="Content\Scripts\Shared\TmplCommon2.js" />
+    <Content Include="Content\Scripts\System\MasterControlBindEvent.js" />
+    <Content Include="Content\Scripts\System\parentOpretion.js" />
+    <Content Include="Content\Scripts\System\SelectCashCoupon.js" />
+    <Content Include="Content\Scripts\tree\demo.js" />
+    <Content Include="Content\Scripts\tree\images\ajax-loader.gif" />
+    <Content Include="Content\Scripts\tree\images\file.gif" />
+    <Content Include="Content\Scripts\tree\images\folder-closed.gif" />
+    <Content Include="Content\Scripts\tree\images\folder.gif" />
+    <Content Include="Content\Scripts\tree\images\minus.gif" />
+    <Content Include="Content\Scripts\tree\images\plus.gif" />
+    <Content Include="Content\Scripts\tree\images\treeview-black-line.gif" />
+    <Content Include="Content\Scripts\tree\images\treeview-black.gif" />
+    <Content Include="Content\Scripts\tree\images\treeview-default-line.gif" />
+    <Content Include="Content\Scripts\tree\images\treeview-default.gif" />
+    <Content Include="Content\Scripts\tree\images\treeview-famfamfam-line.gif" />
+    <Content Include="Content\Scripts\tree\images\treeview-famfamfam.gif" />
+    <Content Include="Content\Scripts\tree\images\treeview-gray-line.gif" />
+    <Content Include="Content\Scripts\tree\images\treeview-gray.gif" />
+    <Content Include="Content\Scripts\tree\images\treeview-red-line.gif" />
+    <Content Include="Content\Scripts\tree\images\treeview-red.gif" />
+    <Content Include="Content\Scripts\tree\jquery.cookie.js" />
+    <Content Include="Content\Scripts\tree\jquery.js" />
+    <Content Include="Content\Scripts\tree\jquery.treeview.css" />
+    <Content Include="Content\Scripts\tree\jquery.treeview.js" />
+    <Content Include="Content\Scripts\tree\screen.css" />
+    <Content Include="Global.asax" />
+    <Content Include="menuConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Permissions.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <!--<Content Include="Permissions.xml">
+      <SubType>Designer</SubType>
+    </Content>-->
+    <Content Include="Views\Account\InitialPwdChange.aspx" />
+    <Content Include="Views\Account\LogInToShop.aspx" />
+    <Content Include="Views\Account\PasswordChange.aspx" />
+    <Content Include="Views\Audit\Index.aspx" />
+    <Content Include="Views\Demo\DemoLov.aspx" />
+    <Content Include="Views\Demo\Index.aspx" />
+    <Content Include="Views\Shop\detail.aspx" />
+    <Content Include="Views\Shop\SetDefaultGodown.aspx" />
+    <Content Include="Views\Shop\SetPassword.aspx" />
+    <Content Include="Views\Shop\ShopList.aspx" />
+    <Content Include="Views\Function\Edit.aspx" />
+    <Content Include="Views\Function\Index.aspx" />
+    <Content Include="Views\Role\Edit.aspx" />
+    <Content Include="Views\Role\List.aspx" />
+    <Content Include="Views\Role\RoleFunc.aspx" />
+    <Content Include="Views\Role\Shop.ascx" />
+    <Content Include="Views\Parameter\Index.aspx" />
+    <Content Include="Views\Role\UserRole.aspx" />
+    <Content Include="Views\User\Edit.aspx" />
+    <Content Include="Views\User\Index.aspx" />
+    <Content Include="Views\User\List.aspx" />
+    <Content Include="Views\User\RoleFunc.aspx" />
+    <Content Include="Views\User\UserRole.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Role\Index.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Account\Login.aspx" />
+    <Content Include="Views\Shared\Message.aspx" />
+    <Content Include="Views\Shop\Edit.aspx" />
+    <Content Include="Views\Shop\Index.aspx" />
+    <Content Include="Content\Scripts\jQuery\jquery-1.4.1.js" />
+    <Content Include="Content\Scripts\jQuery\jquery-1.4.1.min.js" />
+    <Content Include="Content\Scripts\jQuery\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.validate.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.validate.min.js" />
+    <Content Include="Content\Scripts\jQuery\jquery.validate-vsdoc.js" />
+    <Content Include="Content\Scripts\Shared\MicrosoftAjax.js" />
+    <Content Include="Content\Scripts\Shared\MicrosoftAjax.debug.js" />
+    <Content Include="Content\Scripts\Shared\MicrosoftMvcAjax.js" />
+    <Content Include="Content\Scripts\Shared\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Content\Scripts\Shared\MicrosoftMvcValidation.js" />
+    <Content Include="Content\Scripts\Shared\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config" />
+    <EmbeddedResource Include="App_GlobalResources\BusinessResultMessage.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BusinessResultMessage.en-us1.designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\BusinessResultMessage.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BusinessResultMessage1.designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Contractor.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Contractor.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\ServiceGroupText.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ServiceGroupText.en-us.designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\ServiceGroupText.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ServiceGroupText.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Content Include="App_GlobalResources\Material.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Material.designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\" />
+    <Folder Include="Content\UploadFile\" />
+    <Folder Include="Controllers\Setup\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\ProvinceCityAreaText.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProvinceCityAreaText.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Account.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\ProvinceCityAreaText.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProvinceCityAreaText.en-us.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Account.en-us.designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\FunctionText.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FunctionText.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\FunctionText.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FunctionText.en-us.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\UserText.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserText.en-us.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\UserText.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserText.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\GlobalText.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalText.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\GlobalText.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalText.en-us.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Menu.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Menu.en-us.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Menu.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Menu.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Content Include="App_GlobalResources\SiteMapLocalizations.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>SiteMapLocalizations.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </Content>
+    <Content Include="App_GlobalResources\SiteMapLocalizations.en-us.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>SiteMapLocalizations.en-us.designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="App_GlobalResources\ShopText.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ShopText.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\ShopText.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ShopText.en-us.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Parameter.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Parameter.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Parameter.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Parameter.en-us.designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Role.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Role.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Role.en-us.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Role.en-us.designer.cs</LastGenOutput>
+      <CustomToolNamespace>CSC.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSC.Business\CSC.Business.csproj">
+      <Project>{A6BA06D7-5A6C-4A6B-B3FE-8635C5448F83}</Project>
+      <Name>CSC.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\App.Framework.Security\App.Framework.Security.csproj">
+      <Project>{BEBA1E08-9590-4ABD-9E0A-58D6225D0CA3}</Project>
+      <Name>App.Framework.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\App.Framework.Web\App.Framework.Web.csproj">
+      <Project>{E25BDEB4-AE6B-4E6E-9F00-C9EED8F251B1}</Project>
+      <Name>App.Framework.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\App.Framework\App.Framework.csproj">
+      <Project>{FFEDC854-962E-4BED-BAB9-DF9B62334BC9}</Project>
+      <Name>App.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Templates\DownloadTemplate.xlsx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ReportService\DocumentMapNode.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\ExecutionInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\ExecutionInfo2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\Extension.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ReportService\ReportExecution2005.wsdl" />
+    <None Include="Web References\ReportService\Warning.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://192.168.1.111/ReportServer_MSSQL2008R2/ReportExecution2005.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ReportService\</RelPath>
+      <UpdateFromURL>http://192.168.1.111/ReportServer_MSSQL2008R2/ReportExecution2005.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CSC_ReportService_ReportExecutionService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>555</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/CSC</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

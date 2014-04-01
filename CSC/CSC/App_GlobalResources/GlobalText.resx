@@ -1,0 +1,855 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BtnDeleteText" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="BtnEditText" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="BtnNewText" xml:space="preserve">
+    <value>新增</value>
+  </data>
+  <data name="BtnResetText" xml:space="preserve">
+    <value>重置</value>
+  </data>
+  <data name="btnCancelText" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="BtnSaveText" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="BtnSearchText" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="BtnSelectedText" xml:space="preserve">
+    <value>选用</value>
+  </data>
+  <data name="BtnSignOutText" xml:space="preserve">
+    <value>注销</value>
+  </data>
+  <data name="CancelFrozen" xml:space="preserve">
+    <value>解除冻结</value>
+  </data>
+  <data name="CancelFrozenConfirm" xml:space="preserve">
+    <value>确定要解除冻结吗？</value>
+  </data>
+  <data name="CancelSuspend" xml:space="preserve">
+    <value>解除暂停</value>
+  </data>
+  <data name="CancelSuspendConfirm" xml:space="preserve">
+    <value>确定要解除暂停吗？</value>
+  </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="DeleteConfirm" xml:space="preserve">
+    <value>确定要删除吗？</value>
+  </data>
+  <data name="DropDownListDefaultItemText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Frozen" xml:space="preserve">
+    <value>冻结</value>
+  </data>
+  <data name="FrozenConfirm" xml:space="preserve">
+    <value>确定要冻结吗？</value>
+  </data>
+  <data name="FullNamex" xml:space="preserve">
+    <value>全名</value>
+  </data>
+  <data name="PagerBtnJumpText" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="PagerFirst" xml:space="preserve">
+    <value>首页 </value>
+  </data>
+  <data name="PagerGo" xml:space="preserve">
+    <value>转到</value>
+  </data>
+  <data name="PagerJumpToFormat" xml:space="preserve">
+    <value>转到第{0}页</value>
+  </data>
+  <data name="PagerLast" xml:space="preserve">
+    <value>末页</value>
+  </data>
+  <data name="PagerNext" xml:space="preserve">
+    <value>后一页</value>
+  </data>
+  <data name="PagerOverNumStr" xml:space="preserve">
+    <value>请输入1到{0}的数字</value>
+  </data>
+  <data name="PagerPrevious" xml:space="preserve">
+    <value>前一页</value>
+  </data>
+  <data name="PagerToolTip" xml:space="preserve">
+    <value>共有 {0} 条记录, 共 {1} 页, 每页 {2} 条记录,当前第 {3} 页</value>
+  </data>
+  <data name="RequiredMessage" xml:space="preserve">
+    <value>必须输入该项</value>
+  </data>
+  <data name="SelectSingle" xml:space="preserve">
+    <value>请您先勾选一条记录，再进行当前操作!</value>
+  </data>
+  <data name="Suspend" xml:space="preserve">
+    <value>暂停</value>
+  </data>
+  <data name="SuspendConfirm" xml:space="preserve">
+    <value>确定要暂停吗？</value>
+  </data>
+  <data name="ChangeShop" xml:space="preserve">
+    <value>更换店铺</value>
+  </data>
+  <data name="SelectNoItemText" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="SelectYesItemText" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="HasFrozen" xml:space="preserve">
+    <value>已经被冻结，不能再次冻结。</value>
+  </data>
+  <data name="NoFrozen" xml:space="preserve">
+    <value>没有被冻结，不能解除冻结。</value>
+  </data>
+  <data name="RedirectToLogin" xml:space="preserve">
+    <value>转到登录页</value>
+  </data>
+  <data name="AjaxProcess" xml:space="preserve">
+    <value>正在加载……</value>
+  </data>
+  <data name="CancelFrozenSuccess" xml:space="preserve">
+    <value>解除冻结成功</value>
+  </data>
+  <data name="FrozenSuccess" xml:space="preserve">
+    <value>冻结成功</value>
+  </data>
+  <data name="NotCancelFrozenRoleByNS" xml:space="preserve">
+    <value>公司用户不能解除冻结系统层面的角色</value>
+  </data>
+  <data name="NotEditRoleByNS" xml:space="preserve">
+    <value>公司用户不能编辑系统层面的角色</value>
+  </data>
+  <data name="NotFrozenRoleByNS" xml:space="preserve">
+    <value>公司用户不能冻结系统层面的角色</value>
+  </data>
+  <data name="CancelFrozenNoSuccess" xml:space="preserve">
+    <value>解除冻结不成功</value>
+  </data>
+  <data name="FrozenNoSuccess" xml:space="preserve">
+    <value>冻结不成功</value>
+  </data>
+  <data name="RecordChanged" xml:space="preserve">
+    <value>记录已经改变</value>
+  </data>
+  <data name="RecordDuplicate" xml:space="preserve">
+    <value>记录重复</value>
+  </data>
+  <data name="SaveSucceed" xml:space="preserve">
+    <value>保存成功</value>
+  </data>
+  <data name="CancelSuspendNoSuccess" xml:space="preserve">
+    <value>解除暂停不成功</value>
+  </data>
+  <data name="CancelSuspendSuccess" xml:space="preserve">
+    <value>解除暂停成功</value>
+  </data>
+  <data name="SuspendNoSuccess" xml:space="preserve">
+    <value>暂停不成功</value>
+  </data>
+  <data name="SuspendSuccess" xml:space="preserve">
+    <value>暂停成功</value>
+  </data>
+  <data name="CancelLock" xml:space="preserve">
+    <value>解除锁定</value>
+  </data>
+  <data name="CancelLockConfirm" xml:space="preserve">
+    <value>确定要解除锁定吗？</value>
+  </data>
+  <data name="HasSuspend" xml:space="preserve">
+    <value>已经被暂停，不能再次暂停。</value>
+  </data>
+  <data name="NoLock" xml:space="preserve">
+    <value>没有被锁定，不能解除锁定。</value>
+  </data>
+  <data name="NoSuspend" xml:space="preserve">
+    <value>没有被暂停，不能解除暂停。</value>
+  </data>
+  <data name="CancelLockNoSuccess" xml:space="preserve">
+    <value>解除锁定不成功</value>
+  </data>
+  <data name="CancelLockSuccess" xml:space="preserve">
+    <value>解除锁定成功</value>
+  </data>
+  <data name="EnterConfirmPassword" xml:space="preserve">
+    <value>请输入确认新密码</value>
+  </data>
+  <data name="EnterPassword" xml:space="preserve">
+    <value>请输入新密码</value>
+  </data>
+  <data name="PassNoEqualsConfirmPass" xml:space="preserve">
+    <value>新密码和确认新密码不一致</value>
+  </data>
+  <data name="DeleteFailed" xml:space="preserve">
+    <value>删除失败</value>
+  </data>
+  <data name="DeleteSucceed" xml:space="preserve">
+    <value>删除成功</value>
+  </data>
+  <data name="ExistsSubData" xml:space="preserve">
+    <value>当前数据已经被其他数据所使用。</value>
+  </data>
+  <data name="SaveFailed" xml:space="preserve">
+    <value>保存失败</value>
+  </data>
+  <data name="SHOP_MUST_SELECT" xml:space="preserve">
+    <value>当选择角色层面为店时，必须选择一个店!</value>
+  </data>
+  <data name="ModifySuccessed" xml:space="preserve">
+    <value>修改成功</value>
+  </data>
+  <data name="EnterNumber" xml:space="preserve">
+    <value>请输入数字</value>
+  </data>
+  <data name="FrozenEditError" xml:space="preserve">
+    <value>冻结状态不允许编辑</value>
+  </data>
+  <data name="CanNotDeleteMainData" xml:space="preserve">
+    <value>不能删除主数据</value>
+  </data>
+  <data name="MustSelectShop" xml:space="preserve">
+    <value>用户必须至少拥有一个权限店铺</value>
+  </data>
+  <data name="BtnModifyText" xml:space="preserve">
+    <value>修改</value>
+  </data>
+  <data name="BtnOKText" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="ClickModify" xml:space="preserve">
+    <value>请单击修改按钮</value>
+  </data>
+  <data name="BtnCancelSelectedText" xml:space="preserve">
+    <value>取消选用</value>
+  </data>
+  <data name="CancelMasterCodeConfirm" xml:space="preserve">
+    <value>确定要取消选用此数据吗？</value>
+  </data>
+  <data name="SelectMasterCodeConfirm" xml:space="preserve">
+    <value>确定要选用此数据吗？</value>
+  </data>
+  <data name="BtnExportText" xml:space="preserve">
+    <value>导出数据 CSV</value>
+  </data>
+  <data name="ConfirmActive" xml:space="preserve">
+    <value>确定生效吗？</value>
+  </data>
+  <data name="ConfirmAuto" xml:space="preserve">
+    <value>确认自动吗？</value>
+  </data>
+  <data name="ConfirmInactive" xml:space="preserve">
+    <value>确认失效吗？</value>
+  </data>
+  <data name="ConfirmManual" xml:space="preserve">
+    <value>确认手动吗？</value>
+  </data>
+  <data name="HasActive" xml:space="preserve">
+    <value>当前已经为生效，不能改变为生效</value>
+  </data>
+  <data name="HasAuto" xml:space="preserve">
+    <value>当前已经为自动，不能改变为自动</value>
+  </data>
+  <data name="HasInactive" xml:space="preserve">
+    <value>当前已经为失效，不能改变为失效</value>
+  </data>
+  <data name="HasManual" xml:space="preserve">
+    <value>当前已经为手动，不能改变为手动</value>
+  </data>
+  <data name="ModifyUnsuccessed" xml:space="preserve">
+    <value>修改不成功</value>
+  </data>
+  <data name="ConfirmClose" xml:space="preserve">
+    <value>确认关闭吗？</value>
+  </data>
+  <data name="BtnReturnText" xml:space="preserve">
+    <value>返回</value>
+  </data>
+  <data name="RequiredSelect" xml:space="preserve">
+    <value>必须选择该项</value>
+  </data>
+  <data name="BtnCopy" xml:space="preserve">
+    <value>复制</value>
+  </data>
+  <data name="BtnDownload" xml:space="preserve">
+    <value>下载</value>
+  </data>
+  <data name="BtnConfirmChange" xml:space="preserve">
+    <value>确定倒置</value>
+  </data>
+  <data name="BtnDownCSV" xml:space="preserve">
+    <value>下载数据CSV</value>
+  </data>
+  <data name="BtnImport" xml:space="preserve">
+    <value>汇入</value>
+  </data>
+  <data name="BtnValid" xml:space="preserve">
+    <value>核对</value>
+  </data>
+  <data name="ShopLovTitle" xml:space="preserve">
+    <value>请选择店</value>
+  </data>
+  <data name="NoRecords" xml:space="preserve">
+    <value>没有找到任何记录！</value>
+  </data>
+  <data name="MessageInfoTitle" xml:space="preserve">
+    <value>提示</value>
+  </data>
+  <data name="BtnReturnChange" xml:space="preserve">
+    <value>转返</value>
+  </data>
+  <data name="SearchFrist" xml:space="preserve">
+    <value>请先搜索或搜索(客户档)后导出</value>
+  </data>
+  <data name="SelectExportField" xml:space="preserve">
+    <value>请选择导出字段</value>
+  </data>
+  <data name="MustSelectRecord" xml:space="preserve">
+    <value>当前选择的操作必须选择记录。</value>
+  </data>
+  <data name="BtnDownTempCSV" xml:space="preserve">
+    <value>下载模版CSV</value>
+  </data>
+  <data name="BtnViewText" xml:space="preserve">
+    <value>检视</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>程序错误</value>
+  </data>
+  <data name="MaxMin" xml:space="preserve">
+    <value>最多月份数必须大于最小月份数</value>
+  </data>
+  <data name="NoSelectMode" xml:space="preserve">
+    <value>模式本店未选用</value>
+  </data>
+  <data name="NotAlphabet" xml:space="preserve">
+    <value>不是一个字母</value>
+  </data>
+  <data name="NotChar" xml:space="preserve">
+    <value>不是一个字符</value>
+  </data>
+  <data name="NotNumber" xml:space="preserve">
+    <value>不是一个数字</value>
+  </data>
+  <data name="NotValid" xml:space="preserve">
+    <value>数据不合法</value>
+  </data>
+  <data name="SameValue" xml:space="preserve">
+    <value>存在相同的数据</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>选择</value>
+  </data>
+  <data name="Sure" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="BtnComplete" xml:space="preserve">
+    <value>完成</value>
+  </data>
+  <data name="BtnReject" xml:space="preserve">
+    <value>拒绝</value>
+  </data>
+  <data name="BtnCancelAllSelectedText" xml:space="preserve">
+    <value>全部取消选用</value>
+  </data>
+  <data name="BtnSelectedAllText" xml:space="preserve">
+    <value>全部选用</value>
+  </data>
+  <data name="NO" xml:space="preserve">
+    <value>序号</value>
+  </data>
+  <data name="DateCompareMsg" xml:space="preserve">
+    <value>截至日期必须大于等于起始日期</value>
+  </data>
+  <data name="ConfirmSave" xml:space="preserve">
+    <value>确定保存吗？</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>日</value>
+  </data>
+  <data name="DateVaid" xml:space="preserve">
+    <value>查询时间不合理,结束日期必须大于开始日期</value>
+  </data>
+  <data name="ParameterError" xml:space="preserve">
+    <value>参数错误！</value>
+  </data>
+  <data name="TimeTypeError" xml:space="preserve">
+    <value>时间格式错误</value>
+  </data>
+  <data name="RecalculateConfirm" xml:space="preserve">
+    <value>确认日期重算吗？</value>
+  </data>
+  <data name="HasUnlockLogin" xml:space="preserve">
+    <value>已经解锁登录，不能再次解锁</value>
+  </data>
+  <data name="HasUnlockWP" xml:space="preserve">
+    <value>已经解锁工作台，不能再次解锁</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>到</value>
+  </data>
+  <data name="SelectMultiple" xml:space="preserve">
+    <value>请您先勾选一条以上记录，再进行当前操作</value>
+  </data>
+  <data name="SelectAllConfirm" xml:space="preserve">
+    <value>是否全部选用？</value>
+  </data>
+  <data name="SureLeave" xml:space="preserve">
+    <value>你还有数据没有保存，确定离开此页吗？</value>
+  </data>
+  <data name="SureLeave1" xml:space="preserve">
+    <value>确定进行此操作吗?</value>
+  </data>
+  <data name="NoVehicle" xml:space="preserve">
+    <value>选择客户没有车辆</value>
+  </data>
+  <data name="BtnUploadCSV" xml:space="preserve">
+    <value>上传数据CSV</value>
+  </data>
+  <data name="DMSDeleteConfirm" xml:space="preserve">
+    <value>您确定删除当前所勾选的记录</value>
+  </data>
+  <data name="ErrBegDateMoreThanEndDate" xml:space="preserve">
+    <value>查询起始时间不得大于结束时间</value>
+  </data>
+  <data name="ErrMoreThanDateNow" xml:space="preserve">
+    <value>查询时间不能大于今天</value>
+  </data>
+  <data name="DMSProhibitDelStatus" xml:space="preserve">
+    <value>该记录状态禁止删除</value>
+  </data>
+  <data name="DMSProhibitEditStsD" xml:space="preserve">
+    <value>该记录状态禁止编辑</value>
+  </data>
+  <data name="CheckedStatus" xml:space="preserve">
+    <value>请至少勾选一项状态</value>
+  </data>
+  <data name="SaveComplaintFirst" xml:space="preserve">
+    <value>请您先保存投诉单，再进行当前操作！</value>
+  </data>
+  <data name="BtnReport" xml:space="preserve">
+    <value>列印</value>
+  </data>
+  <data name="BtnShopSelectedText" xml:space="preserve">
+    <value>本店选用</value>
+  </data>
+  <data name="SHOP_CODE" xml:space="preserve">
+    <value>店代码</value>
+  </data>
+  <data name="SYS_CODE" xml:space="preserve">
+    <value>系统代码</value>
+  </data>
+  <data name="USER_CODE" xml:space="preserve">
+    <value>特殊设定座席</value>
+  </data>
+  <data name="USER_GROUP" xml:space="preserve">
+    <value>特殊设定座席组</value>
+  </data>
+  <data name="HasSelected" xml:space="preserve">
+    <value>已被选用，不能重复操作。</value>
+  </data>
+  <data name="NotSelectToSetDefaultValue" xml:space="preserve">
+    <value>未被选用，不能设置默认值。</value>
+  </data>
+  <data name="DateError" xml:space="preserve">
+    <value>结束日期必须大于等于开始日期</value>
+  </data>
+  <data name="SelectMemberAttrItem" xml:space="preserve">
+    <value>请先选择会员属性项目</value>
+  </data>
+  <data name="CURRENT_USER_GROUP" xml:space="preserve">
+    <value>本店帐套座席组</value>
+  </data>
+  <data name="DecimalCompareMsg" xml:space="preserve">
+    <value>截至值必须大于等于起始值</value>
+  </data>
+  <data name="btnSetText" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="hasNoPermissionToOperate" xml:space="preserve">
+    <value>您当前未被赋予检视权限，建议您向管理人员提出赋权申请。</value>
+  </data>
+  <data name="BtnClose" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="PropMustActiveAndShopSelect" xml:space="preserve">
+    <value>不能使用此功能！注：属性必须为可使用的店选数据！</value>
+  </data>
+  <data name="ConfirmConvert" xml:space="preserve">
+    <value>确定转换吗？</value>
+  </data>
+  <data name="LblMultipleChoice" xml:space="preserve">
+    <value>多选</value>
+  </data>
+  <data name="LblRadio" xml:space="preserve">
+    <value>单选</value>
+  </data>
+  <data name="SingleSelected" xml:space="preserve">
+    <value>单选</value>
+  </data>
+  <data name="MaxValue" xml:space="preserve">
+    <value>最大值输入错误,不能大于{0}</value>
+  </data>
+  <data name="MinValue" xml:space="preserve">
+    <value>最小值输入错误,不能小于{0}</value>
+  </data>
+  <data name="Input_plus_number" xml:space="preserve">
+    <value>请输入正整数</value>
+  </data>
+  <data name="LOV_CANCEL" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="LOV_CLEAR" xml:space="preserve">
+    <value>勾选清空</value>
+  </data>
+  <data name="LOV_OK" xml:space="preserve">
+    <value>勾选选取</value>
+  </data>
+  <data name="CurrShop" xml:space="preserve">
+    <value>Current Shop</value>
+  </data>
+  <data name="BtnAuditText" xml:space="preserve">
+    <value>Audit</value>
+  </data>
+  <data name="BtnReset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="BtnCreateText" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="BtnSubmitText" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="CreationDate" xml:space="preserve">
+    <value>Creation Date</value>
+  </data>
+  <data name="LastUpdateDate" xml:space="preserve">
+    <value>Last Update Date</value>
+  </data>
+  <data name="LastUpdatedBy" xml:space="preserve">
+    <value>Last Updated By</value>
+  </data>
+  <data name="MustInput" xml:space="preserve">
+    <value>必填</value>
+  </data>
+  <data name="ConfrimDel" xml:space="preserve">
+    <value>确定要删除吗？</value>
+  </data>
+  <data name="CurrentUser" xml:space="preserve">
+    <value>User : </value>
+  </data>
+  <data name="BtnNoText" xml:space="preserve">
+    <value>NO</value>
+  </data>
+  <data name="BtnYesText" xml:space="preserve">
+    <value>YES</value>
+  </data>
+  <data name="MessageTitle" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="BtnCreateFromText" xml:space="preserve">
+    <value>Create From</value>
+  </data>
+  <data name="NotMasterPartsPrompt" xml:space="preserve">
+    <value>Not the master parts,Can not modify Substitution information.</value>
+  </data>
+  <data name="Mandatory" xml:space="preserve">
+    <value>＊</value>
+  </data>
+  <data name="BtnGroupProduct" xml:space="preserve">
+    <value>Group Product</value>
+  </data>
+  <data name="DDL_CheckReq" xml:space="preserve">
+    <value>Check Req</value>
+  </data>
+  <data name="DDL_Need" xml:space="preserve">
+    <value>Need</value>
+  </data>
+  <data name="DDL_NoNeed" xml:space="preserve">
+    <value>No Need</value>
+  </data>
+  <data name="DDL_Valid" xml:space="preserve">
+    <value>Valid</value>
+  </data>
+  <data name="NotInt" xml:space="preserve">
+    <value>非整数</value>
+  </data>
+  <data name="SelectBrandFrist" xml:space="preserve">
+    <value>Pls. select Brand first.</value>
+  </data>
+  <data name="SelectDistrictFrist" xml:space="preserve">
+    <value>Pls. select District first.</value>
+  </data>
+  <data name="SelectEstateRoadFrist" xml:space="preserve">
+    <value>Pls. select Estate/Road first.</value>
+  </data>
+  <data name="SelectModelTypeFrist" xml:space="preserve">
+    <value>Pls. select Model Type first.</value>
+  </data>
+  <data name="BtnAudit" xml:space="preserve">
+    <value>Audit</value>
+  </data>
+  <data name="BtnBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="BtnBookingHistory" xml:space="preserve">
+    <value>Booking History</value>
+  </data>
+  <data name="BtnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="BtnCreateJob" xml:space="preserve">
+    <value>Create Job</value>
+  </data>
+  <data name="BtnDeleteJob" xml:space="preserve">
+    <value>Delete Job</value>
+  </data>
+  <data name="BtnDeleteProduct" xml:space="preserve">
+    <value>Delete Product</value>
+  </data>
+  <data name="BtnEditMailAddress" xml:space="preserve">
+    <value>Edit Mail Address</value>
+  </data>
+  <data name="BtnPrint" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="BtnQuotation" xml:space="preserve">
+    <value>Quotation</value>
+  </data>
+  <data name="BtnReturn" xml:space="preserve">
+    <value>Return</value>
+  </data>
+  <data name="BtnSubmit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="BtnEditJob" xml:space="preserve">
+    <value>Edit Job</value>
+  </data>
+  <data name="BtnGenerateText" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="PartsMasterPartsReplece" xml:space="preserve">
+    <value>非主零件，不能替换。</value>
+  </data>
+  <data name="DDL_InvoiceOnly" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
+  <data name="DDL_ProductAndInvoice" xml:space="preserve">
+    <value>Product and Invoice</value>
+  </data>
+  <data name="BtnBookHistory" xml:space="preserve">
+    <value>Book History</value>
+  </data>
+  <data name="BtnCancelBooking" xml:space="preserve">
+    <value>Cancel Booking</value>
+  </data>
+  <data name="BtnDetailResult" xml:space="preserve">
+    <value>Detail Result</value>
+  </data>
+  <data name="GroupValidateNotPass" xml:space="preserve">
+    <value>Name / Phone / Address inconsistencies. Can not operate Group Product. </value>
+  </data>
+  <data name="SearchFirst" xml:space="preserve">
+    <value>Please search data first.</value>
+  </data>
+  <data name="BtnHistory" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="BtnCancelJob" xml:space="preserve">
+    <value>Cancel Job</value>
+  </data>
+  <data name="CancelJobConfirm" xml:space="preserve">
+    <value>Are you sure you want to cancel this job?</value>
+  </data>
+  <data name="CheckDistrictCodeFirst" xml:space="preserve">
+    <value>District code not exists,Please check District code first.</value>
+  </data>
+  <data name="CheckEstateRoadCodeFirst" xml:space="preserve">
+    <value>Estate/Road code not exists,Please check Estate/Road code first.</value>
+  </data>
+  <data name="CheckModelTypeCodeFirst" xml:space="preserve">
+    <value>Model Type code not exists,Please check Model Type code first.</value>
+  </data>
+  <data name="CheckModelTypeOrBrandCodeFirst" xml:space="preserve">
+    <value>Model Type / Brand code not exists,Please check Model Type / Brand code first.</value>
+  </data>
+  <data name="SelectSingleFromOSList" xml:space="preserve">
+    <value>You must select a record from [Outstanding Order List] before you do this operation.</value>
+  </data>
+  <data name="BtnConfirmText" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="ConfirmedJobAdjust" xml:space="preserve">
+    <value>Are you sure you want to confirm Job Adjustment?</value>
+  </data>
+  <data name="BtnVoid" xml:space="preserve">
+    <value>Void</value>
+  </data>
+  <data name="BtnApprove" xml:space="preserve">
+    <value>Approve</value>
+  </data>
+  <data name="BtnDecline" xml:space="preserve">
+    <value>Decline</value>
+  </data>
+  <data name="BtnCreateJobForIDOD" xml:space="preserve">
+    <value>Create Job For ID/OD</value>
+  </data>
+  <data name="CONFIRM_VOID" xml:space="preserve">
+    <value>Are you sure you want to void it?</value>
+  </data>
+  <data name="BtnBookingList" xml:space="preserve">
+    <value>Booking List</value>
+  </data>
+  <data name="BtnBookedJob" xml:space="preserve">
+    <value>Booked Job</value>
+  </data>
+  <data name="BtnOverwriteMailingAddressText" xml:space="preserve">
+    <value>Overwrite Mailing Address</value>
+  </data>
+  <data name="BtnCustProdAddrUpdatedInfo" xml:space="preserve">
+    <value>Address Updated Info.</value>
+  </data>
+  <data name="SaveAndConfirm" xml:space="preserve">
+    <value>Save And Confirm</value>
+  </data>
+  <data name="BtnCreateByProdNoText" xml:space="preserve">
+    <value>Create By Product No.</value>
+  </data>
+  <data name="BtnCreateByNewProdText" xml:space="preserve">
+    <value>Create By New Product</value>
+  </data>
+  <data name="NoPermssion" xml:space="preserve">
+    <value>无此权限</value>
+  </data>
+</root>

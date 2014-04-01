@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="HomeTitle" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="ProvinceCityAreaTitle" xml:space="preserve">
+    <value>Province/City/Area Management</value>
+  </data>
+  <data name="ShopTitle" xml:space="preserve">
+    <value>Shop Management</value>
+  </data>
+  <data name="UserTitle" xml:space="preserve">
+    <value>User Management</value>
+  </data>
+  <data name="RoleTitle" xml:space="preserve">
+    <value>Role Management</value>
+  </data>
+  <data name="FunctionTitle" xml:space="preserve">
+    <value>Function Management</value>
+  </data>
+  <data name="ChangePasswordTitle" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="ParameterTitle" xml:space="preserve">
+    <value>Parameter Management</value>
+  </data>
+  <data name="AuditLogTitle" xml:space="preserve">
+    <value>Audit Search</value>
+  </data>
+  <data name="LoginTitle" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Material" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="BrandCodeTitle" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="ReasonCodeTitle" xml:space="preserve">
+    <value>Reason Code</value>
+  </data>
+  <data name="ProductClassTitle" xml:space="preserve">
+    <value>Product Class</value>
+  </data>
+  <data name="CodeTypeTitle" xml:space="preserve">
+    <value>Master Code</value>
+  </data>
+  <data name="CurrencyTitle" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="RepairCodeTitle" xml:space="preserve">
+    <value>Repair Code</value>
+  </data>
+  <data name="ResultCodeTitle" xml:space="preserve">
+    <value>Result Code</value>
+  </data>
+  <data name="ServiceGroupTitle" xml:space="preserve">
+    <value>Service Group</value>
+  </data>
+  <data name="ExchangeRateTitle" xml:space="preserve">
+    <value>Exchange Rate</value>
+  </data>
+  <data name="AddressCodeTitle" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="ClientTitle" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="SupplierTitle" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="ModelClassTitle" xml:space="preserve">
+    <value>Model Class</value>
+  </data>
+  <data name="ChargeCodeTitle" xml:space="preserve">
+    <value>Charge Code</value>
+  </data>
+  <data name="ModelTitle" xml:space="preserve">
+    <value>Model Code</value>
+  </data>
+  <data name="PartsClass" xml:space="preserve">
+    <value>Parts Class</value>
+  </data>
+  <data name="ReorderFactorTitle" xml:space="preserve">
+    <value>Reorder Factor</value>
+  </data>
+  <data name="SymptomTitle" xml:space="preserve">
+    <value>Symptom</value>
+  </data>
+  <data name="PartsMaintenanceTitle" xml:space="preserve">
+    <value>Parts</value>
+  </data>
+  <data name="CategoryCodeTitle" xml:space="preserve">
+    <value>Category Code</value>
+  </data>
+  <data name="TestReportTitle" xml:space="preserve">
+    <value>Test Report</value>
+  </data>
+  <data name="BinLocationTitle" xml:space="preserve">
+    <value>Bin Location</value>
+  </data>
+  <data name="GodownTitle" xml:space="preserve">
+    <value>Godown</value>
+  </data>
+  <data name="PolicyCodeTitle" xml:space="preserve">
+    <value>Policy</value>
+  </data>
+  <data name="ContractorTitle" xml:space="preserve">
+    <value>Contractor</value>
+  </data>
+  <data name="JobTitle" xml:space="preserve">
+    <value>Job</value>
+  </data>
+  <data name="MaintenanceTitle" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="PartsSetup" xml:space="preserve">
+    <value>Parts Setup</value>
+  </data>
+  <data name="ProductTitle" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="SystemTitle" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="Contractor" xml:space="preserve">
+    <value>Contractor</value>
+  </data>
+  <data name="ProductInformationTitle" xml:space="preserve">
+    <value>Product Information</value>
+  </data>
+  <data name="Technician" xml:space="preserve">
+    <value>Technician</value>
+  </data>
+  <data name="JobQuotaTitle" xml:space="preserve">
+    <value>Job Assign Rule</value>
+  </data>
+  <data name="JobLabourFeeTitle" xml:space="preserve">
+    <value>Job Labor Fee</value>
+  </data>
+  <data name="POApprovalSetup" xml:space="preserve">
+    <value>PO Approval Setup</value>
+  </data>
+  <data name="PurchaseOrder" xml:space="preserve">
+    <value>Purchase Order</value>
+  </data>
+  <data name="PartsFactoryPriceTitle" xml:space="preserve">
+    <value>Parts Factory Price</value>
+  </data>
+  <data name="PartsSellingPriceTitle" xml:space="preserve">
+    <value>Parts Selling Price</value>
+  </data>
+  <data name="AgreementTitle" xml:space="preserve">
+    <value>Agreement</value>
+  </data>
+  <data name="ProductRenewalLetterPrintingTitle" xml:space="preserve">
+    <value>Product Renewal Letter Printing</value>
+  </data>
+  <data name="OrderTakeTitle" xml:space="preserve">
+    <value>Take Order</value>
+  </data>
+  <data name="RejoinRenewalProductPrintingTitle" xml:space="preserve">
+    <value>Rejoin Renewal Product Printing</value>
+  </data>
+  <data name="FinanceTitle" xml:space="preserve">
+    <value>Finance</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="PartsTitle" xml:space="preserve">
+    <value>Parts</value>
+  </data>
+  <data name="RequisitionTitle" xml:space="preserve">
+    <value>Requisition Note</value>
+  </data>
+  <data name="PurchaseApproval" xml:space="preserve">
+    <value>Approve PO</value>
+  </data>
+  <data name="PurchaseAssignRule" xml:space="preserve">
+    <value>PO Approval Rule</value>
+  </data>
+  <data name="PurchaseOrderMaintenance" xml:space="preserve">
+    <value>Purchase Order</value>
+  </data>
+  <data name="OutstandingPartsByTechnicianReportTitle" xml:space="preserve">
+    <value>Outstanding Parts By Technician Report</value>
+  </data>
+  <data name="OutstandingPartsHistoryByTechnicianReportTitle" xml:space="preserve">
+    <value>Outstanding Parts History By Technician Report</value>
+  </data>
+  <data name="PurchaseAnalysisReportTitle" xml:space="preserve">
+    <value>Purchase Analysis</value>
+  </data>
+  <data name="PurchaseOrderReportTitle" xml:space="preserve">
+    <value>Purchase Order Report</value>
+  </data>
+  <data name="PurchaseOrderSuggestListReportTitle" xml:space="preserve">
+    <value>Purchase Order Suggest List </value>
+  </data>
+  <data name="PurchaseReceivingCorrectionReportTitle" xml:space="preserve">
+    <value>Purchase Receiving Correction Report</value>
+  </data>
+  <data name="StockAdjustmentTransactionReportTitle" xml:space="preserve">
+    <value>Stock Adjustment Transaction Report</value>
+  </data>
+  <data name="StockAgingByBrandByPartsReportTitle" xml:space="preserve">
+    <value>Stock Aging By Brand By Parts Report</value>
+  </data>
+  <data name="StockAgingByBrandByTypeReportTitle" xml:space="preserve">
+    <value>Stock Aging By Brand By Type Report</value>
+  </data>
+  <data name="StockAgingByBrandReportTitle" xml:space="preserve">
+    <value>Stock Aging By Brand Report</value>
+  </data>
+  <data name="StockMovementReportTitle" xml:space="preserve">
+    <value>Stock Movement Report</value>
+  </data>
+  <data name="StockTakeDiscrepancyReportTitle" xml:space="preserve">
+    <value>Stock Take Discrepancy Report</value>
+  </data>
+  <data name="StockTakeReportTitle" xml:space="preserve">
+    <value>Stock Take Report</value>
+  </data>
+  <data name="StockValueReportTitle" xml:space="preserve">
+    <value>Stock Value Report</value>
+  </data>
+  <data name="JobQueueTitle" xml:space="preserve">
+    <value>Job Queue</value>
+  </data>
+  <data name="AssignJobTitle" xml:space="preserve">
+    <value>Assign Job</value>
+  </data>
+  <data name="AssignmentTitle" xml:space="preserve">
+    <value>Assignment</value>
+  </data>
+  <data name="QuotationTitle" xml:space="preserve">
+    <value>Quotation</value>
+  </data>
+  <data name="JobResultTitle" xml:space="preserve">
+    <value>Enter Job Result and Complete</value>
+  </data>
+  <data name="StockArrivalMaintenanceTitle" xml:space="preserve">
+    <value>Stock Arrival</value>
+  </data>
+  <data name="StockTitle" xml:space="preserve">
+    <value>Stock</value>
+  </data>
+  <data name="Requisition" xml:space="preserve">
+    <value>Requisition</value>
+  </data>
+  <data name="StockTransferTitle" xml:space="preserve">
+    <value>Stock Transfer </value>
+  </data>
+  <data name="SalesMemoTitle" xml:space="preserve">
+    <value>Sales Memo</value>
+  </data>
+  <data name="JobSheetPrintTitle" xml:space="preserve">
+    <value>Print Job Sheet</value>
+  </data>
+  <data name="ReturnToVendorTitle" xml:space="preserve">
+    <value>Return To Vendor</value>
+  </data>
+  <data name="StockArrivalCorrectionTitle" xml:space="preserve">
+    <value>Stock Arrival Correction</value>
+  </data>
+  <data name="DistrictDistributionReportTitle" xml:space="preserve">
+    <value>District Distribution Report</value>
+  </data>
+  <data name="TechnicianPartsMovementReportTitle" xml:space="preserve">
+    <value>Technician Parts Movement Report</value>
+  </data>
+  <data name="PurchaseOrderTitle" xml:space="preserve">
+    <value>Purchase Order </value>
+  </data>
+  <data name="StockArrivalReportTitle" xml:space="preserve">
+    <value>Stock Arrival Report</value>
+  </data>
+  <data name="InvoiceTitle" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
+  <data name="SupplierInvoiceTitle" xml:space="preserve">
+    <value>Supplier Invoice</value>
+  </data>
+  <data name="StockAdjustmentTitle" xml:space="preserve">
+    <value>Stock Adjustment</value>
+  </data>
+  <data name="AccountCodeTitle" xml:space="preserve">
+    <value>GL Account</value>
+  </data>
+  <data name="PrintTechJobTitle" xml:space="preserve">
+    <value>Print Technician Daily Job List</value>
+  </data>
+  <data name="JobDetailsInformationReportTitle" xml:space="preserve">
+    <value>Job Details Information Report </value>
+  </data>
+  <data name="ProductInformationReportTitle" xml:space="preserve">
+    <value>Product Information Report</value>
+  </data>
+  <data name="PartsEnquiryTitle" xml:space="preserve">
+    <value>Parts Enquiry</value>
+  </data>
+  <data name="RequisitionReturnTitle" xml:space="preserve">
+    <value>Requisition Return</value>
+  </data>
+  <data name="APInvoiceReportTitle" xml:space="preserve">
+    <value>AP Invoice Report </value>
+  </data>
+  <data name="StockTransferNoteTitle" xml:space="preserve">
+    <value>Stock Transfer Note</value>
+  </data>
+  <data name="PaymentMethodTitle" xml:space="preserve">
+    <value>Payment Method</value>
+  </data>
+  <data name="VoucherTitle" xml:space="preserve">
+    <value>Voucher</value>
+  </data>
+  <data name="CustomerInvoiceTitle" xml:space="preserve">
+    <value>Customer Invoice</value>
+  </data>
+  <data name="SalesReturnTitle" xml:space="preserve">
+    <value>Sales Return</value>
+  </data>
+  <data name="AccountingMovementTransactionReportTitle" xml:space="preserve">
+    <value>Accounting Movement TransactionReport</value>
+  </data>
+  <data name="ARSettlementHistoryReportTitle" xml:space="preserve">
+    <value>AR Settlement History Report</value>
+  </data>
+  <data name="ARVoucherReportTitle" xml:space="preserve">
+    <value>AR Voucher Report</value>
+  </data>
+  <data name="CounterSalesReportTitle" xml:space="preserve">
+    <value>Counter Sales Report</value>
+  </data>
+  <data name="CounterSalesReturnReportTitle" xml:space="preserve">
+    <value>Counter Sales Return Report</value>
+  </data>
+  <data name="CustomerInformationAuditReportTitle" xml:space="preserve">
+    <value>Customer Information Audit Report</value>
+  </data>
+  <data name="DailyCostConsumptionSummaryReportTitle" xml:space="preserve">
+    <value>Daily Cost Consumption Summary Report</value>
+  </data>
+  <data name="DailyJobPickSlipReportTitle" xml:space="preserve">
+    <value>Daily Job Pick Slip Report</value>
+  </data>
+  <data name="DailyJobReportTitle" xml:space="preserve">
+    <value>Daily Job Report</value>
+  </data>
+  <data name="DailyReceivedTransactionReportTitle" xml:space="preserve">
+    <value>Daily Received Transaction Report</value>
+  </data>
+  <data name="DailySalesSummaryReportTitle" xml:space="preserve">
+    <value>Daily Sales Summary Report</value>
+  </data>
+  <data name="DebtorAgingReportTitle" xml:space="preserve">
+    <value>Debtor Aging Report</value>
+  </data>
+  <data name="DebtorInvoiceReportTitle" xml:space="preserve">
+    <value>Debtor Invoice Report</value>
+  </data>
+  <data name="IDODCheckListTitle" xml:space="preserve">
+    <value>IDOD CheckList</value>
+  </data>
+  <data name="InventoryDistributionReportTitle" xml:space="preserve">
+    <value>Inventory Distribution Report</value>
+  </data>
+  <data name="JobAnalysisForNonDCHBrandTitle" xml:space="preserve">
+    <value>Job Analysis For Non DCH Brand</value>
+  </data>
+  <data name="MaintenancePriceReportTitle" xml:space="preserve">
+    <value>Maintenance Price Report</value>
+  </data>
+  <data name="MaterialAccountDistributionDetailTitle" xml:space="preserve">
+    <value>Material Account Distribution Detail</value>
+  </data>
+  <data name="MaterialAccountDistributionSummaryTitle" xml:space="preserve">
+    <value>Material Account Distribution Summary</value>
+  </data>
+  <data name="ModelInformationReportTitle" xml:space="preserve">
+    <value>Mode Information Report</value>
+  </data>
+  <data name="OutstandingJobAlertReportByTechnicianTitle" xml:space="preserve">
+    <value>Outstanding Job Alert Report ByTechnician</value>
+  </data>
+  <data name="OutstandingPartsByTechnicianTitle" xml:space="preserve">
+    <value>Outstanding Parts By Technician</value>
+  </data>
+  <data name="OutstandingPartsHistoryByTechnicianTitle" xml:space="preserve">
+    <value>Outstanding Parts History By Technician</value>
+  </data>
+  <data name="PartsSalesAnalysisReportTitle" xml:space="preserve">
+    <value>Parts Sales Analysis Report</value>
+  </data>
+  <data name="PartsSellingPriceAuditReportTitle" xml:space="preserve">
+    <value>Parts Selling Price Audit Report</value>
+  </data>
+  <data name="PartsSellingPriceReportTitle" xml:space="preserve">
+    <value>Parts Selling Price Report</value>
+  </data>
+  <data name="PartsSellingPriceVSCostAuditReportTitle" xml:space="preserve">
+    <value>Parts Selling Price VS Cost Audit Report</value>
+  </data>
+  <data name="PurchaseOrderSuggestListTitle" xml:space="preserve">
+    <value>Purchase Order Suggest List</value>
+  </data>
+  <data name="RenewAnalysisByAgingReportTitle" xml:space="preserve">
+    <value>Renew Analysis By Aging Report</value>
+  </data>
+  <data name="RepairSymptomAnalysisReportTitle" xml:space="preserve">
+    <value>Repair Symptom Analysis Report</value>
+  </data>
+  <data name="SalesAnalysisByMaintTypeTitle" xml:space="preserve">
+    <value>Sales Analysis By Maint Type</value>
+  </data>
+  <data name="SalesAnalysisByProductAgingTitle" xml:space="preserve">
+    <value>Sales Analysis By Product Aging</value>
+  </data>
+  <data name="StockAgingByBrandByPartsTitle" xml:space="preserve">
+    <value>Stock Aging By Brand By Parts</value>
+  </data>
+  <data name="StockAgingByBrandByTypeTitle" xml:space="preserve">
+    <value>Stock Aging By Brand By Type</value>
+  </data>
+  <data name="StockAgingByBrandTitle" xml:space="preserve">
+    <value>Stock Aging By Brand</value>
+  </data>
+  <data name="StockTakeSkipPartsReportTitle" xml:space="preserve">
+    <value>Stock Take Skip Parts Report</value>
+  </data>
+  <data name="TechnicianDailyJobListTitle" xml:space="preserve">
+    <value>Technician Daily Job List</value>
+  </data>
+  <data name="TechnicianPerformanceByProductReportTitle" xml:space="preserve">
+    <value>Technician Performance By Product Report</value>
+  </data>
+  <data name="TechnicianPerformanceReportTitle" xml:space="preserve">
+    <value>Technician Performance Report</value>
+  </data>
+  <data name="WaitOrderStockArrivalAlertListTitle" xml:space="preserve">
+    <value>Wait Order Stock Arrival Alert List</value>
+  </data>
+  <data name="TechOutPartsEnquiryTitle" xml:space="preserve">
+    <value>Technician Outstanding Parts Enquiry</value>
+  </data>
+  <data name="DiscontinuePartsEnquiryTitle" xml:space="preserve">
+    <value>Discontinue Parts Enquiry</value>
+  </data>
+  <data name="StockMovementEnquiryTitle" xml:space="preserve">
+    <value>Stock Movement Enquiry</value>
+  </data>
+  <data name="IssuedRequisitionEnquiryTitle" xml:space="preserve">
+    <value>Issued Requisition Enquiry</value>
+  </data>
+  <data name="PartsDetailsEnquiryTitle" xml:space="preserve">
+    <value>Parts Details Enquiry</value>
+  </data>
+  <data name="ArPaymentTermsTitle" xml:space="preserve">
+    <value>Payment Terms</value>
+  </data>
+  <data name="TechnicianBonusTitle" xml:space="preserve">
+    <value>Incentive Bonus</value>
+  </data>
+  <data name="AdjustJobTitle" xml:space="preserve">
+    <value>Adjust Job</value>
+  </data>
+  <data name="InvoiceGenerationTitle" xml:space="preserve">
+    <value>Generate Invoice/DR/CR Note</value>
+  </data>
+  <data name="JobPaymentTitle" xml:space="preserve">
+    <value>Job Payment</value>
+  </data>
+  <data name="StockTakeBatchTitle" xml:space="preserve">
+    <value>Stock Take</value>
+  </data>
+  <data name="DRCRNoteTitle" xml:space="preserve">
+    <value>DR/CR Note</value>
+  </data>
+  <data name="PaymentReceived" xml:space="preserve">
+    <value>Payment Received</value>
+  </data>
+  <data name="TechnicianIncentiveBonusReportTitle" xml:space="preserve">
+    <value>Technician Incentive Bonus Report</value>
+  </data>
+  <data name="DiscontinueLetterPrintingTitle" xml:space="preserve">
+    <value>Discontinue Letter Printing</value>
+  </data>
+  <data name="MaintenancePolicyPrintoutTitle" xml:space="preserve">
+    <value>Maintenance Policy Printout</value>
+  </data>
+  <data name="RefundMaintAgreementTitle" xml:space="preserve">
+    <value>Refund Maintenance Agreement</value>
+  </data>
+  <data name="IDODOrderTitle" xml:space="preserve">
+    <value>ID/OD Order</value>
+  </data>
+  <data name="ProductUploadTitle" xml:space="preserve">
+    <value>Product Upload</value>
+  </data>
+  <data name="RenewMaintTitle" xml:space="preserve">
+    <value>Settle Maintenance Renewal</value>
+  </data>
+  <data name="BadDebtTitle" xml:space="preserve">
+    <value>Bad Debt</value>
+  </data>
+  <data name="DayEndReportTitle" xml:space="preserve">
+    <value>Day End</value>
+  </data>
+  <data name="DailyJobAllocationListTitle" xml:space="preserve">
+    <value>Daily Job Allocation List</value>
+  </data>
+  <data name="DailyPhysicalStockOnHandReportTitle" xml:space="preserve">
+    <value>Daily Physical Stock OnHand Report</value>
+  </data>
+  <data name="InvoicePrintTitle" xml:space="preserve">
+    <value>Print Invoice</value>
+  </data>
+  <data name="OutstandingJobEnquiryTitle" xml:space="preserve">
+    <value>Outstanding Job Enquiry</value>
+  </data>
+  <data name="JobWaitingPartsEnquiryTitle" xml:space="preserve">
+    <value>Job Waiting Parts Enquiry</value>
+  </data>
+  <data name="JobPaymentEnquiry" xml:space="preserve">
+    <value>Job Payment Enquiry</value>
+  </data>
+  <data name="JobImportantFieldApprovalTitle" xml:space="preserve">
+    <value>Job Important Field Approval</value>
+  </data>
+  <data name="ProductInformationAuditReportTitle" xml:space="preserve">
+    <value>Product Information Audit Report</value>
+  </data>
+  <data name="MaintenancePriceAuditReportTitle" xml:space="preserve">
+    <value>Maintenance Price Audit Report</value>
+  </data>
+  <data name="CSTitle" xml:space="preserve">
+    <value>CS</value>
+  </data>
+  <data name="POTitle" xml:space="preserve">
+    <value>PO</value>
+  </data>
+  <data name="InvoiceGenForSalesMemoTitle" xml:space="preserve">
+    <value>Generate Invoice For Sales Memo</value>
+  </data>
+  <data name="JobPaymentConsolidateTitle" xml:space="preserve">
+    <value>Job Payment Consolidate</value>
+  </data>
+  <data name="ApChargeTitle" xml:space="preserve">
+    <value>AP Charges</value>
+  </data>
+  <data name="FunctionListReportTitle" xml:space="preserve">
+    <value>Role Function List Report</value>
+  </data>
+  <data name="UserListReportTitle" xml:space="preserve">
+    <value>User List Report</value>
+  </data>
+  <data name="TechGroup" xml:space="preserve">
+    <value>Technician Group</value>
+  </data>
+  <data name="ProdUploadTitle" xml:space="preserve">
+    <value>Upload EAD Product</value>
+  </data>
+  <data name="OJobResultTitle" xml:space="preserve">
+    <value>Override Job Result</value>
+  </data>
+</root>
