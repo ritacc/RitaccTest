@@ -214,6 +214,7 @@
     <Compile Include="Code\UserExtension.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AjaxController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\System\AccountCodeController.cs" />
     <Compile Include="Controllers\System\AuditController.cs" />
     <Compile Include="Controllers\System\ShopController.cs" />
@@ -267,7 +268,6 @@
     <Content Include="bin\NPOI.OOXML.dll" />
     <Content Include="bin\NPOI.OpenXml4Net.dll" />
     <Content Include="bin\NPOI.OpenXmlFormats.dll" />
-    <Content Include="bin\NPOI.XML" />
     <Content Include="Content\Css\Images\Audit.png" />
     <Content Include="Content\Css\Images\create.png" />
     <Content Include="Content\Css\Images\Down.ico" />
@@ -483,6 +483,7 @@
     <Content Include="Views\Audit\Index.aspx" />
     <Content Include="Views\Demo\DemoLov.aspx" />
     <Content Include="Views\Demo\Index.aspx" />
+    <Content Include="Views\Main\Index.aspx" />
     <Content Include="Views\Shop\detail.aspx" />
     <Content Include="Views\Shop\SetDefaultGodown.aspx" />
     <Content Include="Views\Shop\SetPassword.aspx" />
