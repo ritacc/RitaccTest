@@ -13,7 +13,18 @@
 <meta name="description" content="网易彩票是最值得信赖的专业彩票网站,为彩民提供双色球,大乐透,3D,11选5,足彩,竞彩,北单等众多彩种的彩票代购、合买、开奖等服务，中奖福地，买彩票首选！"/>
 <title>网易彩票网_彩票中奖福地_网上购买彩票首选_福彩_体彩_竞技彩</title>
 <link rel="canonical" href="http://caipiao.163.com/"/>
-<link rel="stylesheet" href="http://cdn.caipiao.163.com/caipiao/css2/base.css?179842"/><link rel="stylesheet" href="http://cdn.caipiao.163.com/caipiao/css2/core.css?179842"/><link rel="stylesheet" href="http://cdn.caipiao.163.com/caipiao/css2/index/index.css?179842"/><script src="http://cdn.caipiao.163.com/caipiao/js2/jquery-1.4.2.js?201205221605"></script><script src="/globalConfig.html?1396516668692"></script><script src="http://cdn.caipiao.163.com/caipiao/js2/easyCore.js?179842"></script><script src="http://cdn.caipiao.163.com/caipiao/js2/groupBuy.js?179842"></script><script src="http://cdn.caipiao.163.com/caipiao/js2/index/index.js?179842"></script><meta http-equiv="X-Frame-Options" content="DENY"/><script>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        	if (window.top != window.self) window.top.location.href = window.location.href;</script>
+<link rel="stylesheet" href="http://cdn.caipiao.163.com/caipiao/css2/base.css?179842"/>
+<link rel="stylesheet" href="http://cdn.caipiao.163.com/caipiao/css2/core.css?179842"/>
+<link rel="stylesheet" href="http://cdn.caipiao.163.com/caipiao/css2/index/index.css?179842"/>
+
+<script src="http://cdn.caipiao.163.com/caipiao/js2/jquery-1.4.2.js?201205221605"></script>
+<script src="/globalConfig.html?1396516668692"></script>
+<script src="http://cdn.caipiao.163.com/caipiao/js2/easyCore.js?179842"></script>
+<script src="http://cdn.caipiao.163.com/caipiao/js2/groupBuy.js?179842"></script>
+<script src="http://cdn.caipiao.163.com/caipiao/js2/index/index.js?179842"></script>
+<meta http-equiv="X-Frame-Options" content="DENY"/>
+
+<script>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        	if (window.top != window.self) window.top.location.href = window.location.href;</script>
 <meta property="wb:webmaster" content="0048397d7f72fbc7" />
 
 </head>
@@ -811,7 +822,7 @@
 		</dl>
 	</div>
 	<div class="betinfoBox">
-		<h3><strong>大奖直播室</strong><a href="/order/ssq/#from=syks&goodnum=yes" target="_blank">试试手气</a></h3>
+		<h3><strong>大奖直播室</strong></h3>
 		<ul class="betinfo_list">
 			<li class="clearfix first"><a href="http://bbs.caipiao.163.com/8635.html" target="_blank"><img src="http://img4.cache.netease.com/sports/2014/2/20/20140220150313c81f2.jpg" alt="" class="betinfo_img"/><span class="betinfo_text"><strong>2亿!史上最大奖</strong>最牛双色球大奖花落网易!易友擒48注双色球头奖!</span></a>			</li>
 			<li class="clearfix">&middot;<a href="http://bbs.caipiao.163.com/13941.html" target="_blank">又见大奖!易友中大乐透619万</a>			</li>
@@ -820,7 +831,7 @@
 			<li class="clearfix">&middot;<a href="http://bbs.caipiao.163.com/1720.html" target="_blank">美女教师守号6年终揽1941万</a>			</li>
 			<li class="clearfix">&middot;<a href="http://bbs.caipiao.163.com/7615.html" target="_blank">平安夜豪揽双色球大奖517万</a>			</li>
 		</ul>
-		<h3><strong>最新中奖</strong><a href="/hit/hit_ssq.html#from=syks" target="_blank">全部</a></h3>
+		<h3><strong>最新中奖</strong></h3>
 		<div class="latestWin_con">
 			<ul class="latestWin_list">
 				<li> <span class="czname">&middot;[<a href="/order/11x5/#from=syks">11选5</a>]</span> <span class="winner">雨晴***</span> <span class="awards">1450元</span> </li>
@@ -962,50 +973,33 @@
 <div class="hot_block clearfix">
     <h2 class="hot_title">热点导航：</h2>
     <p id="hot_block">
-    <a href="http://zx.caipiao.163.com/ssq/" target="_blank">福利彩票双色球</a>
-    <a href="http://zx.caipiao.163.com/3d/" target="_blank">福彩3D预测分析</a>
-    <a href="http://zx.caipiao.163.com/trend/trend.html" target="_blank">彩票走势图</a>
-	<a href="http://caipiao.163.com/order/ssq/" target="_blank">双色球投注</a>
-	<a href="http://caipiao.163.com/order/3d/" target="_blank">福利彩票3D</a>
-	<a href="http://caipiao.163.com/order/sfc/" target="_blank">足球胜负彩</a>
-	<a href="http://caipiao.163.com/order/jczq/" target="_blank">竞彩足球</a>
-	<a href="http://caipiao.163.com/order/dc/" target="_blank">足彩单场</a>
-	<a href="http://caipiao.163.com/order/11x5/" target="_blank">体彩11选5</a>
-	<a rel="nofollow" id="showmore" href="javascript:void(0)">更多</a><br />
-	<a href="http://caipiao.163.com/order/" target="_blank">彩票投注</a>
-	<a href="http://caipiao.163.com/order/dlt/" target="_blank">体彩大乐透</a>
-	<a href="http://caipiao.163.com/order/pl3/" target="_blank">排列三</a>
-	<a target="_blank" href="http://live.caipiao.163.com/">竞彩比分直播</a>
-	<a target="_blank" href="http://zx.caipiao.163.com">彩票开奖</a>
-	<a href="http://caipiao.163.com/order/qlc/" target="_blank">七乐彩</a>
-	<a href="http://caipiao.163.com/order/qxc/" target="_blank">体彩七星彩</a>
-	<a href="http://caipiao.163.com/order/pl5/" target="_blank">体彩排列5</a>
-	<a href="http://caipiao.163.com/groupbuy/" target="_blank">彩票合买</a>
-	<a target="_blank" href="http://saishi.caipiao.163.com/" title="足球联赛资料">足球资料库</a>
-	<a href="http://vs.caipiao.163.com/" target="_blank">VS足球对阵</a>
-	<a href=" http://caipiao.163.com/award/kuai3/" target="_blank">福彩快3开奖结果</a>
-	<a href=" http://zx.caipiao.163.com/trend/kuai3/" target="_blank">福彩快3走势图</a>
-	<a href="http://caipiao.163.com/award/ssq/" target="_blank">双色球开奖结果</a>
-    <a target="_blank" href="http://basketball.caipiao.163.com/" title="篮彩">篮球资料库</a>
-    <a target="_blank" href="http://live.caipiao.163.com/all/">足球比分直播</a>
+    <a href="#" target="_blank">福利彩票双色球</a>
+    <a href="#" target="_blank">福彩3D预测分析</a>
+    <a href="#" target="_blank">彩票走势图</a>
+	<a href="#" target="_blank">双色球投注</a>
+	<a href="#" target="_blank">福利彩票3D</a>
+	<a href="#" target="_blank">足球胜负彩</a>
+	<a href="#" target="_blank">竞彩足球</a>
+	<a href="#" target="_blank">足彩单场</a>
+	<a href="#" target="_blank">体彩11选5</a>
 	</p>
 </div>
 
 <footer id="docFoot">
 	<ul id="guideList">
 		<li><em class="guide_2"></em><span>
-			&middot; <a target="_blank" href="/help/special/00754IHC/caipiao_help_index.html" title="购彩流程">购彩流程</a><br />
-			&middot; <a target="_blank" href="/help/10/0726/16/6CHGN51T00754IHQ.html" title="领奖流程">领奖流程</a><br />
+			&middot; <a target="_blank" href="#" title="购彩流程">购彩流程</a><br />
+			&middot; <a target="_blank" href="#" title="领奖流程">领奖流程</a><br />
 		</span></li>
         <li><em class="guide_3"></em><span>
-			&middot; <a target="_blank" href="/imghelp/tz_pt_1.jsp" title="新手购彩图解">新手购彩图解</a><br /> 
-			&middot; <a target="_blank" href="/help/special/00754II5/caipiao_qa_guide.html" title="常见问题">常见问题</a><br />
-			&middot; <a target="_blank" href="/help/special/00754IHC/caipiao_help_index.html" title="功能指引">功能指引</a><br />
-			&middot; <a target="_blank" href="/help/special/00754IHC/caipiao_help_index.html" title="彩种介绍">彩种介绍</a>		</span></li>
+			&middot; <a target="_blank" href="#" title="新手购彩图解">新手购彩图解</a><br /> 
+			&middot; <a target="_blank" href="#" title="常见问题">常见问题</a><br />
+			&middot; <a target="_blank" href="#" title="功能指引">功能指引</a><br />
+			&middot; <a target="_blank" href="#" title="彩种介绍">彩种介绍</a>		</span></li>
 		<li><em class="guide_4"></em><span>
-			&middot; <a target="_blank" href="/help/10/0726/17/6CHLJHB100754IHP.html" rel="nofollow">网银支付</a><br />
-			&middot; <a target="_blank" href="/help/10/0726/17/6CHLRB7600754IHP.html" rel="nofollow">支付宝支付</a><br />
-			&middot; <a target="_blank" href="/help/10/0726/17/6CHM0HIM00754IHP.html" rel="nofollow">手机充值卡支付</a>
+			&middot; <a target="_blank" href="#" rel="nofollow">网银支付</a><br />
+			&middot; <a target="_blank" href="#" rel="nofollow">支付宝支付</a><br />
+			&middot; <a target="_blank" href="#" rel="nofollow">手机充值卡支付</a>
 		</span></li>
 	</ul>
 </footer>
