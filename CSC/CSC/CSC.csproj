@@ -484,6 +484,7 @@
     <Content Include="Views\Demo\DemoLov.aspx" />
     <Content Include="Views\Demo\Index.aspx" />
     <Content Include="Views\Main\Index.aspx" />
+    <Content Include="Views\Main\Test.aspx" />
     <Content Include="Views\Shop\detail.aspx" />
     <Content Include="Views\Shop\SetDefaultGodown.aspx" />
     <Content Include="Views\Shop\SetPassword.aspx" />
