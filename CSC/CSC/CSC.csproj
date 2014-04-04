@@ -268,6 +268,8 @@
     <Content Include="bin\NPOI.OOXML.dll" />
     <Content Include="bin\NPOI.OpenXml4Net.dll" />
     <Content Include="bin\NPOI.OpenXmlFormats.dll" />
+    <Content Include="Content\CssCP\base.css" />
+    <Content Include="Content\CssCP\core.css" />
     <Content Include="Content\Css\Images\Audit.png" />
     <Content Include="Content\Css\Images\create.png" />
     <Content Include="Content\Css\Images\Down.ico" />
@@ -279,6 +281,11 @@
     <Content Include="Content\Css\Images\up2.png" />
     <Content Include="Content\Css\jQuery\dropdownEx.css" />
     <Content Include="Content\Css\jQuery\dropdownEx_autocomplete.css" />
+    <Content Include="Content\img\coupon\act.png" />
+    <Content Include="Content\img\dialog.png" />
+    <Content Include="Content\img\dialog2.png" />
+    <Content Include="Content\img\headfoot.png" />
+    <Content Include="Content\img\head_repeat.png" />
     <Content Include="Content\Scripts\Common\DateConvert.js" />
     <Content Include="Content\Scripts\jQuery\jquery-SimpleValidForm.js" />
     <Content Include="Content\Scripts\jQuery\jquery-SimpleValidMethod.js" />

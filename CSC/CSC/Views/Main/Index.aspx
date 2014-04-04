@@ -12,9 +12,10 @@
 <meta name="keywords" content="彩票,彩票网,福彩,体彩,合买彩票,中国福利彩票网,中国福利彩票"/>
 <meta name="description" content="网易彩票是最值得信赖的专业彩票网站,为彩民提供双色球,大乐透,3D,11选5,足彩,竞彩,北单等众多彩种的彩票代购、合买、开奖等服务，中奖福地，买彩票首选！"/>
 <title>网易彩票网_彩票中奖福地_网上购买彩票首选_福彩_体彩_竞技彩</title>
-<link rel="canonical" href="http://caipiao.163.com/"/>
-<link rel="stylesheet" href="http://cdn.caipiao.163.com/caipiao/css2/base.css?179842"/>
-<link rel="stylesheet" href="http://cdn.caipiao.163.com/caipiao/css2/core.css?179842"/>
+<link href="/Content/CssCP/base.css" rel="stylesheet" type="text/css" />
+<link href="/Content/CssCP/core.css" rel="stylesheet" type="text/css" />
+
+
 <link rel="stylesheet" href="http://cdn.caipiao.163.com/caipiao/css2/index/index.css?179842"/>
 
 <script src="http://cdn.caipiao.163.com/caipiao/js2/jquery-1.4.2.js?201205221605"></script>
