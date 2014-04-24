@@ -229,7 +229,7 @@ namespace App.Framework.Web.User
         {
             string loginPage = FormsAuthentication.LoginUrl;
             if (!loginPage.StartsWith("~"))
-                HttpContext.Current.Response.Redirect(System.Web.Mvc.UrlHelper.GenerateContentUrl("~" + FormsAuthentication.LoginUrl, HttpContext.Current.Request.RequestContext.HttpContext) + "?ReturnUrl=" + HttpContext.Current.Request.RawUrl);
+                HttpContext.Current.Response.Redirect(System.Web.Mvc.UrlHelper.GenerateContentUrl("~" + FormsAuthentication.LoginUrl, HttpContext.Current.Request.RequestContext.HttpContext) + "?ReturnUrl1=" + HttpContext.Current.Request.RawUrl);
             else
                 FormsAuthentication.RedirectToLoginPage();
         }

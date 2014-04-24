@@ -16,7 +16,7 @@ namespace CSC.Controllers
             return View();
         }
 
-		public ActionResult Test()
+		public ActionResult ssq()
 		{
 			 return View();
 		}

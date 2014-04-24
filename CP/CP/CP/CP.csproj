@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6752B8EF-B130-486C-A0D2-2DC1B504FDC1}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CP</RootNamespace>
+    <AssemblyName>CP</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\csscp\base.css" />
+    <Content Include="Content\csscp\core.css" />
+    <Content Include="Content\csscp\index\index.css" />
+    <Content Include="Content\csscp\lotteryBet\history.css" />
+    <Content Include="Content\csscp\lotteryBet\luckybuy.css" />
+    <Content Include="Content\csscp\lotteryBet\scz\common.css" />
+    <Content Include="Content\csscp\lotteryBet\scz\ssq.css" />
+    <Content Include="Content\csscp\popularize\forFrame.css" />
+    <Content Include="Content\images\notice.png" />
+    <Content Include="Content\img\btnauto.png" />
+    <Content Include="Content\img\catche\20140220150313c81f2.jpg" />
+    <Content Include="Content\img\coupon\act.png" />
+    <Content Include="Content\img\czlogo_35x35.png" />
+    <Content Include="Content\img\czlogo_45x45.png" />
+    <Content Include="Content\img\czlogo_60x64.png" />
+    <Content Include="Content\img\czlogo_81x85.png" />
+    <Content Include="Content\img\dialog.png" />
+    <Content Include="Content\img\dialog2.png" />
+    <Content Include="Content\img\end_hm.png" />
+    <Content Include="Content\img\headfoot.png" />
+    <Content Include="Content\img\head_repeat.png" />
+    <Content Include="Content\img\icon16px.png" />
+    <Content Include="Content\img\index\chartListbg.png" />
+    <Content Include="Content\img\index\headFigureDefault.jpg" />
+    <Content Include="Content\img\index\indexIcon_btn.png" />
+    <Content Include="Content\img\index\indexIcon_other.png" />
+    <Content Include="Content\img\index\index_balls.png" />
+    <Content Include="Content\img\index\index_icon0906_03.png" />
+    <Content Include="Content\img\index\index_repeatBg.png" />
+    <Content Include="Content\img\index\jqc_nodatebg.png" />
+    <Content Include="Content\img\index\mobile_logo.png" />
+    <Content Include="Content\img\index\quickbuy_end.png" />
+    <Content Include="Content\img\lamp.gif" />
+    <Content Include="Content\img\loading.gif" />
+    <Content Include="Content\img\logos\logo.png" />
+    <Content Include="Content\img\lotteryBet\collectBg.png" />
+    <Content Include="Content\img\lotteryBet\lotteryBaseImg.png" />
+    <Content Include="Content\img\lotteryBet\lottery_btnIcon.png" />
+    <Content Include="Content\img\lotteryBet\luckyBuy\luckBuy_other.png" />
+    <Content Include="Content\img\lotteryBet\szc\ssq_repeat.png" />
+    <Content Include="Content\img\lotteryBet\szc\ssq_xbfk.png" />
+    <Content Include="Content\img\lotteryBet\szc\szc_comicons.png" />
+    <Content Include="Content\img\newballs.png" />
+    <Content Include="Content\img\num_bg.png" />
+    <Content Include="Content\img\repeat_x.png" />
+    <Content Include="Content\js2\easyCore.js" />
+    <Content Include="Content\js2\game\COMS\PT\baseCom.js" />
+    <Content Include="Content\js2\game\game.js" />
+    <Content Include="Content\js2\game\history\history.js" />
+    <Content Include="Content\js2\globalConfig.js" />
+    <Content Include="Content\js2\groupBuy.js" />
+    <Content Include="Content\js2\index\award.js" />
+    <Content Include="Content\js2\index\index.js" />
+    <Content Include="Content\js2\index\quickBet.js" />
+    <Content Include="Content\js2\jquery-1.4.2.js" />
+    <Content Include="Content\js2\jtip.js" />
+    <Content Include="Content\js2\ssq\clientRandom.js" />
+    <Content Include="Content\js2\ssq\core.js" />
+    <Content Include="Content\js2\ssq\index.js" />
+    <Content Include="Content\js2\ssq\luckyBuy.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Views\Main\Index.aspx" />
+    <Content Include="Views\Main\ssq.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Account\ChangePassword.aspx" />
+    <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Views\Account\LogOn.aspx" />
+    <Content Include="Views\Account\Register.aspx" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56896</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

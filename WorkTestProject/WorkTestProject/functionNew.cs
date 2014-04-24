@@ -36,13 +36,14 @@ namespace WorkTestProject
 		{
 			Console.WriteLine("B.Fun()");
 		}
-
+        /*
 		public static void Main()
 		{
 			A a = new B();
 			a.Fun();
 			Console.ReadKey();
 		}
+         * */
 	} 
 
 }
