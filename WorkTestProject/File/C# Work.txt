@@ -1,0 +1,48 @@
+Serializable
+ICloneable
+this.MemberwiseClone
+
+ThreadPool
+.QueueUserWorkItem
+ManualResetEvent
+WaitHeadle.WaitAll
+
+DictionaryEntry
+IDictionaryEnumerator
+
+private 
+public 
+protected
+internal
+protected internal
+
+extern 
+abstract 
+Common Language Runtime,CLR
+
+ManualResetEvent
+ThreadPool.GetMaxThreads(out i, out x)
+ThreadPool.SetMaxThreads(workerThreads,completionPortThreads)
+ThreadPool.GetMinThreads(out i,out x);
+ThreadPool.QueueUserWorkItem
+ThreadPool.GetAvailableThreads
+
+Debug  Assert  Weakreference
+
+select * from (
+SELECT *,ROW_NUMBER() OVER(ORDER BY channelno DESC) AS rownum 
+FROM t_Channel 
+)  as t
+where rownum between  1 and 4
+
+DECLARE cc CURSOR  FOR select r.role_name from t_sys_user
+DECLARE @TestValue varchar(100)
+OPEN cc
+    FETCH cc INTO @TestValue    
+    WHILE @@FETCH_STATUS=0
+    BEGIN   
+        set @rstrs=@rstrs+'£¬'+isnull(Rtrim(@TestValue),'')
+        FETCH cc INTO @TestValue    
+    END
+CLOSE cc    
+DEALLOCATE cc

@@ -1,0 +1,2 @@
+如MVC底层机制: Session、Cache、Route、Filter、模型绑定、WebAPI等）；
+熟悉ORM(Petapoco, Nhibernate等)、IOC框架、熟悉TDD开发；
