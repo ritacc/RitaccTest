@@ -17,42 +17,34 @@ namespace WorkTestProject
 			public int index { get; set; }
 			public string name { get; set; }
 			public static object mobj = new object();
-			public void test()
+			public void test(tt mt)
 			{
 				//Console.WriteLine(string.Format("step 1:{0}", index));
-				int i = index;
-				lock (mobj)
+				 
+				lock (this)
 				{
-					while (i > 10)
+					while (mt.index > 10)
 					{
-						Console.WriteLine(string.Format("step 2:{0} Name={1}", index, name));
-						i--;
-						index--;
-						test();
-						Thread.Sleep(new Random().Next(100,400));
+						Console.WriteLine(string.Format("step 2:{0} Name={1}", mt.index, name));
+						mt.index--;
+
+						test(mt);
+						 
 					}
 				}
 			}
 		}
-
+		public class tt
+		{
+			public tt(int _index)
+			{
+				index = _index;
+			}
+			public int index { get; set; }
+		}
 		public static void Main()
 		{
-			mLock
-				m = new mLock();
-			m.name = "AA";
-			m.test();
-			m.index = 17;
-			Thread th = new Thread(m.test);
-			th.Start();
-
-			mLock
-				m1 = new mLock();
-			m1.name = "cc";
-			m1.test();
-			m1.index = 19;
-			Thread th1 = new Thread(m1.test);
-			th1.Start();
-
+			new mLock().test(new tt(15));
 			Console.ReadKey();
 		}
 
